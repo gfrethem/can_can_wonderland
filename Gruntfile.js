@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                     "angular/angular.min.js.map",
                     "angular/angular-csp.css"
                 ],
-                "dest": "server/public/vendor/"
+                "dest": "public/vendor/"
             }
         }
     });
