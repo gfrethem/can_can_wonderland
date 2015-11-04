@@ -7,9 +7,16 @@
     <script src="/javascripts/client.js"></script>
 
     <link rel="stylesheet" href="/vendor/simplegrid.css"/>
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="/stylesheets/style.css"/>
 </head>
 <body>
-    <h1> There is stuff here!</h1>
+    <header>
+        <i class="fa fa-bars "></i>
+        <!--<img src="Logo Image Here">-->
+        <button class="loginButton">LOGIN</button>
+        <button class="logoutButton">LOGOUT</button>
+    </header>
+    <ng-view class="customerViews"></ng-view>
 </body>
 </html>
