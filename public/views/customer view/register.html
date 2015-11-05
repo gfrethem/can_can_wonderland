@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<div class="registerMain">
 
-</body>
-</html>
+    <form role action="/register" method="post">
+        <input class="registerForm" type="text" name="name" id="name" placeholder="NAME" required="required">
+
+        <input class="registerForm" type="text" name="username" id="username" placeholder="EMAIL" required="required">
+
+        <input class="registerForm" type="text" name="password" id="password" placeholder="PASSWORD" required="required">
+
+        <input class="registerForm" type="number" name="phone" id="phone" placeholder="(555)-555-5555"  pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$">
+
+        <input class="registerForm" type="text" name="password" id="password" placeholder="PASSWORD" required="required">
+
+        <button class="continueButton" type="submit">CONTINUE</button>
+
+    </form>
+
+</div>
