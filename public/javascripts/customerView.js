@@ -20,8 +20,20 @@ app.config(function($routeProvider, $locationProvider){
             controller: "NumberController"
         })
         .when('/register', {
-            templateUrl: "/register",
+            templateUrl: "../views/customerView/register.html",
             controller: "RegisterController"
+        })
+        .when('/customerCalendar', {
+            templateUrl: "../views/customerView/calendar.html",
+            controller: "CustomerCalendarController"
+        })
+        .when('/confirmReservation', {
+            templateUrl: "../views/customerView/confirm.html",
+            controller: "ConfirmController"
+        })
+        .when('/userControl', {
+            templateUrl: "../views/customerView/usercontrol.html",
+            controller: "UserControlController"
         });
 
     $locationProvider.html5Mode(true);
@@ -30,3 +42,33 @@ app.config(function($routeProvider, $locationProvider){
 app.controller("MainController", ["$scope", function($scope){
     var vm = this;
 }]);
+
+app.controller("LoginController", ["$scope", function($scope){
+    var vm = this;
+}]);
+
+app.controller("CustomerInfoController", ["$scope", function($scope){
+    var vm = this;
+}]);
+
+app.controller("NumberController", ["$scope", function($scope){
+    var vm = this;
+}]);
+
+app.controller("RegisterController", ["$scope", function($scope){
+    var vm = this;
+}]);
+
+app.controller("CustomerCalendarController", ["$scope", function($scope){
+    var vm = this;
+}]);
+
+app.controller("ConfirmController", ["$scope", function($scope){
+    var vm = this;
+}]);
+
+app.controller("UserControlController", ["$scope", function($scope){
+    var vm = this;
+}]);
+
+
