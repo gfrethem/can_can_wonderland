@@ -27,9 +27,23 @@ app.controller("AdminCalendarController", ["$scope", function($scope){
     var vm = this;
 }]);
 
-app.controller("AdminEditController", ["$scope", function($scope){
+app.controller("AdminEditController", ["$scope", function($scope) {
     var vm = this;
+
+    vm.time = {
+    hoursMonday: 'Closed',
+    hoursTuesday: 'Closed',
+    hoursWednesday: 'Closed',
+    hoursThursday: '10am - Midnight',
+    hoursFriday: '10am - Midnight',
+    hoursSaturday: '10am - Midnight',
+    hoursSunday: '10am - Midnight'
+};
+
+
 }]);
+
+
 
 app.controller("AdminStatsController", ["$scope", function($scope){
     var vm = this;
