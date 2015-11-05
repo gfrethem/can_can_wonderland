@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "angular": "^1.4.7",
+    "angular-xeditable": "0.0.1",
     "express": "^4.13.3",
     "path": "^0.12.7"
   }
