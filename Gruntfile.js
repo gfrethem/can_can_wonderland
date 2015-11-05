@@ -24,7 +24,8 @@ module.exports = function(grunt) {
                     "angular/angular-csp.css",
                     "font-awesome/css/*",
                     "font-awesome/fonts/*",
-                    "angular-xeditable/xeditable.min.js"
+                    "angular-xeditable/xeditable.min.js",
+                    "angular-route/angular-route.min.js"
                 ],
                 "dest": "public/vendor/"
             }

@@ -40,9 +40,9 @@
     <button class="editInfo" ng-click="showCustomerInfo = true">EDIT MY INFO</button>
     <div class="customerInfo" ng-show="showCustomerInfo">
         <ul>
-            <li>NAME: {{}}</li>
-            <li>EMAIL: {{}}</li>
-            <li>PHONE NUMBER: {{}}</li>
+            <li editable-text="user.name">NAME: {{}}</li>
+            <li editable-text="user.email">EMAIL: {{}}</li>
+            <li editable-text="user.phoneNumber">PHONE NUMBER: {{}}</li>
         </ul>
         <button>SUBMIT CHANGES</button>
         <button>CLOSE</button>

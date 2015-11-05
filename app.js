@@ -7,7 +7,7 @@ var index = require('./routes/index');
 
 var app = express();
 
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 var server = app.listen(3000, function(){
     var port = server.address().port;
