@@ -1,0 +1,50 @@
+<div class="userControlMain">
+    <h1>Hello, {{}}</h1>
+    <div class="currentReservation">
+        <h2>YOUR CURRENT RESERVATION</h2>
+        <div class="grid grid-pad">
+            <p class="col-1-3">DATE:</p>
+            <p class="col-2-3">{{}}</p>
+        </div>
+        <div class="grid grid-pad">
+            <p class="col-1-3">TIME:</p>
+            <p class="col-2-3">{{}}</p>
+        </div>
+        <div class="grid grid-pad">
+            <p class="col-1-3">SLOTS:</p>
+            <p class="col-2-3">{{}}</p>
+        </div>
+        <p>{{}} Adults</p>
+        <p>{{}} Children</p>
+        <button class="changeButton">CHANGE</button>
+        <button class="confirmButton">CONFIRM</button>
+    </div>
+    <p class="reservationDisclaimer">Groups of 4 or more will tee off separately.</p>
+    <h2>PREVIOUS RESERVATIONS</h2>
+    <div class="previousReservations">
+        <div class="grid grid-pad">
+            <p class="col-1-3">DATE:</p>
+            <p class="col-2-3">{{}}</p>
+        </div>
+        <div class="grid grid-pad">
+            <p class="col-1-3">TIME:</p>
+            <p class="col-2-3">{{}}</p>
+        </div>
+        <div class="grid grid-pad">
+            <p class="col-1-3">SLOTS:</p>
+            <p class="col-2-3">{{}}</p>
+        </div>
+        <p>{{}} Adults</p>
+        <p>{{}} Children</p>
+    </div>
+    <button class="editInfo" ng-click="showCustomerInfo = true">EDIT MY INFO</button>
+    <div class="customerInfo" ng-show="showCustomerInfo">
+        <ul>
+            <li>NAME: {{}}</li>
+            <li>EMAIL: {{}}</li>
+            <li>PHONE NUMBER: {{}}</li>
+        </ul>
+        <button>SUBMIT CHANGES</button>
+        <button>CLOSE</button>
+    </div>
+</div>

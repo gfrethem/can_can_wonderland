@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="customerApp">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Can Can Wonderland Scheduler</title>
@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="/stylesheets/style.css"/>
 </head>
 <body>
-    <header>
-        <i class="fa fa-bars "></i>
-        <!--<img src="Logo Image Here">-->
-        <button class="loginButton">LOGIN</button>
-        <button class="logoutButton">LOGOUT</button>
+    <header class='adminHeader grid grid-pad'>
+        <h3 class="col-1-3 adminLink">Calendar</h3>
+        <h3 class="col-1-3 adminLink">Information</h3>
+        <h3 class="col-1-3 adminLink">Statistics</h3>
     </header>
-    <ng-view class="customerViews"></ng-view>
+    <ng-view class="adminViews"></ng-view>
 </body>
 </html>
