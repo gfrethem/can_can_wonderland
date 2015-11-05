@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="frontDeskApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Can Can Wonderland Scheduler</title>
+        <script src="/vendor/angular/angular.min.js"></script>
+        <script src="/vendor/angular-route/angular-route.min.js"></script>
+        <script src="/vendor/angular-xeditable/xeditable.min.js"></script>
+        <script src="/javascripts/registerView.js"></script>
+
+        <link rel="stylesheet" href="/vendor/simplegrid.css"/>
+        <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="/stylesheets/style.css"/>
+        <base href="/">
+    </head>
+    <body ng-controller="FrontDeskController as frontDesk">
+        <header>
+            <img src="/images/yellowBlue.png" ng-click="admin.goHome()">
+            <button class="logoutButton" ng-click="admin.logout()">LOGOUT</button>
+        </header>
+        <p>{{frontDesk.message}}</p>
+    </body>
+</html>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="customerApp">
-<head>
-    <meta charset="UTF-8">
-    <title>Can Can Wonderland Scheduler</title>
-    <script src="/vendor/angular/angular.min.js"></script>
-    <script src="/vendor/angular-route/angular-route.min.js"></script>
-    <script src="/vendor/angular-xeditable/xeditable.min.js"></script>
-    <script src="/javascripts/customerView.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <title>Can Can Wonderland Scheduler</title>
+        <script src="/vendor/angular/angular.min.js"></script>
+        <script src="/vendor/angular-route/angular-route.min.js"></script>
+        <script src="/vendor/angular-xeditable/xeditable.min.js"></script>
+        <script src="/javascripts/customerView.js"></script>
 
+<<<<<<< HEAD
     <link rel="stylesheet" href="/vendor/simplegrid.css"/>
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="/stylesheets/style.css"/>
@@ -26,9 +27,29 @@
     </header>
     <div id="main">
         <ng-view>
+=======
+        <link rel="stylesheet" href="/vendor/simplegrid.css"/>
+        <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="/stylesheets/style.css"/>
+        <base href="/">
+    </head>
+    <body ng-controller="MainController as main">
+        <header>
+            <a href="/">
+                <i class="fa fa-bars "></i>
+            </a>
+            <a href="/info">
+                <img src="/images/redYellow.png" alt="Golf ball image, takes you to tee time registration">
+            </a>
+            <a class="loginButton" href="/login">LOGIN</a>
+            <a class="logoutButton" href="/">LOGOUT</a>
+        </header>
+        <div id="main">
+            <ng-view>
+>>>>>>> 3e7019dc60042d325c92ca1538b2f5c80da3ce38
 
 
-        </ng-view>
-    </div>
-</body>
+            </ng-view>
+        </div>
+    </body>
 </html>

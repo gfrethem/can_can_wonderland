@@ -5,16 +5,32 @@ app.config(function($routeProvider, $locationProvider){
     $routeProvider
         .when('/admin', {
             templateUrl: "../views/adminView/calendar.html",
-            controller: "CalendarController"
+            controller: "AdminCalendarController"
         })
-        .when('/login', {
+        .when('/settings', {
             templateUrl: "../views/adminView/settings.html",
-            controller: 'LoginController'
+            controller: 'AdminEditController'
         })
-        .when('/info', {
+        .when('/stats', {
             templateUrl: "../views/adminView/stats.html",
-            controller: "CustomerInfoController"
+            controller: "AdminStatsController"
         });
 
     $locationProvider.html5Mode(true);
 });
+
+app.controller("AdminController", ["$scope", function($scope){
+    var vm = this;
+}]);
+
+app.controller("AdminCalendarController", ["$scope", function($scope){
+    var vm = this;
+}]);
+
+app.controller("AdminEditController", ["$scope", function($scope){
+    var vm = this;
+}]);
+
+app.controller("AdminStatsController", ["$scope", function($scope){
+    var vm = this;
+}]);
