@@ -3,7 +3,9 @@
 *, *:before, *:after {
     box-sizing: inherit;
 }
-
+body{
+    font-family: Oswald, Helvetica, Arial, sans-serif;
+}
 /*home page css*/
 .fa{
     color:black;
@@ -16,7 +18,7 @@
 
 .loginButton{
     text-decoration: none;
-    font: 20px Oswald, Helvetica, Arial, sans-serif;
+    font-size: 20px;
     font-weight: bold;
     color: black;
     float: right;
@@ -25,7 +27,7 @@
 
 .logoutButton {
     text-decoration: none;
-    font: 20px Oswald, Helvetica, Arial, sans-serif;
+    font-size: 20px;
     font-weight: bold;
     color: black;
     margin: 4% 5% 0 0;
@@ -39,7 +41,7 @@
 
 
 h3{
-    font: 20px Oswald, Helvetica, Arial, sans-serif;
+    font-size: 20px;
     font-weight: bold;
     color: red;
     margin: 15px 0 5px 5%;
@@ -52,7 +54,7 @@ p{
 }
 
 .continueButton{
-    font: 2em Oswald, Helvetica, Arial, sans-serif;
+    font-size: 2em;
     font-weight: bold;
     text-align: center;
     color: red;
