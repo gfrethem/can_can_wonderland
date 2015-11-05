@@ -23,7 +23,8 @@ module.exports = function(grunt) {
                     "angular/angular.min.js.map",
                     "angular/angular-csp.css",
                     "font-awesome/css/*",
-                    "font-awesome/fonts/*"
+                    "font-awesome/fonts/*",
+                    "angular-xeditable/xeditable.min.js"
                 ],
                 "dest": "public/vendor/"
             }
