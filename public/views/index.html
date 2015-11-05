@@ -4,20 +4,31 @@
     <meta charset="UTF-8">
     <title>Can Can Wonderland Scheduler</title>
     <script src="/vendor/angular/angular.min.js"></script>
+    <script src="/vendor/angular-route/angular-route.min.js"></script>
     <script src="/vendor/angular-xeditable/xeditable.min.js"></script>
-    <script src="/javascripts/client.js"></script>
+    <script src="/javascripts/customerView.js"></script>
 
     <link rel="stylesheet" href="/vendor/simplegrid.css"/>
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <base href="/">
 </head>
-<body>
+<body ng-controller="MainController as main">
     <header>
-        <i class="fa fa-bars "></i>
-        <!--<img src="Logo Image Here">-->
-        <button class="loginButton">LOGIN</button>
-        <button class="logoutButton">LOGOUT</button>
+        <a href="/">
+            <i class="fa fa-bars "></i>
+        </a>
+        <a href="/info">
+            <img src="/images/redYellow.png" alt="Golf ball image, takes you to tee time registration">
+        </a>
+        <a class="loginButton" href="/login">LOGIN</a>
+        <a class="logoutButton" href="/">LOGOUT</a>
     </header>
-    <ng-view class="customerViews"></ng-view>
+    <div id="main">
+        <ng-view>
+
+
+        </ng-view>
+    </div>
 </body>
 </html>
