@@ -101,10 +101,6 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
     console.log(vm.date);
     //ng-model="date"
 
-<<<<<<< HEAD
-
-    //ng-model="date";
-
     vm.mainTime = true;
 
     vm.buttonTime = function(){
@@ -112,8 +108,6 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
         vm.mainTime = false;
     };
 
-=======
->>>>>>> e81499fb12909c959ce85ac0b7aee2e62e1e9615
     vm.hours = ['10','11','12','1','2','3','4','5','6','7','8','9'];
 
     vm.quarters = [':00', ':15', ':30', ':45'];
