@@ -1,3 +1,21 @@
-<div class="numberCheckMain">
-
+<div class="numberCheckMain" ng-controller="NumberController as num">
+    <div class="numAdults">
+        <h2>ADULTS</h2>
+        <slick dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1" ng-repeat="num in num.numAdults">
+            <div>
+                <p>{{num}}</p>
+            </div>
+        </slick>
+    </div>
+    <div class="numChildren">
+        <h2>CHILDREN</h2>
+        <h3>12 and under</h3>
+        <slick dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1" ng-repeat="num in num.numChildren">
+            <div>
+                <p>{{num}}</p>
+            </div>
+        </slick>
+    </div>
+    <h2>${{num.price}}</h2>
+    <button class="continueButton" type="submit">CONTINUE</button>
 </div>
