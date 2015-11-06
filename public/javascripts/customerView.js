@@ -51,15 +51,38 @@ app.controller("CustomerInfoController", ["$scope", function($scope){
     var vm = this;
 }]);
 
-app.controller("NumberController", ["$scope", 'slickController', function($scope, slickController){
+app.controller("NumberController", ["$scope", function($scope){
     var vm = this;
 
     vm.numAdults = [0,1,2,3,4,5,6,7,8,9,10,11,12];
     vm.numChildren = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+    vm.totalAdults = 0;
+    vm.totalChildren = 0;
+    vm.price = 0;
+    vm.totalPeople = 0;
+    vm.slots = 0;
 
-    vm.slickConfig = {
-        method: {}
+//Determine number of adults and children, as well as get total number of people and slots taken up
+    vm.numberOfAdults = function(num){
+        vm.totalAdults = num;
+        updateTotals();
+    };
+    vm.numberOfChildren = function(num){
+        vm.totalChildren = num;
+        updateTotals();
+    };
+    var updateTotals = function(){
+        vm.price = ((vm.totalAdults * 12) + (vm.totalChildren * 8));
+        vm.totalPeople = vm.totalAdults + vm.totalChildren;
+        vm.slots = Math.ceil(vm.totalPeople / 4);
+    };
+//Alert customer if they have more than 12 people in their party
+    vm.showNumAlert = function(){
+        if(vm.totalPeople > 12){
+            alert('You group is larger than 12 people, please call to schedule');
+        }
     }
+
 }]);
 
 app.controller("RegisterController", ["$scope", function($scope){
@@ -70,9 +93,13 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
 
     var vm = this;
 
+<<<<<<< HEAD
 
     //ng-model="date"
 
+=======
+    ng-model="date"
+>>>>>>> d4359f7eff436c778af296a4f423abe71c235b8c
 
 
     vm.hours = ['10','11','12','1','2','3','4','5','6','7','8','9'];
