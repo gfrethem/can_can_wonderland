@@ -1,4 +1,4 @@
-var app = angular.module('customerApp', ['ngRoute', 'xeditable', 'slickCarousel']);
+var app = angular.module('customerApp', ['ngRoute', 'xeditable', 'slickCarousel', '720kb.datepicker']);
 
 //Sets specific html view to load and sets an Angular controller to each page
 app.config(function($routeProvider, $locationProvider){
@@ -92,6 +92,11 @@ app.controller("RegisterController", ["$scope", function($scope){
 app.controller("CustomerCalendarController", ["$scope", function($scope){
 
     var vm = this;
+
+    //ng-model="date"
+
+
+    //ng-model="date";
 
     vm.hours = ['10','11','12','1','2','3','4','5','6','7','8','9'];
 
