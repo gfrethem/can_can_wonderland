@@ -61,6 +61,10 @@ app.controller("RegisterController", ["$scope", function($scope){
 
 app.controller("CustomerCalendarController", ["$scope", function($scope){
     var vm = this;
+
+    ng-model="date"
+
+
 }]);
 
 app.controller("ConfirmController", ["$scope", function($scope){
