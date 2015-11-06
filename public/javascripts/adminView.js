@@ -43,7 +43,11 @@ app.controller("AdminEditController", ["$scope", function($scope) {
     vm.price = {
         adult: '$13',
         adolescent: '$8'
-    }
+    };
+
+    vm.message = {
+      special: 'Special Message for Customers'
+    };
 
 
 }]);

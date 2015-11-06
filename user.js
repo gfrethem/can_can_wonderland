@@ -82,4 +82,8 @@
 //router.get('/', function(req, res, next) {
 //    res.json(req.isAuthenticated());
 //});
+<<<<<<< HEAD
 
+=======
+//
+>>>>>>> 4ecbc7826f5fa8f5fc987a567a7bdaa4c4f6bad4
