@@ -93,8 +93,15 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
 
     var vm = this;
 
+    vm.partySize = 0;
+    vm.showPartySize = true;
+    vm.partyList = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+    vm.slotsNeeded = 0;
+    vm.date;
+    console.log(vm.date);
     //ng-model="date"
 
+<<<<<<< HEAD
 
     //ng-model="date";
 
@@ -105,6 +112,8 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
         vm.mainTime = false;
     };
 
+=======
+>>>>>>> e81499fb12909c959ce85ac0b7aee2e62e1e9615
     vm.hours = ['10','11','12','1','2','3','4','5','6','7','8','9'];
 
     vm.quarters = [':00', ':15', ':30', ':45'];
@@ -115,6 +124,14 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
     vm.fullTime[index] = true;
 
     };
+
+//Toggles party size selector, choose party size, and determines number of slots needed
+    vm.findPartySize = function(party){
+        vm.partySize = party;
+        vm.slots = Math.ceil(vm.partySize / 4);
+        //console.log(vm.partySize);
+        //console.log(vm.slots);
+    }
 }]);
 
 app.controller("ConfirmController", ["$scope", function($scope){
