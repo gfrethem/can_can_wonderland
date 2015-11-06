@@ -1,4 +1,15 @@
+<div ng-controller="CustomerCalendarController as calendar">
+
 <datepicker date-format="{{today | date:'shortDate'}}">
     <input ng-model="date" type="text"/>
 </datepicker>
 
+    <div ng-repeat="hour in calendar.hours">
+       <div ng-click="calendar.fullTime[hour] = !calendar.fullTime[hour]"> {{hour}} </div>
+
+            <div ng-show="calendar.fullTime[hour]" ng-repeat="quarter in calendar.quarters">
+                <div>{{hour}} {{quarter}}<div>
+            </div>
+    </div>
+
+</div>

@@ -1,5 +1,4 @@
 0 info it worked if it ends with ok
-<<<<<<< HEAD
 1 verbose cli [ '/usr/local/Cellar/node/4.1.0/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
 1 verbose cli   'start' ]
@@ -21,7 +20,7 @@
 9 verbose stack     at maybeClose (internal/child_process.js:817:16)
 9 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
 10 verbose pkgid cancanwonderland@1.0.0
-11 verbose cwd /Users/Dave/WebstormProjects/cancanwonderland
+11 verbose cwd /Users/Amelia/WebstormProjects/can_can_wonderland
 12 error Darwin 14.5.0
 13 error argv "/usr/local/Cellar/node/4.1.0/bin/node" "/usr/local/bin/npm" "start"
 14 error node v4.1.0
@@ -38,40 +37,3 @@
 18 error     npm owner ls cancanwonderland
 18 error There is likely additional logging output above.
 19 verbose exit [ 1, true ]
-=======
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'start' ]
-2 info using npm@2.11.2
-3 info using node@v0.12.7
-4 verbose node symlink /usr/local/bin/node
-5 verbose run-script [ 'prestart', 'start', 'poststart' ]
-6 info prestart cancanwonderland@1.0.0
-7 info start cancanwonderland@1.0.0
-8 verbose unsafe-perm in lifecycle true
-9 info cancanwonderland@1.0.0 Failed to exec start script
-10 verbose stack Error: cancanwonderland@1.0.0 start: `node app.js`
-10 verbose stack Exit status 1
-10 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
-10 verbose stack     at EventEmitter.emit (events.js:110:17)
-10 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
-10 verbose stack     at ChildProcess.emit (events.js:110:17)
-10 verbose stack     at maybeClose (child_process.js:1015:16)
-10 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
-11 verbose pkgid cancanwonderland@1.0.0
-12 verbose cwd /Users/Liz/Desktop/can_can_wonderland
-13 error Darwin 14.5.0
-14 error argv "node" "/usr/local/bin/npm" "start"
-15 error node v0.12.7
-16 error npm  v2.11.2
-17 error code ELIFECYCLE
-18 error cancanwonderland@1.0.0 start: `node app.js`
-18 error Exit status 1
-19 error Failed at the cancanwonderland@1.0.0 start script 'node app.js'.
-19 error This is most likely a problem with the cancanwonderland package,
-19 error not with npm itself.
-19 error Tell the author that this fails on your system:
-19 error     node app.js
-19 error You can get their info via:
-19 error     npm owner ls cancanwonderland
-19 error There is likely additional logging output above.
-20 verbose exit [ 1, true ]
->>>>>>> 4ecbc7826f5fa8f5fc987a567a7bdaa4c4f6bad4
