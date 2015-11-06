@@ -11,7 +11,7 @@
     </div>
 
     <datepicker  date-format="{{today | date:'shortDate'}}">
-        <button ng-model="calendar.date"type="text">PICK A DATE</button>
+        <button ng-model="calendar.date"type="text" ng-click="calendar.showDate = !calendar.showDate">PICK A DATE</button>
     </datepicker>
 
 

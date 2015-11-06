@@ -100,8 +100,10 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
     vm.date;
     console.log(vm.date);
 
-    //console.log(setDatePickerDay);
+
     //ng-model="date"
+    vm.showDate = true;
+
 
     vm.mainTime = true;
 
