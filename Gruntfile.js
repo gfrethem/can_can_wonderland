@@ -30,8 +30,6 @@ module.exports = function(grunt) {
                     "angularjs-datepicker/dist/angular-datepicker.min.js",
                     "angular-slick-carousel/dist/angular-slick.min.js",
                     "jquery/dist/jquery.min.js"
-
-
                 ],
                 "dest": "public/vendor/"
             }

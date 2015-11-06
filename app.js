@@ -5,7 +5,7 @@ var path = require('path');
 //REQUIRE PASSPORT, etc --Liz
 //var passport = require('passport');
 //var session = require('express-session');
-//var localStrategy =require ('localStrategy');
+//var localStrategy = require('localStrategy');
 //WE DON"T KNOW HOW TO HANDLE THIS YET // MONGOOSE STUFF
 //var User = require('../models/user');
 
@@ -22,8 +22,20 @@ var server = app.listen(3000, function(){
     console.log('Listening on port: ', port);
 });
 
-
-//PASSPORT USE --Liz
+////USE PASSPORT --Liz
+//app.use(passport.initialize());
+//app.use(passport.session());
+//
+////USE SESSION --Liz
+//app.use(session({
+//    secret:'secret',
+//    key:'user',
+//    resave:'true',
+//    saveUninitialized: false,
+//    cookie: {maxAge: null, secure:false}
+//}));
+//
+////PASSPORT USE --Liz
 //passport.use('local', new localStrategy({
 //        passReqToCallback:true,
 //        usernameField:'username',
@@ -61,18 +73,9 @@ var server = app.listen(3000, function(){
 
 app.use('/', index);
 
-//USE SESSION --Liz
-//app.use(session({
-//    secret:'secret',
-//    key:'user',
-//    resave:'true',
-//    saveUninitialized: false,
-//    cookie: {maxAge: null, secure:false}
-//}));
-//
-////USE PASSPORT --Liz
-//app.use(passport.initialize());
-//app.use(passport.session());
+
+
+
 
 
 module.exports = app;

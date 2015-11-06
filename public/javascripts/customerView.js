@@ -1,4 +1,4 @@
-var app = angular.module('customerApp', ['ngRoute', 'xeditable', '720kb.datepicker']);
+var app = angular.module('customerApp', ['ngRoute', 'xeditable', 'slickCarousel']);
 
 //Sets specific html view to load and sets an Angular controller to each page
 app.config(function($routeProvider, $locationProvider){
@@ -51,8 +51,15 @@ app.controller("CustomerInfoController", ["$scope", function($scope){
     var vm = this;
 }]);
 
-app.controller("NumberController", ["$scope", function($scope){
+app.controller("NumberController", ["$scope", 'slickController', function($scope, slickController){
     var vm = this;
+
+    vm.numAdults = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+    vm.numChildren = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+
+    vm.slickConfig = {
+        method: {}
+    }
 }]);
 
 app.controller("RegisterController", ["$scope", function($scope){
@@ -60,11 +67,26 @@ app.controller("RegisterController", ["$scope", function($scope){
 }]);
 
 app.controller("CustomerCalendarController", ["$scope", function($scope){
+
     var vm = this;
 
+<<<<<<< HEAD
     ng-model="date"
 
 
+=======
+    vm.hours = ['10','11','12','1','2','3','4','5','6','7','8','9'];
+
+    vm.quarters = [':00', ':15', ':30', ':45'];
+
+    vm.hourTime = function(index) {
+        console.log(index);
+
+    vm.fullTime[index] = true;
+
+
+    };
+>>>>>>> b620e061814871f07f2772f503be1bb5da10b510
 }]);
 
 app.controller("ConfirmController", ["$scope", function($scope){
