@@ -25,7 +25,13 @@ module.exports = function(grunt) {
                     "font-awesome/css/*",
                     "font-awesome/fonts/*",
                     "angular-xeditable/xeditable.min.js",
-                    "angular-route/angular-route.min.js"
+                    "angular-route/angular-route.min.js",
+                    "angularjs-datepicker/dist/angular-datepicker.min.css",
+                    "angularjs-datepicker/dist/angular-datepicker.min.js",
+                    "angular-slick-carousel/dist/angular-slick.min.js",
+                    "jquery/dist/jquery.min.js"
+
+
                 ],
                 "dest": "public/vendor/"
             }

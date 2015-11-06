@@ -74,9 +74,5 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use('local', new localStrategy({ passReqToCallBack : true, usernameField: 'username'},
-        function(req, username, password, done){
-
-        }));
 
 module.exports = app;
