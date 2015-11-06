@@ -41,7 +41,7 @@ app.controller("AdminEditController", ["$scope", function($scope) {
 };
 
     vm.price = {
-        adult: '$13',
+        adult: '$12',
         adolescent: '$8'
     };
 
