@@ -1,4 +1,4 @@
-var app = angular.module('customerApp', ['ngRoute', 'xeditable']);
+var app = angular.module('customerApp', ['ngRoute', 'xeditable', '720kb.datepicker']);
 
 //Sets specific html view to load and sets an Angular controller to each page
 app.config(function($routeProvider, $locationProvider){
