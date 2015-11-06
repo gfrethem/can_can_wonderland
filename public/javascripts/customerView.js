@@ -92,11 +92,13 @@ app.controller("RegisterController", ["$scope", function($scope){
 app.controller("CustomerCalendarController", ["$scope", function($scope){
 
     var vm = this;
-
+    vm.partySize = 0;
+    vm.showPartySize = true;
+    vm.partyList = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+    vm.slotsNeeded = 0;
+    vm.date;
+    console.log(vm.date);
     //ng-model="date"
-
-
-    //ng-model="date";
 
     vm.hours = ['10','11','12','1','2','3','4','5','6','7','8','9'];
 
@@ -109,6 +111,14 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
 
 
     };
+
+//Toggles party size selector, choose party size, and determines number of slots needed
+    vm.findPartySize = function(party){
+        vm.partySize = party;
+        vm.slots = Math.ceil(vm.partySize / 4);
+        //console.log(vm.partySize);
+        //console.log(vm.slots);
+    }
 }]);
 
 app.controller("ConfirmController", ["$scope", function($scope){
