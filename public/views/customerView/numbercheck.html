@@ -1,21 +1,23 @@
 <div class="numberCheckMain" ng-controller="NumberController as num">
     <div class="numAdults">
         <h2>ADULTS</h2>
-        <slick dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1" ng-repeat="num in num.numAdults">
-            <div>
-                <p>{{num}}</p>
+        <slick dots="false" infinite="true" speed="300" slides-to-show="4" touch-move="true" slides-to-scroll="2" centerMode= "true">
+            <div ng-repeat="number in num.numAdults track by $index" ng-click="num.numberOfAdults(number)">
+                <p >{{number}}</p>
             </div>
         </slick>
     </div>
     <div class="numChildren">
         <h2>CHILDREN</h2>
         <h3>12 and under</h3>
-        <slick dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1" ng-repeat="num in num.numChildren">
-            <div>
-                <p>{{num}}</p>
+        <slick dots="false" infinite="true" speed="300" slides-to-show="4" touch-move="true" slides-to-scroll="2" centerMode= "true">
+            <div ng-repeat="number in num.numChildren track by $index" ng-click="num.numberOfChildren(number)">
+                <p >{{number}}</p>
             </div>
         </slick>
     </div>
     <h2>${{num.price}}</h2>
-    <button class="continueButton" type="submit">CONTINUE</button>
+    <h2>{{num.totalPeople}}</h2>
+    <h2>{{num.slots}}</h2>
+    <a ng-click='num.showNumAlert()' class="continueButton" href="/login">CONTINUE</a>
 </div>
