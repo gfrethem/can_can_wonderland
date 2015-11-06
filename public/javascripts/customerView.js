@@ -93,11 +93,9 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
 
     var vm = this;
 
-<<<<<<< HEAD
     ng-model="date"
 
 
-=======
     vm.hours = ['10','11','12','1','2','3','4','5','6','7','8','9'];
 
     vm.quarters = [':00', ':15', ':30', ':45'];
@@ -109,7 +107,6 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
 
 
     };
->>>>>>> b620e061814871f07f2772f503be1bb5da10b510
 }]);
 
 app.controller("ConfirmController", ["$scope", function($scope){
