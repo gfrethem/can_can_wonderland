@@ -93,13 +93,11 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
 
     var vm = this;
 
-<<<<<<< HEAD
 
     //ng-model="date"
 
-=======
-    ng-model="date"
->>>>>>> d4359f7eff436c778af296a4f423abe71c235b8c
+
+
 
 
     vm.hours = ['10','11','12','1','2','3','4','5','6','7','8','9'];
