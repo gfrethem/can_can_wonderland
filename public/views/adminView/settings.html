@@ -1,11 +1,18 @@
 <div ng-controller="AdminEditController as edit">
+    <div class="adjustHours">
+        <p editable-text="edit.time.hoursMonday"> Monday {{edit.time.hoursMonday || 'empty'}}</p>
+        <p editable-text="edit.time.hoursTuesday"> Tuesday {{edit.time.hoursTuesday || 'empty'}}</p>
+        <p editable-text="edit.time.hoursWednesday"> Wednesday {{edit.time.hoursWednesday || 'empty'}}</p>
+        <p editable-text="edit.time.hoursThursday"> Thursday {{edit.time.hoursThursday || 'empty'}}</p>
+        <p editable-text="edit.time.hoursFriday"> Friday {{edit.time.hoursFriday || 'empty'}}</p>
+        <p editable-text="edit.time.hoursSaturday"> Saturday {{edit.time.hoursSaturday || 'empty'}}</p>
+        <p editable-text="edit.time.hoursSunday">Sunday {{edit.time.hoursSunday || 'empty'}}</p>
+    </div>
 
-    <p editable-text="edit.time.hoursMonday"> Monday {{edit.time.hoursMonday || 'empty'}}</p>
-    <p editable-text="edit.time.hoursTuesday"> Tuesday {{edit.time.hoursTuesday || 'empty'}}</p>
-    <p editable-text="edit.time.hoursWednesday"> Wednesday {{edit.time.hoursWednesday || 'empty'}}</p>
-    <p editable-text="edit.time.hoursThursday"> Thursday {{edit.time.hoursThursday || 'empty'}}</p>
-    <p editable-text="edit.time.hoursFriday"> Friday {{edit.time.hoursFriday || 'empty'}}</p>
-    <p editable-text="edit.time.hoursSaturday"> Saturday {{edit.time.hoursSaturday || 'empty'}}</p>
-    <p editable-text="edit.time.hoursSunday">Sunday {{edit.time.hoursSunday || 'empty'}}</p>
+    <div class="adjustPrice">
+        <p editable-text="edit.price.adult">Adult {{edit.price.adult || 'empty'}}</p>
+        <p editable-text="edit.price.adolescent">Children {{edit.price.adolescent || 'empty'}}</p>
+
+    </div>
 
 </div>

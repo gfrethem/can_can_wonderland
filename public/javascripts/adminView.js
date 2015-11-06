@@ -40,6 +40,11 @@ app.controller("AdminEditController", ["$scope", function($scope) {
     hoursSunday: '10am - Midnight'
 };
 
+    vm.price = {
+        adult: '$13',
+        adolescent: '$8'
+    }
+
 
 }]);
 
