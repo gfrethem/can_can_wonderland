@@ -95,7 +95,7 @@ body{
 ._720kb-datepicker-calendar-header {
     text-align: center;
     font-size: 3em;
-    padding: 10px 0 0 0;
+    padding: 15px 0 0 0;
 }
 
 ._720kb-datepicker-calendar-header:nth-child(odd) {
@@ -212,7 +212,7 @@ body{
     margin: 0 auto;
     padding: 0 2%;
     background: #0091D5;
-    border-bottom: 2px solid black;
+    border-bottom: 5px solid black;
 }
 
 ._720kb-datepicker-calendar-days-header div {
