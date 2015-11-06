@@ -15,9 +15,9 @@
     </datepicker>
 
 
-    <button ng-click="buttonTime()"  class="buttonCalendar" >PICK A TIME</button>
+    <button ng-click="calendar.buttonTime()"  class="buttonCalendar">PICK A TIME</button>
 
-    <div ng-hide="mainTime" ng-repeat="hour in calendar.hours">
+    <div ng-hide="calendar.mainTime" ng-repeat="hour in calendar.hours">
 
        <div ng-click="calendar.fullTime[hour] = !calendar.fullTime[hour]"> {{hour}}
        </div>

@@ -105,7 +105,7 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
 
     vm.buttonTime = function(){
 
-        vm.mainTime = false;
+        vm.mainTime = ! vm.mainTime;
     };
 
     vm.hours = ['10','11','12','1','2','3','4','5','6','7','8','9'];
