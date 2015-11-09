@@ -8,7 +8,7 @@
         <script src="/vendor/angular-route/angular-route.min.js"></script>
         <script src="/vendor/angular-xeditable/xeditable.min.js"></script>
         <script src="/vendor/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
-        <script src="/javascripts/customerView.js"></script>
+        <script src="/javascripts/registerView.js"></script>
 
         <link rel="stylesheet" href="/vendor/simplegrid.css"/>
         <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
@@ -21,6 +21,37 @@
             <img src="/images/yellowBlue.png" ng-click="admin.goHome()">
             <button class="logoutButton" ng-click="admin.logout()">LOGOUT</button>
         </header>
+
         <p>{{frontDesk.message}}</p>
+            <div class="calendarDiv">
+
+
+                <div class="mainHour" ng-click="frontDesk.showQuarterHour()">
+                   <ul>
+                       <li>
+                           {{hour}} available {{hourSlotNumber}}
+                       </li>
+                   </ul>
+                </div>
+
+                     <div class="quarterHour" ng-hide="frontDesk.quarterHour" ng-click="frontDesk.showReservation()">
+                         <!--<ul class="quarterHourMaster" ng-repeat="reservation in reservations">-->
+                             <li>
+                                    {{frontDesk.reservations.fullname}}
+                             </li>
+                         </ul>
+                     </div>
+                  </div>
+
+                        <div class="reservation"  ng-hide="frontDesk.showReservationSlot">
+                            <ul>
+                                <li>
+                                    {{fullname}} {{partySize}} <button class="infoButton">INFO</button> walk-up <input type="checkbox" name="walk-up" value="walk-up"> check-in <input type="checkbox" name="check-in" value="check-in">
+                                </li>
+                            </ul>
+                        </div>
+            </div>
+
     </body>
 </html>
+
