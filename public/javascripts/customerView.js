@@ -102,7 +102,8 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
 
 
     //ng-model="date"
-    vm.showDate = true;
+    //vm.showDate = true;
+    //console.log(calendar);
 
 
     vm.mainTime = true;
