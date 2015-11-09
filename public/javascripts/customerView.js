@@ -97,6 +97,7 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
     vm.showPartySize = true;
     vm.partyList = [0,1,2,3,4,5,6,7,8,9,10,11,12];
     vm.slotsNeeded = 0;
+
     vm.mainTime = true;
 
     vm.buttonTime = function(){

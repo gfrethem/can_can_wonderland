@@ -1,0 +1,16 @@
+/**
+ * Created by Liz on 11/9/15.
+ */
+
+//LOGIN
+
+//POPULATE CALENDAR
+
+
+//CHECK IN
+
+
+//NEW RESERVATION OR WALK UP
+
+
+//CHANGE RESERVATION
