@@ -97,36 +97,32 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
     vm.showPartySize = true;
     vm.partyList = [0,1,2,3,4,5,6,7,8,9,10,11,12];
     vm.slotsNeeded = 0;
-    vm.date;
-    console.log(vm.date);
-
-    //console.log(setDatePickerDay);
-    //ng-model="date"
-
     vm.mainTime = true;
 
     vm.buttonTime = function(){
-
         vm.mainTime = ! vm.mainTime;
     };
 
-    vm.hours = ['10','11','12','1','2','3','4','5','6','7','8','9'];
+    vm.hours = ['10','11','12','1','2','3','4','5','6','7','8','9', '10', '11', '12'];
+    vm.quarters = ['00', '15', '30', '45'];
 
-    vm.quarters = [':00', ':15', ':30', ':45'];
-
-    vm.hourTime = function(index) {
-        console.log(index);
-
-    vm.fullTime[index] = true;
-
+    vm.getTime = function(hour, quarter){
+        //var time = hour + quarter;
+        var newDateTime = makeDateTime($('.dateButton').val(), hour, quarter);
+        console.log(newDateTime._d);
     };
 
+    var makeDateTime = function(date, hour, minutes){
+        hour = parseInt(hour);
+        minutes = parseInt(minutes);
+        var input = date;
+        var newDate = moment(input).hour(hour).minute(minutes);
+        return newDate;
+    };
 //Toggles party size selector, choose party size, and determines number of slots needed
     vm.findPartySize = function(party){
         vm.partySize = party;
         vm.slots = Math.ceil(vm.partySize / 4);
-        //console.log(vm.partySize);
-        //console.log(vm.slots);
     }
 }]);
 
