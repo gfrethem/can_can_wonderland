@@ -18,8 +18,8 @@ router.get('/getDate/:date?', function(req, res, next) {
                 $between: [date, nextDate]
             }
         }
-    }).success(function(date) {
-        res.send(date)
+    }).success(function(response) {
+        res.send(response)
     });
 });
 
@@ -29,9 +29,15 @@ router.post('/makeReservation', function(req, res, next){
 
     Reservation.sync().then(function () {
 
-        return User.create({
-            firstName: 'John',
-            lastName: 'Hancock'
+        return Reservation.create({
+            email: newReservation.email,
+            phonenumber: newReservation.phonenumber,
+            adultnumber: newReservation.adultnumber,
+            childnumber: newReservation.childnumber,
+            noshow: newReservation.noshow,
+            walkup: newReservation.walkup,
+            datetime: newReservation.datetime,
+            notes: newReservation.notes
         });
     });
 });
