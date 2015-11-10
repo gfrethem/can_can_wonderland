@@ -25,11 +25,8 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var user = require('./routes/user');
 var reservation = require('./routes/reservation');
-<<<<<<< HEAD
 var register = require('./routes/register');
-=======
 var admin = require('./routes/admin');
->>>>>>> bfe06d8e00fdd91f6992d80573e48c7bf71c00d9
 
 var app = express();
 
@@ -101,12 +98,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', index);
 app.use('/user', user);
 app.use('/reservation', reservation);
-<<<<<<< HEAD
 app.use('/register', register);
-
-
-=======
 app.use('/settings', admin);
->>>>>>> bfe06d8e00fdd91f6992d80573e48c7bf71c00d9
 
 module.exports = app;
