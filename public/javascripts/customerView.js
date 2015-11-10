@@ -39,6 +39,25 @@ app.config(function($routeProvider, $locationProvider){
     $locationProvider.html5Mode(true);
 });
 
+//Service to grab reservation information along the journey
+app.factory('captureRes', function(){
+    var newReservation = {
+        email: "",
+        phonenumber: "",
+        adultnumber: 0,
+        childnumber: 0,
+        datetime: ""
+    };
+
+    return newReservation;
+}).factory('currentUser', function(){
+    var currentUser = {};
+
+    return currentUser;
+}).factory('numSlots', function(){
+    return var slots = 0;
+});
+
 app.controller("MainController", ["$scope", function($scope){
     var vm = this;
 }]);
@@ -49,9 +68,14 @@ app.controller("LoginController", ["$scope", function($scope){
 
 app.controller("CustomerInfoController", ["$scope", function($scope){
     var vm = this;
+    vm.currentSettings = {};
+    http.get('/settings/settings').then(function(response){
+        console.log(response);
+        vm.currentSettings = response;
+    });
 }]);
 
-app.controller("NumberController", ["$scope", function($scope){
+app.controller("NumberController", ["$scope", "captureRes", function($scope, captureRes){
     var vm = this;
 
     vm.numAdults = [0,1,2,3,4,5,6,7,8,9,10,11,12];
@@ -65,10 +89,12 @@ app.controller("NumberController", ["$scope", function($scope){
 //Determine number of adults and children, as well as get total number of people and slots taken up
     vm.numberOfAdults = function(num){
         vm.totalAdults = num;
+        captureRes.newReservation.adultnumber = num;
         updateTotals();
     };
     vm.numberOfChildren = function(num){
         vm.totalChildren = num;
+        captureRes.newReservation.childnumber = num;
         updateTotals();
     };
     var updateTotals = function(){
@@ -89,7 +115,7 @@ app.controller("RegisterController", ["$scope", function($scope){
     var vm = this;
 }]);
 
-app.controller("CustomerCalendarController", ["$scope", function($scope){
+app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots", function($scope, captureRes, numSlots){
 
     var vm = this;
 
@@ -109,6 +135,7 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
 
     vm.getTime = function(hour, quarter, meridian){
         var newDateTime = makeDateTime(vm.date, hour, quarter, meridian);
+        captureRes.newReservation.datetime = newDateTime;
         console.log(newDateTime._d);
     };
 
@@ -124,11 +151,18 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
     vm.findPartySize = function(party){
         vm.partySize = party;
         vm.slots = Math.ceil(vm.partySize / 4);
+        numSlots.slots = vm.slots;
     }
 }]);
 
-app.controller("ConfirmController", ["$scope", function($scope){
+app.controller("ConfirmController", ["$scope", "captureRes", "numSlots", function($scope, captureRes, numSlots){
     var vm = this;
+    var selectedDate = captureRes.newReservation.datetime;
+    vm.resConfirm = captureRes.newReservation;
+    vm.date = moment(selectedDate).format('MMMM Do YYYY, h:mm:ss a');
+    vm.slots = numSlots.slots;
+
+
 }]);
 
 app.controller("UserControlController", ["$scope", function($scope){

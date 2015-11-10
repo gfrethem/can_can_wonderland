@@ -25,6 +25,19 @@ router.get('/getDate/:date?', function(req, res, next) {
     });
 });
 
+//GET ALL RESERVATIONS TIED TO A USER
+router.get('/getReservations/:email?', function(req, res, next){
+   var userEmail = req.params.email;
+
+    Reservation.findAll({
+        where:{
+            email: userEmail
+        }
+    }).then(function(response){
+        res.send(response);
+    })
+});
+
 //CREATE A NEW RESERVATION
 router.post('/makeReservation', function(req, res, next){
     var newReservation = req.body;
