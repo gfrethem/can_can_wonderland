@@ -55,7 +55,8 @@ app.factory('captureRes', function(){
 
     return currentUser;
 }).factory('numSlots', function(){
-    return var slots = 0;
+    var slots = 0;
+    return slots;
 });
 
 app.controller("MainController", ["$scope", function($scope){

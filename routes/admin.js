@@ -6,7 +6,7 @@ var express = require('express');
 var router = express.Router();
 //var Sequelize = require('sequelize');
 var models = require('../models');
-var Settings = models.Settings;
+var Settings = models.Setting;
 
 //LOGIN
 
