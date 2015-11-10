@@ -55,12 +55,9 @@ app.factory('captureRes', function(){
 
     return currentUser;
 }).factory('numSlots', function(){
-<<<<<<< HEAD
     var slots = 0;
     return slots;
-=======
-    //return var slots = 0;
->>>>>>> 06e9d0710e629dab9be64977eda89251496ac486
+
 });
 
 //DEFINE CONTROLLERS
