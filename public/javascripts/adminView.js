@@ -7,7 +7,7 @@ app.config(function($routeProvider, $locationProvider){
             templateUrl: "../views/adminView/calendar.html",
             controller: "AdminCalendarController"
         })
-        .when('/settings', {
+        .when('/adminInfo', {
             templateUrl: "../views/adminView/settings.html",
             controller: 'AdminEditController'
         })
@@ -27,28 +27,16 @@ app.controller("AdminCalendarController", ["$scope", function($scope){
     var vm = this;
 }]);
 
-app.controller("AdminEditController", ["$scope", function($scope) {
+app.controller("AdminEditController", ["$scope", "$http", function($scope, $http) {
     var vm = this;
-
-    vm.time = {
-    hoursMonday: 'Closed',
-    hoursTuesday: 'Closed',
-    hoursWednesday: 'Closed',
-    hoursThursday: '10am - Midnight',
-    hoursFriday: '10am - Midnight',
-    hoursSaturday: '10am - Midnight',
-    hoursSunday: '10am - Midnight'
-};
-
-
-
-    vm.price = {
-        adult: '$12',
-        adolescent: '$8'
-    };
-
-    vm.message = {
-      special: 'Special Message for Customers'
+    vm.settings = {};
+//GET CURRENT SETTINGS ON VIEW LOAD
+    $http.get('/settings/settings').then(function(response){
+        vm.settings = response.data[0];
+    });
+//SUBMIT ALL SETTINGS CHANGES ON SUBMIT
+    vm.submitChanges = function(){
+      $http.put('/settings/update', vm.settings);
     };
 
 

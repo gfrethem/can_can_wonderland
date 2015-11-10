@@ -8,7 +8,7 @@
         <script src="/vendor/angular-route/angular-route.min.js"></script>
         <script src="/vendor/angular-xeditable/xeditable.min.js"></script>
         <script src="/vendor/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
-        <script src="/javascripts/customerView.js"></script>
+        <script src="/javascripts/adminView.js"></script>
 
         <link rel="stylesheet" href="/vendor/simplegrid.css"/>
         <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
@@ -23,9 +23,13 @@
         </header>
         <div class='adminHeader grid grid-pad'>
             <a href="/admin" class="col-1-3 adminLink">Calendar</a>
-            <a href="/settings"class="col-1-3 adminLink">Information</a>
+            <a href="/adminInfo"class="col-1-3 adminLink">Information</a>
             <a href="/stats" class="col-1-3 adminLink">Statistics</a>
         </div>
-        <ng-view class="adminViews"></ng-view>
+        <div id="adminMain">
+            <ng-view class="adminViews">
+
+            </ng-view>
+        </div>
     </body>
 </html>

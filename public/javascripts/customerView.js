@@ -55,9 +55,10 @@ app.factory('captureRes', function(){
 
     return currentUser;
 }).factory('numSlots', function(){
-    return var slots = 0;
+    //return var slots = 0;
 });
 
+//DEFINE CONTROLLERS
 app.controller("MainController", ["$scope", function($scope){
     var vm = this;
 }]);
@@ -66,10 +67,10 @@ app.controller("LoginController", ["$scope", function($scope){
     var vm = this;
 }]);
 
-app.controller("CustomerInfoController", ["$scope", function($scope){
+app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $http){
     var vm = this;
     vm.currentSettings = {};
-    http.get('/settings/settings').then(function(response){
+    $http.get('/settings/settings').then(function(response){
         console.log(response);
         vm.currentSettings = response;
     });

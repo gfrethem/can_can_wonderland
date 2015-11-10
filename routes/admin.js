@@ -6,7 +6,7 @@ var express = require('express');
 var router = express.Router();
 //var Sequelize = require('sequelize');
 var models = require('../models');
-var Settings = models.Settings;
+var Settings = models.Setting;
 
 //LOGIN
 
@@ -39,8 +39,8 @@ var Settings = models.Settings;
 //  });
 
 router.get('/settings', function(req, res, next){
-        Settings.findAll({}).then(function (res) {
-            console.log(res)
+        Settings.findAll({}).then(function(response) {
+            res.send(response);
         })
 
 

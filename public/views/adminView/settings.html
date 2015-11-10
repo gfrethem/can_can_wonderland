@@ -1,24 +1,28 @@
 <div ng-controller="AdminEditController as edit">
     <div class="adjustHours">
-        <p editable-text="edit.time.hoursMonday"> Monday {{edit.time.hoursMonday || 'empty'}}</p>
-        <p editable-text="edit.time.hoursTuesday"> Tuesday {{edit.time.hoursTuesday || 'empty'}}</p>
-        <p editable-text="edit.time.hoursWednesday"> Wednesday {{edit.time.hoursWednesday || 'empty'}}</p>
-        <p editable-text="edit.time.hoursThursday"> Thursday {{edit.time.hoursThursday || 'empty'}}</p>
-        <p editable-text="edit.time.hoursFriday"> Friday {{edit.time.hoursFriday || 'empty'}}</p>
-        <p editable-text="edit.time.hoursSaturday"> Saturday {{edit.time.hoursSaturday || 'empty'}}</p>
-        <p editable-text="edit.time.hoursSunday">Sunday {{edit.time.hoursSunday || 'empty'}}</p>
+        <p editable-text="edit.settings.mopen"> Monday Hours: {{edit.settings.mopen || 'empty'}} to <p editable-text="edit.settings.mclose">{{edit.settings.mclose || 'empty'}}</p></p>
+        <p editable-text="edit.settings.tuopen"> Tuesday Hours: {{edit.settings.tuopen || 'empty'}} to <p editable-text="edit.settings.tuclose">{{edit.settings.tuclose || 'empty'}}</p></p>
+        <p editable-text="edit.settings.wopen"> Wednesday Hours: {{edit.settings.wopen || 'empty'}} to <p editable-text="edit.settings.wclose">{{edit.settings.wclose || 'empty'}}</p></p>
+        <p editable-text="edit.settings.thopen"> Thursday Hours: {{edit.settings.thopen || 'empty'}} to <p editable-text="edit.settings.thclose">{{edit.settings.thclose || 'empty'}}</p></p>
+        <p editable-text="edit.settings.fopen"> Friday Hours: {{edit.settings.fopen || 'empty'}} to <p editable-text="edit.settings.fclose">{{edit.settings.fclose || 'empty'}}</p></p>
+        <p editable-text="edit.settings.saopen"> Saturday Hours: {{edit.settings.saopen || 'empty'}} to <p editable-text="edit.settings.saclose">{{edit.settings.saclose || 'empty'}}</p></p>
+        <p editable-text="edit.settings.suopen">Sunday Hours: {{edit.settings.suopen || 'empty'}} to <p editable-text="edit.settings.suclose">{{edit.settings.suclose || 'empty'}}</p></p>
     </div>
 
     <div class="adjustPrice">
-        <p editable-text="edit.price.adult">Adult {{edit.price.adult || 'empty'}}</p>
-        <p editable-text="edit.price.adolescent">Children {{edit.price.adolescent || 'empty'}}</p>
-
+        <p editable-text="edit.settings.adultprice">Adult: ${{edit.settings.adultprice || 'empty'}}</p>
+        <p editable-text="edit.settings.childprice">Children: ${{edit.settings.childprice || 'empty'}}</p>
     </div>
 
     <div class="adjustMessage">
-        <p editable-text="edit.message.special">Special Message {{edit.message.special || 'empty'}}</p>
+        <p editable-text="edit.settings.specialmessage">Special Message: {{edit.settings.specialmessage || 'Add a special message'}}</p>
     </div>
 
-
-    <p> what is going on!!!!</p>
+    <div class="availableTimeSlots">
+        <p editable-text="edit.settings.walkuptimeslots">Number of Walkup Time Slots: {{edit.settings.walkuptimeslots || 'Empty'}}</p>
+        <p editable-text="edit.settings.onlinerestimeslots">Number of Reservable Time Slots: {{edit.settings.onlinerestimeslots || 'Empty'}}</p>
+        <p editable-text="edit.settings.minperslot">Minimum Golfers per Slot: {{edit.settings.minperslot || 'Empty'}}</p>
+        <p editable-text="edit.settings.maxperslot">Maximum Golfers Per Slot: {{edit.settings.maxperslot || 'Empty'}}</p>
+    </div>
+    <button class="submitAdminUpdates" ng-click="edit.submitUpdates()">SUBMIT CHANGES</button>
 </div>
