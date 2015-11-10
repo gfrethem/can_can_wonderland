@@ -25,6 +25,19 @@ router.get('/getDate/:date?', function(req, res, next) {
     });
 });
 
+//GET ALL RESERVATIONS TIED TO A USER
+router.get('/getReservations/:email?', function(req, res, next){
+   var userEmail = req.params.email;
+
+    Reservation.findAll({
+        where:{
+            email: userEmail
+        }
+    }).then(function(response){
+        res.send(response);
+    })
+});
+
 //CREATE A NEW RESERVATION
 router.post('/makeReservation', function(req, res, next){
     var newReservation = req.body;
@@ -60,6 +73,21 @@ router.get('/cancelReservation/:id?', function(req, res, next) {
         res.send(200);
     });
 });
+router.put('/checkin/:id?', function(req, res, next) {
+    var resId = req.params.id;
+    Reservation.find({
+        where: {
+            id: resId
+        }
+    }).then(function (response) {
+        response.noshow = false;
+        response.save()
+    }).then(function (response) {
+        res.send(200);
+    });
+});
+
+
 
 //CHANGE RESERVATION - STRETCH GOAL!
 

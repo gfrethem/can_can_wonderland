@@ -4,6 +4,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 //var Sequelize = require('sequelize');
 
+
 //var models = require("./models");
 //var User = models.User;
 //var user = User.findOne({
@@ -24,7 +25,11 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var user = require('./routes/user');
 var reservation = require('./routes/reservation');
+<<<<<<< HEAD
 var register = require('./routes/register');
+=======
+var admin = require('./routes/admin');
+>>>>>>> bfe06d8e00fdd91f6992d80573e48c7bf71c00d9
 
 var app = express();
 
@@ -32,6 +37,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 var server = app.listen(3000, function(){
     var port = server.address().port;
+
     console.log('Listening on port: ', port);
 });
 
@@ -95,8 +101,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', index);
 app.use('/user', user);
 app.use('/reservation', reservation);
+<<<<<<< HEAD
 app.use('/register', register);
 
 
+=======
+app.use('/settings', admin);
+>>>>>>> bfe06d8e00fdd91f6992d80573e48c7bf71c00d9
 
 module.exports = app;

@@ -24,14 +24,25 @@ var Settings = models.Settings;
 //        onlinerestimeslots:newSetting.onlinerestimeslots,
 //        minperslot:newSetting.minperslot,
 //        maxperslot:newSetting.maxperslot,
-//        mopen:newSetting.mopen
-//
+//        mopen:newSetting.mopen,
+//        wclose:newSetting.wclose,
+//        thopen:newSetting.thopen,
+//        thclose:newSetting.thclose,
+//        fopen:newSetting.fopen,
+//        fclose:newSetting.fclose,
+//        saopen:newSetting.saopen,
+//        saclose:newSetting.saclose,
+//        suopen:newSetting.suopen,
+//        suclose:newSetting.suclose,
+//        specialmessage:newSetting.specialmessage
 //    }).then(function () {})
-//});
+//  });
 
 router.get('/settings', function(req, res, next){
-    Settings.find({}).then(function(res)
-    {console.log(res)})
+        Settings.findAll({}).then(function (res) {
+            console.log(res)
+        })
+
 
 });
 
