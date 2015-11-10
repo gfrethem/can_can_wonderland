@@ -7,17 +7,29 @@ var models = require('../models');
 var User = models.User;
 
 //GET A USER
-router.get('/user', function(req, res, next){
+router.get('/user/:email?', function(req, res, next){
+    var userEmail = req.params.email;
     User.findOne({
         where: {
-            fname: 'Liz'
+            email: userEmail
         }
     }).then(function(response){
-        console.log(response);
+        res.send(response);
+    });
+});
+
+//DELETE ACCOUNT
+router.get('/deleteUser/:email?', function(req, res, next) {
+    var userEmail = req.params.email;
+    User.destroy({
+        where: {
+            email: userEmail
+        }
+    }).then(function (response) {
         res.send(200);
     });
 });
-//DELETE ACCOUNT
+
 
 //CONFIRM LOGIN INFO / REGISTRATION INFO / FACEBOOK INFO
 
