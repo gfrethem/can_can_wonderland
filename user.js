@@ -78,7 +78,7 @@
 //
 //app.use('/register', register);
 //
-////Goes in users.js
+////Goes in reservation.js
 //router.get('/', function(req, res, next) {
 //    res.json(req.isAuthenticated());
 //});

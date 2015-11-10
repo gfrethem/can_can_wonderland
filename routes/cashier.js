@@ -4,8 +4,6 @@
 
 //LOGIN
 
-//POPULATE CALENDAR
-
 
 //CHECK IN
 

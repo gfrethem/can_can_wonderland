@@ -1,6 +1,14 @@
 //REQUIRED LIBRARIES
 var express = require('express');
 var path = require('path');
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize('mysql://gfrethem_cancan:P!nk69@jackswastedlife.org:3306/gfrethem_cancan', {
+    define: {
+        timestamps: false // true by default
+    },
+    engine: 'MYISAM'
+});
+
 
 //REQUIRE PASSPORT, etc --Liz
 //var passport = require('passport');
@@ -8,7 +16,6 @@ var path = require('path');
 //var localStrategy = require('localStrategy');
 //WE DON"T KNOW HOW TO HANDLE THIS YET // MONGOOSE STUFF
 //var User = require('../models/user');
-
 
 //REQUIRED ROUTES
 var index = require('./routes/index');
@@ -72,10 +79,6 @@ var server = app.listen(3000, function(){
 /////////////////
 
 app.use('/', index);
-
-
-
-
 
 
 module.exports = app;

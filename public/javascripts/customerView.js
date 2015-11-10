@@ -97,27 +97,27 @@ app.controller("CustomerCalendarController", ["$scope", function($scope){
     vm.showPartySize = true;
     vm.partyList = [0,1,2,3,4,5,6,7,8,9,10,11,12];
     vm.slotsNeeded = 0;
-
+    vm.date = '';
     vm.mainTime = true;
 
     vm.buttonTime = function(){
         vm.mainTime = ! vm.mainTime;
     };
-
-    vm.hours = ['10','11','12','1','2','3','4','5','6','7','8','9', '10', '11', '12'];
+//This is bad code, needs to be dynamic
+    vm.hours = [{hour: 10, meridian: 'AM'}, {hour: 11, meridian: 'AM'}, {hour: 12, meridian: 'PM'}, {hour: 1, meridian: 'PM'}, {hour: 2, meridian: 'PM'}, {hour: 3, meridian: 'PM'}, {hour: 4, meridian: 'PM'}, {hour: 5, meridian: 'PM'}, {hour: 6, meridian: 'PM'}, {hour: 7, meridian: 'PM'}, {hour: 8, meridian: 'PM'}, {hour: 9, meridian: 'PM'}, {hour: 10, meridian: 'PM'}];
     vm.quarters = ['00', '15', '30', '45'];
 
-    vm.getTime = function(hour, quarter){
-        //var time = hour + quarter;
-        var newDateTime = makeDateTime($('.dateButton').val(), hour, quarter);
+    vm.getTime = function(hour, quarter, meridian){
+        var newDateTime = makeDateTime(vm.date, hour, quarter, meridian);
         console.log(newDateTime._d);
     };
 
-    var makeDateTime = function(date, hour, minutes){
-        hour = parseInt(hour);
-        minutes = parseInt(minutes);
+    var makeDateTime = function(date, hour, minutes, meridian){
+        var time= hour + minutes + " " + meridian;
         var input = date;
-        var newDate = moment(input).hour(hour).minute(minutes);
+        if(meridian === 'AM'){
+            var newDate = moment(input).hour(hour).minute(minutes);
+        }
         return newDate;
     };
 //Toggles party size selector, choose party size, and determines number of slots needed

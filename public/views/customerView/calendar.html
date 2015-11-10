@@ -11,18 +11,18 @@
     </div>
 
     <datepicker  date-format="{{today | date:'shortDate'}}">
-        <button class='dateButton' ng-model="calendar.date">PICK A DATE</button>
+        <input class='dateButton' ng-model="calendar.date">PICK A DATE</input>
     </datepicker>
 
     <button ng-click="calendar.buttonTime()"  class="buttonCalendar">PICK A TIME</button>
 
-    <div ng-hide="calendar.mainTime" ng-repeat="hour in calendar.hours track by $index">
-       <div ng-click="calendar.fullTime[hour] = !calendar.fullTime[hour]">
-           {{hour}}
+    <div ng-hide="calendar.mainTime" ng-repeat="hour in calendar.hours">
+       <div ng-click="calendar.fullTime[hour.hour + hour.meridian] = !calendar.fullTime[hour.hour + hour.meridian]">
+           {{hour.hour}} {{hour.meridian}}
        </div>
-            <div ng-show="calendar.fullTime[hour]" ng-repeat="quarter in calendar.quarters">
-                <div ng-click="calendar.getTime(hour, quarter)">
-                    {{hour}}:{{quarter}}
+            <div ng-show="calendar.fullTime[hour.hour + hour.meridian]" ng-repeat="quarter in calendar.quarters">
+                <div ng-click="calendar.getTime(hour.hour, quarter, hour.meridian)">
+                    {{hour.hour}}:{{quarter}} {{hour.meridian}}
                 </div>
             </div>
     </div>
