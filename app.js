@@ -25,6 +25,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var user = require('./routes/user');
 var reservation = require('./routes/reservation');
+var register = require('./routes/register');
 var admin = require('./routes/admin');
 
 var app = express();
@@ -36,6 +37,12 @@ var server = app.listen(3000, function(){
 
     console.log('Listening on port: ', port);
 });
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
+
 
 ////USE PASSPORT --Liz
 //app.use(passport.initialize());
@@ -85,12 +92,13 @@ var server = app.listen(3000, function(){
 //});
 
 /////////////////
-app.use(bodyParser.json());
 
 //ROUTES
+
 app.use('/', index);
 app.use('/user', user);
 app.use('/reservation', reservation);
+app.use('/register', register);
 app.use('/settings', admin);
 
 module.exports = app;
