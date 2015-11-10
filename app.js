@@ -1,15 +1,17 @@
 //REQUIRED LIBRARIES
 var express = require('express');
 var path = require('path');
-var Sequelize = require('sequelize');
-var sequelize = new Sequelize('mysql://gfrethem_cancan:P!nk69@jackswastedlife.org:3306/gfrethem_cancan', {
-    define: {
-        timestamps: false // true by default
-    },
-    engine: 'MYISAM'
-});
+//var Sequelize = require('sequelize');
 
-
+//var models = require("./models");
+//var User = models.User;
+//var user = User.findOne({
+//    where: {
+//        fname: 'Liz'
+//    }
+//}).then(function(response){
+//    console.log(response);
+//});
 //REQUIRE PASSPORT, etc --Liz
 //var passport = require('passport');
 //var session = require('express-session');
@@ -19,6 +21,7 @@ var sequelize = new Sequelize('mysql://gfrethem_cancan:P!nk69@jackswastedlife.or
 
 //REQUIRED ROUTES
 var index = require('./routes/index');
+var user = require('./routes/user');
 
 var app = express();
 
@@ -78,7 +81,9 @@ var server = app.listen(3000, function(){
 
 /////////////////
 
+//ROUTES
 app.use('/', index);
+app.use('/user', user);
 
 
 module.exports = app;

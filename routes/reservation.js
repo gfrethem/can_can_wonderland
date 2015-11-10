@@ -3,14 +3,16 @@
  */
 var express = require('express');
 var router = express.Router();
-var models = require('../')
+//var Sequelize = require('sequelize');
+var models = require('../models');
+var Reservation = models.Reservation;
 
 //GET A DATE
 router.get('/getDate/:date?', function(req, res, next) {
     var date = req.params.date;
     var nextDate = date.setHours(23).setMinutes(59);
 
-    Reservations.findAll({
+    Reservation.findAll({
         where: {
             datetime: {
                 $between: [date, nextDate]
@@ -25,7 +27,7 @@ router.get('/getDate/:date?', function(req, res, next) {
 router.post('/makeReservation', function(req, res, next){
     var newReservation = req.body;
 
-    Reservations.sync().then(function () {
+    Reservation.sync().then(function () {
 
         return User.create({
             firstName: 'John',
