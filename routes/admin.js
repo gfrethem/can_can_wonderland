@@ -39,8 +39,8 @@ var Settings = models.Setting;
 //  });
 
 router.get('/settings', function(req, res, next){
-        Settings.findAll({}).then(function (res) {
-            console.log(res)
+        Settings.findAll({}).then(function(response) {
+            res.send(response);
         })
 
 
