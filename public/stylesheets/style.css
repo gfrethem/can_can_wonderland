@@ -109,3 +109,34 @@ a {
     margin: 0 auto -4px;
     display: block;
 }
+/*iphone5, 5s*/
+@media only screen and (max-width: 320px) {
+    body {
+
+    }
+}
+
+/*iphone6*/
+@media only screen and (max-width: 375px) {
+    body {
+    }
+}
+
+/*iphone6 plus*/
+@media only screen and (max-width: 414px) {
+    body {
+    }
+}
+/*most android phones*/
+@media only screen and (max-width: 360px) {
+    body {
+    }
+}
+
+/*ipad portrait and landscape*/
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1) {
+
+}
