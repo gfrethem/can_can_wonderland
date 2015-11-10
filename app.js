@@ -1,6 +1,7 @@
 //REQUIRED LIBRARIES
 var express = require('express');
 var path = require('path');
+var bodyParser = require('body-parser');
 //var Sequelize = require('sequelize');
 
 //var models = require("./models");
@@ -22,6 +23,7 @@ var path = require('path');
 //REQUIRED ROUTES
 var index = require('./routes/index');
 var user = require('./routes/user');
+var reservation = require('./routes/reservation');
 
 var app = express();
 
@@ -80,10 +82,12 @@ var server = app.listen(3000, function(){
 //});
 
 /////////////////
+app.use(bodyParser.json());
 
 //ROUTES
 app.use('/', index);
 app.use('/user', user);
+app.use('/reservation', reservation);
 
 
 module.exports = app;
