@@ -1,10 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald);
+
 /*this is a border hack */
 *, *:before, *:after {
     box-sizing: inherit;
 }
 /*hack to stop blue hue on button clicks*/
 button:focus {outline:0;}
+
 body{
     font-family: Oswald, Helvetica, Arial, sans-serif;
 }
@@ -12,10 +14,10 @@ body{
 .fa{
     color:black;
     margin: 4% 0 0 5%;
-
 }
-.logoImage{
-    width:20px;
+
+.starLogo {
+    width:3%;
 }
 
 .loginButton{
@@ -62,6 +64,13 @@ p{
 
 }
 
+.continue{
+    display:block;
+    margin: 0 auto;
+
+
+}
+
 .continueButton{
     font-size: 2em;
     font-weight: bold;
@@ -73,13 +82,15 @@ p{
     border-radius: 0;
     margin: 30px 42% 20px;
 }
+
+
 a {
     text-decoration: none;
 }
 
 /*//cashier Calander View*/
 
-.calendarDiv li {
+ li {
     list-style: none;
 }
 
@@ -139,4 +150,21 @@ and (min-device-width: 768px)
 and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 1) {
 
+}
+
+.infoButton{
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+    background-color: white;
+    border: 2px solid black;
+    padding: 3px 6px;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 0 3%;
+}
+
+.infoButton:hover{
+    background-color:red;
 }

@@ -18,4 +18,9 @@ models.forEach(function(model) {
     module.exports[model] = sequelize.import(__dirname + '/' + model);
 });
 
+(function(m) {
+    m.Reservation.belongsTo(m.User);
+    m.User.hasMany(m.Reservation);
+})(module.exports);
+
 module.exports.sequelize = sequelize;
