@@ -60,6 +60,21 @@ router.get('/cancelReservation/:id?', function(req, res, next) {
         res.send(200);
     });
 });
+router.put('/checkin/:id?', function(req, res, next) {
+    var resId = req.params.id;
+    Reservation.find({
+        where: {
+            id: resId
+        }
+    }).then(function (response) {
+        response.noshow = false;
+        response.save()
+    }).then(function (response) {
+        res.send(200);
+    });
+});
+
+
 
 //CHANGE RESERVATION - STRETCH GOAL!
 

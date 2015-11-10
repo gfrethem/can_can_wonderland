@@ -1,6 +1,7 @@
-/**
- * Created by Liz on 11/9/15.
- */
+var express = require('express');
+var router = express.Router();
+var models = require('../models');
+var User = models.User;
 
 //LOGIN
 
@@ -9,6 +10,3 @@
 
 
 //NEW RESERVATION OR WALK UP
-
-
-//CHANGE RESERVATION
