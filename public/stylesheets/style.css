@@ -98,7 +98,7 @@ a {
 
 /*REGISTER*/
 .newUser{
-    font-family:font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     color: #0091D5;
     font-weight: bold;
@@ -109,7 +109,7 @@ a {
 
 
 #email{
-    font-family:font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -125,7 +125,7 @@ a {
 }
 
 #password{
-    font-family:font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -141,7 +141,7 @@ a {
 }
 
 #name{
-    font-family:font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -157,7 +157,7 @@ a {
 }
 
 #username{
-    font-family:font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -174,7 +174,7 @@ a {
 
 
 #phone{
-    font-family:font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -202,8 +202,10 @@ a {
     color:    white;
     opacity:  1;
 }
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color:   white;
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white;
+}
 
 /*//cashier Calander View*/
 
