@@ -10,14 +10,23 @@ button:focus {outline:0;}
 body{
     font-family: Oswald, Helvetica, Arial, sans-serif;
 }
+
 /*home page css*/
 .fa{
     color:black;
     margin: 4% 0 0 5%;
+    font-size: 2em;
+
+}
+.mainLogo{
+    display: block;
+    margin: 0 auto;
+    width: 31%;
 }
 
 .starLogo {
     width:3%;
+    margin: 0 5% 0 1%;
 }
 
 .loginButton{
@@ -25,8 +34,8 @@ body{
     font-size: 20px;
     font-weight: bold;
     color: black;
-    float: right;
-    margin: 4% 5% 0 0;
+    /*float: right;*/
+    margin: 0 5% 0 1%;
 }
 
 .logoutButton {
@@ -34,7 +43,6 @@ body{
     font-size: 20px;
     font-weight: bold;
     color: black;
-    margin: 4% 5% 0 0;
     background:white;
     border: none;
 }
@@ -59,17 +67,6 @@ p{
     margin: 2px 0 5px 5%;
 }
 
-.buttonCalendar {
-
-
-}
-
-.continue{
-    display:block;
-    margin: 0 auto;
-
-
-}
 
 .continueButton{
     font-size: 2em;
@@ -80,28 +77,133 @@ p{
     padding: 10px 29px;
     text-decoration: none;
     border-radius: 0;
-    margin: 30px 42% 20px;
+    margin: 0 auto ;
 }
-
 
 a {
     text-decoration: none;
 }
-
-/*REGISTER*/
-
-#email{
+.fb{
     font-size: 2em;
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: blue;
-    padding: 10px 29px;
+    background-color: #0091D5;
+    padding: 1% 4.8% .5%;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 3% auto;
+}
+
+
+/*REGISTER*/
+.newUser{
+    font-family:font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    color: #0091D5;
+    font-weight: bold;
+    text-align: center;
+    margin: 1% auto 3% auto;
+    display: block;
+}
+
+
+#email{
+    font-family:font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #0091D5;
+    padding: 1% 2%;
+    border-color: transparent;
     /*text-decoration: none;*/
     /*border*/
     border-radius: 0;
-    margin: 30px 42% 20px;
+    margin: 2% auto 2% auto;
+    display: block;
 }
+
+#password{
+    font-family:font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #0091D5;
+    padding: 1% 2%;
+    border-color: transparent;
+    /*text-decoration: none;*/
+    /*border*/
+    border-radius: 0;
+    margin: 0 auto 2% auto;
+    display: block;
+}
+
+#name{
+    font-family:font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #0091D5;
+    padding: 1% 2%;
+    border-color: transparent;
+    /*text-decoration: none;*/
+    /*border*/
+    border-radius: 0;
+    margin: 0 auto 2% auto;
+    display: block;
+}
+
+#username{
+    font-family:font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #0091D5;
+    padding: 1% 2%;
+    border-color: transparent;
+    /*text-decoration: none;*/
+    /*border*/
+    border-radius: 0;
+    margin: 0 auto 2% auto;
+    display: block;
+}
+
+
+#phone{
+    font-family:font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #0091D5;
+    padding: 1% 2%;
+    border-color: transparent;
+    /*text-decoration: none;*/
+    /*border*/
+    border-radius: 0;
+    margin: 0 auto 2% auto;
+    display: block;
+}
+
+
+/*button:focus {outline:0;}*/
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:   white;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    white;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:   white;
 
 /*//cashier Calander View*/
 

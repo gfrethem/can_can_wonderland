@@ -6,37 +6,6 @@
 /*hack to stop blue hue on button clicks*/
 button:focus {outline:0;}
 
-/*body{*/
-    /*font-family: Oswald, Helvetica, Arial, sans-serif;*/
-    /*margin: 10% 7% 10% 7%;*/
-/*}*/
-
-
-/*/!*month header*!/*/
-/*._720kb-datepicker-calendar-header-middle {*/
-    /*font-size: 2em;*/
-    /*color:white;*/
-    /*background-color: #0091d5*/
-    /*padding: 20px .5%;*/
-
-/*}*/
-
-/*/!*days of the week header*!/*/
-/*._720kb-datepicker-calendar-days-header div {*/
-
-    /*width: 13.2%;*/
-    /*font-weight: 500;*/
-    /*font-size: 2em;*/
-    /*padding: 10px .5%;*/
-    /*float: left;*/
-    /*text-align: center;*/
-    /*color:white;*/
-    /*background-color: #0091d5*/
-/*}*/
-
-
-
-/*///////////////////////*/
 
 .datepicker a,[datepicker] a,datepicker a {
     color: inherit;
@@ -257,4 +226,22 @@ button{
     background: white;
 }
 
-
+/*.slick-slide{*/
+    /*color: red;*/
+    /*background-color: blue;*/
+    /*padding: .1% .07%;*/
+    /*font-size: 2em;*/
+    /*border: .15em solid black;*/
+    /*margin: 1px 1px;*/
+    /*text-align: center;*/
+/*}*/
+.sliders{
+    color: red;
+    background-color: blue;
+    padding: .1% .07%;
+    font-size: 2em;
+    border: .15em solid black;
+    margin: 1px 1px;
+    text-align: center;
+    width: 200px;
+}
