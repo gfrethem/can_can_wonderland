@@ -7,7 +7,7 @@ app.controller('FrontDeskController', ["$scope", function($scope){
     vm.showReservationSlot = true;
     vm.totalAvailableSlots = 20;
     vm.partySize = 0;
-    vm.fullname = 'open';
+    vm.fullname = 'fullName';
     vm.fullhour = vm.hours + vm.quarters;
     vm.fullhourSlotNumber = - vm.totalAvailableSlots - vm.peopleSignedUp;
     vm.walkup = false;
