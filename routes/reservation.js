@@ -94,9 +94,9 @@ router.put('/checkin/:id?', function(req, res, next) {
 
 //POPULATE THE CALENDAR
 router.get('/getCalendar/:date?', function(req, res, next) {
-    var date = moment(req.params.date).format('YYYY-MM-DD HH:mm:ss.SSSS');
-    var nextDate = moment(date).hour(23).minute(59).format('YYYY-MM-DD HH:mm:ss.SSSS');
-    var reservations = [];
+    var date = moment(req.params.date).format('YYYY-MM-DD HH:mm');
+    var nextDate = moment(date).hour(23).minute(59).format('YYYY-MM-DD HH');
+    var reservations =[];
     var currentDate = [];
     var openHours;
     var closeHours;
@@ -122,93 +122,101 @@ router.get('/getCalendar/:date?', function(req, res, next) {
         }
     }).then(function(response) {
         reservations = response;
-    });
+    }).then(function() {
 
-    //SWITCH TO GET OPEN AND CLOSE HOURS
-    Settings.findAll({}).then(function(response){
-        switch(moment(date).day()){
-            case 1:
-                openHours = moment(response[0].mopen).get('hour');
-                closeHours = moment(response[0].mclose).get('hour');
-                break;
-            case 2:
-                openHours = moment(response[0].tuopen).get('hour');
-                closeHours = moment(response[0].tuclose).get('hour');
-                break;
-            case 3:
-                openHours = moment(response[0].wopen).get('hour');
-                closeHours = moment(response[0].wclose).get('hour');
-                break;
-            case 4:
-                openHours = moment(response[0].thopen).get('hour');
-                closeHours = moment(response[0].thclose).get('hour');
-                break;
-            case 5:
-                openHours = moment(response[0].fopen).get('hour');
-                closeHours = moment(response[0].fclose).get('hour');
-                break;
-            case 6:
-                openHours = moment(response[0].saopen).get('hour');
-                closeHours = moment(response[0].saclose).get('hour');
-                break;
-            case 7:
-                openHours = moment(response[0].suopen).get('hour');
-                closeHours = moment(response[0].suclose).get('hour');
-                break;
-            default :
-                console.log('failed to find day of week');
-        }
-        console.log(openHours);
-        console.log(closeHours);
-    }).then(function(){
+        //SWITCH TO GET OPEN AND CLOSE HOURS
+        Settings.findAll({}).then(function (response) {
+            switch (moment(date).day()) {
+                case 1:
+                    openHours = moment("2015-11-11", response[0].mopen).get('hour');
+                    closeHours = moment("2015-11-11", response[0].mclose).get('hour');
+                    break;
+                case 2:
+                    openHours = moment("2015-11-11", response[0].tuopen).get('hour');
+                    closeHours = moment("2015-11-11", response[0].tuclose).get('hour');
+                    break;
+                case 3:
+                    openHours = moment("2015-11-11", response[0].wopen).get('hour');
+                    closeHours = moment("2015-11-11", response[0].wclose).get('hour');
+                    break;
+                case 4:
+                    openHours = response[0].thopen.substring(0, 2);
+                    closeHours = response[0].thclose.substring(0, 2);
+                    break;
+                case 5:
+                    openHours = response[0].fopen.substring(0, 1);
+                    closeHours = response[0].fclose.substring(0, 1);
+                    break;
+                case 6:
+                    openHours = moment("2015-11-11", response[0].saopen).get('hour');
+                    closeHours = moment("2015-11-11", response[0].saclose).get('hour');
+                    break;
+                case 7:
+                    openHours = moment("2015-11-11", response[0].suopen).get('hour');
+                    closeHours = moment("2015-11-11", response[0].suclose).get('hour');
+                    break;
+                default :
+                    console.log('failed to find day of week');
+            }
+        }).then(function () {
 //FIRST CHECK IF CLOSED, IF NOT
 //GET ALL HOURS OF OPERATION IN AN ARRAY
-        if((closeHours - openHours) == 0){
-            res.send("Closed");
-            next();
-        }else {
-            while (openHours <= closeHours) {
-                operationHours.push(openHours);
-                openHours++;
-            }
-        }
-//BUILD MASTER OBJECT TO BE SENT TO CLIENT
-        for(var i = 0; i< operationHours.length; i++){
-
-            //SET CURRENT HOUR
-            hourObject.hour = operationHours[i] + ":00";
-
-            for(var it = 0; it < quarterHours.length; it++){
-
-                //FIND THE CURRENT QUARTER HOUR TO MATCH WITH RESERVATIONS
-                var currentTime = operationHours[i] + quarterHours[it];
-                //SET CURRENT QUARTER HOUR
-                quarterObject.quarter = currentTime;
-
-                for(var iter = 0; iter < reservations.length; iter++){
-                    //GET DATETIME FOR RESERVATION AND CONVERT TO BE COMPARED TO TIME
-                    var resTime = moment(reservations[iter].datetime).format('HH:mm');
-                    var currentReservation = reservations[iter];
-                    //PUSH ALL MATCHING RESERVATION TIMES TO THE CURRENT QUARTER HOUR AND UPDATE SLOT TOTALS
-                    if(resTime === currentTime){
-                        reservations.splice(iter, 1);
-                        hourObject.totalSlotsRemaining -= currentReservation.numslots;
-                        quarterObject.remainingSlots -= currentReservation.numslots;
-                        quarterObject.reservations.push(currentReservation);
-                    }
+            if ((closeHours - openHours) == 0) {
+                res.send("Closed");
+                next();
+            } else {
+                while (openHours <= closeHours) {
+                    operationHours.push(parseInt(openHours));
+                    openHours++;
                 }
-                //PUSH QUARTER HOUR OBJECT TO FULL HOUR OBJECT
-                hourObject.quarters.push(quarterObject);
-                //REINITIALIZE REMAINING SLOTS FOR QUARTER HOUR
-                quarterObject.remainingSlots = 3;
             }
-            //PUSH THE FULL HOUR OBJECT TO CURRENT DATE ARRAY
-            currentDate.push(hourObject);
-            //REINITIALIZE REMAINING SLOTS FOR WHOLE HOUR
-            hourObject.totalSlotsRemaining = 20;
-        }
-    }).then(function(){
-        res.send(currentDate);
+//BUILD MASTER OBJECT TO BE SENT TO CLIENT
+            for (var i = 0; i < operationHours.length; i++) {
+
+                //SET CURRENT HOUR
+                hourObject.hour = operationHours[i] + ":00";
+
+                for (var it = 0; it < quarterHours.length; it++) {
+
+                    //FIND THE CURRENT QUARTER HOUR TO MATCH WITH RESERVATIONS
+                    var currentTime = operationHours[i] + ":" + quarterHours[it];
+                    //SET CURRENT QUARTER HOUR
+                    quarterObject.quarter = currentTime;
+
+                    for (var iter = 0; iter < reservations.length; iter++) {
+                        //GET DATETIME FOR RESERVATION AND CONVERT TO BE COMPARED TO TIME
+                        var resTime = moment(reservations[iter].datetime).format('HH:mm');
+                        var currentReservation = reservations[iter].dataValues;
+
+                        //PUSH ALL MATCHING RESERVATION TIMES TO THE CURRENT QUARTER HOUR AND UPDATE SLOT TOTALS
+                        if (resTime === currentTime) {
+                            reservations.splice(iter, 1);
+                            hourObject.totalSlotsRemaining -= currentReservation.numslots;
+                            quarterObject.remainingSlots -= currentReservation.numslots;
+                            quarterObject.reservations.push(currentReservation);
+                        }
+                    }
+                    hourObject.quarters.push(quarterObject);
+                    //REINITIALIZE REMAINING SLOTS FOR QUARTER HOUR
+                    quarterObject = {
+                        quarter: "",
+                        remainingSlots : 3,
+                        reservations: []
+                    };
+                }
+                //PUSH THE FULL HOUR OBJECT TO CURRENT DATE ARRAY
+                currentDate.push(hourObject);
+                hourObject = {
+                    hour: 0,
+                    quarters: [],
+                    totalSlotsRemaining: 20
+                };
+                //REINITIALIZE REMAINING SLOTS FOR WHOLE HOUR
+                hourObject.totalSlotsRemaining = 20;
+            }
+        }).then(function () {
+            res.send(currentDate);
+        });
     });
 });
 //CHANGE RESERVATION - STRETCH GOAL!

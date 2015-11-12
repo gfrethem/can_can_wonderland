@@ -192,21 +192,21 @@ app.controller("UserControlController", ["$scope", function($scope){
 
 //OBJECT BUILDING TEST DATA
 //SAVE FOR NOW
-//vm.currentDate = [
-//    {hour: 10,
-//        quarters: [
-//            {quarter: 00,
-//                remainingSlots: 3,
-//                reservations: [
-//                    {email: 'name@gmail.com',
-//                        phonenumber: '5555555555',
-//                        adultnumber: 2,
-//                        childnumber: 2,
-//                        noshow: true,
-//                        walkup: false,
-//                        datetime: "2015-11-12 10:00",
-//                        numslots: 1
-//                    },
+vm.currentDate = [
+    {hour: 10,
+        quarters: [
+            {quarter: 00,
+                remainingSlots: 3,
+                reservations: [
+                    {email: 'name@gmail.com',
+                        phonenumber: '5555555555',
+                        adultnumber: 2,
+                        childnumber: 2,
+                        noshow: true,
+                        walkup: false,
+                        datetime: "2015-11-12 10:00",
+                        numslots: 1
+                    },
 //                    {email: 'thismail@gmail.com',
 //                        phonenumber: '6666666666',
 //                        adultnumber: 3,
