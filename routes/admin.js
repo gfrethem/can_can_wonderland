@@ -8,44 +8,35 @@ var router = express.Router();
 var models = require('../models');
 var Settings = models.Setting;
 
-//LOGIN
-
-//POPULATE CALENDAR
-
 //CHANGE INFO (HOURS, PRICES, SPECIAL MESSAGE)
+router.put('/updateSettings', function(req, res, next) {
+    var newSetting = req.body;
+    var settingId = req.body.id;
 
-//router.put('/settings', function(req, res, next) {
-//    var newSetting = req.body;
-//
-//    Settings.save({
-//        adultprice:newSetting.adultprice,
-//        childprice:newSetting.childprice,
-//        walkuptimeslots:newSetting.walkuptimeslots,
-//        onlinerestimeslots:newSetting.onlinerestimeslots,
-//        minperslot:newSetting.minperslot,
-//        maxperslot:newSetting.maxperslot,
-//        mopen:newSetting.mopen,
-//        wclose:newSetting.wclose,
-//        thopen:newSetting.thopen,
-//        thclose:newSetting.thclose,
-//        fopen:newSetting.fopen,
-//        fclose:newSetting.fclose,
-//        saopen:newSetting.saopen,
-//        saclose:newSetting.saclose,
-//        suopen:newSetting.suopen,
-//        suclose:newSetting.suclose,
-//        specialmessage:newSetting.specialmessage
-//    }).then(function () {})
-//  });
+    Settings.destroy({
+        where: {
+            id: settingId
+        }
+    }).then(function () {
+        Settings.build(newSetting)
+            .save()
+            .then(function (anotherTask) {
+                // you can now access the currently saved task with the variable anotherTask... nice!
+                res.send(200);
+            }).catch(function (error) {
+                // Ooops, do some error-handling
+                console.log(error);
+            });
+    });
+});
 
-router.get('/settings', function(req, res, next){
+//GET ALL CURRENT SETTINGS
+router.get('/getSettings', function(req, res, next){
         Settings.findAll({}).then(function(response) {
             res.send(response);
         })
-
-
 });
 
-//STATS
-
+//STATS-STRETCH GOAL
+//BLOCK OUT LARGE TIME SLOTS
 module.exports = router;

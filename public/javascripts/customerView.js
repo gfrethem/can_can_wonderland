@@ -28,7 +28,7 @@ app.config(function($routeProvider, $locationProvider){
             controller: "CustomerCalendarController"
         })
         .when('/confirmReservation', {
-            templateUrl: "../views/customerView/confirm.html",
+            templateUrl: "../views/customerView/confirmation.html",
             controller: "ConfirmController"
         })
         .when('/userControl', {
@@ -41,6 +41,7 @@ app.config(function($routeProvider, $locationProvider){
 
 //Service to grab reservation information along the journey
 app.factory('captureRes', function(){
+
     var newReservation = {
         email: "",
         phonenumber: "",
@@ -49,14 +50,17 @@ app.factory('captureRes', function(){
         datetime: ""
     };
 
-    return newReservation;
-}).factory('currentUser', function(){
+    return {
+        newReservation : newReservation
+    }
+});
+app.factory('currentUser', function(){
     var currentUser = {};
 
     return currentUser;
-}).factory('numSlots', function(){
-    var slots = 0;
-    return slots;
+});
+app.factory('numSlots', function(){
+    return slots = 0;
 });
 
 //DEFINE CONTROLLERS
@@ -71,7 +75,7 @@ app.controller("LoginController", ["$scope", function($scope){
 app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $http){
     var vm = this;
     vm.currentSettings = {};
-    $http.get('/settings/settings').then(function(response){
+    $http.get('/settings/getSettings').then(function(response){
         console.log(response);
         vm.currentSettings = response;
     });
@@ -97,6 +101,7 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
     vm.numberOfChildren = function(num){
         vm.totalChildren = num;
         captureRes.newReservation.childnumber = num;
+        console.log(captureRes.newReservation.childnumber);
         updateTotals();
     };
     var updateTotals = function(){
@@ -117,8 +122,8 @@ app.controller("RegisterController", ["$scope", function($scope){
     var vm = this;
 }]);
 
-app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots", function($scope, captureRes, numSlots){
-
+app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots", "$http", function($scope, captureRes, numSlots, $http){
+    $scope.Math = window.Math;
     var vm = this;
 
     vm.partySize = 0;
@@ -127,34 +132,42 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots"
     vm.slotsNeeded = 0;
     vm.date = '';
     vm.mainTime = true;
+    vm.currentDate = [];
 
     vm.buttonTime = function(){
-        vm.mainTime = ! vm.mainTime;
+        var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
+        console.log(thisDate);
+        $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
+            vm.currentDate = response.data;
+            vm.mainTime = ! vm.mainTime;
+            console.log(vm.currentDate);
+        });
     };
-//This is bad code, needs to be dynamic
-    vm.hours = [{hour: 10, meridian: 'AM'}, {hour: 11, meridian: 'AM'}, {hour: 12, meridian: 'PM'}, {hour: 1, meridian: 'PM'}, {hour: 2, meridian: 'PM'}, {hour: 3, meridian: 'PM'}, {hour: 4, meridian: 'PM'}, {hour: 5, meridian: 'PM'}, {hour: 6, meridian: 'PM'}, {hour: 7, meridian: 'PM'}, {hour: 8, meridian: 'PM'}, {hour: 9, meridian: 'PM'}, {hour: 10, meridian: 'PM'}];
-    vm.quarters = ['00', '15', '30', '45'];
 
-    vm.getTime = function(hour, quarter, meridian){
-        var newDateTime = makeDateTime(vm.date, hour, quarter, meridian);
+    vm.getTime = function(hour, quarter){
+        var newDateTime = makeDateTime(vm.date, hour, quarter);
         captureRes.newReservation.datetime = newDateTime;
-        console.log(newDateTime._d);
     };
 
-    var makeDateTime = function(date, hour, minutes, meridian){
-        var time= hour + minutes + " " + meridian;
-        var input = date;
-        if(meridian === 'AM'){
-            var newDate = moment(input).hour(hour).minute(minutes);
-        }
+    var makeDateTime = function(date, hour, minutes){
+        var time = hour + minutes;
+        console.log(date);
+        var newDate = moment(date).hour(hour).minute(minutes);
+        newDate = moment(newDate).format("YYYYa-MM-DD hh:mm A");
         return newDate;
     };
+
 //Toggles party size selector, choose party size, and determines number of slots needed
     vm.findPartySize = function(party){
         vm.partySize = party;
         vm.slots = Math.ceil(vm.partySize / 4);
         numSlots.slots = vm.slots;
-    }
+    };
+
+//GET RESERVATION INFO TO POPULATE RESERVATION LIST
+    $scope.setDatepickerDay = function(day){
+
+    };
 }]);
 
 //////
@@ -190,18 +203,21 @@ $('.center').slick({
 
 
 
-app.controller("ConfirmController", ["$scope", "captureRes", "numSlots", function($scope, captureRes, numSlots){
+
+app.controller("ConfirmController", ["$scope", "captureRes", "numSlots", "$http", function($scope, captureRes, numSlots, $http){
     var vm = this;
     var selectedDate = captureRes.newReservation.datetime;
     vm.resConfirm = captureRes.newReservation;
     vm.date = moment(selectedDate).format('MMMM Do YYYY, h:mm:ss a');
     vm.slots = numSlots.slots;
 
-
+    vm.confirmReservation = function(){
+        $http.post('/reservation/makeReservation', vm.resConfirm).then(function(response){
+            console.log(response);
+        });
+    }
 }]);
 
 app.controller("UserControlController", ["$scope", function($scope){
     var vm = this;
 }]);
-
-

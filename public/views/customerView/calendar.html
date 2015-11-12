@@ -1,6 +1,5 @@
 <div ng-Controller="CustomerCalendarController as calendar">
 
-
     <div class="partySize">
         <button ng-model="date" type="text" ng-click="calendar.showPartySize = !calendar.showPartySize">PARTY SIZE</button>
         <div ng-show='calendar.showPartySize' class="partyTotal">
@@ -14,26 +13,25 @@
         </div>
     </div>
 
-
-
     <datepicker  date-format="{{today | date:'shortDate'}}">
         <input class='dateButton' ng-model="calendar.date">PICK A DATE</input>
     </datepicker>
 
     <button ng-click="calendar.buttonTime()"  class="buttonCalendar">PICK A TIME</button>
 
-    <div ng-hide="calendar.mainTime" ng-repeat="hour in calendar.hours">
-       <div ng-click="calendar.fullTime[hour.hour + hour.meridian] = !calendar.fullTime[hour.hour + hour.meridian]">
-           {{hour.hour}} {{hour.meridian}}
-       </div>
-            <div ng-show="calendar.fullTime[hour.hour + hour.meridian]" ng-repeat="quarter in calendar.quarters">
-                <div ng-click="calendar.getTime(hour.hour, quarter, hour.meridian)">
-                    {{hour.hour}}:{{quarter}} {{hour.meridian}}
-                </div>
+    <div ng-hide="calendar.mainTime" class="timeSlotContainer" ng-repeat="hour in calendar.currentDate">
+        <div>
+            <h2>{{hour.hour}}</h2>
+        </div>
+        <div class="quarterContainer" ng-repeat="quarter in hour.quarters">
+            <div>
+                <p>{{quarter.quarter}}</p>
+                <p>Remaining Slots: {{quarter.remainingSlots}}</p>
             </div>
+        </div>
     </div>
 
-        <div class="continue">
-            <button class="continueButton" type="submit">CONTINUE</button>
-        </div>
+    <div class="continue">
+        <button class="continueButton" type="submit">CONTINUE</button>
+    </div>
 </div>

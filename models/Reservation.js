@@ -23,6 +23,9 @@ module.exports = function(sequelize, DataTypes) {
             },
             notes: {
                 type: DataTypes.TEXT
+            },
+            numslots: {
+                type: DataTypes.INTEGER
             }
         }, {
             freezeTableName: true // Model tableName will be the same as the model name
