@@ -31,12 +31,14 @@ app.controller("AdminEditController", ["$scope", "$http", function($scope, $http
     var vm = this;
     vm.settings = {};
 //GET CURRENT SETTINGS ON VIEW LOAD
-    $http.get('/settings/settings').then(function(response){
+    $http.get('/settings/getSettings').then(function(response){
         vm.settings = response.data[0];
     });
 //SUBMIT ALL SETTINGS CHANGES ON SUBMIT
-    vm.submitChanges = function(){
-      $http.put('/settings/update', vm.settings);
+    vm.submitUpdates = function(){
+      $http.put('/settings/updateSettings', vm.settings).then(function(response){
+          console.log(response);
+      });
     };
 
 

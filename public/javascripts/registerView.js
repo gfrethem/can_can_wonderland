@@ -1,6 +1,6 @@
 var app = angular.module('frontDeskApp', []);
 
-app.controller('FrontDeskController', ["$scope", function($scope){
+app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http){
     var vm = this;
     vm.message = 'Front Desk View';
     vm.quarterHour = true;
@@ -30,4 +30,10 @@ app.controller('FrontDeskController', ["$scope", function($scope){
         vm.showReservationSlot = !vm.showReservationSlot;
     };
 
+//PULL IN ALL RESERVATIONS FOR A CERTAIN DAY
+
+//CHECK IN A RESERVATION
+//    vm.walkUpChange = function(value){
+//        console.log(value);
+//    }
 }]);
