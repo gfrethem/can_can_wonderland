@@ -226,22 +226,34 @@ button{
     background: white;
 }
 
-/*.slick-slide{*/
-    /*color: red;*/
-    /*background-color: blue;*/
-    /*padding: .1% .07%;*/
-    /*font-size: 2em;*/
-    /*border: .15em solid black;*/
-    /*margin: 1px 1px;*/
-    /*text-align: center;*/
-/*}*/
 .sliders{
-    color: red;
-    background-color: blue;
+    color: black;
+    background-color: white;
     padding: .1% .07%;
     font-size: 2em;
-    border: .15em solid black;
-    margin: 1px 1px;
+    margin: .1em -.1em;
     text-align: center;
-    width: 200px;
+    border-left: .15em solid black;
+    border-top: .15em solid black;
+    border-bottom: .15em solid black;
+    /*width: 200px;*/
+}
+
+.slick-list{
+    width: 36%;
+    display:block;
+    margin: 0 auto;
+}
+
+.sliders:hover{
+    color: #ED1C24;
+}
+
+.sliders:focus{
+    color: #ED1C24;
+    background-color: #FFE300;
+}
+
+.slick-prev{
+    float:left;
 }
