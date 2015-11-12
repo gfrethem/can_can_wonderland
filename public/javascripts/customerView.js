@@ -135,20 +135,25 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots"
     vm.currentDate = [];
 
     vm.buttonTime = function(){
-        vm.mainTime = ! vm.mainTime;
+        var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
+        console.log(thisDate);
+        $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
+            vm.currentDate = response.data;
+            vm.mainTime = ! vm.mainTime;
+            console.log(vm.currentDate);
+        });
     };
 
     vm.getTime = function(hour, quarter){
         var newDateTime = makeDateTime(vm.date, hour, quarter);
         captureRes.newReservation.datetime = newDateTime;
-        console.log(newDateTime);
     };
 
     var makeDateTime = function(date, hour, minutes){
         var time = hour + minutes;
         console.log(date);
         var newDate = moment(date).hour(hour).minute(minutes);
-        newDate = moment(newDate).format("YYYY-MM-DD hh:mm A");
+        newDate = moment(newDate).format("YYYYa-MM-DD hh:mm A");
         return newDate;
     };
 
@@ -161,10 +166,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots"
 
 //GET RESERVATION INFO TO POPULATE RESERVATION LIST
     $scope.setDatepickerDay = function(day){
-        $http.get('/reservation/getCalendar/' + day).then(function(response){
-            vm.currentDate = response;
-            console.log(vm.currentDate);
-        });
+
     };
 }]);
 
@@ -185,129 +187,3 @@ app.controller("ConfirmController", ["$scope", "captureRes", "numSlots", "$http"
 app.controller("UserControlController", ["$scope", function($scope){
     var vm = this;
 }]);
-
-
-
-
-
-//OBJECT BUILDING TEST DATA
-//SAVE FOR NOW
-vm.currentDate = [
-    {hour: 10,
-        quarters: [
-            {quarter: 00,
-                remainingSlots: 3,
-                reservations: [
-                    {email: 'name@gmail.com',
-                        phonenumber: '5555555555',
-                        adultnumber: 2,
-                        childnumber: 2,
-                        noshow: true,
-                        walkup: false,
-                        datetime: "2015-11-12 10:00",
-                        numslots: 1
-                    },
-//                    {email: 'thismail@gmail.com',
-//                        phonenumber: '6666666666',
-//                        adultnumber: 3,
-//                        childnumber: 5,
-//                        noshow: true,
-//                        walkup: false,
-//                        datetime: "2015-11-12 10:00",
-//                        numslots: 2
-//                    }
-//                ]},
-//            {quarter : 15,
-//                remainingSlots: 3,
-//                reservations: [
-//                    {email: 'this@gmail.com',
-//                        phonenumber: '5555555555',
-//                        adultnumber: 3,
-//                        childnumber: 5,
-//                        noshow: true,
-//                        walkup: false,
-//                        datetime: "2015-11-12 10:15",
-//                        numslots: 2
-//                    },
-//                    {email: 'alt@gmail.com',
-//                        phonenumber: '9989898898',
-//                        adultnumber: 1,
-//                        childnumber: 3,
-//                        noshow: true,
-//                        walkup: false,
-//                        datetime: "2015-11-12 10:15",
-//                        numslots: 1}
-//                ]},
-//            {quarter: 30,
-//                remainingSlots: 3,
-//                reservations: [{email: 'alt@gmail.com',
-//                    phonenumber: '9989898898',
-//                    adultnumber: 1,
-//                    childnumber: 3,
-//                    noshow: true,
-//                    walkup: false,
-//                    datetime: "2015-11-12 10:30",
-//                    numslots: 1}]},
-//            {quarter: 45,
-//                remainingSlots: 3,
-//                reservations: []}
-//        ]},
-//    {hour: 11,
-//        quarters: [
-//            {quarter: 00,
-//                remainingSlots: 3,
-//                reservations: [
-//                    {email: 'name@gmail.com',
-//                        phonenumber: '5555555555',
-//                        adultnumber: 2,
-//                        childnumber: 2,
-//                        noshow: true,
-//                        walkup: false,
-//                        datetime: "2015-11-12 10:00",
-//                        numslots: 1
-//                    }
-//                ]},
-//            {quarter : 15,
-//                remainingSlots: 3,
-//                reservations: [
-//                    {email: 'this@gmail.com',
-//                        phonenumber: '5555555555',
-//                        adultnumber: 3,
-//                        childnumber: 5,
-//                        noshow: true,
-//                        walkup: false,
-//                        datetime: "2015-11-12 10:15",
-//                        numslots: 2
-//                    },
-//                    {email: 'alt@gmail.com',
-//                        phonenumber: '9989898898',
-//                        adultnumber: 1,
-//                        childnumber: 3,
-//                        noshow: true,
-//                        walkup: false,
-//                        datetime: "2015-11-12 10:15",
-//                        numslots: 1}
-//                ]},
-//            {quarter: 30,
-//                remainingSlots: 3,
-//                reservations: [{email: 'alt@gmail.com',
-//                    phonenumber: '9989898898',
-//                    adultnumber: 1,
-//                    childnumber: 3,
-//                    noshow: true,
-//                    walkup: false,
-//                    datetime: "2015-11-12 10:30",
-//                    numslots: 1}]},
-//            {quarter: 45,
-//                remainingSlots: 3,
-//                reservations: []}
-//        ]}
-//];
-//
-//for(var i = 0; i <vm.currentDate.length; i++){
-//    for(var it = 0; it < vm.currentDate[i].quarters.length; it++){
-//        for(var iter = 0; iter < vm.currentDate[i].quarters[it].reservations.length; iter++){
-//            vm.currentDate[i].quarters[it].remainingSlots -= vm.currentDate[i].quarters[it].reservations[iter].numslots;
-//        }
-//    }
-//}
