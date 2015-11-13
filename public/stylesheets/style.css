@@ -73,7 +73,7 @@ p{
     font-weight: bold;
     text-align: center;
     color: red;
-    background-color: yellow;
+    background-color: #FFE300;
     padding: 10px 29px;
     text-decoration: none;
     border-radius: 0;
@@ -290,7 +290,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     font-size: 1em;
     font-weight: bold;
     text-align: center;
-    color: red;
+    color: #ED1C24;
     background-color: white;
     border: 2px solid black;
     padding: 3px 6px;

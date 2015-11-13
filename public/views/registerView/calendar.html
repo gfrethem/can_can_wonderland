@@ -29,21 +29,21 @@
                 <div class="mainHour" ng-click="frontDesk.showQuarterHour()">
                    <ul>
                        <li>
-                           {{hour}} available {{hourSlotNumber}}
+                           {{frontDesk.hour}} available {{frontDesk.hourSlotNumber}}
                        </li>
                    </ul>
                 </div>
 
                      <div class="quarterHour" ng-hide="frontDesk.quarterHour" ng-click="frontDesk.showReservation()">
-                         <!--<ul class="quarterHourMaster" ng-repeat="reservation in reservations">-->
+
                              <li>
-                                    {{frontDesk.quarterHour}}
+                                    {{frontDesk.quarterHour}} available {{frontDesk.hourSlotNumber}}
                              </li>
                          </ul>
                      </div>
                   </div>
 
-                        <div class="reservation"  ng-hide="frontDesk.showReservationSlot">
+                        <div class="reservation"  ng-hide="frontDesk.showReservationSlot" ng-repeat="item in items | limitTo: 5">
                             <ul>
                                 <li>
                                     {{frontDesk.fullname}} {{frontDesk.partySize}} <button class="infoButton">INFO</button> walk-up <input type="checkbox" name="walk-up" value="walk-up"> check-in <input type="checkbox" name="check-in" value="check-in">
