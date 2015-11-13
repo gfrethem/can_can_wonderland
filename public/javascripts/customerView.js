@@ -47,21 +47,20 @@ app.factory('captureRes', function(){
         phonenumber: "",
         adultnumber: 0,
         childnumber: 0,
-        datetime: ""
+        datetime: "",
+        humandate: "",
+        numslots: 0
     };
 
     return {
         newReservation : newReservation
     }
 });
-app.factory('currentUser', function(){
-    var currentUser = {};
-
-    return currentUser;
-});
-app.factory('numSlots', function(){
-    return slots = 0;
-});
+//app.factory('currentUser', function(){
+//    var currentUser = {};
+//
+//    return currentUser;
+//});
 
 //DEFINE CONTROLLERS
 app.controller("MainController", ["$scope", function($scope){
@@ -78,28 +77,6 @@ app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $h
     $http.get('/settings/getSettings').then(function(response){
         console.log(response);
         vm.currentSettings = response;
-
-        vm.adultprice = "$12";
-        vm.childprice = "$8";
-        vm.walkuptimeslots = "20";
-        vm.onelinerestimeslots = "20";
-        vm.minperslot = "2";
-        vm.maxperslot = "3";
-        vm.mopen = "Closed";
-        vm.mclose = ;
-        vm.topen = "Closed";
-        vm.tuclose = ;
-        vm.wopen = "Closed";
-        vm.wclose = ;
-        vm.thopen = ;
-        vm.fopen = ;
-        vm.fclose = ;
-        vm.saopen = ;
-        vm.saclose = ;
-        vm.sunopen = ;
-        vm.suclose = ;
-        vm.specialmessage = "Have a great day!" ;
-
     });
 }]);
 
@@ -145,7 +122,7 @@ app.controller("RegisterController", ["$scope", function($scope){
     var vm = this;
 }]);
 
-app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots", "$http", function($scope, captureRes, numSlots, $http){
+app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", function($scope, captureRes, $http){
     $scope.Math = window.Math;
     var vm = this;
 
@@ -158,35 +135,36 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots"
     vm.currentDate = [];
     vm.quarterSlots = false;
 
+//SHOW TIME SLOTS FOR A SPECIFIC DAY
     vm.buttonTime = function(){
         var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
         $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
             vm.currentDate = response.data;
             vm.mainTime = ! vm.mainTime;
+            console.log(vm.currentDate);
         });
     };
 
-//PICK A TIME
+//PICK A TIME AND SAVE TO RES FACTORY
     vm.selectTime = function(time){
         var newDateTime = makeDateTime(vm.date, time);
-        vm.yourDate = moment(newDateTime).format('dddd, MMM DD, YYYY hh:mm A');
-        captureRes.newReservation.datetime = newDateTime;
+        var databaseDate = moment(newDateTime).format('YYYY-MM-DD HH:mm');
+        vm.yourDate = moment(newDateTime).format('dddd, MMM DD, YYYY h:mm A');
+        captureRes.newReservation.datetime = databaseDate;
+        captureRes.newReservation.humandate = vm.yourDate;
     };
 
 //COMBINE DATE AND TIME
     var makeDateTime = function(date, time){
-        var hour = time.substring(0,2);
-        var minute = time.substring(3,5);
-        var newDate = moment(date).hour(hour).minute(minute);
-        newDate = moment(newDate).format("YYYY-MM-DD HH:mm");
+        date = moment(date).format('YYYY-MM-DD');
+        newDate = date + " " + time;
         return newDate;
     };
 
 //Toggles party size selector, choose party size, and determines number of slots needed
     vm.findPartySize = function(party){
         vm.partySize = party;
-        vm.slots = Math.ceil(vm.partySize / 4);
-        numSlots.slots = vm.slots;
+        vm.slotsNeeded = Math.ceil(vm.partySize / 4);
     };
 
 //SHOW QUARTER HOURS
@@ -194,6 +172,8 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots"
         vm.quarterSlots[index] = !vm.quarterSlots[index];
     };
 
+
+//SLICK CAROUSEL CONFIG
     vm.slickConfig = {
         infinite: true,
         slidesToShow: 3,
@@ -203,47 +183,10 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots"
     };
 }]);
 
-//////
-
-//$('.center').slick({
-//    centerMode: true,
-//    centerPadding: '60px',
-//    slidesToShow: 3,
-//    responsive: [
-//        {
-//            breakpoint: 768,
-//            settings: {
-//                arrows: false,
-//                centerMode: true,
-//                centerPadding: '40px',
-//                slidesToShow: 3
-//            }
-//        },
-//        {
-//            breakpoint: 480,
-//            settings: {
-//                arrows: false,
-//                centerMode: true,
-//                centerPadding: '40px',
-//                slidesToShow: 1
-//            }
-//        }
-//    ]
-//});
-
-
-//////
-
-
-
-
-app.controller("ConfirmController", ["$scope", "captureRes", "numSlots", "$http", function($scope, captureRes, numSlots, $http){
+app.controller("ConfirmController", ["$scope", "captureRes", "$http", function($scope, captureRes, $http){
     var vm = this;
-    var selectedDate = captureRes.newReservation.datetime;
     vm.resConfirm = captureRes.newReservation;
-    vm.date = moment(selectedDate).format('MMMM Do YYYY, h:mm:ss a');
-    vm.slots = numSlots.slots;
-
+    console.log(captureRes.newReservation.datetime);
     vm.confirmReservation = function(){
         $http.post('/reservation/makeReservation', vm.resConfirm).then(function(response){
             console.log(response);

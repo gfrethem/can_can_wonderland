@@ -169,20 +169,23 @@ router.get('/getCalendar/:date?', function(req, res, next) {
                     operationHours.push(parseInt(openHours));
                     openHours++;
                 }
-                console.log(operationHours);
             }
 //BUILD MASTER OBJECT TO BE SENT TO CLIENT
             for (var i = 0; i < operationHours.length; i++) {
 
                 //SET CURRENT HOUR
-                hourObject.hour = operationHours[i] + ":00";
+                hourObject.hour = moment().set('hour', operationHours[i]).set('minute', 0).format('h:mm A');
 
                 for (var it = 0; it < quarterHours.length; it++) {
 
                     //FIND THE CURRENT QUARTER HOUR TO MATCH WITH RESERVATIONS
                     var currentTime = operationHours[i] + ":" + quarterHours[it];
+                    //console.log(currentTime);
+                    var hour = currentTime.substring(0,2);
+                    var minute = currentTime.substring(3,5);
+                    var formatTime = moment().set('hour', hour).set('minute', minute).format('h:mm A');
                     //SET CURRENT QUARTER HOUR
-                    quarterObject.quarter = currentTime;
+                    quarterObject.quarter = formatTime;
 
                     for (var iter = 0; iter < reservations.length; iter++) {
                         //GET DATETIME FOR RESERVATION AND CONVERT TO BE COMPARED TO TIME

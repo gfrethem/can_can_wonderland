@@ -20,7 +20,7 @@
             <h2>{{hour.hour}}</h2>
         </div>
         <div ng-show='calendar.quarterSlots[hour.hour]' class="quarterContainer" ng-repeat="quarter in hour.quarters">
-            <div ng-click="calendar.selectTime(quarter.quarter)">
+            <div ng-click="calendar.selectTime(quarter.quarter)" ng-if="quarter.remainingSlots >= calendar.slotsNeeded">
                 <h3>{{quarter.quarter}}</h3>
             </div>
         </div>
@@ -28,6 +28,6 @@
 
     <h2>{{calendar.yourDate}}</h2>
     <div class="continue">
-        <button class="continueButton" type="submit">CONTINUE</button>
+        <a href='/guests' class="continueButton" type="submit">CONTINUE</a>
     </div>
 </div>
