@@ -133,14 +133,12 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots"
     vm.date = '';
     vm.mainTime = true;
     vm.currentDate = [];
-
+    vm.quarterSlots = false;
     vm.buttonTime = function(){
         var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
-        console.log(thisDate);
         $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
             vm.currentDate = response.data;
             vm.mainTime = ! vm.mainTime;
-            console.log(vm.currentDate);
         });
     };
 
@@ -164,10 +162,10 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots"
         numSlots.slots = vm.slots;
     };
 
-//GET RESERVATION INFO TO POPULATE RESERVATION LIST
-    $scope.setDatepickerDay = function(day){
-
-    };
+//SHOW QUARTER HOURS
+    vm.showSlots = function(){
+        vm.quarterSlots = true;
+    }
 }]);
 
 app.controller("ConfirmController", ["$scope", "captureRes", "numSlots", "$http", function($scope, captureRes, numSlots, $http){
