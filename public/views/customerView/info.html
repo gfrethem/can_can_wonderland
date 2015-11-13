@@ -1,33 +1,35 @@
+<div ng-controller="CustomerInfoController as info">
+    <div class="infoMain">
+        <h3 class="walkUps"> WALK UPS WELCOME! </h3>
 
-<div class="infoMain">
-    <h3 class="walkUps"> WALK UPS WELCOME! </h3>
-    <h3> HOURS </h3>
+        <h3> HOURS </h3>
 
-    <!--ng-repeats go here:-->
+        <div> Monday {{info.currentSettings.mopen}}  {{info.currentSettings.mclose}} </div>
+        <div> Tuesday {{info.currentSettings.tuopen}}  {{info.currentSettings.tuclose}} </div>
+        <div> Wednesday {{info.currentSettings.wopen}}  {{info.currentSettings.wclose}} </div>
+        <div> Thursday {{info.currentSettings.thopen}} {{info.currentSettings.thclose}} </div>
+        <div> Friday {{info.currentSettings.fopen}}  {{info.currentSettings.fclose}} </div>
+        <div> Saturday {{info.currentSettings.saopen}} {{info.currentSettings.saclose}} </div>
+        <div> Sunday {{info.currentSettings.suopen}}  {{info.currentSettings.suclose}} </div>
+
+
+        <h3> PRICES </h3>
+            <div> ${{info.currentSettings.adultprice}}</div>
+            <div> ${{info.currentSettings.childprice}}</div>
+
+        {{info.currentSettings.specialmessage}}
+
+        <h3> PHONE </h3>
+
+            <p> 612-871-2545</p>
+
+        <h3> ADDRESS </h3>
         <p>
-          Monday - closed
-            Tuesday - closed
-            Wednesday - closed
-            Thursday - 10 am - Midnight
-            Friday - 10 am - Midnight
-            Saturday - 10 am - Midnight
-            Sunday - 10 am - Midnight
+            308 East Prince St. #307<br/>
+            St.Paul, MN 55103
         </p>
-    <h3> PRICES </h3>
-        <p>
-            ADULTS - $8
-            CHILDREN - $5
-        </p>
-    <h3> PHONE </h3>
-    <p>
-        612-871-2545
-    </p>
-    <h3> ADDRESS </h3>
-    <p>
-        308 East Prince St. #307<br/>
-        St.Paul, MN 55103
-    </p>
 
-        <a href='/customerCalendar'><button class="continueButton" type="submit">CONTINUE</button></a>
+            <a href='/customerCalendar'><button class="continueButton" type="submit">CONTINUE</button></a>
 
+    </div>
 </div>

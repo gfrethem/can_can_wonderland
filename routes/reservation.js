@@ -128,32 +128,32 @@ router.get('/getCalendar/:date?', function(req, res, next) {
         Settings.findAll({}).then(function (response) {
             switch (moment(date).day()) {
                 case 1:
-                    openHours = moment("2015-11-11", response[0].mopen).get('hour');
-                    closeHours = moment("2015-11-11", response[0].mclose).get('hour');
+                    openHours = response[0].mopen.substring(0, 2);
+                    closeHours = response[0].mclose.substring(0, 2);
                     break;
                 case 2:
-                    openHours = moment("2015-11-11", response[0].tuopen).get('hour');
-                    closeHours = moment("2015-11-11", response[0].tuclose).get('hour');
+                    openHours = response[0].tuopen.substring(0, 2);
+                    closeHours = response[0].tuclose.substring(0, 2);
                     break;
                 case 3:
-                    openHours = moment("2015-11-11", response[0].wopen).get('hour');
-                    closeHours = moment("2015-11-11", response[0].wclose).get('hour');
+                    openHours = response[0].wopen.substring(0, 2);
+                    closeHours = response[0].wclose.substring(0, 2);
                     break;
                 case 4:
                     openHours = response[0].thopen.substring(0, 2);
                     closeHours = response[0].thclose.substring(0, 2);
                     break;
                 case 5:
-                    openHours = response[0].fopen.substring(0, 1);
-                    closeHours = response[0].fclose.substring(0, 1);
+                    openHours = response[0].fopen.substring(0, 2);
+                    closeHours = response[0].fclose.substring(0, 2);
                     break;
                 case 6:
-                    openHours = moment("2015-11-11", response[0].saopen).get('hour');
-                    closeHours = moment("2015-11-11", response[0].saclose).get('hour');
+                    openHours = response[0].saopen.substring(0, 2);
+                    closeHours = response[0].saclose.substring(0, 2);
                     break;
                 case 7:
-                    openHours = moment("2015-11-11", response[0].suopen).get('hour');
-                    closeHours = moment("2015-11-11", response[0].suclose).get('hour');
+                    openHours = response[0].suopen.substring(0, 2);
+                    closeHours = response[0].suclose.substring(0, 2);
                     break;
                 default :
                     console.log('failed to find day of week');
@@ -174,14 +174,18 @@ router.get('/getCalendar/:date?', function(req, res, next) {
             for (var i = 0; i < operationHours.length; i++) {
 
                 //SET CURRENT HOUR
-                hourObject.hour = operationHours[i] + ":00";
+                hourObject.hour = moment().set('hour', operationHours[i]).set('minute', 0).format('h:mm A');
 
                 for (var it = 0; it < quarterHours.length; it++) {
 
                     //FIND THE CURRENT QUARTER HOUR TO MATCH WITH RESERVATIONS
                     var currentTime = operationHours[i] + ":" + quarterHours[it];
+                    //console.log(currentTime);
+                    var hour = currentTime.substring(0,2);
+                    var minute = currentTime.substring(3,5);
+                    var formatTime = moment().set('hour', hour).set('minute', minute).format('h:mm A');
                     //SET CURRENT QUARTER HOUR
-                    quarterObject.quarter = currentTime;
+                    quarterObject.quarter = formatTime;
 
                     for (var iter = 0; iter < reservations.length; iter++) {
                         //GET DATETIME FOR RESERVATION AND CONVERT TO BE COMPARED TO TIME

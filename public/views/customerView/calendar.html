@@ -1,16 +1,12 @@
 <div ng-Controller="CustomerCalendarController as calendar">
-
     <div class="partySize">
         <button ng-model="date" type="text" ng-click="calendar.showPartySize = !calendar.showPartySize">PARTY SIZE</button>
-        <div ng-show='calendar.showPartySize' class="partyTotal">
-            <slick dots="false" infinite="true" speed="300" slides-to-show="3" touch-move="true" slides-to-scroll="4" centerMode= "true">
 
-                <div ng-repeat="party in calendar.partyList" ng-click="calendar.findPartySize(party)" class="sliders">
-
-                    <div>{{party}}</div>
-                </div>
-            </slick>
-        </div>
+        <slick ng-show='calendar.showPartySize' class="slider" settings="calendar.slickConfig">
+            <div ng-repeat="party in calendar.partyList track by $index">
+                <div class='partySize sliders' ng-click="calendar.findPartySize(party)">{{party}}</div>
+            </div>
+        </slick>
     </div>
 
     <datepicker  date-format="{{today | date:'shortDate'}}">
@@ -19,18 +15,19 @@
 
     <button ng-click="calendar.buttonTime()"  class="buttonCalendar">PICK A TIME</button>
 
-    <div ng-hide="calendar.mainTime" class="timeSlotContainer" ng-repeat="hour in calendar.currentDate">
-        <div ng-click="calendar.showSlots()">
+    <div ng-hide="calendar.mainTime" class="timeSlotContainer" ng-repeat="hour in calendar.currentDate track by $index">
+        <div ng-click="calendar.quarterSlots[hour.hour] = !calendar.quarterSlots[hour.hour]">
             <h2>{{hour.hour}}</h2>
         </div>
-        <div ng-show='calendar.quarterSlots' class="quarterContainer" ng-repeat="quarter in hour.quarters">
-            <div>
-                <p>{{quarter.quarter}}</p>
+        <div ng-show='calendar.quarterSlots[hour.hour]' class="quarterContainer" ng-repeat="quarter in hour.quarters">
+            <div ng-click="calendar.selectTime(quarter.quarter)" ng-if="quarter.remainingSlots >= calendar.slotsNeeded">
+                <h3>{{quarter.quarter}}</h3>
             </div>
         </div>
     </div>
 
+    <h2>{{calendar.yourDate}}</h2>
     <div class="continue">
-        <button class="continueButton" type="submit">CONTINUE</button>
+        <a href='/guests' class="continueButton" type="submit">CONTINUE</a>
     </div>
 </div>
