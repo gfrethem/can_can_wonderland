@@ -23,8 +23,16 @@ app.controller("AdminController", ["$scope", function($scope){
     var vm = this;
 }]);
 
-app.controller("AdminCalendarController", ["$scope", function($scope){
+app.controller("AdminCalendarController", ["$scope", "$http",  function($scope, $http){
     var vm = this;
+    vm.date = '';
+    var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
+
+    //PULL IN ALL RESERVATIONS FOR A CERTAIN DAY
+        $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
+            vm.currentDate = response.data;
+            vm.mainTime = ! vm.mainTime;
+        });
 }]);
 
 app.controller("AdminEditController", ["$scope", "$http", function($scope, $http) {

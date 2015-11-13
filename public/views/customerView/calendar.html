@@ -19,13 +19,12 @@
     <button ng-click="calendar.buttonTime()"  class="buttonCalendar">PICK A TIME</button>
 
     <div ng-hide="calendar.mainTime" class="timeSlotContainer" ng-repeat="hour in calendar.currentDate">
-        <div>
+        <div ng-click="calendar.showSlots()">
             <h2>{{hour.hour}}</h2>
         </div>
-        <div class="quarterContainer" ng-repeat="quarter in hour.quarters">
+        <div ng-show='calendar.quarterSlots' class="quarterContainer" ng-repeat="quarter in hour.quarters">
             <div>
                 <p>{{quarter.quarter}}</p>
-                <p>Remaining Slots: {{quarter.remainingSlots}}</p>
             </div>
         </div>
     </div>
