@@ -1,4 +1,4 @@
-var app = angular.module('customerApp', ['ngRoute', 'xeditable', 'slickCarousel', '720kb.datepicker']);
+var app = angular.module('customerApp', ['ngRoute', 'xeditable', 'slickCarousel', '720kb.datepicker', 'slickCarousel']);
 
 //Sets specific html view to load and sets an Angular controller to each page
 app.config(function($routeProvider, $locationProvider){
@@ -78,6 +78,28 @@ app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $h
     $http.get('/settings/getSettings').then(function(response){
         console.log(response);
         vm.currentSettings = response;
+
+        vm.adultprice = "$12";
+        vm.childprice = "$8";
+        vm.walkuptimeslots = "20";
+        vm.onelinerestimeslots = "20";
+        vm.minperslot = "2";
+        vm.maxperslot = "3";
+        vm.mopen = "Closed";
+        vm.mclose = ;
+        vm.topen = "Closed";
+        vm.tuclose = ;
+        vm.wopen = "Closed";
+        vm.wclose = ;
+        vm.thopen = ;
+        vm.fopen = ;
+        vm.fclose = ;
+        vm.saopen = ;
+        vm.saclose = ;
+        vm.sunopen = ;
+        vm.suclose = ;
+        vm.specialmessage = "Have a great day!" ;
+
     });
 }]);
 
@@ -138,6 +160,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots"
     vm.quarterSlots = false;
     vm.buttonTime = function(){
         var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
+        console.log(thisDate);
         $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
             vm.currentDate = response.data;
             vm.mainTime = ! vm.mainTime;
@@ -167,36 +190,44 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots"
 //SHOW QUARTER HOURS
     vm.showSlots = function(){
         vm.quarterSlots = true;
-    }
+    };
+
+    vm.slickConfig = {
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+        method: {}
+    };
 }]);
 
 //////
 
-$('.center').slick({
-    centerMode: true,
-    centerPadding: '60px',
-    slidesToShow: 3,
-    responsive: [
-        {
-            breakpoint: 768,
-            settings: {
-                arrows: false,
-                centerMode: true,
-                centerPadding: '40px',
-                slidesToShow: 3
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                arrows: false,
-                centerMode: true,
-                centerPadding: '40px',
-                slidesToShow: 1
-            }
-        }
-    ]
-});
+//$('.center').slick({
+//    centerMode: true,
+//    centerPadding: '60px',
+//    slidesToShow: 3,
+//    responsive: [
+//        {
+//            breakpoint: 768,
+//            settings: {
+//                arrows: false,
+//                centerMode: true,
+//                centerPadding: '40px',
+//                slidesToShow: 3
+//            }
+//        },
+//        {
+//            breakpoint: 480,
+//            settings: {
+//                arrows: false,
+//                centerMode: true,
+//                centerPadding: '40px',
+//                slidesToShow: 1
+//            }
+//        }
+//    ]
+//});
 
 
 //////
