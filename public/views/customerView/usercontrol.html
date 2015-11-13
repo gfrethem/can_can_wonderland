@@ -1,22 +1,22 @@
-<div class="userControlMain">
+<div class="userControlMain as customerRes">
     <h1>Hello, {{}}</h1>
     <div class="currentReservation">
         <h2>YOUR CURRENT RESERVATION</h2>
             <div ng-show="yesReservation">
                 <div class="grid grid-pad">
                     <p class="col-1-3">DATE:</p>
-                    <p class="col-2-3">{{}}</p>
+                    <p class="col-2-3">{{customerRes.date}}</p>
                 </div>
                 <div class="grid grid-pad">
                     <p class="col-1-3">TIME:</p>
-                    <p class="col-2-3">{{}}</p>
+                    <p class="col-2-3">{{customerRes.time}}</p>
                 </div>
                 <div class="grid grid-pad">
                     <p class="col-1-3">SLOTS:</p>
                     <p class="col-2-3">{{}}</p>
                 </div>
-            <p>{{}} Adults</p>
-            <p>{{}} Children</p>
+            <p>{{customerRes.adultNumber}} Adults</p>
+            <p>{{customerRes.childNumber}} Children</p>
             <button class="changeButton">CHANGE</button>
             <button class="confirmButton">CONFIRM</button>
         </div>

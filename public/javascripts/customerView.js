@@ -189,6 +189,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 
 app.controller("ConfirmController", ["$scope", "captureRes", "$http", function($scope, captureRes, $http){
     var vm = this;
+    var selectedDate = captureRes.newReservation.datetime;
     vm.resConfirm = captureRes.newReservation;
     console.log(captureRes.newReservation.datetime);
     vm.confirmReservation = function(){
@@ -200,4 +201,19 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", function($
 
 app.controller("UserControlController", ["$scope", function($scope){
     var vm = this;
-}]);
+
+    $http.get('/reservation/getReservations').then(function(response){
+        console.log(response);
+        vm.reservations = response;
+
+
+    //if (moment.currentTime <  vm.reservations.datetime) {
+    //    vm.date = ;
+    //    vm.time = ;
+    //    vm.adultNumber = ;
+    //    vm.childNumber = ;
+    //} else{
+    //    vm.yesReservation = false;
+    //}
+
+        })}]);
