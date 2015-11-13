@@ -188,6 +188,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 
 app.controller("ConfirmController", ["$scope", "captureRes", "$http", function($scope, captureRes, $http){
     var vm = this;
+    var selectedDate = captureRes.newReservation.datetime;
     vm.resConfirm = captureRes.newReservation;
     console.log(captureRes.newReservation.datetime);
     vm.confirmReservation = function(){
@@ -197,6 +198,21 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", function($
     }
 }]);
 
-app.controller("UserControlController", ["$scope", function($scope){
+app.controller("UserControlController", ["$scope", "currentUser",function($scope, currentUser){
     var vm = this;
-}]);
+    var useremail = currentUser.user.email;
+
+    $http.get('/reservation/getReservations/' + useremail).then(function(response){
+        console.log(response);
+        vm.currentReservations = [];
+        vm.pastReservations = [];
+
+
+    for (i = 0; i < response.data.length, i++) {
+        //if (moment() <  response.data[i].datetime) {
+        //   vm.currentReservations.push(response.data[i]);
+        //} else{
+        //    vm.yesReservation = false;
+        //}
+    };
+        })}]);

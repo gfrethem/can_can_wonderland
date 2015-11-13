@@ -50,34 +50,39 @@ app.use(session({
 }));
 
 //PASSPORT USE --Liz
-passport.use(new localStrategy(
-    function (username, password, done) {
-        Model.User.findOne({
+passport.use('local', new localStrategy({passReqToCallback: true, usernameField: 'email'},
+    function (req, email, password, done) {
+        console.log('Passport Start');
+        console.log(email, password);
+        User.find({
             where: {
-                'username': username
+                'email': email
             }
         }).then(function (user) {
             if (user == null) {
                 return done(null, false, {message: 'Incorrect credentials.'})
             }
 
-            var hashedPassword = bcrypt.hashSync(password, user.salt);
+            bcrypt.compare(password, user.password, function (err, isMatch) {
+                if (err) return console.log(err);
+                if (isMatch) {
+                    return done(null, user);
+                } else {
+                    done(null, false, {message: 'Incorrect username or password'})
 
-            if (user.password === hashedPassword) {
-                return done(null, user)
-            }
-
-            return done(null, false, {message: 'Incorrect credentials.'})
+                }
+            })
         })
-    }
-));
+    }));
+
+
 
 passport.serializeUser(function (user, done) {
     done(null, user.id)
 });
 
 passport.deserializeUser(function (id, done) {
-    Model.User.findOne({
+    User.find({
         where: {
             'id': id
         }
