@@ -56,11 +56,13 @@ app.factory('captureRes', function(){
         newReservation : newReservation
     }
 });
-//app.factory('currentUser', function(){
-//    var currentUser = {};
-//
-//    return currentUser;
-//});
+app.factory('currentUser', function(){
+    var user = {};
+
+    return {
+        user : user
+    }
+});
 
 //DEFINE CONTROLLERS
 app.controller("MainController", ["$scope", function($scope){
@@ -69,6 +71,7 @@ app.controller("MainController", ["$scope", function($scope){
 
 app.controller("LoginController", ["$scope", function($scope){
     var vm = this;
+
 }]);
 
 app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $http){
@@ -76,8 +79,6 @@ app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $h
     vm.currentSettings = {};
     $http.get('/settings/getSettings').then(function(response){
         vm.currentSettings = response.data[0];
-        console.log(vm.currentSettings);
-
     });
 }]);
 
