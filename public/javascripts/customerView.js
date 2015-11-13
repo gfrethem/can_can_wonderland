@@ -198,21 +198,21 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", function($
     }
 }]);
 
-app.controller("UserControlController", ["$scope", function($scope){
+app.controller("UserControlController", ["$scope", "currentUser",function($scope, currentUser){
     var vm = this;
+    var useremail = currentUser.user.email;
 
-    $http.get('/reservation/getReservations').then(function(response){
+    $http.get('/reservation/getReservations/' + useremail).then(function(response){
         console.log(response);
-        vm.reservations = response;
+        vm.currentReservations = [];
+        vm.pastReservations = [];
 
 
-    //if (moment.currentTime <  vm.reservations.datetime) {
-    //    vm.date = ;
-    //    vm.time = ;
-    //    vm.adultNumber = ;
-    //    vm.childNumber = ;
-    //} else{
-    //    vm.yesReservation = false;
-    //}
-
+    for (i = 0; i < response.data.length, i++) {
+        //if (moment() <  response.data[i].datetime) {
+        //   vm.currentReservations.push(response.data[i]);
+        //} else{
+        //    vm.yesReservation = false;
+        //}
+    };
         })}]);
