@@ -120,6 +120,8 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
 
 app.controller("RegisterController", ["$scope", function($scope){
     var vm = this;
+
+
 }]);
 
 app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots", "$http", function($scope, captureRes, numSlots, $http){
