@@ -78,6 +78,28 @@ app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $h
     $http.get('/settings/getSettings').then(function(response){
         console.log(response);
         vm.currentSettings = response;
+
+        vm.adultprice = "$12";
+        vm.childprice = "$8";
+        vm.walkuptimeslots = "20";
+        vm.onelinerestimeslots = "20";
+        vm.minperslot = "2";
+        vm.maxperslot = "3";
+        vm.mopen = "Closed";
+        vm.mclose = ;
+        vm.topen = "Closed";
+        vm.tuclose = ;
+        vm.wopen = "Closed";
+        vm.wclose = ;
+        vm.thopen = ;
+        vm.fopen = ;
+        vm.fclose = ;
+        vm.saopen = ;
+        vm.saclose = ;
+        vm.sunopen = ;
+        vm.suclose = ;
+        vm.specialmessage = "Have a great day!" ;
+
     });
 }]);
 

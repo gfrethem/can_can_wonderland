@@ -1,18 +1,21 @@
-
+<div ng-controller="CustomerInfoController as info">
 <div class="infoMain">
     <h3 class="walkUps"> WALK UPS WELCOME! </h3>
     <h3> HOURS </h3>
 
-    <!--ng-repeats go here:-->
-        <p>
-            Monday - closed
-            Tuesday - closed
-            Wednesday - closed
-            Thursday - 10 am - Midnight
-            Friday - 10 am - Midnight
-            Saturday - 10 am - Midnight
-            Sunday - 10 am - Midnight
-        </p>
+    {{info.adultprice}}
+    {{info.childprice}}
+
+    <div> {{info.mopen}}  {{info.mclose}} </div>
+    <div> {{info.tuopen}}  {{info.tuclose}} </div>
+    <div> {{info.wopen}}  {{info.wclose}} </div>
+    <div> {{info.thopen}} {{info.thclose}} </div>
+    <div> {{info.fopen}}  {{info.fclose}} </div>
+    <div> {{info.saopen}} {{info.saclose}} </div>
+    <div> {{info.suopen}}  {{info.suclose}} </div>
+    {{info.specialmessage}}
+
+
     <h3> PRICES </h3>
         <p>
             ADULTS - $8
@@ -31,4 +34,5 @@
 
         <a href='/customerCalendar'><button class="continueButton" type="submit">CONTINUE</button></a>
 
+</div>
 </div>
