@@ -9,6 +9,7 @@
         <script src="/vendor/angular-xeditable/xeditable.min.js"></script>
         <script src="/vendor/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
         <script src="/javascripts/registerView.js"></script>
+        <script src="/vendor/moment/min/moment.min.js"></script>
 
         <link rel="stylesheet" href="/vendor/simplegrid.css"/>
         <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
@@ -25,11 +26,10 @@
 
             <div class="calendarDiv">
 
-
                 <div class="mainHour" ng-click="frontDesk.showQuarterHour()">
                    <ul>
                        <li>
-                           {{frontDesk.hour}} available {{frontDesk.hourSlotNumber}}
+                           {{frontDesk.message}} available {{frontDesk.fullhourSlotNumber}}
                        </li>
                    </ul>
                 </div>
@@ -37,7 +37,7 @@
                      <div class="quarterHour" ng-hide="frontDesk.quarterHour" ng-click="frontDesk.showReservation()">
 
                              <li>
-                                    {{frontDesk.quarterHour}} available {{frontDesk.hourSlotNumber}}
+                                    {{frontDesk.quarterHour}} available {{frontDesk.fullhourSlotNumber}}
                              </li>
                          </ul>
                      </div>
@@ -50,6 +50,7 @@
                                 </li>
                             </ul>
                         </div>
+
             </div>
 
     </body>

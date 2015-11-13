@@ -1,38 +1,35 @@
 <div ng-controller="CustomerInfoController as info">
-<div class="infoMain">
-    <h3 class="walkUps"> WALK UPS WELCOME! </h3>
-    <h3> HOURS </h3>
+    <div class="infoMain">
+        <h3 class="walkUps"> WALK UPS WELCOME! </h3>
 
-    {{info.adultprice}}
-    {{info.childprice}}
+        <h3> HOURS </h3>
 
-    <div> {{info.mopen}}  {{info.mclose}} </div>
-    <div> {{info.tuopen}}  {{info.tuclose}} </div>
-    <div> {{info.wopen}}  {{info.wclose}} </div>
-    <div> {{info.thopen}} {{info.thclose}} </div>
-    <div> {{info.fopen}}  {{info.fclose}} </div>
-    <div> {{info.saopen}} {{info.saclose}} </div>
-    <div> {{info.suopen}}  {{info.suclose}} </div>
-    {{info.specialmessage}}
+        <div> Monday {{info.currentSettings.mopen}}  {{info.currentSettings.mclose}} </div>
+        <div> Tuesday {{info.currentSettings.tuopen}}  {{info.currentSettings.tuclose}} </div>
+        <div> Wednesday {{info.currentSettings.wopen}}  {{info.currentSettings.wclose}} </div>
+        <div> Thursday {{info.currentSettings.thopen}} {{info.currentSettings.thclose}} </div>
+        <div> Friday {{info.currentSettings.fopen}}  {{info.currentSettings.fclose}} </div>
+        <div> Saturday {{info.currentSettings.saopen}} {{info.currentSettings.saclose}} </div>
+        <div> Sunday {{info.currentSettings.suopen}}  {{info.currentSettings.suclose}} </div>
 
 
-    <h3> PRICES </h3>
+        <h3> PRICES </h3>
+            <div> ${{info.currentSettings.adultprice}}</div>
+            <div> ${{info.currentSettings.childprice}}</div>
+
+        {{info.currentSettings.specialmessage}}
+
+        <h3> PHONE </h3>
+
+            <p> 612-871-2545</p>
+
+        <h3> ADDRESS </h3>
         <p>
-            ADULTS - $8
-            CHILDREN - $5
+            308 East Prince St. #307<br/>
+            St.Paul, MN 55103
         </p>
-    <h3> PHONE </h3>
 
-    <p>
-        612-871-2545
-    </p>
-    <h3> ADDRESS </h3>
-    <p>
-        308 East Prince St. #307<br/>
-        St.Paul, MN 55103
-    </p>
+            <a href='/customerCalendar'><button class="continueButton" type="submit">CONTINUE</button></a>
 
-        <a href='/customerCalendar'><button class="continueButton" type="submit">CONTINUE</button></a>
-
-</div>
+    </div>
 </div>

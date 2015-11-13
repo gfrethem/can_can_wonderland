@@ -23,6 +23,7 @@ app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http
         quarterHour: 10
     };
 
+
     //database call;
 
     vm.showQuarterHour = function(){
