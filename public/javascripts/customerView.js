@@ -79,7 +79,6 @@ app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $h
         console.log(response);
         vm.currentSettings = response;
 
-
     });
 }]);
 
