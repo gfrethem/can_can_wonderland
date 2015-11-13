@@ -78,6 +78,9 @@ app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $h
     $http.get('/settings/getSettings').then(function(response){
         console.log(response);
         vm.currentSettings = response;
+        console.log(vm.currentSettings);
+
+        vm.currentSettings = response.data[0];
 
     });
 }]);
