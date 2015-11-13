@@ -128,32 +128,32 @@ router.get('/getCalendar/:date?', function(req, res, next) {
         Settings.findAll({}).then(function (response) {
             switch (moment(date).day()) {
                 case 1:
-                    openHours = response[0].mopen.substring(0, 1);
-                    closeHours = response[0].mclose.substring(0, 1);
+                    openHours = response[0].mopen.substring(0, 2);
+                    closeHours = response[0].mclose.substring(0, 2);
                     break;
                 case 2:
-                    openHours = response[0].tuopen.substring(0, 1);
-                    closeHours = response[0].tuclose.substring(0, 1);
+                    openHours = response[0].tuopen.substring(0, 2);
+                    closeHours = response[0].tuclose.substring(0, 2);
                     break;
                 case 3:
-                    openHours = response[0].wopen.substring(0, 1);
-                    closeHours = response[0].wclose.substring(0, 1);
+                    openHours = response[0].wopen.substring(0, 2);
+                    closeHours = response[0].wclose.substring(0, 2);
                     break;
                 case 4:
                     openHours = response[0].thopen.substring(0, 2);
                     closeHours = response[0].thclose.substring(0, 2);
                     break;
                 case 5:
-                    openHours = response[0].fopen.substring(0, 1);
-                    closeHours = response[0].fclose.substring(0, 1);
+                    openHours = response[0].fopen.substring(0, 2);
+                    closeHours = response[0].fclose.substring(0, 2);
                     break;
                 case 6:
-                    openHours = response[0].saopen.substring(0, 1);
-                    closeHours = response[0].saclose.substring(0, 1);
+                    openHours = response[0].saopen.substring(0, 2);
+                    closeHours = response[0].saclose.substring(0, 2);
                     break;
                 case 7:
-                    openHours = response[0].suopen.substring(0, 1);
-                    closeHours = response[0].suclose.substring(0, 1);
+                    openHours = response[0].suopen.substring(0, 2);
+                    closeHours = response[0].suclose.substring(0, 2);
                     break;
                 default :
                     console.log('failed to find day of week');
@@ -165,8 +165,6 @@ router.get('/getCalendar/:date?', function(req, res, next) {
                 res.send("Closed");
                 next();
             } else {
-                console.log(openHours);
-                console.log(closeHours);
                 while (openHours <= closeHours) {
                     operationHours.push(parseInt(openHours));
                     openHours++;

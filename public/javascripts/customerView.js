@@ -108,6 +108,7 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
         vm.price = ((vm.totalAdults * 12) + (vm.totalChildren * 8));
         vm.totalPeople = vm.totalAdults + vm.totalChildren;
         vm.slots = Math.ceil(vm.totalPeople / 4);
+        captureRes.newReservation.numslots = vm.slots;
     };
 //Alert customer if they have more than 12 people in their party
     vm.showNumAlert = function(){
@@ -134,25 +135,28 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots"
     vm.mainTime = true;
     vm.currentDate = [];
     vm.quarterSlots = false;
+
     vm.buttonTime = function(){
         var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
-        console.log(thisDate);
         $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
             vm.currentDate = response.data;
             vm.mainTime = ! vm.mainTime;
         });
     };
 
-    vm.getTime = function(hour, quarter){
-        var newDateTime = makeDateTime(vm.date, hour, quarter);
+//PICK A TIME
+    vm.selectTime = function(time){
+        var newDateTime = makeDateTime(vm.date, time);
+        vm.yourDate = moment(newDateTime).format('dddd, MMM DD, YYYY hh:mm A');
         captureRes.newReservation.datetime = newDateTime;
     };
 
-    var makeDateTime = function(date, hour, minutes){
-        var time = hour + minutes;
-        console.log(date);
-        var newDate = moment(date).hour(hour).minute(minutes);
-        newDate = moment(newDate).format("YYYYa-MM-DD hh:mm A");
+//COMBINE DATE AND TIME
+    var makeDateTime = function(date, time){
+        var hour = time.substring(0,2);
+        var minute = time.substring(3,5);
+        var newDate = moment(date).hour(hour).minute(minute);
+        newDate = moment(newDate).format("YYYY-MM-DD HH:mm");
         return newDate;
     };
 
@@ -164,8 +168,8 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes", "numSlots"
     };
 
 //SHOW QUARTER HOURS
-    vm.showSlots = function(){
-        vm.quarterSlots = true;
+    vm.showSlots = function(index){
+        vm.quarterSlots[index] = !vm.quarterSlots[index];
     };
 
     vm.slickConfig = {
