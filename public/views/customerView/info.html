@@ -4,18 +4,25 @@
 
         <h3> HOURS </h3>
 
-        <div> Monday {{info.currentSettings.mopen}}  {{info.currentSettings.mclose}} </div>
-        <div> Tuesday {{info.currentSettings.tuopen}}  {{info.currentSettings.tuclose}} </div>
-        <div> Wednesday {{info.currentSettings.wopen}}  {{info.currentSettings.wclose}} </div>
-        <div> Thursday {{info.currentSettings.thopen}} {{info.currentSettings.thclose}} </div>
-        <div> Friday {{info.currentSettings.fopen}}  {{info.currentSettings.fclose}} </div>
-        <div> Saturday {{info.currentSettings.saopen}} {{info.currentSettings.saclose}} </div>
-        <div> Sunday {{info.currentSettings.suopen}}  {{info.currentSettings.suclose}} </div>
+        <div ng-show="info.monday"> Monday: {{info.currentSettings.mopen}} to {{info.currentSettings.mclose}} </div>
+        <div ng-hide="info.monday"> Monday: Closed </div>
+        <div ng-show="info.tuesday"> Tuesday: {{info.currentSettings.tuopen}} to {{info.currentSettings.tuclose}} </div>
+        <div ng-hide="info.tuesday"> Tuesday: Closed </div>
+        <div ng-show="info.wednesday"> Wednesday: {{info.currentSettings.wopen}} to {{info.currentSettings.wclose}} </div>
+        <div ng-hide="info.wednesday"> Wednesday: Closed </div>
+        <div ng-show="info.thursday"> Thursday: {{info.currentSettings.thopen}} to {{info.currentSettings.thclose}} </div>
+        <div ng-hide="info.thursday"> Thursday: Closed </div>
+        <div ng-show="info.friday"> Friday: {{info.currentSettings.fopen}} to {{info.currentSettings.fclose}} </div>
+        <div ng-hide="info.friday"> Friday: Closed </div>
+        <div ng-show="info.saturday"> Saturday: {{info.currentSettings.saopen}} to {{info.currentSettings.saclose}} </div>
+        <div ng-hide="info.saturday"> Saturday: Closed </div>
+        <div ng-show="info.sunday"> Sunday: {{info.currentSettings.suopen}} to {{info.currentSettings.suclose}} </div>
+        <div ng-hide="info.sunday"> Sunday: Closed </div>
 
 
         <h3> PRICES </h3>
-            <div> ${{info.currentSettings.adultprice}}</div>
-            <div> ${{info.currentSettings.childprice}}</div>
+            <div> ${{info.currentSettings.adultprice}} for Adults</div>
+            <div> ${{info.currentSettings.childprice}} for Children</div>
 
         {{info.currentSettings.specialmessage}}
 

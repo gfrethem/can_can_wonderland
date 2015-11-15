@@ -85,6 +85,29 @@ app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $h
     vm.currentSettings = {};
     $http.get('/settings/getSettings').then(function(response){
         vm.currentSettings = response.data[0];
+//CHECK IF OPEN OR CLOSED
+        vm.monday = vm.currentSettings.mclose.substring(0,2) - vm.currentSettings.mopen.substring(0,2);
+        vm.tuesday = vm.currentSettings.tuclose.substring(0,2) - vm.currentSettings.tuopen.substring(0,2);
+        vm.wednesday = vm.currentSettings.wclose.substring(0,2) - vm.currentSettings.wopen.substring(0,2);
+        vm.thursday = vm.currentSettings.thclose.substring(0,2) - vm.currentSettings.thopen.substring(0,2);
+        vm.friday = vm.currentSettings.fclose.substring(0,2) - vm.currentSettings.fopen.substring(0,2);
+        vm.saturday = vm.currentSettings.saclose.substring(0,2) - vm.currentSettings.saopen.substring(0,2);
+        vm.sunday = vm.currentSettings.suclose.substring(0,2) - vm.currentSettings.suopen.substring(0,2);
+//FORMAT DATETIMES
+        vm.currentSettings.mclose = moment().hour(vm.currentSettings.mclose.substring(0,2)).format("hh A");
+        vm.currentSettings.mopen = moment().hour(vm.currentSettings.mopen.substring(0,2)).format('hh A');
+        vm.currentSettings.tuopen = moment().hour(vm.currentSettings.tuopen.substring(0,2)).format("hh A");
+        vm.currentSettings.tuclose = moment().hour(vm.currentSettings.tuclose.substring(0,2)).format("hh A");
+        vm.currentSettings.wopen = moment().hour(vm.currentSettings.wopen.substring(0,2)).format("hh A");
+        vm.currentSettings.wclose = moment().hour(vm.currentSettings.wclose.substring(0,2)).format("hh A");
+        vm.currentSettings.thopen = moment().hour(vm.currentSettings.thopen.substring(0,2)).format("hh A");
+        vm.currentSettings.thclose = moment().hour(vm.currentSettings.thclose.substring(0,2)).format("hh A");
+        vm.currentSettings.fopen = moment().hour(vm.currentSettings.fopen.substring(0,2)).format("hh A");
+        vm.currentSettings.fclose = moment().hour(vm.currentSettings.fclose.substring(0,2)).format("hh A");
+        vm.currentSettings.saopen = moment().hour(vm.currentSettings.saopen.substring(0,2)).format("hh A");
+        vm.currentSettings.saclose = moment().hour(vm.currentSettings.saclose.substring(0,2)).format("hh A");
+        vm.currentSettings.suopen = moment().hour(vm.currentSettings.suopen.substring(0,2)).format("hh A");
+        vm.currentSettings.suclose = moment().hour(vm.currentSettings.suclose.substring(0,2)).format("hh A");
     });
 }]);
 
@@ -156,15 +179,15 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
         $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
             vm.currentDate = response.data;
-            vm.mainTime = ! vm.mainTime;
+            vm.mainTime = true;
             console.log(vm.currentDate);
         });
     };
 
 //PICK A TIME AND SAVE TO RES FACTORY
     vm.selectTime = function(time){
-        vm.mainTime = ! vm.mainTime;
-        vm.quarterSlots = !vm.quarterSlots;
+        vm.mainTime = false;
+        vm.quarterSlots = false;
         var newDateTime = makeDateTime(vm.date, time);
         var databaseDate = moment(newDateTime).format('YYYY-MM-DD HH:mm');
         vm.yourDate = moment(newDateTime).format('dddd, MMM DD, YYYY h:mm A');
