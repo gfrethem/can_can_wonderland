@@ -55,9 +55,7 @@ router.post('/makeReservation', function(req, res, next){
         })
         .save()
         .then(function(anotherTask) {
-            // you can now access the currently saved task with the variable anotherTask... nice!
-            console.log(anotherTask);
-            res.send(200);
+            res.redirect('/userControl');
         }).catch(function(error) {
             // Ooops, do some error-handling
         });

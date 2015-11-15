@@ -93,11 +93,12 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
 
     vm.numAdults = [0,1,2,3,4,5,6,7,8,9,10,11,12];
     vm.numChildren = [0,1,2,3,4,5,6,7,8,9,10,11,12];
-    vm.totalAdults = 0;
-    vm.totalChildren = 0;
+    vm.totalAdults =  captureRes.newReservation.adultnumber;
+    vm.totalChildren = captureRes.newReservation.childnumber;
     vm.price = 0;
     vm.totalPeople = 0;
     vm.slots = 0;
+    vm.numCheck = 'login';
 
 //Determine number of adults and children, as well as get total number of people and slots taken up
     vm.numberOfAdults = function(num){
@@ -119,11 +120,14 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
 //Alert customer if they have more than 12 people in their party
     vm.showNumAlert = function(){
         if(vm.totalPeople > 12){
-            alert('You group is larger than 12 people, please call to schedule');
+            vm.numCheck = 'info';
+            return alert('You group is larger than 12 people, please call to schedule');
         }
         if(captureRes.newReservation.slotcheck < captureRes.newReservation.numslots){
+            vm.numCheck = 'customerCalendar';
             alert('You selected more people and need more slots, please reconfirm date selection.');
         } else if(captureRes.newReservation.slotcheck > captureRes.newReservation.numslots){
+            vm.numCheck = 'customerCalendar';
             alert('You selected fewer people, please reconfirm date selection.');
         }
     }
@@ -143,7 +147,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     vm.partyList = [0,1,2,3,4,5,6,7,8,9,10,11,12];
     vm.slotsNeeded = 0;
     vm.date = '';
-    vm.mainTime = true;
+    vm.mainTime = false;
     vm.currentDate = [];
     vm.quarterSlots = false;
 
@@ -159,6 +163,8 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 
 //PICK A TIME AND SAVE TO RES FACTORY
     vm.selectTime = function(time){
+        vm.mainTime = ! vm.mainTime;
+        vm.quarterSlots = !vm.quarterSlots;
         var newDateTime = makeDateTime(vm.date, time);
         var databaseDate = moment(newDateTime).format('YYYY-MM-DD HH:mm');
         vm.yourDate = moment(newDateTime).format('dddd, MMM DD, YYYY h:mm A');
@@ -178,6 +184,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         vm.partySize = party;
         vm.slotsNeeded = Math.ceil(vm.partySize / 4);
         captureRes.newReservation.slotcheck = vm.slotsNeeded;
+        vm.showPartySize = false;
     };
 
 //SHOW QUARTER HOURS
@@ -213,14 +220,12 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
     vm.resConfirm = captureRes.newReservation;
 
     vm.confirmReservation = function(){
-        $http.post('/reservation/makeReservation', vm.resConfirm).then(function(response){
-            console.log(response);
-        });
+        $http.post('/reservation/makeReservation', vm.resConfirm);
     };
 
 }]);
 
-app.controller("UserControlController", ["$scope", "currentUser",function($scope, currentUser){
+app.controller("UserControlController", ["$scope", "currentUser", "$http", function($scope, currentUser, $http){
     var vm = this;
     var useremail = currentUser.user.email;
 
