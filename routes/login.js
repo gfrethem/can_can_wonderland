@@ -16,4 +16,5 @@ router.post('/', passport.authenticate('local', {
     //failureFlash: true
 }));
 
+
 module.exports = router;

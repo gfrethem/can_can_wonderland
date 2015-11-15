@@ -6,6 +6,12 @@ var router = express.Router();
 var models = require('../models');
 var User = models.User;
 
+//GET A LOGGED IN USER
+router.get('/getUser', function(req, res , next){
+        var currentUser = req.user;
+         res.send(currentUser);
+});
+
 //GET A USER
 router.get('/user/:email?', function(req, res, next){
     var userEmail = req.params.email;

@@ -49,7 +49,8 @@ app.factory('captureRes', function(){
         childnumber: 0,
         datetime: "",
         humandate: "",
-        numslots: 0
+        numslots: 0,
+        slotcheck: 0
     };
 
     return {
@@ -69,9 +70,8 @@ app.controller("MainController", ["$scope", function($scope){
     var vm = this;
 }]);
 
-app.controller("LoginController", ["$scope", function($scope){
+app.controller("LoginController", ["$scope", "$http", 'currentUser', function($scope, $http, currentUser){
     var vm = this;
-
 }]);
 
 app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $http){
@@ -116,14 +116,17 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
         if(vm.totalPeople > 12){
             alert('You group is larger than 12 people, please call to schedule');
         }
+        if(captureRes.newReservation.slotcheck < captureRes.newReservation.numslots){
+            alert('You selected more people and need more slots, please reconfirm date selection.');
+        } else if(captureRes.newReservation.slotcheck > captureRes.newReservation.numslots){
+            alert('You selected fewer people, please reconfirm date selection.');
+        }
     }
 
 }]);
 
 app.controller("RegisterController", ["$scope", function($scope){
     var vm = this;
-
-
 }]);
 
 app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", function($scope, captureRes, $http){
@@ -169,6 +172,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     vm.findPartySize = function(party){
         vm.partySize = party;
         vm.slotsNeeded = Math.ceil(vm.partySize / 4);
+        captureRes.newReservation.slotcheck = vm.slotsNeeded;
     };
 
 //SHOW QUARTER HOURS
@@ -187,16 +191,22 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     };
 }]);
 
-app.controller("ConfirmController", ["$scope", "captureRes", "$http", function($scope, captureRes, $http){
+app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUser", function($scope, captureRes, $http, currentUser){
     var vm = this;
-    var selectedDate = captureRes.newReservation.datetime;
+    $http.get('/user/getUser').then(function(response){
+        captureRes.newReservation.email = response.data.email;
+        captureRes.newReservation.phonenumber = response.data.phonenumber;
+        currentUser.user = response.data;
+    });
+
     vm.resConfirm = captureRes.newReservation;
-    console.log(captureRes.newReservation.datetime);
+
     vm.confirmReservation = function(){
         $http.post('/reservation/makeReservation', vm.resConfirm).then(function(response){
             console.log(response);
         });
-    }
+    };
+
 }]);
 
 app.controller("UserControlController", ["$scope", function($scope){
