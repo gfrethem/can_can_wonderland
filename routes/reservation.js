@@ -49,10 +49,9 @@ router.post('/makeReservation', function(req, res, next){
             phonenumber: newReservation.phonenumber,
             adultnumber: newReservation.adultnumber,
             childnumber: newReservation.childnumber,
-            noshow: newReservation.noshow,
-            walkup: newReservation.walkup,
             datetime: newReservation.datetime,
-            notes: newReservation.notes
+            notes: newReservation.notes,
+            numslots: newReservation.numslots
         })
         .save()
         .then(function(anotherTask) {

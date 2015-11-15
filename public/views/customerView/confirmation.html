@@ -1,7 +1,7 @@
 <div class="confirmationMain" ng-controller="ConfirmController as confirm">
     <h2> YOUR CURRENT RESERVATION </h2>
-    <h3>{{confirm.resConfim.email}}</h3>
-    <h3>{{confirm.resConfim.phonenumber}}</h3>
+    <h3>{{confirm.resConfirm.email}}</h3>
+    <h3>{{confirm.resConfirm.phonenumber || ""}}</h3>
     <div class="currentReservation">
         <h4 class="info"> TIME SLOT </h4>
         <h4 class="customerInfo"> {{confirm.resConfirm.humandate}} </h4>
@@ -18,7 +18,7 @@
         <button class="changeButton" type="submit">CHANGE</button>
     </div>
     <div class="continue">
-        <button class="continueButton" ng-click="confirm.confirmReservaiton()">CONTINUE</button>
+        <button class="continueButton" ng-click="confirm.confirmReservation()">CONTINUE</button>
     </div>
 
 

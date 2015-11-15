@@ -1,4 +1,4 @@
-var app = angular.module('customerApp', ['ngRoute', 'xeditable', 'slickCarousel', '720kb.datepicker', 'slickCarousel']);
+var app = angular.module('customerApp', ['ngRoute', 'xeditable', 'slickCarousel', '720kb.datepicker', 'slickCarousel', 'ngCookies']);
 
 //Sets specific html view to load and sets an Angular controller to each page
 app.config(function($routeProvider, $locationProvider){
@@ -70,8 +70,14 @@ app.controller("MainController", ["$scope", function($scope){
     var vm = this;
 }]);
 
-app.controller("LoginController", ["$scope", "$http", 'currentUser', function($scope, $http, currentUser){
+app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', function($scope, $http, captureRes, $cookies){
     var vm = this;
+    $cookies.put('resAdults', captureRes.newReservation.adultnumber);
+    $cookies.put('resChildren', captureRes.newReservation.childnumber);
+    $cookies.put('resDatetime', captureRes.newReservation.datetime);
+    $cookies.put('resNumslots', captureRes.newReservation.numslots);
+    $cookies.put('resHumanDate', captureRes.newReservation.humandate);
+
 }]);
 
 app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $http){
@@ -102,7 +108,6 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
     vm.numberOfChildren = function(num){
         vm.totalChildren = num;
         captureRes.newReservation.childnumber = num;
-        console.log(captureRes.newReservation.childnumber);
         updateTotals();
     };
     var updateTotals = function(){
@@ -191,8 +196,14 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     };
 }]);
 
-app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUser", function($scope, captureRes, $http, currentUser){
-    var vm = this;
+app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUser", "$cookies", function($scope, captureRes, $http, currentUser, $cookies){
+     var vm = this;
+     captureRes.newReservation.adultnumber = $cookies.get('resAdults');
+     captureRes.newReservation.childnumber = $cookies.get('resChildren');
+     captureRes.newReservation.datetime = $cookies.get('resDatetime');
+     captureRes.newReservation.numslots = $cookies.get('resNumslots');
+     captureRes.newReservation.humandate = $cookies.get('resHumanDate');
+
     $http.get('/user/getUser').then(function(response){
         captureRes.newReservation.email = response.data.email;
         captureRes.newReservation.phonenumber = response.data.phonenumber;
