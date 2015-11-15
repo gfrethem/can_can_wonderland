@@ -1,5 +1,5 @@
 <div class="userControlMain as customerRes">
-    <h1>Hello, {{}}</h1>
+    <h1>Hello, {{customerRes.currentReservations.name}}</h1>
     <div class="currentReservation" ng-repeat="curRes in customerRes.currentReservations">
         <h2>YOUR CURRENT RESERVATION</h2>
             <div ng-show="yesReservation">

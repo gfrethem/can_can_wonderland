@@ -208,11 +208,11 @@ app.controller("UserControlController", ["$scope", "currentUser",function($scope
         vm.pastReservations = [];
 
 
-    //for (i = 0; i < response.data.length, i++) {
-    //    //if (moment() <  response.data[i].datetime) {
-    //    //   vm.currentReservations.push(response.data[i]);
-    //    //} else{
-    //    //    vm.yesReservation = false;
-    //    //}
-    //}
+    for (i = 0; i < response.data.length, i++) {
+        if (moment() <  response.data[i].datetime) {
+           vm.currentReservations.push(response.data[i]);
+        } else{
+            vm.yesReservation = false;
+        }
+    }
         })}]);
