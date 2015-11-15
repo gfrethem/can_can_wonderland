@@ -14,22 +14,33 @@
         <link rel="stylesheet" href="/vendor/simplegrid.css"/>
         <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
         <link rel="stylesheet" href="/vendor/angularjs-datepicker/dist/angular-datepicker.min.css"/>
+        <link rel="stylesheet" href="/stylesheets/calendarStyles.css"/>
         <link rel="stylesheet" href="/stylesheets/style.css"/>
         <base href="/">
     </head>
     <body ng-controller="FrontDeskController as frontDesk">
         <header>
+
             <img src="/images/yellowBlue.png" class="starLogo" ng-click="admin.goHome()">
             <!--<button class="logoutButton" ng-click="admin.logout()">LOGOUT</button>-->
             <a class="logoutButton" ng-click="admin.logout()">LOGOUT</a>
         </header>
 
+
+
             <div class="calendarDiv">
+
+                <datepicker  date-format="{{today | date:'shortDate'}}">
+                    <input class='dateButton' ng-model="calendar.date">PICK A DATE</input>
+                </datepicker>
+
+                <button ng-click="frontDesk.submitTime()"  class="submitButton">Submit</button>
+                </div>
 
                 <div class="mainHour" ng-click="frontDesk.showQuarterHour()">
                    <ul>
                        <li>
-                           {{frontDesk.message}} available {{frontDesk.fullhourSlotNumber}}
+                           {{frontDesk.showReservationSlot}} available {{frontDesk.totalAvailableSlots}}
                        </li>
                    </ul>
                 </div>
@@ -37,7 +48,7 @@
                      <div class="quarterHour" ng-hide="frontDesk.quarterHour" ng-click="frontDesk.showReservation()">
 
                              <li>
-                                    {{frontDesk.quarterHour}} available {{frontDesk.fullhourSlotNumber}}
+                                    {{frontDesk.totalAvailableSlots}} available {{frontDesk.totalAvailableSlots}}
                              </li>
                          </ul>
                      </div>
@@ -51,7 +62,6 @@
                             </ul>
                         </div>
 
-            </div>
 
     </body>
 </html>

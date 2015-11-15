@@ -1,4 +1,4 @@
-var app = angular.module('frontDeskApp', []);
+var app = angular.module('frontDeskApp', ['720kb.datepicker']);
 
 app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http){
     var vm = this;
@@ -15,14 +15,31 @@ app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http
     vm.fullhourSlotNumber = - vm.totalAvailableSlots - vm.peopleSignedUp;
     vm.walkup = false;
     vm.checkin = false;
+    vm.currentDate = [];
     vm.reservations= {
         fullname: "Just Stop!!",
         fullhourSlotNumber: "5",
         partySize: 6,
         message: "what!!!",
         quarterHour: 10
+
     };
 
+//on submit, do a server call,
+
+    //SHOW TIME SLOTS FOR A SPECIFIC DAY
+    vm.submitTime = function(){
+        var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
+        $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
+            vm.currentDate = response.data;
+            vm.mainTime = ! vm.mainTime;
+            console.log(vm.currentDate);
+        });
+    };
+
+    //save the call to a vm
+
+    // work it in Angular
 
     //database call;
 
