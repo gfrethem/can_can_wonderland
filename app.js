@@ -22,6 +22,7 @@ var register = require('./routes/register');
 var admin = require('./routes/admin');
 var login = require('./routes/login');
 var confirmReservation = require('./routes/confirmReservation');
+var userControl = require('./routes/userControl');
 
 var app = express();
 
@@ -107,5 +108,6 @@ app.use('/register', register);
 app.use('/settings', admin);
 app.use('/login', login);
 app.use('/confirmReservation', confirmReservation);
+app.use('/userControl', userControl);
 
 module.exports = app;

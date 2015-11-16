@@ -30,40 +30,41 @@
 
                 <datepicker  date-format="{{today | date:'shortDate'}}">
                     <input class='dateButton' ng-model="frontDesk.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
-                    <!--<input type = "text"  class="logs" placeholder = "username" name = "username" id="username"/>-->
-
                 </datepicker>
 
-                <button ng-click="frontDesk.submitTime()"  class="submitButton">Submit</button>
+                     <button ng-click="frontDesk.submitTime()"  class="submitButton">Submit</button>
                 </div>
 
                     <!--ON THIS CLICK, SHOW QUARTER HOURS BELOW IT-->
                 <div class="mainHour"  ng-repeat="hour in frontDesk.currentDate" >
                    <ul>
                        <li ng-click="vm.quarterHour = ! vm.quarterHour">
-                           {{hour.hour}} available {{hour.totalSlotsRemaining}}
+                          <div class="hour"> {{hour.hour}} </div>
+                            <div class="available">AVAILABLE <div class="numAvailable"> {{hour.totalSlotsRemaining}}</div></div>
                        </li>
                    </ul>
                     <!-- ON THIS CLICK SHOW RESERVATIONS-->
                     <div class="quarterHour" ng-show="vm.quarterHour" ng-repeat="quarter in hour.quarters track by $index">
-                    <ul>
-                        <li ng-click="vm.reservation = ! vm.reservation">
-                            {{quarter.quarter}} available {{quarter.remainingSlots}}
-                        </li>
-                        </ul>
-                        <div class="reservation" ng-show="vm.reservation" ng-repeat="info in frontDesk.currentDate | limitTo: 5">
-                            <ul>
-                                <li>
-                                    {{info.fullname}} {{info.partySize}} <button class="infoButton">INFO</button>  <div id="checkboxes"> walk-up <input type="checkbox" class="walk-up" name="walk-up" value="walk-up"> check-in <input type="checkbox" class="check-in" name="check-in" value="check-in"> </div>
-                                </li>
-                            </ul>
-                        </div>
-
+                        <ul>
+                            <li ng-click="vm.reservation = ! vm.reservation">
+                                <div class="hour"> {{quarter.quarter}} </div>
+                                    <div class="available">AVAILABLE <div class="numAvailable"> {{quarter.remainingSlots}}</div></div>
+                            </li>
+                         </ul>
+                    <div class="reservation" ng-show="vm.reservation" ng-repeat="info in quarter.reservations | limitTo: 5" >
+                        <ul>
+                            <li>
+                                <div class="infoName">{{info.email}}
+                                    <div class="adultNumber">{{info.adultnumber}}
+                                        <!--<div class="childNumber">-->
+                                            {{info.childnumber}} </div>
+                                            <button class="infoButton">INFO</button> </div>
+                                                <div id="checkboxes"> walk-up <input type="checkbox" class="walk-up" name="walk-up" value="walk-up"> check-in <input type="checkbox" class="check-in" name="check-in" value="check-in"> </div>
+                            </li>
+                         </ul>
                     </div>
                 </div>
-
-
-
+            </div>
     </body>
 </html>
 

@@ -1,14 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald);
+
 @font-face{
     font-family: LTCTourist;
     src:url('LTCTouristGothic-Regular.ttf');
 }
-/*this is a border hack */
+
+
+/* this is a border hack */
 *, *:before, *:after {
     box-sizing: inherit;
 }
-/*hack to stop blue hue on button clicks*/
+/* hack to stop blue hue on button and input clicks */
 button:focus {outline:0;}
+input:focus {outline:0;}
 
 body{
     font-family: LTCTourist, Oswald, Helvetica, Arial, sans-serif;
@@ -49,13 +53,6 @@ body{
     background:white;
     border: none;
 }
-/*.homeLogo{*/
-    /*width: 100%;*/
-    /*display: block;*/
-    /*margin: 0 auto;*/
-    /*padding: 5%;*/
-/*}*/
-
 
 h3{
     font-size: 20px;
@@ -70,7 +67,6 @@ p{
     margin: 2px 0 5px 5%;
 }
 
-
 .continueButton{
     font-size: 2em;
     font-weight: bold;
@@ -81,12 +77,12 @@ p{
     text-decoration: none;
     border-radius: 0;
     margin: 0 auto ;
-
 }
 
 a {
     text-decoration: none;
 }
+
 .fb{
     font-size: 2em;
     font-weight: bold;
@@ -99,7 +95,7 @@ a {
     margin: 3% auto;
 }
 
-
+/*/////////////////////////////////*/
 /*REGISTER*/
 .newUser{
     font-family: Oswald, Helvetica, Arial, sans-serif;
@@ -110,7 +106,6 @@ a {
     margin: 1% auto 3% auto;
     display: block;
 }
-
 
 #email{
     font-family: Oswald, Helvetica, Arial, sans-serif;
@@ -191,7 +186,6 @@ a {
     display: block;
 }
 
-
 #phone{
     font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
@@ -209,64 +203,63 @@ a {
 }
 
 
-/*button:focus {outline:0;}*/
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    white;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:   white;
-    opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    white;
-    opacity:  1;
-}
-:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: white;
-}
-
+/*/////////////////////////////////////*/
 /*//cashier Calander View*/
 
  li {
     list-style: none;
+     font-size: 1.25em;
 }
 
  datepicker{
      text-align: center;
      font-size: 3em;
-
  }
 
  .dateButton{
      display:block;
      margin: 0 auto;
-     color: red;
+     color: black;
      border: none;
      font-size: 1em;
      text-align: center;
-     background-color: black;
+     background-color: white;
      font-family: Oswald;
  }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #FFFCEE;
+    color:    black;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:   #FFFCEE;
+    color:   black;
     /*opacity:  1;*/
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #FFFCEE;
+    color:    black;
     /*opacity:  1;*/
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color:   #FFFCEE;
+    color:   black;
 }
 
+.submitButton{
+    border: transparent;
+    font-size: 2em;
+    font-family: Oswald, Helvetica, Ariel, san-serif;
+    text-align: center;
+    margin: 7% auto;
+    display: block;
+    color:  #ED1C24;
+    background-color: #FFE300;
+    padding: .15em .5em;
+}
+
+ul{
+    margin: .75em 0 .75em 0;
+}
 .mainHour{
+    font-size: 1.25em;
     background-color: white;
-    /*padding: 2% 5%;*/
     border: 4px solid black;
     width: 70%;
     margin: 0 auto -4px;
@@ -275,11 +268,9 @@ a {
 
 .quarterHour{
     background-color: white;
-    /*padding: 2% 5%;*/
     border: 4px solid black;
     border-left: none;
     border-right: none;
-    /*width: 70%;*/
     margin: 0 auto -4px;
     display: block;
     color:#ED1C24;
@@ -287,14 +278,72 @@ a {
 
 .reservation{
     background-color: white;
-    /*padding: 2% 5%;*/
     border: 4px solid black;
     border-left: none;
     border-right: none;
-    /*width: 70%;*/
     margin: 0 auto -4px;
     display: block;
 }
+
+/*.infoName{*/
+    /*float:left;*/
+/*}*/
+.adultNumber{
+    margin: 0 2px 0 0;
+}
+/*.childNumber{*/
+    /*float:left;*/
+    /*clear:both;*/
+/*}*/
+
+.infoButton{
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    color: #0091D5;
+    background-color: white;
+    border: 3px solid black;
+    padding: 0 .75em;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 0 3% 0 0;
+}
+
+.infoButton:hover{
+    background-color:#FFE300;
+}
+
+
+.available{
+    float:right;
+    clear:both;
+    margin-right: 3%;
+    margin-top: -1.5em;
+}
+
+.numAvailable{
+    font-weight: bold;
+    color: #ED1C24;
+    float: right;
+    border: 4px solid black;
+    text-align: center;
+    /*padding: .15em .15em;*/
+    width: 1.75em;
+    height: 1.75em;
+    margin: -4% 0 0 1em;
+    line-height: 1.75em;
+}
+
+#checkboxes{
+    float: right;
+    margin: -7% 3% 0 0;
+    color: black;
+}
+
+
+/*/////////////////////////////////////*/
+/* media queries */
+
 /*iphone5, 5s*/
 @media only screen and (max-width: 320px) {
     body {
@@ -369,7 +418,15 @@ and (-webkit-min-device-pixel-ratio: 1) {
     font-family: Oswald;
     font-size: 1.5em;
     color: #0091D5;
-    margin: 2% 0 2% 10%;
+    margin: 2% 0 5% 10%;
+}
+.mapinfo {
+    font-family: Oswald;
+    font-size: 1em;
+    color: red;
+}
+.mapinfo:hover {
+    color:  #FFE300;
 }
 
 #checkboxes{
