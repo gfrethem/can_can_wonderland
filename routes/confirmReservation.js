@@ -6,7 +6,10 @@ var router = express.Router();
 var path = require('path');
 
 router.get('/', function(req, res, next){
-    res.sendFile(path.join(__dirname, '../public/views/index.html'));
+    if (!req.user) {
+        res.redirect('/login');
+    } else
+        res.sendFile(path.join(__dirname, '../public/views/index.html'));
 });
 
 module.exports = router;
