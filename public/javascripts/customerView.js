@@ -77,7 +77,10 @@ app.controller("MainController", ["$scope", "$http", "currentUser", function($sc
     var vm = this;
     vm.logout = function(){
         $http.get("/login/logout");
-    }
+    };
+    // Not sure I like this yet - G
+    //currentUser.fetchUserDetails();
+    //vm.user = currentUser.user;
 }]);
 
 app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', function($scope, $http, captureRes, $cookies){
