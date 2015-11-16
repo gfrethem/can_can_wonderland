@@ -124,6 +124,7 @@ router.get('/getCalendar/:date?', function(req, res, next) {
 
         //SWITCH TO GET OPEN AND CLOSE HOURS
         Settings.findAll({}).then(function (response) {
+            console.log(moment(date).day());
             switch (moment(date).day()) {
                 case 1:
                     openHours = response[0].mopen.substring(0, 2);
@@ -149,7 +150,7 @@ router.get('/getCalendar/:date?', function(req, res, next) {
                     openHours = response[0].saopen.substring(0, 2);
                     closeHours = response[0].saclose.substring(0, 2);
                     break;
-                case 7:
+                case 0:
                     openHours = response[0].suopen.substring(0, 2);
                     closeHours = response[0].suclose.substring(0, 2);
                     break;
