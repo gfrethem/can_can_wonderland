@@ -1,4 +1,4 @@
-<div class="registerMain">
+<div class="registerMain" ng-controller="RegisterController as register">
 
     <form role="form" action="/register" method="post">
 
@@ -6,13 +6,13 @@
 
         <input class="registerForm" type="email" name="email" id="email" placeholder="EMAIL" required="required">
 
-        <input class="registerForm" type="number" name="phone" id="phone" placeholder="(555)-555-5555"  pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$">
-<!-- TODO: Change from type text to type password //-->
-        <input class="registerForm" type="text" name="password2" id="password2" placeholder="PASSWORD" required="required">
+        <input class="registerForm" name="phone" id="phone" type="text" ng-model="phonenumber" ui-mask="(999) 999-9999"  ui-mask-placeholder ui-mask-placeholder-char="5"/>
 
-        <input class="registerForm" type="text" name="password" id="password" placeholder="CONFIRM PASSWORD" required="required">
+        <input class="registerForm" type="password" name="password2" id="password2" placeholder="PASSWORD" required="required" ng-model="register.password1">
 
-        <button class="continueButton" type="submit">CONTINUE</button>
+        <input class="registerForm" type="password" name="password" id="password" placeholder="CONFIRM PASSWORD" required="required" ng-model="register.password2">
+        <p class="passwordAlert" ng-show="register.passFail">Passwords didn't match, please try again.</p>
+        <button class="continueButton" type="submit" ng-click="register.passwordCheck()">CONTINUE</button>
 
     </form>
 

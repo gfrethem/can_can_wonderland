@@ -5,7 +5,6 @@
     src:url('LTCTouristGothic-Regular.ttf');
 }
 
-
 /* this is a border hack */
 *, *:before, *:after {
     box-sizing: inherit;
@@ -77,6 +76,11 @@ p{
     text-decoration: none;
     border-radius: 0;
     margin: 0 auto ;
+
+}
+.continueButton {
+    color: #FFE300;
+    background-color: #ed1c24;
 }
 
 a {
@@ -201,7 +205,12 @@ a {
     margin: 0 auto 2% auto;
     display: block;
 }
-
+.passwordAlert {
+    color: #ED1C24;
+    text-align: center;
+    font-family: LTCTourist;
+    text-transform: uppercase;
+}
 
 /*/////////////////////////////////////*/
 /*//cashier Calander View*/
@@ -249,7 +258,7 @@ a {
     text-align: center;
     margin: 7% auto;
     display: block;
-    color:  #ED1C24;
+    color: #ed1c24;
     background-color: #FFE300;
     padding: .15em .5em;
 }
@@ -403,6 +412,24 @@ and (-webkit-min-device-pixel-ratio: 1) {
 }
 .mapinfo:hover {
     color:  #FFE300;
+}
+
+/*usercontrol page*/
+.h2usercontrol {
+    font-family: Oswald;
+    font-size: 3em;
+    color: red;
+    margin: 2% 0 5% 10%;
+}
+.divusercontrol {
+    font-family: Georgia;
+    font-size: 1.5em;
+    color: black;
+    margin: 2% 0 5% 10%;
+}
+.editInfo {
+    font-family: Oswald;
+    font-size: 1.5em;
 }
 
 #checkboxes{
