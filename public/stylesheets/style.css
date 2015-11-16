@@ -366,7 +366,15 @@ and (-webkit-min-device-pixel-ratio: 1) {
     font-family: Oswald;
     font-size: 1.5em;
     color: #0091D5;
-    margin: 2% 0 2% 10%;
+    margin: 2% 0 5% 10%;
+}
+.mapinfo {
+    font-family: Oswald;
+    font-size: 1em;
+    color: red;
+}
+.mapinfo:hover {
+    color:  #FFE300;
 }
 
 #checkboxes{
