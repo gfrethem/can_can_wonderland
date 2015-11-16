@@ -57,7 +57,7 @@ body{
 h3{
     font-size: 20px;
     font-weight: bold;
-    color: red;
+    color: #ed1c24;
     margin: 15px 0 5px 5%;
 }
 
@@ -71,7 +71,7 @@ p{
     font-size: 2em;
     font-weight: bold;
     text-align: center;
-    color: red;
+    color: #ed1c24;
     background-color: #FFE300;
     padding: 4px 29px;
     text-decoration: none;
@@ -79,7 +79,7 @@ p{
     margin: 0 auto ;
 
 }
-.continueButton {
+.continueButton:hover {
     color: #FFE300;
     background-color: #ed1c24;
 }
@@ -103,7 +103,6 @@ a {
 /*/////////////////////////////////*/
 /*REGISTER*/
 .newUser{
-    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     color: #0091D5;
     font-weight: bold;
@@ -113,7 +112,6 @@ a {
 }
 
 #email{
-    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -129,7 +127,6 @@ a {
 }
 
 #password{
-    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -144,7 +141,6 @@ a {
     display: block;
 }
 #password2{
-    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -160,7 +156,6 @@ a {
 }
 
 #name{
-    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -176,7 +171,6 @@ a {
 }
 
 #username{
-    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -192,7 +186,6 @@ a {
 }
 
 #phone{
-    font-family: Oswald, Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -229,7 +222,6 @@ a {
      font-size: 1em;
      text-align: center;
      background-color: white;
-     font-family: Oswald;
  }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -250,7 +242,6 @@ a {
 .submitButton{
     border: transparent;
     font-size: 2em;
-    font-family: Oswald, Helvetica, Ariel, san-serif;
     text-align: center;
     margin: 7% auto;
     display: block;
@@ -395,20 +386,18 @@ and (-webkit-min-device-pixel-ratio: 1) {
 }
 
 .infoButton:hover{
-    background-color:red;
+    background-color:#ed1c24;
 }
 
 
 /*customer hours and price info*/
 .h3info {
-    font-family: Oswald;
     font-size: 2.7em;
     font-weight: bold;
-    color: red;
+    color: #ed1c24;
     margin: 2% 0 0 10%;
 }
 .h4info {
-    font-family: Oswald;
     font-size: 3em;
     color: #0091D5;
     margin: 2% 10%;
@@ -420,36 +409,66 @@ and (-webkit-min-device-pixel-ratio: 1) {
     margin: 0 0 2% 10%;
 }
 .messageinfo {
-    font-family: Oswald;
     font-size: 1.5em;
     color: #0091D5;
     margin: 2% 0 5% 10%;
 }
 .mapinfo {
-    font-family: Oswald;
     font-size: 1em;
-    color: red;
+    color: #ed1c24;
 }
 .mapinfo:hover {
     color:  #FFE300;
 }
 
 /*usercontrol page*/
-.h2usercontrol {
-    font-family: Oswald;
+.h1UserControl{
     font-size: 3em;
-    color: red;
+    letter-spacing: .5px;
+    color: #ed1c24;
     margin: 2% 0 5% 10%;
 }
-.divusercontrol {
-    font-family: Georgia;
-    font-size: 1.5em;
+.h2UserControl {
+    font-size: 3em;
+    letter-spacing: .5px;
+    color: #ed1c24;
+    margin: 2% 0 5% 10%;
+}
+.divUserControl {
+    font-family: LTCTourist;
+    font-size: 1.25em;
+    letter-spacing: 1px;
     color: black;
     margin: 2% 0 5% 10%;
 }
-.editInfo {
-    font-family: Oswald;
+.reservationDisclaimer {
+    font-family: LTCTourist;
     font-size: 1.5em;
+    letter-spacing: .5px;
+    color: #0091D5;
+    margin: 2% 0 5% 10%;
+}
+.customerInfo {
+    font-family: LTCTourist;
+    font-size: 1.25em;
+    letter-spacing: .5px;
+    color: black;
+    margin: 2% 0 5% 10%;
+}
+.userButton{
+    font-size: 1.75em;
+    font-weight: bold;
+    text-align: center;
+    color: #ed1c24;
+    background-color: #FFE300;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 0 auto 1% auto;
+
+}
+.userButton:hover {
+    color: #FFE300;
+    background-color: #ed1c24;
 }
 
 #checkboxes{
