@@ -66,8 +66,11 @@ app.factory('currentUser', function(){
 });
 
 //DEFINE CONTROLLERS
-app.controller("MainController", ["$scope", function($scope){
+app.controller("MainController", ["$scope", "$http", "currentUser", function($scope, $http, currentUser){
     var vm = this;
+    vm.logout = function(){
+        $http.get("/login/logout");
+    }
 }]);
 
 app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', function($scope, $http, captureRes, $cookies){

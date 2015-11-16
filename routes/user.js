@@ -37,7 +37,6 @@ router.get('/deleteUser/:email?', function(req, res, next) {
     });
 });
 
-
 //CONFIRM LOGIN INFO / REGISTRATION INFO / FACEBOOK INFO
 
 //LOGIN / REGISTER / FACEBOOK LOGIN
