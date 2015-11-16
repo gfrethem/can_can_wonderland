@@ -36,9 +36,7 @@ var server = app.listen(3000, function () {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-//USE PASSPORT --Liz
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 //USE SESSION --Liz
 app.use(session({
@@ -48,6 +46,10 @@ app.use(session({
     saveUninitialized: false,
     cookie: {maxAge: null, secure: false}
 }));
+
+//USE PASSPORT --Liz
+app.use(passport.initialize());
+app.use(passport.session());
 
 //PASSPORT USE --Liz
 passport.use('local', new localStrategy({passReqToCallback: true, usernameField: 'email'},
