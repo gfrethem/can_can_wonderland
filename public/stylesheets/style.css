@@ -73,7 +73,7 @@ p{
     text-align: center;
     color: red;
     background-color: #FFE300;
-    padding: 4px 29px;
+    padding: .75% 3%;
     text-decoration: none;
     border-radius: 0;
     margin: 0 auto ;
@@ -303,7 +303,6 @@ ul{
     color: #0091D5;
     background-color: white;
     border: 3px solid black;
-    padding: 0 .75em;
     text-decoration: none;
     border-radius: 0;
     margin: 0 3% 0 0;
@@ -318,7 +317,7 @@ ul{
     float:right;
     clear:both;
     margin-right: 3%;
-    margin-top: -1.5em;
+    margin-top: -1.4em;
 }
 
 .numAvailable{
@@ -336,7 +335,6 @@ ul{
 
 #checkboxes{
     float: right;
-    margin: -7% 3% 0 0;
     color: black;
 }
 
@@ -376,34 +374,14 @@ and (-webkit-min-device-pixel-ratio: 1) {
 
 }
 
-.infoButton{
-    font-size: 1em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: white;
-    border: 2px solid black;
-    padding: 3px 6px;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 0 3%;
-}
-
-.infoButton:hover{
-    background-color:red;
-}
-
-
 /*customer hours and price info*/
 .h3info {
-    font-family: Oswald;
     font-size: 2.7em;
     font-weight: bold;
     color: red;
     margin: 2% 0 0 10%;
 }
 .h4info {
-    font-family: Oswald;
     font-size: 3em;
     color: #0091D5;
     margin: 2% 10%;
@@ -415,13 +393,11 @@ and (-webkit-min-device-pixel-ratio: 1) {
     margin: 0 0 2% 10%;
 }
 .messageinfo {
-    font-family: Oswald;
     font-size: 1.5em;
     color: #0091D5;
     margin: 2% 0 5% 10%;
 }
 .mapinfo {
-    font-family: Oswald;
     font-size: 1em;
     color: red;
 }
@@ -436,3 +412,50 @@ and (-webkit-min-device-pixel-ratio: 1) {
 }
 
 
+
+/*////////////////////////////////*/
+
+/*CONFIRMATION PAGE*/
+
+.res{
+    font-size: 3.7em;
+    font-weight: bold;
+    color: #ED1C24;
+    margin: 2% 0 0 10%;
+}
+.info{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: black;
+    margin: 1% 0 0 10%;
+}
+
+.groupSize{
+    font-size: 2.4em;
+    font-weight: bold;
+    color: #ED1C24;
+    margin:2% 0 6% 10%;
+}
+
+.changeButton{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+    background-color: #FFE300;
+    padding:.75% 3%;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 2% auto ;
+}
+.confirmButton{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+    background-color: #FFE300;
+    padding: .75% 3%;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 2% auto ;
+}
