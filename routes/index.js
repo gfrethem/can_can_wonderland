@@ -7,15 +7,23 @@ router.get('/', function(req, res, next){
 });
 
 router.get('/admin', function(req, res, next){
-    res.sendFile(path.join(__dirname, '../public/views/adminView/adminIndex.html'));
+    if (!req.user) {
+        res.redirect('/login');
+    } else if(req.user.email == 'admin') {
+        res.sendFile(path.join(__dirname, '../public/views/adminView/adminIndex.html'));
+    } else {
+        res.send('Unauthorized');
+    }
 });
 
 router.get('/frontdesk', function(req, res, next){
-    res.sendFile(path.join(__dirname, '../public/views/registerView/calendar.html'));
-});
-
-router.get('/userControl', function(req, res, next){
-    res.sendFile(path.join(__dirname, '../public/views/customerView/usercontrol.html'));
+    if (!req.user) {
+        res.redirect('/login');
+    } else if(req.user.email == 'frontdesk') {
+        res.sendFile(path.join(__dirname, '../public/views/registerView/calendar.html'));
+    } else {
+        res.send('Unauthorized');
+    }
 });
 
 module.exports = router;

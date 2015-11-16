@@ -56,7 +56,7 @@ h3{
 }
 
 p{
-    font: 14px Georgia,serif;
+    font: 14px LTC,serif;
     color: black;
     margin: 2px 0 5px 5%;
 }
@@ -369,5 +369,67 @@ and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 1) {
 
 }
+
+<<<<<<< HEAD
+=======
+.infoButton{
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    color: #ED1C24;
+    background-color: white;
+    border: 2px solid black;
+    padding: 3px 6px;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 0 3%;
+}
+
+.infoButton:hover{
+    background-color:red;
+}
+
+
+/*customer hours and price info*/
+.h3info {
+    font-family: Oswald;
+    font-size: 2.7em;
+    font-weight: bold;
+    color: red;
+    margin: 2% 0 0 10%;
+}
+.h4info {
+    font-family: Oswald;
+    font-size: 3em;
+    color: #0091D5;
+    margin: 2% 10%;
+    width: 100%;
+}
+.businessinfo {
+    font-family: Georgia;
+    font-size: 1.5em;
+    margin: 0 0 2% 10%;
+}
+.messageinfo {
+    font-family: Oswald;
+    font-size: 1.5em;
+    color: #0091D5;
+    margin: 2% 0 5% 10%;
+}
+.mapinfo {
+    font-family: Oswald;
+    font-size: 1em;
+    color: red;
+}
+.mapinfo:hover {
+    color:  #FFE300;
+}
+
+#checkboxes{
+    float: right;
+    margin: 0 0 2em 0;
+    color: black;
+}
+>>>>>>> 3b25f6ac6f3e282de324c5b80fffdd98925b655e
 
 

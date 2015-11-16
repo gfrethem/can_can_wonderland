@@ -1,42 +1,45 @@
 <div ng-controller="CustomerInfoController as info">
     <div class="infoMain">
-        <h3 class="walkUps"> WALK UPS WELCOME! </h3>
 
-        <h3> HOURS </h3>
+        <h4 class="h4info"> WALK UPS WELCOME! </h4>
 
-        <div ng-show="info.monday"> Monday: {{info.currentSettings.mopen}} to {{info.currentSettings.mclose}} </div>
-        <div ng-hide="info.monday"> Monday: Closed </div>
-        <div ng-show="info.tuesday"> Tuesday: {{info.currentSettings.tuopen}} to {{info.currentSettings.tuclose}} </div>
-        <div ng-hide="info.tuesday"> Tuesday: Closed </div>
-        <div ng-show="info.wednesday"> Wednesday: {{info.currentSettings.wopen}} to {{info.currentSettings.wclose}} </div>
-        <div ng-hide="info.wednesday"> Wednesday: Closed </div>
-        <div ng-show="info.thursday"> Thursday: {{info.currentSettings.thopen}} to {{info.currentSettings.thclose}} </div>
-        <div ng-hide="info.thursday"> Thursday: Closed </div>
-        <div ng-show="info.friday"> Friday: {{info.currentSettings.fopen}} to {{info.currentSettings.fclose}} </div>
-        <div ng-hide="info.friday"> Friday: Closed </div>
-        <div ng-show="info.saturday"> Saturday: {{info.currentSettings.saopen}} to {{info.currentSettings.saclose}} </div>
-        <div ng-hide="info.saturday"> Saturday: Closed </div>
-        <div ng-show="info.sunday"> Sunday: {{info.currentSettings.suopen}} to {{info.currentSettings.suclose}} </div>
-        <div ng-hide="info.sunday"> Sunday: Closed </div>
+        <h3 class="h3info"> HOURS </h3>
 
+        <div class="businessinfo">
+            <div ng-show="info.monday"> Monday: {{info.currentSettings.mopen}} to {{info.currentSettings.mclose}} </div>
+            <div ng-hide="info.monday"> Monday: Closed </div>
+            <div ng-show="info.tuesday"> Tuesday: {{info.currentSettings.tuopen}} to {{info.currentSettings.tuclose}} </div>
+            <div ng-hide="info.tuesday"> Tuesday: Closed </div>
+            <div ng-show="info.wednesday"> Wednesday: {{info.currentSettings.wopen}} to {{info.currentSettings.wclose}} </div>
+            <div ng-hide="info.wednesday"> Wednesday: Closed </div>
+            <div ng-show="info.thursday"> Thursday: {{info.currentSettings.thopen}} to {{info.currentSettings.thclose}} </div>
+            <div ng-hide="info.thursday"> Thursday: Closed </div>
+            <div ng-show="info.friday"> Friday: {{info.currentSettings.fopen}} to {{info.currentSettings.fclose}} </div>
+            <div ng-hide="info.friday"> Friday: Closed </div>
+            <div ng-show="info.saturday"> Saturday: {{info.currentSettings.saopen}} to {{info.currentSettings.saclose}} </div>
+            <div ng-hide="info.saturday"> Saturday: Closed </div>
+            <div ng-show="info.sunday"> Sunday: {{info.currentSettings.suopen}} to {{info.currentSettings.suclose}} </div>
+            <div ng-hide="info.sunday"> Sunday: Closed </div>
+        </div>
 
-        <h3> PRICES </h3>
-            <div> ${{info.currentSettings.adultprice}} for Adults</div>
-            <div> ${{info.currentSettings.childprice}} for Children</div>
+        <h3 class="h3info"> PRICES </h3>
+            <div class="businessinfo">
+                <div> ${{info.currentSettings.adultprice}} for Adults</div>
+                <div> ${{info.currentSettings.childprice}} for Children (12 and under)</div>
+            </div>
 
-        {{info.currentSettings.specialmessage}}
+        <h3 class="h3info"> PHONE </h3>
+        <div class="businessinfo"> 612-871-2545</div>
 
-        <h3> PHONE </h3>
+        <h3 class="h3info"> ADDRESS </h3>
+        <div class="businessinfo">
+            755 Prior Avenue North<br/>
+            St.Paul, MN 55104<br/>
+            <a class="mapinfo" href="https://goo.gl/maps/r2n6Pmikouo" target="_blank">Google Maps</a>
+        </div>
 
-            <p> 612-871-2545</p>
+        <h2 ng-if="info.currentSettings.specialmessage" class="messageinfo">{{info.currentSettings.specialmessage}}</h2>
 
-        <h3> ADDRESS </h3>
-        <p>
-            308 East Prince St. #307<br/>
-            St.Paul, MN 55103
-        </p>
-
-            <a href='/customerCalendar'><button class="continueButton" type="submit">CONTINUE</button></a>
-
+            <a href='/customerCalendar'><button class="continueButton" type="submit">TEE TIMES</button></a>
     </div>
 </div>

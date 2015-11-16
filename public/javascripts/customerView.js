@@ -57,20 +57,30 @@ app.factory('captureRes', function(){
         newReservation : newReservation
     }
 });
-app.factory('currentUser', function(){
+app.factory('currentUser', ['$http', function($http){
     var user = {};
 
+    var fetchUserDetails = function(){
+      $http.get('/user/getUser').then(function(response){
+          user = response.data;
+      })
+    };
+
     return {
-        user : user
+        user : user,
+        fetchUserDetails: fetchUserDetails
     }
-});
+}]);
 
 //DEFINE CONTROLLERS
 app.controller("MainController", ["$scope", "$http", "currentUser", function($scope, $http, currentUser){
     var vm = this;
     vm.logout = function(){
         $http.get("/login/logout");
-    }
+    };
+    // Not sure I like this yet - G
+    //currentUser.fetchUserDetails();
+    //vm.user = currentUser.user;
 }]);
 
 app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', function($scope, $http, captureRes, $cookies){

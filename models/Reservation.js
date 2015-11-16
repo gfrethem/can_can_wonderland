@@ -1,5 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
         return sequelize.define('reservations', {
+            name: {
+                type: DataTypes.STRING
+            },
             email: {
                 type: DataTypes.STRING
             },
