@@ -10,7 +10,7 @@
     </div>
 
     <datepicker  date-format="{{today | date:'shortDate'}}">
-        <input class='dateButton' ng-model="calendar.date">PICK A DATE</input>
+        <input class='dateButton' ng-model="calendar.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
     </datepicker>
 
     <button ng-click="calendar.buttonTime()"  class="buttonCalendar">PICK A TIME</button>

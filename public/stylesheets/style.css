@@ -5,7 +5,6 @@
     src:url('LTCTouristGothic-Regular.ttf');
 }
 
-
 /* this is a border hack */
 *, *:before, *:after {
     box-sizing: inherit;
@@ -73,7 +72,7 @@ p{
     text-align: center;
     color: #ed1c24;
     background-color: #FFE300;
-    padding: 4px 29px;
+    padding: .75% 3%;
     text-decoration: none;
     border-radius: 0;
     margin: 0 auto ;
@@ -199,7 +198,12 @@ a {
     margin: 0 auto 2% auto;
     display: block;
 }
-
+.passwordAlert {
+    color: #ED1C24;
+    text-align: center;
+    font-family: LTCTourist;
+    text-transform: uppercase;
+}
 
 /*/////////////////////////////////////*/
 /*//cashier Calander View*/
@@ -245,7 +249,7 @@ a {
     text-align: center;
     margin: 7% auto;
     display: block;
-    color:  #ED1C24;
+    color: #ed1c24;
     background-color: #FFE300;
     padding: .15em .5em;
 }
@@ -299,7 +303,6 @@ ul{
     color: #0091D5;
     background-color: white;
     border: 3px solid black;
-    padding: 0 .75em;
     text-decoration: none;
     border-radius: 0;
     margin: 0 3% 0 0;
@@ -314,7 +317,7 @@ ul{
     float:right;
     clear:both;
     margin-right: 3%;
-    margin-top: -1.5em;
+    margin-top: -1.4em;
 }
 
 .numAvailable{
@@ -332,7 +335,6 @@ ul{
 
 #checkboxes{
     float: right;
-    margin: -7% 3% 0 0;
     color: black;
 }
 
@@ -478,3 +480,50 @@ and (-webkit-min-device-pixel-ratio: 1) {
 }
 
 
+
+/*////////////////////////////////*/
+
+/*CONFIRMATION PAGE*/
+
+.res{
+    font-size: 3.7em;
+    font-weight: bold;
+    color: #ED1C24;
+    margin: 2% 0 0 10%;
+}
+.info{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: black;
+    margin: 1% 0 0 10%;
+}
+
+.groupSize{
+    font-size: 2.4em;
+    font-weight: bold;
+    color: #ED1C24;
+    margin:2% 0 6% 10%;
+}
+
+.changeButton{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+    background-color: #FFE300;
+    padding:.75% 3%;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 2% auto ;
+}
+.confirmButton{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+    background-color: #FFE300;
+    padding: .75% 3%;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 2% auto ;
+}
