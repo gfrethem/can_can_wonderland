@@ -12,17 +12,18 @@ app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http
     vm.partySize = 0;
     vm.fullname = 'fullName';
     vm.fullhour = vm.hours + vm.quarters;
-    vm.fullhourSlotNumber = - vm.totalAvailableSlots - vm.peopleSignedUp;
+    vm.fullhourSlotNumber =  vm.totalAvailableSlots - vm.peopleSignedUp;
     vm.walkup = false;
     vm.checkin = false;
+    vm.mainTime = true;
     vm.currentDate = [];
+    vm.quarterSlots = false;
     vm.reservations= {
         fullname: "Just Stop!!",
         fullhourSlotNumber: "5",
         partySize: 6,
         message: "what!!!",
         quarterHour: 10
-
     };
 
 //on submit, do a server call,
@@ -37,15 +38,24 @@ app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http
         });
     };
 
+
+    //SHOW QUARTER HOURS
+    vm.showSlots = function(index){
+        vm.quarterSlots[index] = !vm.quarterSlots[index];
+    };
+
+
     //save the call to a vm
 
     // work it in Angular
 
     //database call;
 
-    vm.showQuarterHour = function(){
-        vm.quarterHour = !vm.quarterHour;
-    };
+
+    //vm.showQuarterHour = function(){
+    //    vm.quarterHour = !vm.quarterHour;
+    //    console.log('button clicked');
+    //};
 
     vm.showReservation = function(){
         vm.showReservationSlot = !vm.showReservationSlot;

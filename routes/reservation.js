@@ -92,6 +92,7 @@ router.put('/checkin/:id?', function(req, res, next) {
 });
 
 
+
 //POPULATE THE CALENDAR
 router.get('/getCalendar/:date?', function(req, res, next) {
     var date = moment(req.params.date).format('YYYY-MM-DD HH:mm');

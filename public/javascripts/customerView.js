@@ -104,6 +104,8 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
         console.log(captureRes.newReservation.childnumber);
         updateTotals();
     };
+
+    // THIS SHOULD BE DYNAMIC // LIZ 4 LIFE
     var updateTotals = function(){
         vm.price = ((vm.totalAdults * 12) + (vm.totalChildren * 8));
         vm.totalPeople = vm.totalAdults + vm.totalChildren;
@@ -208,11 +210,11 @@ app.controller("UserControlController", ["$scope", "currentUser",function($scope
         vm.pastReservations = [];
 
 
-    for (i = 0; i < response.data.length, i++) {
-        //if (moment() <  response.data[i].datetime) {
-        //   vm.currentReservations.push(response.data[i]);
-        //} else{
-        //    vm.yesReservation = false;
-        //}
-    };
+    //for (i = 0; i < response.data.length, i++) {
+    //    //if (moment() <  response.data[i].datetime) {
+    //    //   vm.currentReservations.push(response.data[i]);
+    //    //} else{
+    //    //    vm.yesReservation = false;
+    //    //}
+    //};
         })}]);

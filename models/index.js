@@ -14,6 +14,7 @@ var models = [
     'Setting',
     'User'
 ];
+
 models.forEach(function(model) {
     module.exports[model] = sequelize.import(__dirname + '/' + model);
 });
