@@ -26,8 +26,4 @@ router.get('/frontdesk', function(req, res, next){
     }
 });
 
-router.get('/userControl', function(req, res, next){
-    res.sendFile(path.join(__dirname, '../public/views/customerView/usercontrol.html'));
-});
-
 module.exports = router;
