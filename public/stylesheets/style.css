@@ -312,3 +312,30 @@ and (-webkit-min-device-pixel-ratio: 1) {
 .infoButton:hover{
     background-color:red;
 }
+
+/*customer hours and price info*/
+.h3info {
+    font-family: Oswald;
+    font-size: 2.7em;
+    font-weight: bold;
+    color: red;
+    margin: 2% 0 0 10%;
+}
+.h4info {
+    font-family: Oswald;
+    font-size: 3em;
+    color: #0091D5;
+    margin: 2% 10%;
+    width: 100%;
+}
+.businessinfo {
+    font-family: Georgia;
+    font-size: 1.5em;
+    margin: 0 0 2% 10%;
+}
+.messageinfo {
+    font-family: Oswald;
+    font-size: 1.5em;
+    color: #0091D5;
+    margin: 2% 0 2% 10%;
+}
