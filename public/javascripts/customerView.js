@@ -57,13 +57,20 @@ app.factory('captureRes', function(){
         newReservation : newReservation
     }
 });
-app.factory('currentUser', function(){
+app.factory('currentUser', ['$http', function($http){
     var user = {};
 
+    var fetchUserDetails = function(){
+      $http.get('/user/getUser').then(function(response){
+          user = response.data;
+      })
+    };
+
     return {
-        user : user
+        user : user,
+        fetchUserDetails: fetchUserDetails
     }
-});
+}]);
 
 //DEFINE CONTROLLERS
 app.controller("MainController", ["$scope", "$http", "currentUser", function($scope, $http, currentUser){

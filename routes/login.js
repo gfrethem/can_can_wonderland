@@ -10,10 +10,14 @@ router.get('/', function(req, res, next){
     res.sendFile(path.join(__dirname, '../public/views/index.html'));
 });
 
-router.post('/', passport.authenticate('local', {
-    successRedirect: '/confirmReservation',
-    failureRedirect: '/register'
-    //failureFlash: true
+//router.post('/', passport.authenticate('local', {
+//    successRedirect: '/confirmReservation',
+//    failureRedirect: '/register'
+//    //failureFlash: true
+//}));
+
+router.post('/', passport.authenticate('local', function(req, res){
+    console.log(req.user);
 }));
 
 //LOGOUT
