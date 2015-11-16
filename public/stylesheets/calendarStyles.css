@@ -218,12 +218,13 @@ button:focus {outline:0;}
 
 button{
     border: transparent;
-    font-size: 3em;
-    font-family: Oswald, Helvetica, Ariel, san-serif;
+    font-size: 3.5em;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     text-align: center;
     margin: 2% auto;
     display: block;
     background: white;
+    letter-spacing: 1px;
 }
 
 .sliders{
