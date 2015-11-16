@@ -16,6 +16,6 @@
             </div>
         </slick>
     </div>
-    <h2 ng-show="num.price">${{num.price}} for {{num.totalAdults}} adults and {{num.totalChildren}} children</h2>
+    <h2 ng-show="num.price">Estimated Price: ${{num.price}} for {{num.totalAdults}} adults and {{num.totalChildren}} children</h2>
     <a class="continueButton" ng-click='num.showNumAlert()' ng-href="/{{num.numCheck}}">CONTINUE</a>
 </div>

@@ -21,23 +21,19 @@
 
 
         <h3> PRICES </h3>
-            <div> ${{info.currentSettings.adultprice}} for Adults</div>
-            <div> ${{info.currentSettings.childprice}} for Children</div>
-
-        {{info.currentSettings.specialmessage}}
+            <div>Ages 12 and Up | ${{info.currentSettings.adultprice}} |</div>
+            <div>Ages 12 and Under | ${{info.currentSettings.childprice}} |</div>
 
         <h3> PHONE </h3>
-
             <p> 612-871-2545</p>
-
         <h3> ADDRESS </h3>
         <p>
             755 Prior Avenue North<br/>
             St.Paul, MN 55104<br/>
             <a href="https://goo.gl/maps/r2n6Pmikouo" target="_blank">Google Maps</a>
         </p>
-
-            <a href='/customerCalendar'><button class="continueButton" type="submit">CONTINUE</button></a>
-
+        <h2 ng-if="info.currentSettings.specialmessage">{{info.currentSettings.specialmessage}}</h2>
+        <p> For groups over 12, please call to schedule a tee time!</p>
+            <a href='/customerCalendar'><button class="continueButton" type="submit">TEE TIMES</button></a>
     </div>
 </div>
