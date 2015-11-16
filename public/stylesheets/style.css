@@ -249,10 +249,8 @@ a {
 .submitButton{
     border: transparent;
     font-size: 2em;
-<<<<<<< HEAD
     font-family: LTCTourist, Helvetica, Ariel, san-serif;
-=======
->>>>>>> c10b837170441bbce0303f211322bc5a5685b8d8
+
     text-align: center;
     margin: 7% auto;
     display: block;
@@ -431,12 +429,10 @@ and (-webkit-min-device-pixel-ratio: 1) {
 }
 
 /*usercontrol page*/
-<<<<<<< HEAD
+
 .h2usercontrol {
     font-family: LTCTourist;
-=======
-.h1UserControl{
->>>>>>> c10b837170441bbce0303f211322bc5a5685b8d8
+
     font-size: 3em;
     letter-spacing: .5px;
     color: #ed1c24;
@@ -455,11 +451,8 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color: black;
     margin: 2% 0 5% 10%;
 }
-<<<<<<< HEAD
-.editInfo {
-=======
+
 .reservationDisclaimer {
->>>>>>> c10b837170441bbce0303f211322bc5a5685b8d8
     font-family: LTCTourist;
     font-size: 1.5em;
     letter-spacing: .5px;
