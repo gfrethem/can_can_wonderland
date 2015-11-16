@@ -31,8 +31,9 @@ body{
 }
 
 .starLogo {
-    width:3%;
     margin: 0 5% 0 1%;
+    width: 5%;
+    min-width: 3em;
 }
 
 .loginButton{
@@ -233,7 +234,7 @@ a {
      font-size: 1em;
      text-align: center;
      background-color: white;
-     font-family: Oswald;
+     font-family: LTCTourist;
  }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -254,7 +255,7 @@ a {
 .submitButton{
     border: transparent;
     font-size: 2em;
-    font-family: Oswald, Helvetica, Ariel, san-serif;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     text-align: center;
     margin: 7% auto;
     display: block;
@@ -416,7 +417,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
 
 /*usercontrol page*/
 .h2usercontrol {
-    font-family: Oswald;
+    font-family: LTCTourist;
     font-size: 3em;
     color: red;
     margin: 2% 0 5% 10%;
@@ -428,7 +429,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     margin: 2% 0 5% 10%;
 }
 .editInfo {
-    font-family: Oswald;
+    font-family: LTCTourist;
     font-size: 1.5em;
 }
 
