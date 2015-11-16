@@ -27,8 +27,8 @@ router.put('/updateSettings', function(req, res, next) {
                 // Ooops, do some error-handling
                 console.log(error);
             });
+        });
     });
-});
 
 //GET ALL CURRENT SETTINGS
 router.get('/getSettings', function(req, res, next){
@@ -40,3 +40,4 @@ router.get('/getSettings', function(req, res, next){
 //STATS-STRETCH GOAL
 //BLOCK OUT LARGE TIME SLOTS
 module.exports = router;
+

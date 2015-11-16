@@ -57,13 +57,20 @@ app.factory('captureRes', function(){
         newReservation : newReservation
     }
 });
-app.factory('currentUser', function(){
+app.factory('currentUser', ['$http', function($http){
     var user = {};
 
+    var fetchUserDetails = function(){
+      $http.get('/user/getUser').then(function(response){
+          user = response.data;
+      })
+    };
+
     return {
-        user : user
+        user : user,
+        fetchUserDetails: fetchUserDetails
     }
-});
+}]);
 
 //DEFINE CONTROLLERS
 app.controller("MainController", ["$scope", "$http", "currentUser", function($scope, $http, currentUser){
@@ -137,6 +144,8 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
         captureRes.newReservation.childnumber = num;
         updateTotals();
     };
+
+    // THIS SHOULD BE DYNAMIC // LIZ 4 LIFE
     var updateTotals = function(){
         vm.price = ((vm.totalAdults * 12) + (vm.totalChildren * 8));
         vm.totalPeople = vm.totalAdults + vm.totalChildren;
@@ -262,10 +271,12 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
 
 
     //for (i = 0; i < response.data.length, i++) {
+
     //    if (moment() <  response.data[i].datetime) {
     //       vm.currentReservations.push(response.data[i]);
     //    } else{
     //        vm.yesReservation = false;
     //    }
     //}
+
         })}]);

@@ -26,41 +26,42 @@
             <a class="logoutButton" ng-click="admin.logout()">LOGOUT</a>
         </header>
 
-
-
             <div class="calendarDiv">
 
                 <datepicker  date-format="{{today | date:'shortDate'}}">
-                    <input class='dateButton' ng-model="calendar.date">PICK A DATE</input>
+                    <input class='dateButton' ng-model="frontDesk.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
+                    <!--<input type = "text"  class="logs" placeholder = "username" name = "username" id="username"/>-->
+
                 </datepicker>
 
                 <button ng-click="frontDesk.submitTime()"  class="submitButton">Submit</button>
                 </div>
 
-                <div class="mainHour" ng-click="frontDesk.showQuarterHour()">
+                    <!--ON THIS CLICK, SHOW QUARTER HOURS BELOW IT-->
+                <div class="mainHour"  ng-repeat="hour in frontDesk.currentDate" >
                    <ul>
-                       <li>
-                           {{frontDesk.showReservationSlot}} available {{frontDesk.totalAvailableSlots}}
+                       <li ng-click="vm.quarterHour = ! vm.quarterHour">
+                           {{hour.hour}} available {{hour.totalSlotsRemaining}}
                        </li>
                    </ul>
-                </div>
-
-                     <div class="quarterHour" ng-hide="frontDesk.quarterHour" ng-click="frontDesk.showReservation()">
-
-                             <li>
-                                    {{frontDesk.totalAvailableSlots}} available {{frontDesk.totalAvailableSlots}}
-                             </li>
-                         </ul>
-                     </div>
-                  </div>
-
-                        <div class="reservation"  ng-hide="frontDesk.showReservationSlot" ng-repeat="item in items | limitTo: 5">
+                    <!-- ON THIS CLICK SHOW RESERVATIONS-->
+                    <div class="quarterHour" ng-show="vm.quarterHour" ng-repeat="quarter in hour.quarters track by $index">
+                    <ul>
+                        <li ng-click="vm.reservation = ! vm.reservation">
+                            {{quarter.quarter}} available {{quarter.remainingSlots}}
+                        </li>
+                        </ul>
+                        <div class="reservation" ng-show="vm.reservation" ng-repeat="info in frontDesk.currentDate | limitTo: 5">
                             <ul>
                                 <li>
-                                    {{frontDesk.fullname}} {{frontDesk.partySize}} <button class="infoButton">INFO</button> walk-up <input type="checkbox" name="walk-up" value="walk-up"> check-in <input type="checkbox" name="check-in" value="check-in">
+                                    {{info.fullname}} {{info.partySize}} <button class="infoButton">INFO</button>  <div id="checkboxes"> walk-up <input type="checkbox" class="walk-up" name="walk-up" value="walk-up"> check-in <input type="checkbox" class="check-in" name="check-in" value="check-in"> </div>
                                 </li>
                             </ul>
                         </div>
+
+                    </div>
+                </div>
+
 
 
     </body>
