@@ -6,6 +6,13 @@ var router = express.Router();
 var models = require('../models');
 var User = models.User;
 
+//GET A LOGGED IN USER
+router.get('/getUser', function(req, res , next){
+        var currentUser = req.user;
+    console.log(currentUser);
+         res.send(currentUser);
+});
+
 //GET A USER
 router.get('/user/:email?', function(req, res, next){
     var userEmail = req.params.email;
@@ -29,7 +36,6 @@ router.get('/deleteUser/:email?', function(req, res, next) {
         res.send(200);
     });
 });
-
 
 //CONFIRM LOGIN INFO / REGISTRATION INFO / FACEBOOK INFO
 

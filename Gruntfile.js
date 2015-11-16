@@ -31,7 +31,8 @@ module.exports = function(grunt) {
                     "angular-slick-carousel/dist/angular-slick.min.js",
                     "jquery/dist/jquery.min.js",
                     "slick-carousel/slick/*",
-                    "moment/min/moment.min.js"
+                    "moment/min/moment.min.js",
+                    "angular-cookies/angular-cookies.min.js"
                 ],
                 "dest": "public/vendor/"
             }

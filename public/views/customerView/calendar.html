@@ -15,7 +15,7 @@
 
     <button ng-click="calendar.buttonTime()"  class="buttonCalendar">PICK A TIME</button>
 
-    <div ng-hide="calendar.mainTime" class="timeSlotContainer" ng-repeat="hour in calendar.currentDate track by $index">
+    <div ng-show="calendar.mainTime" class="timeSlotContainer" ng-repeat="hour in calendar.currentDate track by $index">
         <div ng-click="calendar.quarterSlots[hour.hour] = !calendar.quarterSlots[hour.hour]">
             <h2>{{hour.hour}}</h2>
         </div>
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <h2>{{calendar.yourDate}}</h2>
+    <h2 ng-show="calendar.yourDate">{{calendar.partySize}} people on {{calendar.yourDate}}</h2>
     <div class="continue">
         <a href='/guests'> <button class="continueButton" type="submit">CONTINUE</button></a>
     </div>
