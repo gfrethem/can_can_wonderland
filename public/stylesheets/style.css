@@ -5,7 +5,6 @@
     src:url('LTCTouristGothic-Regular.ttf');
 }
 
-
 /* this is a border hack */
 *, *:before, *:after {
     box-sizing: inherit;
@@ -201,7 +200,12 @@ a {
     margin: 0 auto 2% auto;
     display: block;
 }
-
+.passwordAlert {
+    color: #ED1C24;
+    text-align: center;
+    font-family: LTCTourist;
+    text-transform: uppercase;
+}
 
 /*/////////////////////////////////////*/
 /*//cashier Calander View*/
@@ -249,7 +253,7 @@ a {
     text-align: center;
     margin: 7% auto;
     display: block;
-    color:  #ED1C24;
+    color: #ed1c24;
     background-color: #FFE300;
     padding: .15em .5em;
 }
