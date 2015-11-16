@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald);
-
+@font-face{
+    font-family: LTCTourist;
+    src:url('LTCTouristGothic-Regular.ttf');
+}
 /*this is a border hack */
 *, *:before, *:after {
     box-sizing: inherit;
@@ -8,7 +11,7 @@
 button:focus {outline:0;}
 
 body{
-    font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-family: LTCTourist, Oswald, Helvetica, Arial, sans-serif;
 }
 
 /*home page css*/
@@ -62,7 +65,7 @@ h3{
 }
 
 p{
-    font: 14px LTC,serif;
+    font: 14px Georgia,serif;
     color: black;
     margin: 2px 0 5px 5%;
 }
