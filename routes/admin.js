@@ -37,7 +37,11 @@ router.get('/getSettings', function(req, res, next){
         })
 });
 
-//STATS-STRETCH GOAL
+//PULL IN PREDEFINED STATS
+router.get('/stats', function(req, res, next){
+    var statsObject = {};
+
+});
 //BLOCK OUT LARGE TIME SLOTS
 module.exports = router;
 
