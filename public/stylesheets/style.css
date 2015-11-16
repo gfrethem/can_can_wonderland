@@ -341,7 +341,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     background-color:red;
 }
 
-<<<<<<< HEAD
+
 /*customer hours and price info*/
 .h3info {
     font-family: Oswald;
@@ -368,11 +368,11 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color: #0091D5;
     margin: 2% 0 2% 10%;
 }
-=======
+
 #checkboxes{
     float: right;
     margin: 0 0 2em 0;
     color: black;
 }
 
->>>>>>> ae4af21d52cd8c1fa4bbb52784d64d793330a94b
+
