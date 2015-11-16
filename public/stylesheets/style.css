@@ -416,6 +416,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     margin: 2% 0 5% 10%;
 }
 .mapinfo {
+    font-family: LTCTourist;
     font-size: 1em;
     color: #ed1c24;
 }
