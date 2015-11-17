@@ -61,7 +61,7 @@ app.factory('currentUser', ['$http', function($http){
     var user;
 
     return {
-        user : user,
+        user : user
     }
 }]);
 
@@ -301,6 +301,7 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
 
     var getReservations = function() {
         $http.get('/reservation/getReservations/' + vm.myUser.email).then(function (response) {
+            console.log('called');
             for (i = 0; i < response.data.length; i++) {
                 if (moment().format('YYYY-MM-DD HH:mm') < response.data[i].datetime) {
                     response.data[i].humantime = moment(response.data[i].datetime).format('dddd, MMM DD, YYYY h:mm A');
@@ -315,9 +316,13 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
 
     vm.cancelReservation = function(id, index){
         $http.get("/reservation/cancelReservation/" + id).then(function(){
-            vm.currentReservations.splice(index, 1);
+            for(var i = 0; i < vm.currentReservations.length; i++){
+                if(vm.currentReservations[i].id == id){
+                    vm.currentReservations.splice(i, 1);
+                    //getReservations();
+                }
+            }
             alert('Success!');
-            getReservations();
-        })
+        });
     };
 }]);
