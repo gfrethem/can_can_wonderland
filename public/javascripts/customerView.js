@@ -58,20 +58,10 @@ app.factory('captureRes', function(){
     }
 });
 app.factory('currentUser', ['$http', function($http){
-    var user = {};
-
-    var fetchUserDetails = function(){
-      $http.get('/user/getUser').then(function(response){
-          user.details = response.data;
-          console.log('User', user);
-      })
-    };
-
-    fetchUserDetails();
+    var user;
 
     return {
         user : user,
-        fetchUserDetails: fetchUserDetails
     }
 }]);
 
@@ -85,6 +75,7 @@ app.controller("MainController", ["$scope", "$http", "currentUser", "$cookies", 
         $cookies.remove('resNumslots');
         $cookies.remove('resHumanDate');
         captureRes.newReservation = {};
+        currentUser.user = null;
         $http.get("/login/logout");
     };
     // Not sure I like this yet - G
@@ -93,9 +84,9 @@ app.controller("MainController", ["$scope", "$http", "currentUser", "$cookies", 
 }]);
 
 app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', 'currentUser', '$location', function($scope, $http, captureRes, $cookies, currentUser, $location){
-    //if(currentUser.user.details == !null){
-    //    $location.path('/confirmReservation')
-    //}
+    if(currentUser.user){
+        $location.path('/confirmReservation')
+    }
     var vm = this;
     $cookies.put('resAdults', captureRes.newReservation.adultnumber);
     $cookies.put('resChildren', captureRes.newReservation.childnumber);
@@ -269,9 +260,9 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
         $location.path('/userControl')
     }
      var vm = this;
-    currentUser.fetchUserDetails;
     $http.get('/user/getUser').then(function(response){
         vm.myUser = response.data;
+        currentUser.user = response.data;
         captureRes.newReservation.email = vm.myUser.email;
         captureRes.newReservation.phonenumber = vm.myUser.phonenumber;
     });
@@ -302,15 +293,14 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
     vm.pastReservations = [];
     vm.myUser = {};
 
-    currentUser.fetchUserDetails;
     $http.get('/user/getUser').then(function(response){
         vm.myUser = response.data;
+        currentUser.user = response.data;
         getReservations();
     });
 
     var getReservations = function() {
         $http.get('/reservation/getReservations/' + vm.myUser.email).then(function (response) {
-            console.log(response);
             for (i = 0; i < response.data.length; i++) {
                 if (moment().format('YYYY-MM-DD HH:mm') < response.data[i].datetime) {
                     response.data[i].humantime = moment(response.data[i].datetime).format('dddd, MMM DD, YYYY h:mm A');
