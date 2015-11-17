@@ -110,7 +110,6 @@ a {
     border-radius: 0;
     margin: 3% auto;
 }
-
 .slick-arrow {
     color: #ED1C24 !important;
 }
@@ -241,26 +240,26 @@ a {
 /*/////////////////////////////////////*/
 /*//cashier Calander View*/
 
- li {
+li {
     list-style: none;
-     font-size: 1.25em;
+    font-size: 1.25em;
 }
 
- .datepicker{
-     text-align: center;
-     font-size: 3em;
- }
+.datepicker{
+    text-align: center;
+    font-size: 3em;
+}
 
- .dateButton{
-     display:block;
-     margin: 0 auto;
-     color: black;
-     border: none;
-     font-size: 1em;
-     text-align: center;
-     background-color: white;
-     font-family: LTCTourist;
- }
+.dateButton{
+    display:block;
+    margin: 0 auto;
+    color: black;
+    border: none;
+    font-size: 1em;
+    text-align: center;
+    background-color: white;
+    font-family: LTCTourist;
+}
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    black;
@@ -322,7 +321,7 @@ ul{
 }
 
 /*.infoName{*/
-    /*float:left;*/
+/*float:left;*/
 /*}*/
 .adultNumber{
     margin: 0 2px 0 0;
@@ -452,20 +451,17 @@ ul{
     color: #ED1C24;
 }
 
-.slide-prev{
+.fa .fa-arrow-left{
     color: #0091D5;
     float:left;
-    margin: 0 0 0 12%;
+    margin: 0 0 0 22%;
 }
-.right{
+.fa .fa-arrow-right{
     color: #0091D5;
     float:right;
-    margin: 0 12% 0 0;
+    clear:both;
+    margin: 0 22% 0 0;
 }
-.slider{
-    margin: 0 auto;
-}
-
 
 /*////////////////////////////////*/
 /*CONFIRMATION PAGE*/

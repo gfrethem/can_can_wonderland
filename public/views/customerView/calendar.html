@@ -1,23 +1,29 @@
 <div ng-Controller="CustomerCalendarController as calendar">
+
+
+
     <div class="partySize">
         <button ng-model="date" type="text" ng-click="calendar.showPartySize = !calendar.showPartySize">PARTY SIZE</button>
 
-
-        <a href="">
-            <i class="fa fa-arrow-left" class="slide-prev"></i>
-        </a>
-        <a href="">
-            <i class="fa fa-arrow-right" class="right"></i>
-        </a>
-
-
-        <slick class="slider" settings="calendar.slickConfig" prev-arrow=".slide-prev" next-arrow=".right">
-            <div ng-repeat="party in calendar.partyList track by $index">
-                <div class='partySize sliders' ng-click="calendar.findPartySize(party)">{{party}}</div>
-            </div>
-        </slick>
+                <div class="slide-prev">
+                    <a href="" class="slide-prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                </div>
+                <slick class="slider" settings="calendar.slickConfig" prev-arrow=".slide-prev" next-arrow=".right">
+                    <div ng-repeat="party in calendar.partyList track by $index">
+                        <div class='partySize sliders' ng-click="calendar.findPartySize(party)">{{party}}</div>
+                    </div>
+                </slick>
+                <div class="right">
+                    <a href="" class="right">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
 
     </div>
+
+
     <datepicker  date-format="MMM dd, yyyy">
         <input class='dateButton' ng-model="calendar.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
     </datepicker>
