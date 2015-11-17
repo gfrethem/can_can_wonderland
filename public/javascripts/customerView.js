@@ -151,7 +151,10 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
     // THIS SHOULD BE DYNAMIC // LIZ 4 LIFE
     var updateTotals = function(){
         vm.price = ((vm.totalAdults * 12) + (vm.totalChildren * 8));
+        console.log(vm.totalAdults + 'adults');
+        console.log(vm.totalChildren + 'children');
         vm.totalPeople = vm.totalAdults + vm.totalChildren;
+        console.log(vm.totalPeople + "totalpeeps");
         vm.slots = Math.ceil(vm.totalPeople / 4);
         captureRes.newReservation.numslots = vm.slots;
     };
