@@ -278,9 +278,22 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
     var vm = this;
     currentUser.fetchUserDetails();
 
+<<<<<<< HEAD
     vm.currentReservations = [];
     vm.pastReservations = [];
     vm.myUser = currentUser.user;
+=======
+    $http.get('/user/getUser').then(function(response){
+        captureRes.newReservation.email = response.data.email;
+        captureRes.newReservation.phonenumber = response.data.phonenumber;
+        currentUser.user = response.data;
+    });
+
+    $http.get('/reservation/getReservations/' + useremail).then(function(response){
+        console.log(response);
+        vm.currentReservations = [];
+        vm.pastReservations = [];
+>>>>>>> ef31e28dc40ee646136f3ee3fb7dd7ed42961650
 
     $http.get('/reservation/getReservations/' + currentUser.user.email).then(function(response){
         console.log(response.data);

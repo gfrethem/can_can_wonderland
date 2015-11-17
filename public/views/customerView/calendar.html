@@ -2,36 +2,42 @@
     <div class="partySize">
         <button ng-model="date" type="text" ng-click="calendar.showPartySize = !calendar.showPartySize">PARTY SIZE</button>
 
-        <a href="" class="slide-prev">
-            <i class="fa fa-arrow-left"></i>
+
+        <a href="">
+            <i class="fa fa-arrow-left" class="slide-prev"></i>
         </a>
+        <a href="">
+            <i class="fa fa-arrow-right" class="right"></i>
+        </a>
+
+
         <slick class="slider" settings="calendar.slickConfig" prev-arrow=".slide-prev" next-arrow=".right">
             <div ng-repeat="party in calendar.partyList track by $index">
                 <div class='partySize sliders' ng-click="calendar.findPartySize(party)">{{party}}</div>
             </div>
         </slick>
-        <a href="" class="right">
-            <i class="fa fa-arrow-right"></i>
-        </a>
+
     </div>
     <datepicker  date-format="MMM dd, yyyy">
         <input class='dateButton' ng-model="calendar.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
     </datepicker>
 
+
     <button ng-click="calendar.buttonTime()"  class="buttonCalendar">PICK A TIME</button>
 
-    <div ng-show="calendar.mainTime" class="timeSlotContainer" ng-repeat="hour in calendar.currentDate track by $index">
-        <div ng-click="calendar.quarterSlots[hour.hour] = !calendar.quarterSlots[hour.hour]">
-            <h2>{{hour.hour}}</h2>
-        </div>
-        <div ng-show='calendar.quarterSlots[hour.hour]' class="quarterContainer" ng-repeat="quarter in hour.quarters">
-            <div ng-click="calendar.selectTime(quarter.quarter)" ng-if="quarter.remainingSlots >= calendar.slotsNeeded">
-                <h3>{{quarter.quarter}}</h3>
+        <div ng-show="calendar.mainTime" class="timeSlotContainer" ng-repeat="hour in calendar.currentDate track by $index">
+            <div ng-click="calendar.quarterSlots[hour.hour] = !calendar.quarterSlots[hour.hour]">
+                <div>{{hour.hour}}</div>
+            </div>
+            <div ng-show='calendar.quarterSlots[hour.hour]' class="quarterContainer" ng-repeat="quarter in hour.quarters">
+                <div ng-click="calendar.selectTime(quarter.quarter)" ng-if="quarter.remainingSlots >= calendar.slotsNeeded">
+                    <div>{{quarter.quarter}}</div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <h2 ng-show="calendar.yourDate">{{calendar.partySize}} people on {{calendar.yourDate}}</h2>
+
+    <h2 ng-show="calendar.yourDate" class="results"> {{calendar.partySize}} people on {{calendar.yourDate}}</h2>
     <div class="continue">
         <a href='/guests'> <button class="continueButton" type="submit">CONTINUE</button></a>
     </div>

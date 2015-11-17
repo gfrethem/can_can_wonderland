@@ -21,19 +21,17 @@ body{
     font-family: LTCTourist, Oswald, Helvetica, Arial, sans-serif;
 }
 
+/*//////////////////////////////////*/
 /*home page css*/
-
 .homeNav{
     padding: 2em 0;
 }
 .fa{
     color:black;
-    margin: 4% 0 0 5%;
     font-size: 3em;
     margin: -1em .5em 0 8%;
-
-
 }
+
 .mainLogo{
     display: block;
     margin: 3% auto;
@@ -90,8 +88,8 @@ p{
     text-decoration: none;
     border-radius: 0;
     margin: 0 auto ;
-
 }
+
 .continueButton:hover {
     color: #FFE300;
     background-color: #ed1c24;
@@ -115,6 +113,7 @@ a {
 .slick-arrow {
     color:red !important;
 }
+
 /*/////////////////////////////////*/
 /*REGISTER*/
 .newUser{
@@ -155,6 +154,7 @@ a {
     margin: 0 auto 2% auto;
     display: block;
 }
+
 #password2{
     font-size: 2em;
     font-weight: bold;
@@ -214,6 +214,7 @@ a {
     margin: 0 auto 2% auto;
     display: block;
 }
+
 .passwordAlert {
     color: #ED1C24;
     text-align: center;
@@ -258,7 +259,6 @@ a {
      text-align: center;
      background-color: white;
      font-family: LTCTourist;
-
  }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -280,7 +280,6 @@ a {
     border: transparent;
     font-size: 2em;
     font-family: LTCTourist, Helvetica, Ariel, san-serif;
-
     text-align: center;
     margin: 7% auto;
     display: block;
@@ -292,6 +291,7 @@ a {
 ul{
     margin: .75em 0 .75em 0;
 }
+
 .mainHour{
     font-size: 1.25em;
     background-color: white;
@@ -369,43 +369,6 @@ ul{
     color: black;
 }
 
-
-/*/////////////////////////////////////*/
-/* media queries */
-
-/*iphone5, 5s*/
-@media only screen and (max-width: 320px) {
-    body {
-
-    }
-}
-
-/*iphone6*/
-@media only screen and (max-width: 375px) {
-    body {
-    }
-}
-
-/*iphone6 plus*/
-@media only screen and (max-width: 414px) {
-    body {
-    }
-}
-/*most android phones*/
-@media only screen and (max-width: 360px) {
-    body {
-    }
-}
-
-/*ipad portrait and landscape*/
-@media only screen
-and (min-device-width: 768px)
-and (max-device-width: 1024px)
-and (-webkit-min-device-pixel-ratio: 1) {
-
-}
-
-
 /*////////////////////////////////////////////*/
 /*customer hours and price info*/
 .h3info {
@@ -414,28 +377,90 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color: #ed1c24;
     margin: 2% 0 0 10%;
 }
+
 .h4info {
     font-size: 3em;
     color: #0091D5;
     margin: 2% 10%;
     width: 100%;
 }
+
 .businessinfo {
     font-family: Georgia;
     font-size: 1.5em;
     margin: 0 0 2% 10%;
 }
+
 .messageinfo {
     font-size: 1.5em;
     color: #0091D5;
     margin: 2% 0 5% 10%;
 }
+
 .mapinfo {
     font-size: 1em;
     color: #ed1c24;
 }
+
 .mapinfo:hover {
     color:  #FFE300;
+}
+
+/*///////////////////////////////////////////*/
+/*CUSOTMER CALANDER VIEW*/
+
+.timeSlotContainer{
+    font-size: 2em;
+    text-align: center;
+    background-color: white;
+    border: 4px solid black;
+    width: 50%;
+    margin: 0 auto -4px;
+    display: block;
+}
+
+.timeSlotContainer:hover{
+    color: #ED1C24;
+    background-color: #FFE300;
+}
+
+.quarterContainer {
+    text-align: center;
+    background-color: white;
+    border: 4px solid black;
+    border-left: none;
+    border-right: none;
+    margin: 0 auto -4px;
+    display: block;
+    color: #ED1C24;
+}
+
+.quarterContainer:hover{
+    color: #ED1C24;
+    background-color: #0091D5;
+}
+
+.quarterContainer:focus{
+    color: #ED1C24;
+    background-color: #0091D5;
+}
+
+
+.results{
+    text-align: center;
+    color:#ED1C24;
+}
+
+.fa .fa-arrow-left{
+    color: #0091D5;
+    float:left;
+    margin: 0 0 0 22%;
+}
+.fa .fa-arrow-right{
+    color: #0091D5;
+    float:right;
+    clear:both;
+    margin: 0 22% 0 0;
 }
 
 /*////////////////////////////////////////*/
@@ -449,12 +474,14 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color: #ed1c24;
     margin: 2% 0 5% 10%;
 }
+
 .h2UserControl {
     font-size: 3em;
     letter-spacing: .5px;
     color: #ed1c24;
     margin: 2% 0 5% 10%;
 }
+
 .divUserControl {
     font-family: LTCTourist;
     font-size: 1.25em;
@@ -470,6 +497,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color: #0091D5;
     margin: 2% 0 5% 10%;
 }
+
 .customerInfo {
     font-family: LTCTourist;
     font-size: 1.25em;
@@ -477,6 +505,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color: black;
     margin: 2% 0 5% 10%;
 }
+
 .userButton{
     font-size: 1.75em;
     font-weight: bold;
@@ -488,6 +517,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     margin: 0 auto 1% auto;
 
 }
+
 .userButton:hover {
     color: #FFE300;
     background-color: #ed1c24;
@@ -500,7 +530,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
 }
 
 /*////////////////////////////////*/
-
 /*CONFIRMATION PAGE*/
 
 .res{
@@ -544,4 +573,39 @@ and (-webkit-min-device-pixel-ratio: 1) {
     text-decoration: none;
     border-radius: 0;
     margin: 2% auto ;
+}
+
+/*/////////////////////////////////////*/
+/* media queries */
+
+/*iphone5, 5s*/
+@media only screen and (max-width: 320px) {
+    body {
+
+    }
+}
+
+/*iphone6*/
+@media only screen and (max-width: 375px) {
+    body {
+    }
+}
+
+/*iphone6 plus*/
+@media only screen and (max-width: 414px) {
+    body {
+    }
+}
+/*most android phones*/
+@media only screen and (max-width: 360px) {
+    body {
+    }
+}
+
+/*ipad portrait and landscape*/
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1) {
+
 }
