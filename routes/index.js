@@ -6,10 +6,6 @@ router.get('/', function(req, res, next){
     res.sendFile(path.join(__dirname, '../public/views/index.html'));
 });
 
-router.get('/userControl', function(req, res, next){
-    res.sendFile(path.join(__dirname, '../public/views/customerView/usercontrol.html'));
-});
-
 router.get('/admin', function(req, res, next){
     if (!req.user) {
         res.redirect('/login');
