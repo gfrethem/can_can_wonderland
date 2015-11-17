@@ -151,7 +151,10 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
     // THIS SHOULD BE DYNAMIC // LIZ 4 LIFE
     var updateTotals = function(){
         vm.price = ((vm.totalAdults * 12) + (vm.totalChildren * 8));
+        console.log(vm.totalAdults + 'adults');
+        console.log(vm.totalChildren + 'children');
         vm.totalPeople = vm.totalAdults + vm.totalChildren;
+        console.log(vm.totalPeople + "totalpeeps");
         vm.slots = Math.ceil(vm.totalPeople / 4);
         captureRes.newReservation.numslots = vm.slots;
     };
@@ -277,21 +280,25 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
 
 app.controller("UserControlController", ["$scope", "currentUser", "$http", function($scope, currentUser, $http){
     var vm = this;
-    var useremail = currentUser.user.email;
-
-    $http.get('/reservation/getReservations/' + useremail).then(function(response){
-        console.log(response);
-        vm.currentReservations = [];
-        vm.pastReservations = [];
+    currentUser.fetchUserDetails();
 
 
-    //for (i = 0; i < response.data.length, i++) {
+    vm.currentReservations = [];
+    vm.pastReservations = [];
+    vm.myUser = currentUser.user;
 
-    //    if (moment() <  response.data[i].datetime) {
-    //       vm.currentReservations.push(response.data[i]);
-    //    } else{
-    //        vm.yesReservation = false;
-    //    }
-    //}
+    $http.get('/reservation/getReservations/' + currentUser.user.email).then(function(response){
+        console.log(response.data);
 
-        })}]);
+    for (i = 0; i < response.data.length; i++){
+        if (moment().format('YYYY-MM-DD HH:mm') <  response.data[i].datetime) {
+            console.log(moment());
+           vm.currentReservations.push(response.data[i]);
+        } else{
+            vm.pastReservations.push;
+        }
+    }
+        console.log(vm.currentReservations);
+        console.log(vm.pastReservations);
+        })
+}]);
