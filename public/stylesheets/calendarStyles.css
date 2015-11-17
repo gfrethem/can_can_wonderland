@@ -250,7 +250,7 @@ button{
     color: #ED1C24;
 }
 
-.sliders:focus{
+.sliders:active{
     color: #ED1C24;
     background-color: #FFE300;
 }
