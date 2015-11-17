@@ -277,6 +277,12 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
     var vm = this;
     var useremail = currentUser.user.email;
 
+    $http.get('/user/getUser').then(function(response){
+        captureRes.newReservation.email = response.data.email;
+        captureRes.newReservation.phonenumber = response.data.phonenumber;
+        currentUser.user = response.data;
+    });
+
     $http.get('/reservation/getReservations/' + useremail).then(function(response){
         console.log(response);
         vm.currentReservations = [];
