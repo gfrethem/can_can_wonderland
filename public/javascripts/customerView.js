@@ -259,10 +259,14 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
     if($cookies.get('resDatetime') == ""){
         $location.path('/userControl')
     }
-
      var vm = this;
 
-    vm.user = currentUser.user.details;
+    $http.get('/user/getUser').then(function(response){
+        vm.myUser = response.data;
+        captureRes.newReservation.email = vm.myUser.email;
+        captureRes.newReservation.phonenumber = vm.myUser.phonenumber;
+    })
+
      captureRes.newReservation.adultnumber = $cookies.get('resAdults');
      captureRes.newReservation.childnumber = $cookies.get('resChildren');
      captureRes.newReservation.datetime = $cookies.get('resDatetime');
@@ -270,7 +274,6 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
      captureRes.newReservation.humandate = $cookies.get('resHumanDate');
 
     vm.resConfirm = captureRes.newReservation;
-
     vm.confirmReservation = function(){
         $http.post('/reservation/makeReservation', vm.resConfirm).then(function(){
             $cookies.remove('resAdults');
