@@ -246,6 +246,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         slidesToScroll: 3,
         arrows: true,
         method: {}
+
     };
 }]);
 
