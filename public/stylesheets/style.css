@@ -326,27 +326,23 @@ ul{
 .adultNumber{
     margin: 0 2px 0 0;
 }
-/*.childNumber{*/
-    /*float:left;*/
-    /*clear:both;*/
-/*}*/
 
 .infoButton{
     font-size: 1em;
     font-weight: bold;
     text-align: center;
-    color: #0091D5;
+    color: #ED1C24;
     background-color: white;
-    border: 3px solid black;
+    border: 2px solid black;
+    padding: 3px 6px;
     text-decoration: none;
     border-radius: 0;
-    margin: 0 3% 0 0;
+    margin: 0 3%;
 }
 
 .infoButton:hover{
-    background-color:#FFE300;
+    background-color:#ed1c24;
 }
-
 
 .available{
     float:right;
@@ -409,24 +405,8 @@ and (-webkit-min-device-pixel-ratio: 1) {
 
 }
 
-.infoButton{
-    font-size: 1em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: white;
-    border: 2px solid black;
-    padding: 3px 6px;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 0 3%;
-}
 
-.infoButton:hover{
-    background-color:#ed1c24;
-}
-
-
+/*////////////////////////////////////////////*/
 /*customer hours and price info*/
 .h3info {
     font-size: 2.7em;
@@ -458,6 +438,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color:  #FFE300;
 }
 
+/*////////////////////////////////////////*/
 /*usercontrol page*/
 
 .h2usercontrol {
@@ -517,8 +498,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     margin: 0 0 2em 0;
     color: black;
 }
-
-
 
 /*////////////////////////////////*/
 
