@@ -252,9 +252,9 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUser", "$cookies", '$location', function($scope, captureRes, $http, currentUser, $cookies, $location){
     //SET USER TO CURRENT USER FACTORY
     currentUser.fetchUserDetails();
-    if($cookies.get('resDatetime') == null){
-        $location.path('/userControl')
-    }
+    //if($cookies.get('resDatetime') == null){
+    //    $location.path('/userControl')
+    //}
 
      var vm = this;
 
@@ -287,19 +287,29 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
     vm.pastReservations = [];
     vm.myUser = currentUser.user;
 
-    $http.get('/reservation/getReservations/' + currentUser.user.email).then(function(response){
-        console.log(response.data);
+    var getReservations = function() {
+        $http.get('/reservation/getReservations/' + currentUser.user.email).then(function (response) {
+            console.log(response.data);
 
-    for (i = 0; i < response.data.length; i++){
-        if (moment().format('YYYY-MM-DD HH:mm') <  response.data[i].datetime) {
-            response.data[i].humantime = moment( response.data[i].datetime).format('dddd, MMM DD, YYYY h:mm A');
-           vm.currentReservations.push(response.data[i]);
-        } else{
-            response.data[i].humantime = moment( response.data[i].datetime).format('dddd, MMM DD, YYYY h:mm A');
-            vm.pastReservations.push(response.data[i]);
-        }
+            for (i = 0; i < response.data.length; i++) {
+                if (moment().format('YYYY-MM-DD HH:mm') < response.data[i].datetime) {
+                    response.data[i].humantime = moment(response.data[i].datetime).format('dddd, MMM DD, YYYY h:mm A');
+                    vm.currentReservations.push(response.data[i]);
+                } else {
+                    response.data[i].humantime = moment(response.data[i].datetime).format('dddd, MMM DD, YYYY h:mm A');
+                    vm.pastReservations.push(response.data[i]);
+                }
+            }
+        });
     }
-        console.log(vm.currentReservations);
-        console.log(vm.pastReservations);
+
+    vm.cancelReservation = function(id){
+        console.log('clicked');
+        $http.get("/reservation/cancelReservation/" + id).then(function(){
+            alert('Success!');
+            getReservations();
         })
+    }
+
+    getReservations();
 }]);
