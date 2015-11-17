@@ -13,17 +13,18 @@
                     </div>
     </div>
     <p class="reservationDisclaimer">Groups of 4 or more will tee off separately.</p>
+
     <h2 class="h2UserControl">YOUR PAST RESERVATIONS</h2>
     <div class="pastReservationContainer" ng-repeat="pastRes in control.pastReservations">
             <div class="grid grid-pad">
                 <p class="col-1-3 pUserControl">TEE TIME:</p>
                 <p class="col-2-3 pUserControl">{{pastRes.humantime}}</p>
-                <p class="col-1-3 pUserControl">SLOTS:</p>
+                <p class="col-1-3 pUserControl">Group(s)</p>
                 <p class="col-2-3 pUserControl">{{pastRes.numslots}}</p>
                 <p class="col-2-3 pUserControl">{{pastRes.adultnumber}} Adults</p>
                 <p class="col-2-3 pUserControl">{{pastRes.childnumber}} Children</p>
+            </div>
     </div>
-
     <div>
         <button class='userButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT MY INFO</button>
     </div>
