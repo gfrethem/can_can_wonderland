@@ -451,6 +451,18 @@ ul{
     color:#ED1C24;
 }
 
+.fa .fa-arrow-left{
+    color: #0091D5;
+    float:left;
+    margin: 0 0 0 22%;
+}
+.fa .fa-arrow-right{
+    color: #0091D5;
+    float:right;
+    clear:both;
+    margin: 0 22% 0 0;
+}
+
 /*////////////////////////////////////////*/
 /*usercontrol page*/
 
