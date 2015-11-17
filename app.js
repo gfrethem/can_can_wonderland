@@ -23,6 +23,9 @@ var admin = require('./routes/admin');
 var login = require('./routes/login');
 var confirmReservation = require('./routes/confirmReservation');
 var userControl = require('./routes/userControl');
+var info = require('./routes/info');
+var customerCalendar = require('./routes/customerCalendar');
+var guests = require('./routes/guests');
 
 var app = express();
 
@@ -109,6 +112,9 @@ app.use('/settings', admin);
 app.use('/login', login);
 app.use('/confirmReservation', confirmReservation);
 app.use('/userControl', userControl);
+app.use('/info', info);
+app.use('/customerCalendar', customerCalendar);
+app.use('/guests', guests);
 
 //require the Twilio module and create a REST client
 var ACCOUNT_SID = 'ACa191532f90a93e915f16da74ef789a7a';
