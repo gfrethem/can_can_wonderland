@@ -287,14 +287,13 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
         console.log(response.data);
 
     for (i = 0; i < response.data.length; i++){
-        if (moment() <  response.data[i].datetime) {
+        if (moment().format('YYYY-MM-DD HH:mm') <  response.data[i].datetime) {
             console.log(moment());
            vm.currentReservations.push(response.data[i]);
         } else{
             vm.pastReservations.push;
         }
     }
-
         console.log(vm.currentReservations);
         console.log(vm.pastReservations);
         })
