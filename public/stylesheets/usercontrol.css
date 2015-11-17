@@ -525,7 +525,7 @@ ul{
     font-size: 3em;
     letter-spacing: .5px;
     color: #ED1C24;
-    margin: 0 0 0 11.5%;
+    margin: 2% 0 0 11.5%;
 }
 
 .pUserControl {
@@ -534,6 +534,7 @@ ul{
     letter-spacing: 1px;
     color: black;
     margin: 0 0 0 10%;
+    width: 40%;
 }
 
 .reservationDisclaimer {
@@ -542,7 +543,7 @@ ul{
     letter-spacing: .5px;
     color: #0091D5;
     width: 40%;
-    margin: 0 0 0 10%;
+    margin: 0 0 0 11.5%;
 }
 
 .customerInfo {
@@ -550,7 +551,7 @@ ul{
     font-size: 1.25em;
     letter-spacing: .5px;
     color: black;
-    margin: 2% 0 5% 10%;
+    margin: 0 0 0 10%;
 }
 .confirmButton{
     font-size: 2em;
