@@ -110,4 +110,33 @@ app.use('/login', login);
 app.use('/confirmReservation', confirmReservation);
 app.use('/userControl', userControl);
 
+//require the Twilio module and create a REST client
+var ACCOUNT_SID = 'ACa191532f90a93e915f16da74ef789a7a';
+var AUTH_TOKEN = 'e9ccd52f2d96b3801435c108ca0470ba';
+
+var client = require('twilio')('ACa191532f90a93e915f16da74ef789a7a', 'e9ccd52f2d96b3801435c108ca0470ba');
+
+// Uncomment below to send SMS
+
+////Send an SMS text message
+//client.sendMessage({
+//
+//    to:'+16513384912', // Any number Twilio can deliver to
+//    from: '+16513831380', // A number you bought from Twilio and can use for outbound communication
+//    body: 'Because we can can can!' // body of the SMS message
+//
+//}, function(err, responseData) { //this function is executed when a response is received from Twilio
+//
+//    if (!err) { // "err" is an error received during the request, if any
+//
+//        // "responseData" is a JavaScript object containing data received from Twilio.
+//        // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
+//        // http://www.twilio.com/docs/api/rest/sending-sms#example-1
+//
+//        console.log(responseData.from); // outputs "+14506667788"
+//        console.log(responseData.body); // outputs "word to your mother."
+//
+//    }
+//});
+
 module.exports = app;
