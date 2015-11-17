@@ -18,7 +18,7 @@ router.post('/', passport.authenticate('local',
         } else if (req.user.email == "frontdesk") {
             res.redirect('/frontdesk')
         } else {
-            res.redirect('/userControl')
+            res.redirect('/confirmReservation')
         }
 });
 
