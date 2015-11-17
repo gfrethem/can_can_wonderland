@@ -276,21 +276,24 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
 
 app.controller("UserControlController", ["$scope", "currentUser", "$http", function($scope, currentUser, $http){
     var vm = this;
-    var useremail = currentUser.user.email;
+    currentUser.fetchUserDetails();
 
-    $http.get('/reservation/getReservations/' + useremail).then(function(response){
-        console.log(response);
-        vm.currentReservations = [];
-        vm.pastReservations = [];
+    vm.currentReservations = [];
+    vm.pastReservations = [];
+    vm.myUser = currentUser.user;
 
+    $http.get('/reservation/getReservations/' + currentUser.user.email).then(function(response){
+        console.log(response.data);
 
-    //for (i = 0; i < response.data.length, i++) {
+    for (i = 0; i < response.data.length; i++){
+        if (moment() <  response.data[i].datetime) {
+            console.log(moment());
+           vm.currentReservations.push(response.data[i]);
+        } else{
+            vm.pastReservations.push;
+        }
+    }
 
-    //    if (moment() <  response.data[i].datetime) {
-    //       vm.currentReservations.push(response.data[i]);
-    //    } else{
-    //        vm.yesReservation = false;
-    //    }
-    //}
-
+        console.log(vm.currentReservations);
+        console.log(vm.pastReservations);
         })}]);

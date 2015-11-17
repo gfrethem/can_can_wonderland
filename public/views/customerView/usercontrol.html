@@ -1,6 +1,6 @@
-<div class="userControlMain as customerRes">
-    <h1 class="h1UserControl">Hello, {{customerRes.currentReservations.name}}</h1>
-    <div class="divUserControl" ng-repeat="curRes in customerRes.currentReservations">
+<div ng-controller="UserControlController as control" class="userControlMain">
+    <h1 class="h1UserControl">Hello, {{control.myUser.name}}</h1>
+    <div class="divUserControl" ng-repeat="curRes in control.currentReservations">
         <h2 class="h2UserControl">YOUR CURRENT RESERVATION</h2>
                 <div class="grid grid-pad">
                     <p class="col-1-3">DATE:</p>
@@ -14,15 +14,14 @@
                     <p class="col-1-3">SLOTS:</p>
                     <p class="col-2-3">{{curRes.numslots}}</p>
                 </div>
-            <p>{{curRes.adultNumber}} Adults</p>
-            <p>{{curRes.childNumber}} Children</p>
+            <p>{{curRes.adultnumber}} Adults</p>
+            <p>{{curRes.childnumber}} Children</p>
             <button class="changeButton">CHANGE</button>
             <button class="confirmButton">CONFIRM</button>
-        </div>
-        <p class="reservationDisclaimer">Groups of 4 or more will tee off separately.</p>
     </div>
+        <p class="reservationDisclaimer">Groups of 4 or more will tee off separately.</p>
     <h2 class="h2UserControl">YOUR PAST RESERVATIONS</h2>
-        <div class="divUserControl" ng-repeat="pastRes in customerRes.pastReservations">
+        <div class="divUserControl" ng-repeat="pastRes in control.pastReservations">
             <div class="grid grid-pad">
                 <p class="col-1-3">DATE:</p>
                 <p class="col-2-3">{{pastRes.datetime}}</p>
@@ -41,9 +40,9 @@
     <button class='userButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT MY INFO</button>
     <div class="customerInfo" ng-show="showCustomerInfo">
         <ul>
-            <li editable-text="user.name">NAME: {{}}</li>
-            <li editable-text="user.email">EMAIL: {{}}</li>
-            <li editable-text="user.phoneNumber">PHONE NUMBER: {{}}</li>
+            <li editable-text="control.myUser.name">NAME: {{control.myUser.name || 'Add your name!'}}</li>
+            <li editable-text="control.myUser.email">EMAIL: {{control.myUser.email}}</li>
+            <li editable-text="control.myUser.phonenumber">PHONE NUMBER: {{control.myUser.phonenumber}}</li>
         </ul>
         <button class="userButton">SUBMIT CHANGES</button>
         <button class="userButton" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
