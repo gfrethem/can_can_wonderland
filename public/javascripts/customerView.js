@@ -181,7 +181,7 @@ app.controller("RegisterController", ["$scope", "$timeout", function($scope, $ti
             vm.passFail = true;
             $timeout(function () {
                 vm.passFail = false;
-            }, 3000);
+            }, 10000);
         }
     }
 }]);

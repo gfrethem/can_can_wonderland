@@ -1,3 +1,7 @@
+/* blue #0091D5 */
+/* red #ED1C24 */
+/* yellow #FFE300 */
+
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 
 @font-face{
@@ -18,27 +22,35 @@ body{
 }
 
 /*home page css*/
+
+.homeNav{
+    padding: 2em 0;
+}
 .fa{
     color:black;
     margin: 4% 0 0 5%;
-    font-size: 2em;
+    font-size: 3em;
+    margin: -1em .5em 0 8%;
+
 
 }
 .mainLogo{
     display: block;
     margin: 3% auto;
     width: 31%;
+    min-width: 3em;
 }
 
 .starLogo {
-    margin: 0 5% 0 1%;
+    margin: 0 5% -.6% 2%;
     width: 5%;
     min-width: 3em;
 }
 
 .loginButton{
     text-decoration: none;
-    font-size: 20px;
+    font-size: 3em;
+    letter-spacing: 1px;
     font-weight: bold;
     color: black;
     /*float: right;*/
@@ -47,7 +59,8 @@ body{
 
 .logoutButton {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 3em;
+    letter-spacing: 1px;
     font-weight: bold;
     color: black;
     background:white;
@@ -204,6 +217,21 @@ a {
     text-align: center;
     font-family: LTCTourist;
     text-transform: uppercase;
+}
+
+::-webkit-input-placeholder #name #password #password2 #username #phone{ /* WebKit, Blink, Edge */
+    color:    white;
+}
+:-moz-placeholder #name #password #password2 #username #phone{ /* Mozilla Firefox 4 to 18 */
+    color:   white;
+    /*opacity:  1;*/
+}
+::-moz-placeholder #name #password #password2 #username #phone{ /* Mozilla Firefox 19+ */
+    color:    white;
+    /*opacity:  1;*/
+}
+:-ms-input-placeholder #name #password #password2 #username #phone{ /* Internet Explorer 10-11 */
+    color:   white;
 }
 
 /*/////////////////////////////////////*/
