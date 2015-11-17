@@ -301,10 +301,11 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
                 }
             }
         });
-    }
+    };
 
-    vm.cancelReservation = function(id){
+    vm.cancelReservation = function(id, index){
         $http.get("/reservation/cancelReservation/" + id).then(function(){
+            vm.currentReservations.splice(index, 1);
             alert('Success!');
             getReservations();
         })

@@ -13,7 +13,7 @@
                     </div>
                 <p>{{curRes.adultnumber}} Adults</p>
                 <p>{{curRes.childnumber}} Children</p>
-                <button class="confirmButton" ng-click="control.cancelReservation(curRes.id)">CANCEL</button>
+                <button class="confirmButton" ng-click="control.cancelReservation(curRes.id, $index)">CANCEL</button>
         </div>
     </div>
     <p class="reservationDisclaimer">Groups of 4 or more will tee off separately.</p>
