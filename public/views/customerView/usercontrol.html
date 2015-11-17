@@ -2,35 +2,29 @@
     <h1 class="h1UserControl">Hello, {{control.myUser.name}}</h1>
     <h2 class="h2UserControl">YOUR RESERVATIONS</h2>
     <div ng-repeat="curRes in control.currentReservations" class="futureReservationContainer">
-        <div class="divUserControl">
                     <div class="grid grid-pad">
-                        <p class="col-1-3">TEE TIME:</p>
-                        <p class="col-2-3">{{curRes.humantime}}</p>
+                        <p class="col-1-3 pUserControl">TEE TIME:</p>
+                        <p class="col-2-3 pUserControl">{{curRes.humantime}}</p>
+                        <p class="col-1-3 pUserControl">{{curRes.numslots}} Groups</p>
+                        <!--<p class="col-2-3 pUserControl">{{curRes.numslots}}</p>-->
+                        <p class="col-2-3 pUserControl">{{curRes.adultnumber}} Adults</p>
+                        <p class="col-2-3 pUserControl">{{curRes.childnumber}} Children</p>
+                        <button class="confirmButton" ng-click="control.cancelReservation(curRes.id)">CANCEL</button>
                     </div>
-                    <div class="grid grid-pad">
-                        <p class="col-1-3">SLOTS:</p>
-                        <p class="col-2-3">{{curRes.numslots}}</p>
-                    </div>
-                <p>{{curRes.adultnumber}} Adults</p>
-                <p>{{curRes.childnumber}} Children</p>
-                <button class="confirmButton" ng-click="control.cancelReservation(curRes.id)">CANCEL</button>
-        </div>
     </div>
     <p class="reservationDisclaimer">Groups of 4 or more will tee off separately.</p>
     <h2 class="h2UserControl">YOUR PAST RESERVATIONS</h2>
     <div class="pastReservationContainer" ng-repeat="pastRes in control.pastReservations">
-        <div class="divUserControl">
             <div class="grid grid-pad">
-                <p class="col-1-3">TEE TIME:</p>
-                <p class="col-2-3">{{pastRes.humantime}}</p>
+                <p class="col-1-3 pUserControl">TEE TIME:</p>
+                <p class="col-2-3 pNgUserControl">{{pastRes.humantime}}</p>
             </div>
             <div class="grid grid-pad">
-                <p class="col-1-3">SLOTS:</p>
-                <p class="col-2-3">{{pastRes.numslots}}</p>
+                <p class="col-1-3 pUserControl">SLOTS:</p>
+                <p class="col-2-3 pNgUserControl">{{pastRes.numslots}}</p>
             </div>
-            <p>{{pastRes.adultnumber}} Adults</p>
-            <p>{{pastRes.childnumber}} Children</p>
-        </div>
+            <p class="pUserControl">{{pastRes.adultnumber}} Adults</p>
+            <p class="pUserControl">{{pastRes.childnumber}} Children</p>
     </div>
     <button class='userButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT MY INFO</button>
     <div class="customerInfo" ng-show="showCustomerInfo">
