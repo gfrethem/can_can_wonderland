@@ -282,7 +282,6 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
     var vm = this;
     currentUser.fetchUserDetails();
 
-
     vm.currentReservations = [];
     vm.pastReservations = [];
     vm.myUser = currentUser.user;
