@@ -4,12 +4,8 @@
     <div ng-repeat="curRes in control.currentReservations" class="futureReservationContainer">
         <div class="divUserControl">
                     <div class="grid grid-pad">
-                        <p class="col-1-3">DATE:</p>
-                        <p class="col-2-3">{{curRes.datetime}}</p>
-                    </div>
-                    <div class="grid grid-pad">
-                        <p class="col-1-3">TIME:</p>
-                        <p class="col-2-3">{{curRes.datetime}}</p>
+                        <p class="col-1-3">TEE TIME:</p>
+                        <p class="col-2-3">{{curRes.humantime}}</p>
                     </div>
                     <div class="grid grid-pad">
                         <p class="col-1-3">SLOTS:</p>
@@ -25,19 +21,15 @@
     <div class="pastReservationContainer" ng-repeat="pastRes in control.pastReservations">
         <div class="divUserControl">
             <div class="grid grid-pad">
-                <p class="col-1-3">DATE:</p>
-                <p class="col-2-3">{{pastRes.datetime}}</p>
-                <div class="grid grid-pad">
-                    <p class="col-1-3">TIME:</p>
-                    <p class="col-2-3">{{pastRes.datetime}}</p>
-                </div>
-                <div class="grid grid-pad">
-                    <p class="col-1-3">SLOTS:</p>
-                    <p class="col-2-3">{{pastRes.numslots}}</p>
-                </div>
+                <p class="col-1-3">TEE TIME:</p>
+                <p class="col-2-3">{{pastRes.humantime}}</p>
+            </div>
+            <div class="grid grid-pad">
+                <p class="col-1-3">SLOTS:</p>
+                <p class="col-2-3">{{pastRes.numslots}}</p>
+            </div>
             <p>{{pastRes.adultnumber}} Adults</p>
             <p>{{pastRes.childnumber}} Children</p>
-            </div>
         </div>
     </div>
     <button class='userButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT MY INFO</button>
