@@ -112,7 +112,9 @@ a {
     border-radius: 0;
     margin: 3% auto;
 }
-
+.slick-arrow {
+    color:red !important;
+}
 /*/////////////////////////////////*/
 /*REGISTER*/
 .newUser{

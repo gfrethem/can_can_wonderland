@@ -50,7 +50,10 @@ app.controller("AdminEditController", ["$scope", "$http", function($scope, $http
 
 
 
-app.controller("AdminStatsController", ["$scope", function($scope){
+app.controller("AdminStatsController", ["$scope", "$http", function($scope, $http){
     var vm = this;
+    $http.get('/admin/stats', function(response){
+        vm.stats = response.data;
+    })
 }]);
 
