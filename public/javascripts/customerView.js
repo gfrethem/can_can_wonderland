@@ -181,7 +181,7 @@ app.controller("RegisterController", ["$scope", "$timeout", function($scope, $ti
             vm.passFail = true;
             $timeout(function () {
                 vm.passFail = false;
-            }, 3000);
+            }, 10000);
         }
     }
 }]);
@@ -205,7 +205,6 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
             vm.currentDate = response.data;
             vm.mainTime = true;
-            console.log(vm.currentDate);
         });
     };
 
@@ -232,7 +231,6 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         vm.partySize = party;
         vm.slotsNeeded = Math.ceil(vm.partySize / 4);
         captureRes.newReservation.slotcheck = vm.slotsNeeded;
-        vm.showPartySize = false;
     };
 
 //SHOW QUARTER HOURS
@@ -253,6 +251,9 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 
 app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUser", "$cookies", function($scope, captureRes, $http, currentUser, $cookies){
      var vm = this;
+//SET USER TO CURRENT USER FACTORY
+     currentUser.fetchUserDetails();
+
      captureRes.newReservation.adultnumber = $cookies.get('resAdults');
      captureRes.newReservation.childnumber = $cookies.get('resChildren');
      captureRes.newReservation.datetime = $cookies.get('resDatetime');

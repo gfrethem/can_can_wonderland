@@ -1,3 +1,7 @@
+/* blue #0091D5 */
+/* red #ED1C24 */
+/* yellow #FFE300 */
+
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 
 @font-face{
@@ -17,28 +21,34 @@ body{
     font-family: LTCTourist, Oswald, Helvetica, Arial, sans-serif;
 }
 
+/*//////////////////////////////////*/
 /*home page css*/
+.homeNav{
+    padding: 2em 0;
+}
 .fa{
     color:black;
-    margin: 4% 0 0 5%;
-    font-size: 2em;
-
+    font-size: 3em;
+    margin: -1em .5em 0 8%;
 }
+
 .mainLogo{
     display: block;
     margin: 3% auto;
     width: 31%;
+    min-width: 3em;
 }
 
 .starLogo {
-    margin: 0 5% 0 1%;
+    margin: 0 5% -.6% 2%;
     width: 5%;
     min-width: 3em;
 }
 
 .loginButton{
     text-decoration: none;
-    font-size: 20px;
+    font-size: 3em;
+    letter-spacing: 1px;
     font-weight: bold;
     color: black;
     /*float: right;*/
@@ -47,7 +57,8 @@ body{
 
 .logoutButton {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 3em;
+    letter-spacing: 1px;
     font-weight: bold;
     color: black;
     background:white;
@@ -77,8 +88,8 @@ p{
     text-decoration: none;
     border-radius: 0;
     margin: 0 auto ;
-
 }
+
 .continueButton:hover {
     color: #FFE300;
     background-color: #ed1c24;
@@ -102,6 +113,7 @@ a {
 .slick-arrow {
     color:red !important;
 }
+
 /*/////////////////////////////////*/
 /*REGISTER*/
 .newUser{
@@ -142,6 +154,7 @@ a {
     margin: 0 auto 2% auto;
     display: block;
 }
+
 #password2{
     font-size: 2em;
     font-weight: bold;
@@ -201,11 +214,27 @@ a {
     margin: 0 auto 2% auto;
     display: block;
 }
+
 .passwordAlert {
     color: #ED1C24;
     text-align: center;
     font-family: LTCTourist;
     text-transform: uppercase;
+}
+
+::-webkit-input-placeholder #name #password #password2 #username #phone{ /* WebKit, Blink, Edge */
+    color:    white;
+}
+:-moz-placeholder #name #password #password2 #username #phone{ /* Mozilla Firefox 4 to 18 */
+    color:   white;
+    /*opacity:  1;*/
+}
+::-moz-placeholder #name #password #password2 #username #phone{ /* Mozilla Firefox 19+ */
+    color:    white;
+    /*opacity:  1;*/
+}
+:-ms-input-placeholder #name #password #password2 #username #phone{ /* Internet Explorer 10-11 */
+    color:   white;
 }
 
 /*/////////////////////////////////////*/
@@ -230,7 +259,6 @@ a {
      text-align: center;
      background-color: white;
      font-family: LTCTourist;
-
  }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -252,7 +280,6 @@ a {
     border: transparent;
     font-size: 2em;
     font-family: LTCTourist, Helvetica, Ariel, san-serif;
-
     text-align: center;
     margin: 7% auto;
     display: block;
@@ -264,6 +291,7 @@ a {
 ul{
     margin: .75em 0 .75em 0;
 }
+
 .mainHour{
     font-size: 1.25em;
     background-color: white;
@@ -298,27 +326,23 @@ ul{
 .adultNumber{
     margin: 0 2px 0 0;
 }
-/*.childNumber{*/
-    /*float:left;*/
-    /*clear:both;*/
-/*}*/
 
 .infoButton{
     font-size: 1em;
     font-weight: bold;
     text-align: center;
-    color: #0091D5;
+    color: #ED1C24;
     background-color: white;
-    border: 3px solid black;
+    border: 2px solid black;
+    padding: 3px 6px;
     text-decoration: none;
     border-radius: 0;
-    margin: 0 3% 0 0;
+    margin: 0 3%;
 }
 
 .infoButton:hover{
-    background-color:#FFE300;
+    background-color:#ed1c24;
 }
-
 
 .available{
     float:right;
@@ -345,60 +369,7 @@ ul{
     color: black;
 }
 
-
-/*/////////////////////////////////////*/
-/* media queries */
-
-/*iphone5, 5s*/
-@media only screen and (max-width: 320px) {
-    body {
-
-    }
-}
-
-/*iphone6*/
-@media only screen and (max-width: 375px) {
-    body {
-    }
-}
-
-/*iphone6 plus*/
-@media only screen and (max-width: 414px) {
-    body {
-    }
-}
-/*most android phones*/
-@media only screen and (max-width: 360px) {
-    body {
-    }
-}
-
-/*ipad portrait and landscape*/
-@media only screen
-and (min-device-width: 768px)
-and (max-device-width: 1024px)
-and (-webkit-min-device-pixel-ratio: 1) {
-
-}
-
-.infoButton{
-    font-size: 1em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: white;
-    border: 2px solid black;
-    padding: 3px 6px;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 0 3%;
-}
-
-.infoButton:hover{
-    background-color:#ed1c24;
-}
-
-
+/*////////////////////////////////////////////*/
 /*customer hours and price info*/
 .h3info {
     font-size: 2.7em;
@@ -406,31 +377,81 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color: #ed1c24;
     margin: 2% 0 0 10%;
 }
+
 .h4info {
     font-size: 3em;
     color: #0091D5;
     margin: 2% 10%;
     width: 100%;
 }
+
 .businessinfo {
     font-family: Georgia;
     font-size: 1.5em;
     margin: 0 0 2% 10%;
 }
+
 .messageinfo {
     font-size: 1.5em;
     color: #0091D5;
     margin: 2% 0 5% 10%;
 }
+
 .mapinfo {
-    font-family: LTCTourist;
     font-size: 1em;
     color: #ed1c24;
 }
+
 .mapinfo:hover {
     color:  #FFE300;
 }
 
+/*///////////////////////////////////////////*/
+/*CUSOTMER CALANDER VIEW*/
+
+.timeSlotContainer{
+    font-size: 2em;
+    text-align: center;
+    background-color: white;
+    border: 4px solid black;
+    width: 50%;
+    margin: 0 auto -4px;
+    display: block;
+}
+
+.timeSlotContainer:hover{
+    color: #ED1C24;
+    background-color: #FFE300;
+}
+
+.quarterContainer {
+    text-align: center;
+    background-color: white;
+    border: 4px solid black;
+    border-left: none;
+    border-right: none;
+    margin: 0 auto -4px;
+    display: block;
+    color: #ED1C24;
+}
+
+.quarterContainer:hover{
+    color: #ED1C24;
+    background-color: #0091D5;
+}
+
+.quarterContainer:focus{
+    color: #ED1C24;
+    background-color: #0091D5;
+}
+
+
+.results{
+    text-align: center;
+    color:#ED1C24;
+}
+
+/*////////////////////////////////////////*/
 /*usercontrol page*/
 
 .h2usercontrol {
@@ -441,12 +462,14 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color: #ed1c24;
     margin: 2% 0 5% 10%;
 }
+
 .h2UserControl {
     font-size: 3em;
     letter-spacing: .5px;
     color: #ed1c24;
     margin: 2% 0 5% 10%;
 }
+
 .divUserControl {
     font-family: LTCTourist;
     font-size: 1.25em;
@@ -462,6 +485,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color: #0091D5;
     margin: 2% 0 5% 10%;
 }
+
 .customerInfo {
     font-family: LTCTourist;
     font-size: 1.25em;
@@ -469,6 +493,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color: black;
     margin: 2% 0 5% 10%;
 }
+
 .userButton{
     font-size: 1.75em;
     font-weight: bold;
@@ -480,6 +505,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     margin: 0 auto 1% auto;
 
 }
+
 .userButton:hover {
     color: #FFE300;
     background-color: #ed1c24;
@@ -491,10 +517,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color: black;
 }
 
-
-
 /*////////////////////////////////*/
-
 /*CONFIRMATION PAGE*/
 
 .res{
@@ -538,4 +561,39 @@ and (-webkit-min-device-pixel-ratio: 1) {
     text-decoration: none;
     border-radius: 0;
     margin: 2% auto ;
+}
+
+/*/////////////////////////////////////*/
+/* media queries */
+
+/*iphone5, 5s*/
+@media only screen and (max-width: 320px) {
+    body {
+
+    }
+}
+
+/*iphone6*/
+@media only screen and (max-width: 375px) {
+    body {
+    }
+}
+
+/*iphone6 plus*/
+@media only screen and (max-width: 414px) {
+    body {
+    }
+}
+/*most android phones*/
+@media only screen and (max-width: 360px) {
+    body {
+    }
+}
+
+/*ipad portrait and landscape*/
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1) {
+
 }
