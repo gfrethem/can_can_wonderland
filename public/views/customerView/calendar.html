@@ -5,7 +5,7 @@
         <a href="" class="slide-prev">
             <i class="fa fa-arrow-left"></i>
         </a>
-        <slick ng-show='calendar.showPartySize' class="slider" settings="calendar.slickConfig" prev-arrow=".slide-prev" next-arrow=".right">
+        <slick class="slider" settings="calendar.slickConfig" prev-arrow=".slide-prev" next-arrow=".right">
             <div ng-repeat="party in calendar.partyList track by $index">
                 <div class='partySize sliders' ng-click="calendar.findPartySize(party)">{{party}}</div>
             </div>
