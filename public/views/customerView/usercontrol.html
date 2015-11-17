@@ -1,10 +1,6 @@
 <div ng-controller="UserControlController as control" class="userControlMain">
     <h1 class="h1UserControl">Hello, {{control.myUser.name}}</h1>
-<<<<<<< HEAD
-    <h2 class="h2UserControl">YOUR FUTURE RESERVATIONS</h2>
-=======
     <h2 class="h2UserControl">YOUR RESERVATIONS</h2>
->>>>>>> b8d1b48cf25ec48286f405abbb8e42e13ac3db0f
     <div ng-repeat="curRes in control.currentReservations" class="futureReservationContainer">
         <div class="divUserControl">
                     <div class="grid grid-pad">
@@ -17,12 +13,7 @@
                     </div>
                 <p>{{curRes.adultnumber}} Adults</p>
                 <p>{{curRes.childnumber}} Children</p>
-<<<<<<< HEAD
-                <button class="changeButton">CHANGE</button>
-                <button class="confirmButton">CONFIRM</button>
-=======
                 <button class="confirmButton">CANCEL</button>
->>>>>>> b8d1b48cf25ec48286f405abbb8e42e13ac3db0f
         </div>
     </div>
     <p class="reservationDisclaimer">Groups of 4 or more will tee off separately.</p>
@@ -39,8 +30,6 @@
             </div>
             <p>{{pastRes.adultnumber}} Adults</p>
             <p>{{pastRes.childnumber}} Children</p>
-            <button class="changeButton">CHANGE</button>
-            <button class="confirmButton">CONFIRM</button>
         </div>
     </div>
     <button class='userButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT MY INFO</button>
