@@ -204,7 +204,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 
     vm.partySize = 0;
     vm.showPartySize = true;
-    vm.partyList = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+    vm.partyList = [2,3,4,5,6,7,8,9,10,11,12];
     vm.slotsNeeded = 0;
     vm.date = '';
     vm.mainTime = false;
@@ -212,13 +212,18 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     vm.quarterSlots = false;
 
 //SHOW TIME SLOTS FOR A SPECIFIC DAY
-    vm.buttonTime = function(){
-        var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
-        $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
-            vm.currentDate = response.data;
+    vm.buttonTime = function() {
+        if(vm.slotsNeeded == 0) {
+            vm.mainTime = false;
+            alert('Please select a party size');
+        } else {
             vm.mainTime = true;
-            console.log(vm.currentDate);
-        });
+            var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
+            $http.get('/reservation/getCalendar/' + thisDate).then(function (response) {
+                vm.currentDate = response.data;
+                console.log(vm.currentDate);
+            });
+        }
     };
 
 //PICK A TIME AND SAVE TO RES FACTORY
@@ -241,17 +246,10 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 
 //Toggles party size selector, choose party size, and determines number of slots needed
     vm.findPartySize = function(party){
-        console.log(party);
         vm.partySize = party;
         vm.slotsNeeded = Math.ceil(vm.partySize / 4);
         captureRes.newReservation.slotcheck = vm.slotsNeeded;
     };
-
-//SHOW QUARTER HOURS
-    vm.showSlots = function(index){
-        vm.quarterSlots[index] = !vm.quarterSlots[index];
-    };
-
 
 //SLICK CAROUSEL CONFIG
     vm.slickConfig = {
@@ -261,9 +259,12 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         arrows: true,
         method: {}
     };
-
-
-
+    vm.confirmDateSelection = function(){
+        if(!vm.yourDate){
+            event.preventDefault();
+            alert('Please chose a time.');
+        }
+    }
 }]);
 
 
