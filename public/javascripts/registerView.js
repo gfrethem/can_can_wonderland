@@ -50,8 +50,13 @@ app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http
                 childnumber: vm.childnumber[time + index],
                 datetime: newDate,
                 numslots: vm.numslots[time + index],
-                notes: vm.notes[time + index]
+                notes: vm.notes[time + index],
+                walkup: true
             };
+
+        if(vm.reserved[time + index]){
+            newReservation.walkup = false;
+        }
         $http.post("/reservation/makeReservation", newReservation).then(function(){
             vm.currentDate = [];
             vm.submitTime();
