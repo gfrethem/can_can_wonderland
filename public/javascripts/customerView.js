@@ -261,7 +261,6 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         method: {}
     };
 
-    vm.toggles = [{ state: true }, { state: false }, { state: true }];
 
 
 }]);

@@ -3,7 +3,7 @@
         <button class="partySizeButton" ng-model="date" type="text" ng-click="calendar.showPartySize = !calendar.showPartySize">PARTY SIZE</button>
                 <slick class="slider" settings="calendar.slickConfig" prev-arrow=".slide-prev" next-arrow=".right">
                     <div ng-repeat="party in calendar.partyList track by $index">
-                        <div class='partySize sliders' ng-click="calendar.findPartySize(party), toggle.state = !toggle.state" ng-class="{'yellow' : toggle.state}" >{{party}}</div>
+                        <div class='partySize sliders' ng-click="calendar.findPartySize(party)" >{{party}}</div>
                     </div>
                 </slick>
     </div>
