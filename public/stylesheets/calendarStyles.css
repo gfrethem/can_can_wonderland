@@ -231,11 +231,14 @@ button:focus {outline:0;}
     color: black;
     background-color: white;
     padding: .1% .07%;
-    font-size: 2em;
+    font-size: 2.5em;
     margin: .1em -.1em;
     text-align: center;
+
     border-left: .15em solid black;
     border-top: .15em solid black;
+    border-top: .25em solid grey;
+
     border-bottom: .15em solid black;
     /*width: 200px;*/
 }
