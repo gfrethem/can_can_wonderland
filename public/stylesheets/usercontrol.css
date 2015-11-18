@@ -98,11 +98,11 @@ body{
     text-align: center;
     color: #ED1C24;
     background-color: #FFE300;
-    padding: .75% 3%;
     text-decoration: none;
     border-radius: 0;
     width: 40%;
-    margin: 1% 1%;
+    height: 70px;
+    float: left;
 }
 
 .userCloseEditButton {
@@ -111,21 +111,21 @@ body{
     text-align: center;
     color: #ED1C24;
     background-color: #FFE300;
-    padding: 5.70% 3%;
     text-decoration: none;
     border-radius: 0;
     width: 40%;
-    margin: 1%
+    height: 70px;
+    float: right;
 }
 
 .userEditButtons {
     font-size: 1.2em;
     font-weight: bold;
     text-align: center;
-    padding: .75% 3%;
     text-decoration: none;
     border-radius: 0;
-    margin: 1% 1%;
+    height: 80px;
+    margin-bottom: 40px;
 }
 
 /*.userEditButton:hover, .usercloseEditButton:hover {*/
