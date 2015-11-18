@@ -15,11 +15,11 @@ module.exports = function(sequelize, DataTypes) {
             childnumber: {
                 type: DataTypes.INTEGER
             },
-            noshow: {
-                type: DataTypes.BOOLEAN // Defaults to True
+            checkedin: {
+                type: DataTypes.BOOLEAN // Defaults to False
             },
             walkup: {
-                type: DataTypes.BOOLEAN // Walkup Vs. Online - Defaults to True
+                type: DataTypes.BOOLEAN // Walkup Vs. Online/Phone - Defaults to False
             },
             datetime: {
                 type: DataTypes.DATE
