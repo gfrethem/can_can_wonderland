@@ -63,8 +63,8 @@ button:focus {outline:0;}
 
 ._720kb-datepicker-calendar-header {
     text-align: center;
-    font-size: 1em;
-    padding: 15px 0 0 0;
+    font-size: 4em;
+    padding: 25px 0 0 0;
 }
 
 ._720kb-datepicker-calendar-header:nth-child(odd) {
@@ -136,7 +136,7 @@ button:focus {outline:0;}
 }
 
 ._720kb-datepicker-calendar-month span {
-    font-size: 2em;
+    font-size: 1em;
     color: white;
 }
 
@@ -216,7 +216,7 @@ button:focus {outline:0;}
     cursor: default;
 }
 
-button{
+.standard-button{
     border: transparent;
     font-size: 3.5em;
     font-family: LTCTourist, Helvetica, Ariel, san-serif;
@@ -248,9 +248,11 @@ button{
 
 .sliders:hover{
     color: #ED1C24;
+    background-color: #FFE300;
 }
 
 .sliders:active{
     color: #ED1C24;
     background-color: #FFE300;
 }
+

@@ -168,9 +168,17 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
             vm.numCheck = 'customerCalendar';
             alert('You selected fewer people, please reconfirm date selection.');
         }
-    }
+    };
 
-}]);
+    //SLICK CAROUSEL CONFIG
+    vm.slickConfig = {
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        arrows: true,
+        method: {}
+    };
+    }]);
 
 app.controller("RegisterController", ["$scope", "$timeout", function($scope, $timeout){
     var vm = this;
@@ -247,7 +255,13 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         arrows: true,
         method: {}
     };
+
+    vm.toggles = [{ state: true }, { state: false }, { state: true }];
+
+
 }]);
+
+
 
 app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUser", "$cookies", '$location', function($scope, captureRes, $http, currentUser, $cookies, $location){
     //SET USER TO CURRENT USER FACTORY
@@ -301,7 +315,7 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
                 }
             }
         });
-    }
+    };
 
     vm.cancelReservation = function(id){
         console.log('clicked');
@@ -309,7 +323,7 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
             alert('Success!');
             getReservations();
         })
-    }
+    };
 
     getReservations();
 }]);
