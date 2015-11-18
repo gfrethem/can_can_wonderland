@@ -9,8 +9,8 @@
     src: url('LTCTouristGothic-Regular.ttf');
 }
 @font-face{
-    font-family: LTCTourist;
-    src: url('LTCTouristGothic-Regular.ttf');
+    font-family: LTCTouristAlt;
+    src:url('LTCTouristGothic-Alternate.ttf');
 }
 
 /* this is a border hack */
@@ -22,496 +22,9 @@ button:focus {outline:0;}
 input:focus {outline:0;}
 
 body{
-    font-family: LTCTourist, Oswald, Helvetica, Arial, sans-serif;
+    font-family: LTCTouristAlt, Oswald, Helvetica, Arial, sans-serif;
 }
 
-/*//////////////////////////////////*/
-/*home page css*/
-.homeNav{
-    padding: 2em 0;
-}
-.fa{
-    color:black;
-    font-size: 3em;
-    margin: -1em .5em 0 8%;
-}
-
-.mainLogo{
-    display: block;
-    margin: 3% auto;
-    width: 31%;
-    min-width: 3em;
-}
-
-.starLogo {
-    margin: 0 5% -.6% 2%;
-    width: 5%;
-    min-width: 3em;
-}
-
-.loginButton{
-    text-decoration: none;
-    font-size: 3em;
-    letter-spacing: 1px;
-    font-weight: bold;
-    color: black;
-    /*float: right;*/
-    margin: 0 5% 0 1%;
-}
-
-.logoutButton {
-    text-decoration: none;
-    font-size: 3em;
-    letter-spacing: 1px;
-    font-weight: bold;
-    color: black;
-    background:white;
-    border: none;
-}
-
-h3{
-    font-size: 20px;
-    font-weight: bold;
-    color: #ED1C24;
-    margin: 15px 0 5px 5%;
-}
-
-p{
-    font: 14px Georgia,serif;
-    color: black;
-    margin: 2px 0 5px 5%;
-}
-
-.continueButton{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 0 auto ;
-}
-
-.continueButton:hover {
-    color: #FFE300;
-    background-color:#ED1C24;
-}
-
-a {
-    text-decoration: none;
-}
-
-.fb{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    background-color: #0091D5;
-    padding: 1% 4.8% .5%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 3% auto;
-}
-.slick-arrow {
-    color: #ED1C24 !important;
-}
-
-/*/////////////////////////////////*/
-/*REGISTER*/
-.newUser{
-    font-size: 2em;
-    color: #0091D5;
-    font-weight: bold;
-    text-align: center;
-    margin: 1% auto 3% auto;
-    display: block;
-}
-
-#email{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    background-color: #0091D5;
-    padding: 1% 2%;
-    border-color: transparent;
-    /*text-decoration: none;*/
-    /*border*/
-    border-radius: 0;
-    margin: 2% auto 2% auto;
-    display: block;
-}
-
-#password{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    background-color: #0091D5;
-    padding: 1% 2%;
-    border-color: transparent;
-    /*text-decoration: none;*/
-    /*border*/
-    border-radius: 0;
-    margin: 0 auto 2% auto;
-    display: block;
-}
-
-#password2{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    background-color: #0091D5;
-    padding: 1% 2%;
-    border-color: transparent;
-    /*text-decoration: none;*/
-    /*border*/
-    border-radius: 0;
-    margin: 0 auto 2% auto;
-    display: block;
-}
-
-#name{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    background-color: #0091D5;
-    padding: 1% 2%;
-    border-color: transparent;
-    /*text-decoration: none;*/
-    /*border*/
-    border-radius: 0;
-    margin: 0 auto 2% auto;
-    display: block;
-}
-
-#username{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    background-color: #0091D5;
-    padding: 1% 2%;
-    border-color: transparent;
-    /*text-decoration: none;*/
-    /*border*/
-    border-radius: 0;
-    margin: 0 auto 2% auto;
-    display: block;
-}
-
-#phone{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    background-color: #0091D5;
-    padding: 1% 2%;
-    border-color: transparent;
-    /*text-decoration: none;*/
-    /*border*/
-    border-radius: 0;
-    margin: 0 auto 2% auto;
-    display: block;
-}
-
-.passwordAlert {
-    color: #ED1C24;
-    text-align: center;
-    font-family: LTCTourist;
-    text-transform: uppercase;
-}
-
-::-webkit-input-placeholder #name #password #password2 #username #phone{ /* WebKit, Blink, Edge */
-    color:    white;
-}
-:-moz-placeholder #name #password #password2 #username #phone{ /* Mozilla Firefox 4 to 18 */
-    color:   white;
-    /*opacity:  1;*/
-}
-::-moz-placeholder #name #password #password2 #username #phone{ /* Mozilla Firefox 19+ */
-    color:    white;
-    /*opacity:  1;*/
-}
-:-ms-input-placeholder #name #password #password2 #username #phone{ /* Internet Explorer 10-11 */
-    color:   white;
-}
-
-/*/////////////////////////////////////*/
-/*//cashier Calander View*/
-
-li {
-    list-style: none;
-    font-size: 1.25em;
-}
-
-.datepicker{
-    text-align: center;
-    font-size: 3em;
-}
-
-.dateButton{
-    display:block;
-    margin: 0 auto;
-    color: black;
-    border: none;
-    font-size: 1em;
-    text-align: center;
-    background-color: white;
-    font-family: LTCTourist;
-}
-
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    black;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:   black;
-    /*opacity:  1;*/
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    black;
-    /*opacity:  1;*/
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color:   black;
-}
-
-.submitButton{
-    border: transparent;
-    font-size: 2em;
-    font-family: LTCTourist, Helvetica, Ariel, san-serif;
-    text-align: center;
-    margin: 7% auto;
-    display: block;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .15em .5em;
-}
-
-ul{
-    margin: .75em 0 .75em 0;
-}
-
-.mainHour{
-    font-size: 1.25em;
-    background-color: white;
-    border: 4px solid black;
-    width: 70%;
-    margin: 0 auto -4px;
-    display: block;
-}
-
-.quarterHour{
-    background-color: white;
-    border: 4px solid black;
-    border-left: none;
-    border-right: none;
-    margin: 0 auto -4px;
-    display: block;
-    color: #ED1C24;
-}
-
-.reservation{
-    background-color: white;
-    border: 4px solid black;
-    border-left: none;
-    border-right: none;
-    margin: 0 auto -4px;
-    display: block;
-}
-
-/*.infoName{*/
-/*float:left;*/
-/*}*/
-.adultNumber{
-    margin: 0 2px 0 0;
-}
-
-.infoButton{
-    font-size: 1em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: white;
-    border: 2px solid black;
-    padding: 3px 6px;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 0 3%;
-}
-
-.infoButton:hover{
-    background-color: #ED1C24;
-}
-
-.available{
-    float:right;
-    clear:both;
-    margin-right: 3%;
-    margin-top: -1.4em;
-}
-
-.numAvailable{
-    font-weight: bold;
-    color: #ED1C24;
-    float: right;
-    border: 4px solid black;
-    text-align: center;
-    /*padding: .15em .15em;*/
-    width: 1.75em;
-    height: 1.75em;
-    margin: -4% 0 0 1em;
-    line-height: 1.75em;
-}
-
-#checkboxes{
-    float: right;
-    color: black;
-}
-
-/*////////////////////////////////////////////*/
-/*customer hours and price info*/
-.h3info {
-    font-size: 2.7em;
-    font-weight: bold;
-    color: #ED1C24;
-    margin: 2% 0 0 10%;
-}
-
-.h4info {
-    font-size: 3em;
-    color: #0091D5;
-    margin: 2% 10%;
-    width: 100%;
-}
-
-.businessinfo {
-    font-family: Georgia;
-    font-size: 1.5em;
-    margin: 0 0 2% 10%;
-}
-
-.messageinfo {
-    font-size: 1.5em;
-    color: #0091D5;
-    margin: 2% 0 5% 10%;
-}
-
-.mapinfo {
-    font-size: 1em;
-    color: #ED1C24;
-}
-
-.mapinfo:hover {
-    color:  #FFE300;
-}
-
-/*///////////////////////////////////////////*/
-/*CUSOTMER CALANDER VIEW*/
-
-.timeSlotContainer{
-    font-size: 2em;
-    text-align: center;
-    background-color: white;
-    border: 4px solid black;
-    width: 50%;
-    margin: 0 auto -4px;
-    display: block;
-}
-
-.timeSlotContainer:hover{
-    color: #ED1C24;
-    background-color: #FFE300;
-}
-
-.quarterContainer {
-    text-align: center;
-    background-color: white;
-    border: 4px solid black;
-    border-left: none;
-    border-right: none;
-    margin: 0 auto -4px;
-    display: block;
-    color: #ED1C24;
-}
-
-.quarterContainer:hover{
-    color: #ED1C24;
-    background-color: #0091D5;
-}
-
-.quarterContainer:focus{
-    color: #ED1C24;
-    background-color: #0091D5;
-}
-
-
-.results{
-    text-align: center;
-    color: #ED1C24;
-}
-
-.fa .fa-arrow-left{
-    color: #0091D5;
-    float:left;
-    margin: 0 0 0 22%;
-}
-.fa .fa-arrow-right{
-    color: #0091D5;
-    float:right;
-    clear:both;
-    margin: 0 22% 0 0;
-}
-
-/*////////////////////////////////*/
-/*CONFIRMATION PAGE*/
-
-.res{
-    font-size: 3.7em;
-    font-weight: bold;
-    color: #ED1C24;
-    margin: 2% 0 0 10%;
-}
-.info{
-    font-size: 2.5em;
-    font-weight: bold;
-    color: black;
-    margin: 1% 0 0 10%;
-}
-
-.groupSize{
-    font-size: 2.4em;
-    font-weight: bold;
-    color: #ED1C24;
-    margin:2% 0 6% 10%;
-}
-
-.changeButton{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding:.75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 2% auto ;
-}
-.confirmButton{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 2% auto ;
-}
 
 /*////////////////////////////////////////*/
 /*usercontrol page*/
@@ -597,74 +110,49 @@ ul{
 
 /*iphone5, 5s*/
 @media only screen and (max-width: 320px) {
+    body{
+        font-size: 50%;
+        font-family: LTCTouristAlt;
+    }
 
     .h1UserControl {
-        background-color: black;
-        font-family: LTCTourist;
-        font-size: 10em;
-        letter-spacing: .5px;
+
         color: #0091D5;
-        margin: 0 0 0 10%;
+
     }
 
     .h2UserControl {
-        font-family: LTCTourist;
-        font-size: 7em;
-        letter-spacing: .5px;
+        font-family: LTCTouristAlt;
         color: #ED1C24;
-        width: 100%;
-        margin: 3% 0 0 17%;
     }
 
     .pUserControl {
-        font-family: LTCTourist;
-        font-size: 5em;
-        letter-spacing: 1px;
         color: black;
-        margin: 0 0 0 15%;
-        width: 100%;
     }
 
     .reservationDisclaimer {
-        font-family: LTCTourist;
-        font-size: 5em;
-        letter-spacing: .5px;
         color: #0091D5;
-        width: 100%;
-        margin: 5% 0 8% 10%;
     }
 
     .customerInfo {
-        font-family: LTCTourist;
-        font-size: 3em;
-        letter-spacing: .5px;
         color: black;
-        margin: 0 0 0 10%;
     }
 
     .confirmButton {
-        font-size: 5em;
+        font-family: LTCTouristAlt;
         font-weight: bold;
         text-align: center;
         color: #ED1C24;
         background-color: #FFE300;
-        padding: .75% 3%;
         text-decoration: none;
-        border-radius: 0;
-        width: 40%;
-        margin: 7% 0% 5% 15%;
     }
 
     .userButton {
-        font-size: 2em;
         font-weight: bold;
         text-align: center;
         color: #ED1C24;
         background-color: #FFE300;
-        padding: .75% 3%;
         text-decoration: none;
-        border-radius: 0;
-        margin: 2% auto;
     }
 
     .userButton:hover {
