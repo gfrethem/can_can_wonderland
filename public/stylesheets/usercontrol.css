@@ -2,8 +2,12 @@
 /* red #ED1C24 */
 /* yellow #FFE300 */
 
-@import url('https://fonts.googleapis.com/css?family=Oswald');
+/*@import url('https://fonts.googleapis.com/css?family=Oswald');*/
 
+@font-face{
+    font-family: LTCTourist;
+    src: url('LTCTouristGothic-Regular.ttf');
+}
 @font-face{
     font-family: LTCTourist;
     src: url('LTCTouristGothic-Regular.ttf');
@@ -593,8 +597,9 @@ ul{
 
 /*iphone5, 5s*/
 @media only screen and (max-width: 320px) {
-    body {
+
     .h1UserControl {
+        background-color: black;
         font-family: LTCTourist;
         font-size: 10em;
         letter-spacing: .5px;
@@ -631,12 +636,13 @@ ul{
 
     .customerInfo {
         font-family: LTCTourist;
-        font-size: 1.25em;
+        font-size: 3em;
         letter-spacing: .5px;
         color: black;
         margin: 0 0 0 10%;
     }
-    .confirmButton{
+
+    .confirmButton {
         font-size: 5em;
         font-weight: bold;
         text-align: center;
@@ -648,7 +654,8 @@ ul{
         width: 40%;
         margin: 7% 0% 5% 15%;
     }
-    .userButton{
+
+    .userButton {
         font-size: 2em;
         font-weight: bold;
         text-align: center;
@@ -657,7 +664,7 @@ ul{
         padding: .75% 3%;
         text-decoration: none;
         border-radius: 0;
-        margin: 2% auto ;
+        margin: 2% auto;
     }
 
     .userButton:hover {
@@ -666,10 +673,11 @@ ul{
     }
 }
 
+
+
 /*iphone6*/
 @media only screen and (max-width: 375px) {
-    body {
-    }
+
 }
 
 /*iphone6 plus*/
