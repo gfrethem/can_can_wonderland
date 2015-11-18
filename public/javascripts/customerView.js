@@ -246,6 +246,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 
 //Toggles party size selector, choose party size, and determines number of slots needed
     vm.findPartySize = function(party){
+        vm.mainTime = false;
         vm.partySize = party;
         vm.slotsNeeded = Math.ceil(vm.partySize / 4);
         captureRes.newReservation.slotcheck = vm.slotsNeeded;
