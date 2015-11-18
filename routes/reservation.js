@@ -81,7 +81,22 @@ router.put('/checkin/:id?', function(req, res, next) {
             id: resId
         }
     }).then(function (response) {
-        response.noshow = false;
+        response.noshow = !response.noshow;
+        response.save()
+    }).then(function (response) {
+        res.send(200);
+    });
+});
+
+//UPDATE THE WALKUP FIELD
+router.put('/walkup/:id?', function(req, res, next) {
+    var resId = req.params.id;
+    Reservation.find({
+        where: {
+            id: resId
+        }
+    }).then(function (response) {
+        response.walkup = !response.walkup;
         response.save()
     }).then(function (response) {
         res.send(200);
@@ -107,10 +122,20 @@ router.get('/getCalendar/:date?', function(req, res, next) {
     };
     var quarterObject = {
         quarter: "",
-        remainingSlots : 3,
+        remainingSlots : 5,
         reservations: []
     };
-
+    var emptyReservation = {
+        email: "",
+        phonenumber: "",
+        name: "",
+        adultnumber: 0,
+        childnumber: 0,
+        noshow: true,
+        walkup: false,
+        notes: "",
+        numslots: 0,
+    };
     //GETS ALL RESERVATIONS FOR CERTAIN DAY
     Reservation.findAll({
         where: {
@@ -199,11 +224,18 @@ router.get('/getCalendar/:date?', function(req, res, next) {
                             quarterObject.reservations.push(currentReservation);
                         }
                     }
+                    //FILL REMAINING RESERVATIONS FOR QUARTER HOUR WITH EMPTY RESERVATIONS
+                    var emptyRes = quarterObject.remainingSlots;
+                    var iterator = 0;
+                    while(iterator < emptyRes){
+                        quarterObject.reservations.push(emptyReservation);
+                        iterator++;
+                    }
                     hourObject.quarters.push(quarterObject);
                     //REINITIALIZE REMAINING SLOTS FOR QUARTER HOUR
                     quarterObject = {
                         quarter: "",
-                        remainingSlots : 3,
+                        remainingSlots : 5,
                         reservations: []
                     };
                 }

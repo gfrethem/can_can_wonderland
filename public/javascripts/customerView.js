@@ -43,6 +43,7 @@ app.config(function($routeProvider, $locationProvider){
 app.factory('captureRes', function(){
 
     var newReservation = {
+        name: "",
         email: "",
         phonenumber: "",
         adultnumber: 0,
@@ -234,7 +235,6 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     vm.findPartySize = function(party){
         vm.partySize = party;
         vm.slotsNeeded = Math.ceil(vm.partySize / 4);
-        console.log(vm.slotsNeeded);
         captureRes.newReservation.slotcheck = vm.slotsNeeded;
     };
 
@@ -265,6 +265,7 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
         currentUser.user = response.data;
         captureRes.newReservation.email = vm.myUser.email;
         captureRes.newReservation.phonenumber = vm.myUser.phonenumber;
+        captureRes.newReservation.name = vm.myUser.name;
     });
 
      captureRes.newReservation.adultnumber = $cookies.get('resAdults');
@@ -301,7 +302,6 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
 
     var getReservations = function() {
         $http.get('/reservation/getReservations/' + vm.myUser.email).then(function (response) {
-            console.log('called');
             for (i = 0; i < response.data.length; i++) {
                 if (moment().format('YYYY-MM-DD HH:mm') < response.data[i].datetime) {
                     response.data[i].humantime = moment(response.data[i].datetime).format('dddd, MMM DD, YYYY h:mm A');
@@ -314,12 +314,10 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
         });
     };
 
-    vm.cancelReservation = function(id, index){
+    vm.cancelReservation = function(id){
         $http.get("/reservation/cancelReservation/" + id).then(function(){
             for(var i = 0; i < vm.currentReservations.length; i++){
                 if(vm.currentReservations[i].id == id){
-                    vm.currentReservations.splice(i, 1);
-                    //getReservations();
                 }
             }
             alert('Success!');

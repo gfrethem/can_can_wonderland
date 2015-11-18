@@ -1,73 +1,85 @@
-var app = angular.module('frontDeskApp', ['720kb.datepicker']);
+var app = angular.module('frontDeskApp', ['720kb.datepicker', 'ui.mask']);
 
 app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http){
     var vm = this;
     vm.date = '';
     var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
 
-    vm.message = 'Front Desk View';
-    vm.quarterHour = true;
+    vm.quarterHour = false;
     vm.showReservationSlot = true;
-    vm.totalAvailableSlots = 20;
-    vm.partySize = 0;
-    vm.fullname = 'Walk Up';
-    vm.fullhour = vm.hours + vm.quarters;
-    vm.fullhourSlotNumber =  vm.totalAvailableSlots - vm.peopleSignedUp;
-    vm.walkup = false;
-    vm.checkin = false;
     vm.mainTime = true;
     vm.currentDate = [];
     vm.quarterSlots = false;
-    vm.reservations= {
-        fullname: "Just Stop!!",
-        fullhourSlotNumber: "5",
-        partySize: 6,
-        message: "what!!!",
-        quarterHour: 10
-    };
+    vm.info = false;
+    vm.notes = "";
+    vm.name = "";
+    vm.email = "";
+    vm.phonenumber = "";
 
 //on submit, do a server call,
-
     //SHOW TIME SLOTS FOR A SPECIFIC DAY
     vm.submitTime = function(){
         var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
         $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
             vm.currentDate = response.data;
             vm.mainTime = ! vm.mainTime;
-            console.log(vm.currentDate);
         });
     };
 
+    //SUBMIT A NEW RESERVATION
+    vm.submitReservation = function(time, index){
+        if(time.length == 7){
+            var hour = parseInt(time.substring(0, 1));
+            var minute = parseInt(time.substring(2, 4));
+            var meridian = time.substring(5, 7);
+        } else {
+            var hour = parseInt(time.substring(0, 2));
+            var minute = parseInt(time.substring(3, 5));
+            var meridian = time.substring(6, 8);
+        }
 
-    //SHOW QUARTER HOURS
-    vm.showSlots = function(index){
-        vm.quarterSlots[index] = !vm.quarterSlots[index];
+        if(meridian == "PM"){
+            hour += 12;
+        }
+        var newDate = moment(vm.date).hour(hour).minute(minute).format('YYYY-MM-DD HH:mm');
+            var newReservation = {
+                name: vm.name[time + index],
+                email: vm.email[time + index],
+                phonenumber: vm.phonenumber[time + index],
+                adultnumber: vm.adultnumber[time + index],
+                childnumber: vm.childnumber[time + index],
+                datetime: newDate,
+                numslots: vm.numslots[time + index],
+                notes: vm.notes[time + index]
+            };
+        $http.post("/reservation/makeReservation", newReservation).then(function(){
+            vm.currentDate = [];
+            vm.submitTime();
+
+            vm.name;
+            vm.email;
+            vm.phonenumber;
+            vm.adultnumber;
+            vm.childnumber;
+            vm.numslots;
+            vm.notes;
+        });
     };
 
-
-    //save the call to a vm
-
-    // work it in Angular
-
-    //database call;
-
-
-    //vm.showQuarterHour = function(){
-    //    vm.quarterHour = !vm.quarterHour;
-    //    console.log('button clicked');
-    //};
-
-    vm.showReservation = function(){
-        vm.showReservationSlot = !vm.showReservationSlot;
-    };
-
-//PULL IN ALL RESERVATIONS FOR A CERTAIN DAY
-    $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
-        vm.currentDate = response.data;
-        vm.mainTime = ! vm.mainTime;
-    });
 //CHECK IN A RESERVATION
-//    vm.walkUpChange = function(value){
-//        console.log(value);
-//    }
+    vm.noshow = function(value){
+        $http.put('/reservation/checkin/' + value);
+    };
+
+//CHANGE WALKUP
+    vm.walkup = function(value){
+        $http.put('/reservation/walkup/' + value);
+    };
+
+//CANCEL A RESERVATION
+    vm.cancelReservation = function(id){
+        $http.get("/reservation/cancelReservation/" + id).then(function(){
+            vm.submitTime();
+        });
+    };
 }]);

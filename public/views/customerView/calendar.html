@@ -36,7 +36,7 @@
                 <div>{{hour.hour}}</div>
             </div>
             <div ng-show='calendar.quarterSlots[hour.hour]' class="quarterContainer" ng-repeat="quarter in hour.quarters">
-                <div ng-click="calendar.selectTime(quarter.quarter)" ng-if="quarter.remainingSlots >= calendar.slotsNeeded">
+                <div ng-click="calendar.selectTime(quarter.quarter)" ng-if="(quarter.remainingSlots-2) >= calendar.slotsNeeded">
                     <div>{{quarter.quarter}}</div>
                 </div>
             </div>
