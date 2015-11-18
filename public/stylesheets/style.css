@@ -79,8 +79,8 @@ p{
 }
 
 .continueButton{
-    font-size: 2em;
-    font-weight: bold;
+    font-family: LTCTourist;
+    font-size: 2.5em;
     text-align: center;
     color: #ED1C24;
     background-color: #FFE300;
@@ -88,6 +88,11 @@ p{
     text-decoration: none;
     border-radius: 0;
     margin: 0 auto ;
+    display: block;
+    border: transparent;
+    letter-spacing: 1px;
+
+
 }
 
 .continueButton:hover {
@@ -253,14 +258,18 @@ a {
 
  .dateButton{
      display:block;
-     margin: 0 auto;
+     margin: 2% auto 0;
      color: black;
      border: none;
-     font-size: 1em;
+     font-size: 5em;
      text-align: center;
      background-color: white;
      font-family: LTCTourist;
  }
+
+.dateButton:hover{
+    color:#ED1C24;
+}
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    black;
@@ -382,9 +391,10 @@ ul{
 .h4info {
     font-size: 3em;
     color: #0091D5;
-    margin: 2% 10%;
+    margin: 2% 10% -2% 10%;;
     width: 100%;
 }
+
 
 .businessinfo {
     font-family: Georgia;
@@ -393,9 +403,9 @@ ul{
 }
 
 .messageinfo {
-    font-size: 1.5em;
+    font-size: 2em;
     color: #0091D5;
-    margin: 2% 0 5% 10%;
+    margin: 2% 0 4% 10%;
 }
 
 .mapinfo {
@@ -409,6 +419,53 @@ ul{
 
 /*///////////////////////////////////////////*/
 /*CUSOTMER CALANDER VIEW*/
+
+
+.calendarDiv{
+    width:70%;
+    margin: 0 auto 3%;
+}
+.buttonCalendar{
+    text-align: center;
+}
+.partySizeButton{
+    margin: 2% auto 1%;
+    display: block;
+    font-family: LTCTourist;
+    font-size: 4.1em;
+    text-align: center;
+    color: black;
+    background-color: white;
+    padding: .75% 3%;
+    text-decoration: none;
+    border-radius: 0;
+    border: transparent;
+    letter-spacing: 1px;
+}
+
+/*.partySizeButton:hover{*/
+    /*color:#ED1C24;*/
+/*}*/
+
+.pickTime{
+    margin: 9% auto 1%;
+    display: block;
+    font-family: LTCTourist;
+    font-size: 4.1em;
+    text-align: center;
+    color: black;
+    background-color: white;
+    padding: .75% 3%;
+    text-decoration: none;
+    border-radius: 0;
+    border: transparent;
+    letter-spacing: 1px;
+
+}
+
+.pickTime:hover{
+    color:#ED1C24;
+}
 
 .timeSlotContainer{
     font-size: 2em;
@@ -447,10 +504,11 @@ ul{
 }
 
 .results{
+    font-size: 2em;
     text-align: center;
     color: #ED1C24;
 }
-
+/*//////////////////////////////*/
 .fa-arrow-left:before{
     color:#0091D5;
 }
@@ -471,12 +529,99 @@ ul{
     float:right;
     margin: -14px 21% 0 0;
 }
+/*//////////////////////////////*/
+
+.slide-prevAdult{
+    color: #0091D5;
+    float:left;
+    margin: -14px 0 0 22%;
+    z-index: -1;
+}
+
+.rightAdult{
+    color: #0091D5;
+    float:right;
+    margin: -14px 21% 0 0;
+}
+
+.slide-prevChild{
+    color: #0091D5;
+    float:left;
+    margin: -14px 0 0 22%;
+    z-index: -1;
+}
+
+.rightChild{
+    color: #0091D5;
+    float:right;
+    margin: -14px 21% 0 0;
+}
+
+.numPickButton{
+    margin: 5% 0 0 0;
+}
+
+.numPickButton {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #ED1C24;
+    background-color: #FFE300;
+    padding: .75% 3%;
+    text-decoration: none;
+    border-radius: 0;
+    display: block;
+    border: transparent;
+    letter-spacing: 1px;
+    margin: 5% auto 0;
+    font-family: LTCTourist;
+}
+
+.numPickButton:hover {
+    color: #FFE300;
+    background-color:#ED1C24;
+}
 
 .slick-picker{
     margin: 0 auto;
 }
 
+/*////////////////////////////////////*/
+/*CHECK NUMBERS FOR CHILDREN AND ADULTS*/
 
+.checkNums{
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    color: #ED1C24;
+    margin: 0 0 1% 0;
+}
+.checkChildrenNums{
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    color: #ED1C24;
+    margin: 3% 0 0 0;
+}
+
+.children12{
+    text-align: center;
+    color: #ED1C24;
+    font-size:2em ;
+    margin: -1% 0 1% 0;
+
+}
+
+.estimatedPrice{
+    text-align: center;
+    color: #0091D5;
+    font-size:3em ;
+    margin-top: 3%;
+}
+
+.black{
+    color:black;
+}
 /*////////////////////////////////*/
 /*CONFIRMATION PAGE*/
 
@@ -523,75 +668,75 @@ ul{
     margin: 2% auto ;
 }
 
-/*////////////////////////////////////////*/
-/*usercontrol page*/
+/*!//////////////////////////////////////!**/
+/*!*usercontrol page*!*/
 
-.h2usercontrol {
-    font-family: LTCTourist;
+/*.h2usercontrol {*/
+    /*font-family: LTCTourist;*/
 
-    font-size: 3em;
-    letter-spacing: .5px;
-    color: #ED1C24;
-    margin: 2% 0 5% 10%;
-}
+    /*font-size: 3em;*/
+    /*letter-spacing: .5px;*/
+    /*color: #ED1C24;*/
+    /*margin: 2% 0 5% 10%;*/
+/*}*/
 
-.h2UserControl {
-    font-size: 3em;
-    letter-spacing: .5px;
-    color: #ED1C24;
-    margin: 2% 0 5% 10%;
-}
+/*.h2UserControl {*/
+    /*font-size: 3em;*/
+    /*letter-spacing: .5px;*/
+    /*color: #ED1C24;*/
+    /*margin: 2% 0 5% 10%;*/
+/*}*/
 
-.divUserControl {
-    font-family: LTCTourist;
-    font-size: 1.25em;
-    letter-spacing: 1px;
-    color: black;
-    margin: 2% 0 5% 10%;
-}
+/*.divUserControl {*/
+    /*font-family: LTCTourist;*/
+    /*font-size: 1.25em;*/
+    /*letter-spacing: 1px;*/
+    /*color: black;*/
+    /*margin: 2% 0 5% 10%;*/
+/*}*/
 
-.reservationDisclaimer {
-    font-family: LTCTourist;
-    font-size: 1.5em;
-    letter-spacing: .5px;
-    color: #0091D5;
-    margin: 2% 0 5% 10%;
-}
+/*.reservationDisclaimer {*/
+    /*font-family: LTCTourist;*/
+    /*font-size: 1.5em;*/
+    /*letter-spacing: .5px;*/
+    /*color: #0091D5;*/
+    /*margin: 2% 0 5% 10%;*/
+/*}*/
 
-.customerInfo {
-    font-family: LTCTourist;
-    font-size: 1.25em;
-    letter-spacing: .5px;
-    color: black;
-    margin: 2% 0 5% 10%;
-}
-.confirmButton{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 2% auto ;
-}
-.userButton{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 2% auto ;
-}
+/*.customerInfo {*/
+    /*font-family: LTCTourist;*/
+    /*font-size: 1.25em;*/
+    /*letter-spacing: .5px;*/
+    /*color: black;*/
+    /*margin: 2% 0 5% 10%;*/
+/*}*/
+/*.confirmButton{*/
+    /*font-size: 2em;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*color: #ED1C24;*/
+    /*background-color: #FFE300;*/
+    /*padding: .75% 3%;*/
+    /*text-decoration: none;*/
+    /*border-radius: 0;*/
+    /*margin: 2% auto ;*/
+/*}*/
+/*.userButton{*/
+    /*font-size: 2em;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*color: #ED1C24;*/
+    /*background-color: #FFE300;*/
+    /*padding: .75% 3%;*/
+    /*text-decoration: none;*/
+    /*border-radius: 0;*/
+    /*margin: 2% auto ;*/
+/*}*/
 
-.userButton:hover {
-    color: #FFE300;
-    background-color: #ED1C24;
-}
+/*.userButton:hover {*/
+    /*color: #FFE300;*/
+    /*background-color: #ED1C24;*/
+/*}*/
 
 #checkboxes{
     float: right;
@@ -634,3 +779,4 @@ and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 1) {
 
 }
+

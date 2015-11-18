@@ -1,4 +1,9 @@
 /* Slider */
+
+button:focus {outline:0;}
+input:focus {outline:0;}
+*:focus {outline:0;}
+
 .slick-slider
 {
     /*position: relative;*/
@@ -117,3 +122,4 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
