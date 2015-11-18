@@ -89,23 +89,6 @@ router.put('/checkin/:id?', function(req, res, next) {
     });
 });
 
-//UPDATE THE WALKUP FIELD
-//router.put('/walkup/:id?', function(req, res, next) {
-//    var resId = req.params.id;
-//    Reservation.find({
-//        where: {
-//            id: resId
-//        }
-//    }).then(function (response) {
-//        response.walkup = !response.walkup;
-//        response.save()
-//    }).then(function (response) {
-//        res.send(200);
-//    });
-//});
-
-
-
 //POPULATE THE CALENDAR
 router.get('/getCalendar/:date?', function(req, res, next) {
     var date = moment(req.params.date).format('YYYY-MM-DD HH:mm');
@@ -190,7 +173,7 @@ router.get('/getCalendar/:date?', function(req, res, next) {
                 res.send("Closed");
                 next();
             } else {
-                while (openHours <= closeHours) {
+                while (openHours < closeHours) {
                     operationHours.push(parseInt(openHours));
                     openHours++;
                 }

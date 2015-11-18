@@ -38,7 +38,10 @@ app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http
             var meridian = time.substring(6, 8);
         }
 
-        if(meridian == "PM"){
+        if(meridian == "PM" && hour == 12){
+            hour = 12;
+        }
+        else if(meridian == "PM"){
             hour += 12;
         }
         var newDate = moment(vm.date).hour(hour).minute(minute).format('YYYY-MM-DD HH:mm');
