@@ -106,7 +106,7 @@ passport.use(new FacebookStrategy({
         process.nextTick(function () {
 
             // find the user in the database based on their facebook id
-            User.findOne({'facebook.id': profile.id}, function (err, user) {
+            User.findOne({'faceid': profile.id}, function (err, user) {
 
                 // if there is an error, stop everything and return that
                 // ie an error connecting to the database

@@ -161,6 +161,10 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
     };
 //Alert customer if they have more than 12 people in their party
     vm.showNumAlert = function(){
+        if(vm.totalAdults == 0 && vm.totalChildren == 0){
+            event.preventDefault();
+            return alert("Please select number of adults and/or children");
+        }
         if(vm.totalPeople > 12){
             vm.numCheck = 'info';
             return alert('You group is larger than 12 people, please call to schedule');
