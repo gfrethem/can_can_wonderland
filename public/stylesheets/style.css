@@ -8,6 +8,10 @@
     font-family: LTCTourist;
     src:url('LTCTouristGothic-Regular.ttf');
 }
+@font-face{
+    font-family: LTCTouristAlt;
+    src:url('LTCTouristGothic-Alternate.ttf');
+}
 
 /* this is a border hack */
 *, *:before, *:after {
@@ -18,7 +22,7 @@ button:focus {outline:0;}
 input:focus {outline:0;}
 
 body{
-    font-family: LTCTourist, Oswald, Helvetica, Arial, sans-serif;
+    font-family: LTCTouristAlt, Oswald, Helvetica, Arial, sans-serif;
 }
 
 /*//////////////////////////////////*/
@@ -26,9 +30,9 @@ body{
 .homeNav{
     padding: 2em 0;
 }
-.fa{
+.fa .fa-bars{
     color:black;
-    font-size: 3em;
+    font-size: 5em;
     margin: -1em .5em 0 8%;
 }
 
@@ -48,7 +52,7 @@ body{
 .loginButton{
     text-decoration: none;
     font-size: 3em;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-weight: bold;
     color: black;
     /*float: right;*/
@@ -58,7 +62,7 @@ body{
 .logoutButton {
     text-decoration: none;
     font-size: 3em;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-weight: bold;
     color: black;
     background:white;
@@ -79,7 +83,7 @@ p{
 }
 
 .continueButton{
-    font-family: LTCTourist;
+    font-family:  LTCTouristAlt
     font-size: 2.5em;
     text-align: center;
     color: #ED1C24;
@@ -90,7 +94,7 @@ p{
     margin: 0 auto ;
     display: block;
     border: transparent;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 
 
 }
@@ -386,6 +390,7 @@ ul{
     font-weight: bold;
     color: #ED1C24;
     margin: 2% 0 0 10%;
+    letter-spacing: 2px;
 }
 
 .h4info {
@@ -393,6 +398,7 @@ ul{
     color: #0091D5;
     margin: 2% 10% -2% 10%;;
     width: 100%;
+    letter-spacing: 2px;
 }
 
 
@@ -406,6 +412,7 @@ ul{
     font-size: 2em;
     color: #0091D5;
     margin: 2% 0 4% 10%;
+    letter-spacing: 2px;
 }
 
 .mapinfo {
@@ -440,7 +447,7 @@ ul{
     text-decoration: none;
     border-radius: 0;
     border: transparent;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 /*.partySizeButton:hover{*/
@@ -459,7 +466,7 @@ ul{
     text-decoration: none;
     border-radius: 0;
     border: transparent;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 
 }
 
@@ -509,25 +516,31 @@ ul{
     color: #ED1C24;
 }
 /*//////////////////////////////*/
-.fa-arrow-left:before{
+.fa-caret-right{
+    font-size: 5em;
+}
+.fa-caret-left{
+    font-size: 5em;
+}
+
+.fa-caret-left:before{
     color:#0091D5;
 }
 
 .slide-prev{
     color: #0091D5;
     float:left;
-    margin: -14px 0 0 22%;
-    z-index: -1;
+    margin: -1.3% 0 0 25.5%;
 }
 
-.fa-arrow-right:before{
+.fa-caret-right:before{
     color:#0091D5;
 }
 
 .right{
     color: #0091D5;
     float:right;
-    margin: -14px 21% 0 0;
+    margin: -1.3% 23% 0 0;
 }
 /*//////////////////////////////*/
 
@@ -535,13 +548,12 @@ ul{
     color: #0091D5;
     float:left;
     margin: -14px 0 0 22%;
-    z-index: -1;
 }
 
 .rightAdult{
     color: #0091D5;
     float:right;
-    margin: -14px 21% 0 0;
+    margin: -14px 22% 0 0;
 }
 
 .slide-prevChild{
@@ -554,7 +566,7 @@ ul{
 .rightChild{
     color: #0091D5;
     float:right;
-    margin: -14px 21% 0 0;
+    margin: -14px 22% 0 0;
 }
 
 .numPickButton{
@@ -572,7 +584,7 @@ ul{
     border-radius: 0;
     display: block;
     border: transparent;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     margin: 5% auto 0;
     font-family: LTCTourist;
 }
@@ -750,9 +762,7 @@ ul{
 
 /*iphone5, 5s*/
 @media only screen and (max-width: 320px) {
-    body {
 
-    }
 }
 
 /*iphone6*/
