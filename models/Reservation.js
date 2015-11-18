@@ -18,8 +18,8 @@ module.exports = function(sequelize, DataTypes) {
             checkedin: {
                 type: DataTypes.BOOLEAN // Defaults to False
             },
-            walkup: {
-                type: DataTypes.BOOLEAN // Walkup Vs. Online/Phone - Defaults to False
+            reservation: {
+                type: DataTypes.BOOLEAN // Walkup Vs. In Advance - Defaults to False
             },
             datetime: {
                 type: DataTypes.DATE
