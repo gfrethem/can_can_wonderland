@@ -512,28 +512,29 @@ ul{
 /*////////////////////////////////////////*/
 /*usercontrol page*/
 
-.h2usercontrol {
+.h1UserControl {
     font-family: LTCTourist;
-
-    font-size: 3em;
+    font-size: 4em;
     letter-spacing: .5px;
-    color: #ED1C24;
-    margin: 2% 0 5% 10%;
+    color: #0091D5;
+    margin: 0 0 0 10%;
 }
 
 .h2UserControl {
+    font-family: LTCTourist;
     font-size: 3em;
     letter-spacing: .5px;
     color: #ED1C24;
-    margin: 2% 0 5% 10%;
+    margin: 3% 0 0 11.5%;
 }
 
-.divUserControl {
+.pUserControl {
     font-family: LTCTourist;
-    font-size: 1.25em;
+    font-size: 1.5em;
     letter-spacing: 1px;
     color: black;
-    margin: 2% 0 5% 10%;
+    margin: 0 0 0 10%;
+    width: 40%;
 }
 
 .reservationDisclaimer {
@@ -541,7 +542,8 @@ ul{
     font-size: 1.5em;
     letter-spacing: .5px;
     color: #0091D5;
-    margin: 2% 0 5% 10%;
+    width: 40%;
+    margin: 2% 0 0 11.5%;
 }
 
 .customerInfo {
@@ -549,7 +551,7 @@ ul{
     font-size: 1.25em;
     letter-spacing: .5px;
     color: black;
-    margin: 2% 0 5% 10%;
+    margin: 0 0 0 10%;
 }
 .confirmButton{
     font-size: 2em;
@@ -592,7 +594,75 @@ ul{
 /*iphone5, 5s*/
 @media only screen and (max-width: 320px) {
     body {
+    .h1UserControl {
+        font-family: LTCTourist;
+        font-size: 10em;
+        letter-spacing: .5px;
+        color: #0091D5;
+        margin: 0 0 0 10%;
+    }
 
+    .h2UserControl {
+        font-family: LTCTourist;
+        font-size: 7em;
+        letter-spacing: .5px;
+        color: #ED1C24;
+        width: 100%;
+        margin: 3% 0 0 17%;
+    }
+
+    .pUserControl {
+        font-family: LTCTourist;
+        font-size: 5em;
+        letter-spacing: 1px;
+        color: black;
+        margin: 0 0 0 15%;
+        width: 100%;
+    }
+
+    .reservationDisclaimer {
+        font-family: LTCTourist;
+        font-size: 5em;
+        letter-spacing: .5px;
+        color: #0091D5;
+        width: 100%;
+        margin: 5% 0 8% 10%;
+    }
+
+    .customerInfo {
+        font-family: LTCTourist;
+        font-size: 1.25em;
+        letter-spacing: .5px;
+        color: black;
+        margin: 0 0 0 10%;
+    }
+    .confirmButton{
+        font-size: 5em;
+        font-weight: bold;
+        text-align: center;
+        color: #ED1C24;
+        background-color: #FFE300;
+        padding: .75% 3%;
+        text-decoration: none;
+        border-radius: 0;
+        width: 40%;
+        margin: 7% 0% 5% 15%;
+    }
+    .userButton{
+        font-size: 2em;
+        font-weight: bold;
+        text-align: center;
+        color: #ED1C24;
+        background-color: #FFE300;
+        padding: .75% 3%;
+        text-decoration: none;
+        border-radius: 0;
+        margin: 2% auto ;
+    }
+
+    .userButton:hover {
+        color: #FFE300;
+        background-color: #ED1C24;
     }
 }
 

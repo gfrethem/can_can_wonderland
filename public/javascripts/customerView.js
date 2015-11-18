@@ -58,24 +58,24 @@ app.factory('captureRes', function(){
     }
 });
 app.factory('currentUser', ['$http', function($http){
-    var user = {};
-
-    var fetchUserDetails = function(){
-      $http.get('/user/getUser').then(function(response){
-          user = response.data;
-      })
-    };
+    var user;
 
     return {
-        user : user,
-        fetchUserDetails: fetchUserDetails
+        user : user
     }
 }]);
 
 //DEFINE CONTROLLERS
-app.controller("MainController", ["$scope", "$http", "currentUser", function($scope, $http, currentUser){
+app.controller("MainController", ["$scope", "$http", "currentUser", "$cookies", "captureRes", function($scope, $http, currentUser, $cookies, captureRes){
     var vm = this;
     vm.logout = function(){
+        $cookies.remove('resAdults');
+        $cookies.remove('resChildren');
+        $cookies.remove('resDatetime');
+        $cookies.remove('resNumslots');
+        $cookies.remove('resHumanDate');
+        captureRes.newReservation = {};
+        currentUser.user = null;
         $http.get("/login/logout");
     };
     // Not sure I like this yet - G
@@ -83,7 +83,10 @@ app.controller("MainController", ["$scope", "$http", "currentUser", function($sc
     //vm.user = currentUser.user;
 }]);
 
-app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', function($scope, $http, captureRes, $cookies){
+app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', 'currentUser', '$location', function($scope, $http, captureRes, $cookies, currentUser, $location){
+    if(currentUser.user){
+        $location.path('/confirmReservation')
+    }
     var vm = this;
     $cookies.put('resAdults', captureRes.newReservation.adultnumber);
     $cookies.put('resChildren', captureRes.newReservation.childnumber);
@@ -129,8 +132,8 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
 
     vm.numAdults = [0,1,2,3,4,5,6,7,8,9,10,11,12];
     vm.numChildren = [0,1,2,3,4,5,6,7,8,9,10,11,12];
-    vm.totalAdults =  captureRes.newReservation.adultnumber;
-    vm.totalChildren = captureRes.newReservation.childnumber;
+    vm.totalAdults =  0;
+    vm.totalChildren = 0;
     vm.price = 0;
     vm.totalPeople = 0;
     vm.slots = 0;
@@ -213,6 +216,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
             vm.currentDate = response.data;
             vm.mainTime = true;
+            console.log(vm.currentDate);
         });
     };
 
@@ -238,6 +242,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     vm.findPartySize = function(party){
         vm.partySize = party;
         vm.slotsNeeded = Math.ceil(vm.partySize / 4);
+        console.log(vm.slotsNeeded);
         captureRes.newReservation.slotcheck = vm.slotsNeeded;
     };
 
@@ -264,13 +269,17 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 
 
 app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUser", "$cookies", '$location', function($scope, captureRes, $http, currentUser, $cookies, $location){
-    //SET USER TO CURRENT USER FACTORY
-    currentUser.fetchUserDetails();
-    //if($cookies.get('resDatetime') == null){
-    //    $location.path('/userControl')
-    //}
 
+    if(!$cookies.get('resDatetime')){
+        $location.path('/userControl')
+    }
      var vm = this;
+    $http.get('/user/getUser').then(function(response){
+        vm.myUser = response.data;
+        currentUser.user = response.data;
+        captureRes.newReservation.email = vm.myUser.email;
+        captureRes.newReservation.phonenumber = vm.myUser.phonenumber;
+    });
 
      captureRes.newReservation.adultnumber = $cookies.get('resAdults');
      captureRes.newReservation.childnumber = $cookies.get('resChildren');
@@ -278,33 +287,35 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
      captureRes.newReservation.numslots = $cookies.get('resNumslots');
      captureRes.newReservation.humandate = $cookies.get('resHumanDate');
 
-    $http.get('/user/getUser').then(function(response){
-        captureRes.newReservation.email = response.data.email;
-        captureRes.newReservation.phonenumber = response.data.phonenumber;
-        currentUser.user = response.data;
-    });
-
     vm.resConfirm = captureRes.newReservation;
-
     vm.confirmReservation = function(){
-        $http.post('/reservation/makeReservation', vm.resConfirm);
+        $http.post('/reservation/makeReservation', vm.resConfirm).then(function(){
+            $cookies.remove('resAdults');
+            $cookies.remove('resChildren');
+            $cookies.remove('resDatetime');
+            $cookies.remove('resNumslots');
+            $cookies.remove('resHumanDate');
+            captureRes.newReservation = {};
+        });
     };
 
 }]);
 
 app.controller("UserControlController", ["$scope", "currentUser", "$http", function($scope, currentUser, $http){
     var vm = this;
-    currentUser.fetchUserDetails();
-    console.log(currentUser.user);
-
     vm.currentReservations = [];
     vm.pastReservations = [];
-    vm.myUser = currentUser.user;
+    vm.myUser = {};
+
+    $http.get('/user/getUser').then(function(response){
+        vm.myUser = response.data;
+        currentUser.user = response.data;
+        getReservations();
+    });
 
     var getReservations = function() {
-        $http.get('/reservation/getReservations/' + currentUser.user.email).then(function (response) {
-            console.log(response.data);
-
+        $http.get('/reservation/getReservations/' + vm.myUser.email).then(function (response) {
+            console.log('called');
             for (i = 0; i < response.data.length; i++) {
                 if (moment().format('YYYY-MM-DD HH:mm') < response.data[i].datetime) {
                     response.data[i].humantime = moment(response.data[i].datetime).format('dddd, MMM DD, YYYY h:mm A');
@@ -317,13 +328,18 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
         });
     };
 
-    vm.cancelReservation = function(id){
-        console.log('clicked');
+    vm.cancelReservation = function(id, index){
         $http.get("/reservation/cancelReservation/" + id).then(function(){
+            for(var i = 0; i < vm.currentReservations.length; i++){
+                if(vm.currentReservations[i].id == id){
+                    vm.currentReservations.splice(i, 1);
+                    //getReservations();
+                }
+            }
             alert('Success!');
+
             getReservations();
         })
     };
 
-    getReservations();
 }]);

@@ -668,75 +668,75 @@ ul{
     margin: 2% auto ;
 }
 
-/*////////////////////////////////////////*/
-/*usercontrol page*/
+/*!//////////////////////////////////////!**/
+/*!*usercontrol page*!*/
 
-.h2usercontrol {
-    font-family: LTCTourist;
+/*.h2usercontrol {*/
+    /*font-family: LTCTourist;*/
 
-    font-size: 3em;
-    letter-spacing: .5px;
-    color: #ED1C24;
-    margin: 2% 0 5% 10%;
-}
+    /*font-size: 3em;*/
+    /*letter-spacing: .5px;*/
+    /*color: #ED1C24;*/
+    /*margin: 2% 0 5% 10%;*/
+/*}*/
 
-.h2UserControl {
-    font-size: 3em;
-    letter-spacing: .5px;
-    color: #ED1C24;
-    margin: 2% 0 5% 10%;
-}
+/*.h2UserControl {*/
+    /*font-size: 3em;*/
+    /*letter-spacing: .5px;*/
+    /*color: #ED1C24;*/
+    /*margin: 2% 0 5% 10%;*/
+/*}*/
 
-.divUserControl {
-    font-family: LTCTourist;
-    font-size: 1.25em;
-    letter-spacing: 1px;
-    color: black;
-    margin: 2% 0 5% 10%;
-}
+/*.divUserControl {*/
+    /*font-family: LTCTourist;*/
+    /*font-size: 1.25em;*/
+    /*letter-spacing: 1px;*/
+    /*color: black;*/
+    /*margin: 2% 0 5% 10%;*/
+/*}*/
 
-.reservationDisclaimer {
-    font-family: LTCTourist;
-    font-size: 1.5em;
-    letter-spacing: .5px;
-    color: #0091D5;
-    margin: 2% 0 5% 10%;
-}
+/*.reservationDisclaimer {*/
+    /*font-family: LTCTourist;*/
+    /*font-size: 1.5em;*/
+    /*letter-spacing: .5px;*/
+    /*color: #0091D5;*/
+    /*margin: 2% 0 5% 10%;*/
+/*}*/
 
-.customerInfo {
-    font-family: LTCTourist;
-    font-size: 1.25em;
-    letter-spacing: .5px;
-    color: black;
-    margin: 2% 0 5% 10%;
-}
-.confirmButton{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 2% auto ;
-}
-.userButton{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 2% auto ;
-}
+/*.customerInfo {*/
+    /*font-family: LTCTourist;*/
+    /*font-size: 1.25em;*/
+    /*letter-spacing: .5px;*/
+    /*color: black;*/
+    /*margin: 2% 0 5% 10%;*/
+/*}*/
+/*.confirmButton{*/
+    /*font-size: 2em;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*color: #ED1C24;*/
+    /*background-color: #FFE300;*/
+    /*padding: .75% 3%;*/
+    /*text-decoration: none;*/
+    /*border-radius: 0;*/
+    /*margin: 2% auto ;*/
+/*}*/
+/*.userButton{*/
+    /*font-size: 2em;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*color: #ED1C24;*/
+    /*background-color: #FFE300;*/
+    /*padding: .75% 3%;*/
+    /*text-decoration: none;*/
+    /*border-radius: 0;*/
+    /*margin: 2% auto ;*/
+/*}*/
 
-.userButton:hover {
-    color: #FFE300;
-    background-color: #ED1C24;
-}
+/*.userButton:hover {*/
+    /*color: #FFE300;*/
+    /*background-color: #ED1C24;*/
+/*}*/
 
 #checkboxes{
     float: right;

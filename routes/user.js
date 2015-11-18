@@ -9,7 +9,6 @@ var User = models.User;
 //GET A LOGGED IN USER
 router.get('/getUser', function(req, res , next){
         var currentUser = req.user;
-    console.log(currentUser);
          res.send(currentUser);
 });
 
