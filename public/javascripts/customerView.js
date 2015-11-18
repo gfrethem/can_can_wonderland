@@ -315,6 +315,7 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
 
     var getReservations = function() {
         $http.get('/reservation/getReservations/' + vm.myUser.email).then(function (response) {
+            vm.currentReservations = [];
             for (i = 0; i < response.data.length; i++) {
                 if (moment().format('YYYY-MM-DD HH:mm') < response.data[i].datetime) {
                     response.data[i].humantime = moment(response.data[i].datetime).format('dddd, MMM DD, YYYY h:mm A');
@@ -331,6 +332,7 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
         $http.get("/reservation/cancelReservation/" + id).then(function(){
             for(var i = 0; i < vm.currentReservations.length; i++){
                 if(vm.currentReservations[i].id == id){
+                    vm.currentReservations.splice(i, 1);
                 }
             }
             alert('Success!');
