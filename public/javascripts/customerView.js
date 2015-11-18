@@ -231,8 +231,26 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         vm.mainTime = false;
         vm.quarterSlots = false;
         var newDateTime = makeDateTime(vm.date, time);
-        var databaseDate = moment(newDateTime).format('YYYY-MM-DD HH:mm');
-        vm.yourDate = moment(newDateTime).format('dddd, MMM DD, YYYY h:mm A');
+        if(time.length == 7){
+            var meridian = time.substring(5, 7);
+            var hour = parseInt(time.substring(0,1));
+        } else {
+            meridian = time.substring(6, 8);
+            hour = parseInt(time.substring(0,2));
+        }
+        if(meridian == "PM" && hour == 12){
+            hour = 12;
+        }
+        else if(meridian == "PM"){
+            hour += 12;
+        }
+
+        var sloppyDate = moment(newDateTime, 'YYYY-MM-DD HH:mm');
+        sloppyDate.hour(hour);
+        var databaseDate = sloppyDate.format('YYYY-MM-DD HH:mm');
+        console.log(databaseDate);
+        vm.yourDate = sloppyDate.format('dddd, MMM DD, YYYY h:mm A');
+        console.log(vm.yourDate);
         captureRes.newReservation.datetime = databaseDate;
         captureRes.newReservation.humandate = vm.yourDate;
     };
