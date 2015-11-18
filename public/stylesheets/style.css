@@ -530,7 +530,7 @@ ul{
 .slide-prev{
     color: #0091D5;
     float:left;
-    margin: -1.3% 0 0 25.5%;
+    margin: -2% 0 0 25.5%;
 }
 
 .fa-caret-right:before{
@@ -540,33 +540,33 @@ ul{
 .right{
     color: #0091D5;
     float:right;
-    margin: -1.3% 23% 0 0;
+    margin: -2% 23% 0 0;
 }
 /*//////////////////////////////*/
 
 .slide-prevAdult{
     color: #0091D5;
     float:left;
-    margin: -14px 0 0 22%;
+    margin: 2% 0 0 22%;
 }
 
 .rightAdult{
     color: #0091D5;
     float:right;
-    margin: -14px 22% 0 0;
+    margin: 2% 22% 0 0;
 }
 
 .slide-prevChild{
     color: #0091D5;
     float:left;
-    margin: -14px 0 0 22%;
+    margin: 2% 0 0 22%;
     z-index: -1;
 }
 
 .rightChild{
     color: #0091D5;
     float:right;
-    margin: -14px 22% 0 0;
+    margin: 2% 22% 0 0;
 }
 
 .numPickButton{
