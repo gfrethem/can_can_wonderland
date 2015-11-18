@@ -30,9 +30,9 @@ body{
 .homeNav{
     padding: 2em 0;
 }
-.fa .fa-bars{
+.fa {
     color:black;
-    font-size: 5em;
+    font-size: 4em;
     margin: -1em .5em 0 8%;
 }
 
@@ -83,7 +83,7 @@ p{
 }
 
 .continueButton{
-    font-family:  LTCTouristAlt
+    font-family:  LTCTouristAlt;
     font-size: 2.5em;
     text-align: center;
     color: #ED1C24;
