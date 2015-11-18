@@ -4,7 +4,7 @@
         <div class="checkNums"> ADULTS </div>
         <slick class="slider" settings="num.slickConfig" prev-arrow=".slide-prevAdult" next-arrow=".rightAdult">
             <div ng-repeat="number in num.numAdults track by $index">
-                <div class ="partySize sliders" ng-click="num.numberOfAdults(number)">{{number}}</div>
+                <div class ="partySize sliders" ng-click="num.numberOfAdults(number)" ng-class="{active:num.totalAdults == number}">{{number}}</div>
                 <!--<div >{{number}}</div>-->
             </div>
         </slick>
@@ -26,7 +26,7 @@
         <div class="children12">( 12 and under )</div>
         <slick class="slider" settings="num.slickConfig" prev-arrow=".slide-prevChild" next-arrow=".rightChild">
             <div ng-repeat="number in num.numChildren track by $index">
-                <div class ="partySize sliders" ng-click="num.numberOfChildren(number)">{{number}}</div>
+                <div class ="partySize sliders" ng-click="num.numberOfChildren(number)" ng-class="{active:num.totalChildren == number}">{{number}}</div>
             </div>
         </slick>
     </div>

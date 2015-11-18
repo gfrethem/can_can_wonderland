@@ -1,27 +1,25 @@
 <div ng-Controller="CustomerCalendarController as calendar">
+
     <div class="partySize">
         <button class="partySizeButton" ng-model="date" type="text" ng-click="calendar.showPartySize = !calendar.showPartySize">PARTY SIZE</button>
                 <slick class="slider" settings="calendar.slickConfig" prev-arrow=".slide-prev" next-arrow=".right">
                     <div ng-repeat="party in calendar.partyList track by $index">
-                        <div class='partySize sliders' ng-click="calendar.findPartySize(party)" >{{party}}</div>
+                        <div class='partySize sliders' ng-click="calendar.findPartySize(party)" ng-class="{active:calendar.partySize == party}">{{party}}</div>
                     </div>
                 </slick>
     </div>
 
     <div class="slide-prev">
         <a href="" class="slide-prev">
-            <!--<i class="fa fa-arrow-left"></i>-->
             <i class="fa fa-caret-left"></i>
-
         </a>
     </div>
     <div class="right">
         <a href="" class="right">
-            <!--<i class="fa fa-arrow-right"></i>-->
             <i class="fa fa-caret-right"></i>
-
         </a>
     </div>
+
     <div class="calendarDiv">
         <datepicker  date-format="MMM dd, yyyy">
             <input class='dateButton' ng-model="calendar.date" type="text" name="datebutton" placeholder="PICK A DATE"/>

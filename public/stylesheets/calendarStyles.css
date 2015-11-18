@@ -236,8 +236,9 @@ button:focus {outline:0;}
     text-align: center;
 
     border-left: .15em solid black;
-    border-top: .15em solid black;
+
     border-top: .25em solid grey;
+    border-top: .15em solid black;
 
     border-bottom: .15em solid black;
     /*width: 200px;*/
@@ -254,7 +255,12 @@ button:focus {outline:0;}
     background-color: #FFE300;
 }
 
-.sliders:active{
+/*.sliders:active{*/
+    /*color: #ED1C24;*/
+    /*background-color: #FFE300;*/
+/*}*/
+
+.sliders.active{
     color: #ED1C24;
     background-color: #FFE300;
 }
