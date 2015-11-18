@@ -105,10 +105,33 @@ body{
     margin: 1% 1%;
 }
 
-.userEditButton:hover {
-    color: #FFE300;
-    background-color: #ED1C24;
+.userCloseEditButton {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    color: #ED1C24;
+    background-color: #FFE300;
+    padding: 5.70% 3%;
+    text-decoration: none;
+    border-radius: 0;
+    width: 40%;
+    margin: 1%
 }
+
+.userEditButtons {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    padding: .75% 3%;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 1% 1%;
+}
+
+/*.userEditButton:hover, .usercloseEditButton:hover {*/
+    /*color: #FFE300;*/
+    /*background-color: #ED1C24;*/
+/*}*/
 
 #checkboxes{
     float: right;
@@ -123,13 +146,13 @@ body{
 /*iphone5, 5s*/
 @media only screen and (max-width: 320px) {
     body{
-            font-size: 75%;
+            font-size: 77%;
             font-family: LTCTouristAlt;
     }
     .h1UserControl {
 
             color: #0091D5;
-            margin: 0% 10%;
+            margin: 2% 10%;
 
     }
 
@@ -145,7 +168,7 @@ body{
 
     .pUserControl {
         color: black;
-        margin: 0 0 0 9%;
+        margin: 0 5% 0 5%;
     }
 
     .reservationDisclaimer {
@@ -162,7 +185,7 @@ body{
         color: #ED1C24;
         background-color: #FFE300;
         text-decoration: none;
-        margin: 1% 5% 4% 5%;
+        margin: 3% 5% 2% 5%;
     }
     .userButton {
         font-weight: bold;
@@ -177,13 +200,35 @@ body{
 
 /*iphone6*/
 @media only screen and (max-width: 375px) {
+    body {
+        font-size: 75%;
+    }
+.userEditButton {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    /* color: #ED1C24; */
+    /* background-color: #FFE300; */
+    /* padding: 0.75% 0%; */
+    text-decoration: none;
+    border-radius: 0;
+    /* width: 100%; */
+    float: left;
+    /* margin: 4% 4%; */
+}
+.userCloseEditButton {
 
 }
 
 /*iphone6 plus*/
 @media only screen and (max-width: 414px) {
     body {
+        font-size: 80%;
     }
+    .h2UserControl {
+        margin: 3% 5% 0 5%;
+    }
+}
 }
 /*most android phones*/
 @media only screen and (max-width: 360px) {
