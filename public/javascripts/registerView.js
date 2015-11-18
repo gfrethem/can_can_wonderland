@@ -42,6 +42,7 @@ app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http
             hour += 12;
         }
         var newDate = moment(vm.date).hour(hour).minute(minute).format('YYYY-MM-DD HH:mm');
+        console.log(newDate);
             var newReservation = {
                 name: vm.name[time + index],
                 email: vm.email[time + index],
@@ -51,11 +52,12 @@ app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http
                 datetime: newDate,
                 numslots: vm.numslots[time + index],
                 notes: vm.notes[time + index],
-                walkup: true
+                reservation: false
             };
 
-        if(vm.reserved[time + index]){
-            newReservation.walkup = false;
+        if(vm.reservation[time + index]){
+            newReservation.reservation = true;
+            console.log(newReservation.reservation);
         }
         $http.post("/reservation/makeReservation", newReservation).then(function(){
             vm.currentDate = [];
@@ -72,13 +74,9 @@ app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http
     };
 
 //CHECK IN A RESERVATION
-    vm.noshow = function(value){
+    vm.checkedin = function(value){
+        console.log(vm.checked);
         $http.put('/reservation/checkin/' + value);
-    };
-
-//CHANGE WALKUP
-    vm.walkup = function(value){
-        $http.put('/reservation/walkup/' + value);
     };
 
 //CANCEL A RESERVATION

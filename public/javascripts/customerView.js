@@ -288,6 +288,7 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
      captureRes.newReservation.humandate = $cookies.get('resHumanDate');
 
     vm.resConfirm = captureRes.newReservation;
+    vm.resConfirm.reservation = true;
     vm.confirmReservation = function(){
         $http.post('/reservation/makeReservation', vm.resConfirm).then(function(){
             $cookies.remove('resAdults');
