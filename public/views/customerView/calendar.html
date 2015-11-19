@@ -2,6 +2,7 @@
 
     <div class="partySize">
         <button class="partySizeButton" ng-model="date" type="text" ng-click="calendar.showPartySize = !calendar.showPartySize">PARTY SIZE</button>
+               <div class="underline"></div>
                 <slick class="slider" settings="calendar.slickConfig" prev-arrow=".slide-prev" next-arrow=".right">
                     <div ng-repeat="party in calendar.partyList track by $index">
                         <div class='partySize sliders' ng-click="calendar.findPartySize(party)" ng-class="{active:calendar.partySize == party}">{{party}}</div>
@@ -24,10 +25,12 @@
         <datepicker  date-format="MMM dd, yyyy">
             <input class='dateButton' ng-model="calendar.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
         </datepicker>
+
     </div>
 
-    <div>
+        <div class="underline"></div>
         <button class="pickTime" ng-click="calendar.buttonTime()"> PICK A TIME </button>
+        <div class="underline"></div>
 
         <div ng-show="calendar.mainTime" class="timeSlotContainer" ng-repeat="hour in calendar.currentDate track by $index">
             <div ng-click="calendar.quarterSlots[hour.hour] = !calendar.quarterSlots[hour.hour]">
@@ -41,7 +44,7 @@
                 </div>
             </div>
         </div>
-        </div>
+
     <h2 ng-show="calendar.yourDate"  class="results"> {{calendar.partySize}} people on {{calendar.yourDate}}</h2>
         <div class="continue">
             <a href='/guests'> <button class="continueButton" ng-click="calendar.confirmDateSelection()"type="submit">CONTINUE</button></a>
