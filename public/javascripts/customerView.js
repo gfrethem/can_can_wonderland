@@ -367,4 +367,22 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
         })
     };
 
+    vm.deleteAccount = function(){
+        if(confirm('Are you sure you want to delete your account and reservations?')){
+            $http.get("/user/deleteUser/" + vm.myUser.id).then(function(response){
+                if(response){
+                    currentUser.user = null;
+                    alert('Your account has been deleted');
+                }
+            });
+        }
+    }
+
+    vm.updateAccount = function(){
+        $http.put('/user/updateUser', vm.myUser).then(function(response){
+            if(response){
+                alert("Successfully updated your account!");
+            }
+        })
+    }
 }]);
