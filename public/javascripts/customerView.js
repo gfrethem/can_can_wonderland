@@ -4,36 +4,28 @@ var app = angular.module('customerApp', ['ngRoute', 'xeditable', 'slickCarousel'
 app.config(function($routeProvider, $locationProvider){
     $routeProvider
         .when('/', {
-            templateUrl: "../views/home.html",
-            controller: "MainController"
+            templateUrl: "../views/home.html"
         })
         .when('/login', {
-            templateUrl: "../views/login.html",
-            controller: 'LoginController'
+            templateUrl: "../views/login.html"
         })
         .when('/info', {
-            templateUrl: "../views/customerView/info.html",
-            controller: "CustomerInfoController"
+            templateUrl: "../views/customerView/info.html"
         })
         .when('/guests', {
-            templateUrl: "../views/customerView/numbercheck.html",
-            controller: "NumberController"
+            templateUrl: "../views/customerView/numbercheck.html"
         })
         .when('/register', {
-            templateUrl: "../views/customerView/register.html",
-            controller: "RegisterController"
+            templateUrl: "../views/customerView/register.html"
         })
         .when('/customerCalendar', {
-            templateUrl: "../views/customerView/calendar.html",
-            controller: "CustomerCalendarController"
+            templateUrl: "../views/customerView/calendar.html"
         })
         .when('/confirmReservation', {
-            templateUrl: "../views/customerView/confirmation.html",
-            controller: "ConfirmController"
+            templateUrl: "../views/customerView/confirmation.html"
         })
         .when('/userControl', {
-            templateUrl: "../views/customerView/usercontrol.html",
-            controller: "UserControlController"
+            templateUrl: "../views/customerView/usercontrol.html"
         });
 
     $locationProvider.html5Mode(true);
@@ -134,6 +126,7 @@ app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $h
         vm.currentSettings.suopen = moment().hour(vm.currentSettings.suopen.substring(0,2)).format("hh A");
         vm.currentSettings.suclose = moment().hour(vm.currentSettings.suclose.substring(0,2)).format("hh A");
     });
+
 }]);
 
 app.controller("NumberController", ["$scope", "captureRes", function($scope, captureRes){
@@ -169,16 +162,20 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
     };
 //Alert customer if they have more than 12 people in their party
     vm.showNumAlert = function(){
+        if(vm.totalAdults == 0 && vm.totalChildren == 0){
+            event.preventDefault();
+            return vex.dialog.alert("Please select number of adults and/or children.");
+        }
         if(vm.totalPeople > 12){
             vm.numCheck = 'info';
-            return alert('You group is larger than 12 people, please call to schedule');
+            return vex.dialog.alert('You group is larger than 12 people, please call to reserve a tee time!');
         }
         if(captureRes.newReservation.slotcheck < captureRes.newReservation.numslots){
             vm.numCheck = 'customerCalendar';
-            alert('You selected more people and need more slots, please reconfirm date selection.');
+            vex.dialog.alert('Selected more people and need more tee times, please reconfirm date selection.');
         } else if(captureRes.newReservation.slotcheck > captureRes.newReservation.numslots){
             vm.numCheck = 'customerCalendar';
-            alert('You selected fewer people, please reconfirm date selection.');
+            vex.dialog.alert('Selected fewer people, please reconfirm date selection.');
         }
     };
 
@@ -223,13 +220,18 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     vm.buttonTime = function() {
         if(vm.slotsNeeded == 0) {
             vm.mainTime = false;
-            alert('Please select a party size');
+            vex.dialog.alert('Please select a party size!');
         } else {
             vm.mainTime = true;
             var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
             $http.get('/reservation/getCalendar/' + thisDate).then(function (response) {
-                vm.currentDate = response.data;
-                console.log(vm.currentDate);
+                if(response.data == "Closed"){
+                    vm.yourDate = "";
+                    vm.closed = response.data;
+                } else {
+                    vm.closed = "";
+                    vm.currentDate = response.data;
+                }
             });
         }
     };
@@ -256,9 +258,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         var sloppyDate = moment(newDateTime, 'YYYY-MM-DD HH:mm');
         sloppyDate.hour(hour);
         var databaseDate = sloppyDate.format('YYYY-MM-DD HH:mm');
-        console.log(databaseDate);
         vm.yourDate = sloppyDate.format('dddd, MMM DD, YYYY h:mm A');
-        console.log(vm.yourDate);
         captureRes.newReservation.datetime = databaseDate;
         captureRes.newReservation.humandate = vm.yourDate;
     };
@@ -289,7 +289,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     vm.confirmDateSelection = function(){
         if(!vm.yourDate){
             event.preventDefault();
-            alert('Please chose a time.');
+            vex.dialog.alert('Please choose a tee time.');
         }
     }
 }]);
@@ -331,7 +331,7 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
 
 }]);
 
-app.controller("UserControlController", ["$scope", "currentUser", "$http", function($scope, currentUser, $http){
+app.controller("UserControlController", ["$scope", "currentUser", "$http", "$location", function($scope, currentUser, $http, $location){
     var vm = this;
     vm.currentReservations = [];
     vm.pastReservations = [];
@@ -365,10 +365,42 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
                     vm.currentReservations.splice(i, 1);
                 }
             }
-            alert('Success!');
+            vex.dialog.alert('Success!');
 
             getReservations();
         })
     };
 
+    vm.deleteAccount = function(){
+        var deleteConfirm;
+            vex.dialog.confirm({
+                message: 'Are you sure you want to delete your account and reservations?',
+                callback: function(value) {
+                    if(value){
+                        $http.get("/user/deleteUser/" + vm.myUser.id).then(function(response){
+                            if(response){
+                                currentUser.user = null;
+                                vex.dialog.alert('Your account has been deleted!');
+                            }
+                            $location.path('/')
+                        });
+                    } else {
+                        event.preventDefault();
+                    }
+                }
+            });
+    };
+
+    vm.updateAccount = function(){
+        $http.put('/user/updateUser', vm.myUser).then(function(response){
+            if(response){
+                vex.dialog.alert("Successfully updated your account!");
+                vm.showCustomerInfo = false;
+            }
+        })
+    }
+
+    vex.dialog.open(
+
+    )
 }]);

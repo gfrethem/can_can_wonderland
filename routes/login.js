@@ -33,6 +33,7 @@ router.get('/logout', function(req, res, next){
     req.logOut();
     req.session.destroy(function(err){
         res.redirect('/');
-    });});
+    });
+});
 
 module.exports = router;

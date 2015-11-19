@@ -21,45 +21,53 @@
 button:focus {outline:0;}
 input:focus {outline:0;}
 
-body{
+.userControlMain {
     font-family: LTCTouristAlt, Oswald, Helvetica, Arial, sans-serif;
+    text-align: center;
 }
+.redUC{
+    color:#ED1C24;
 
-
-/*////////////////////////////////////////*/
-/*usercontrol page*/
+}
 
 .h1UserControl {
     font-family:LTCTouristAlt;
-    font-size: 4em;
+    font-size: 6em;
     letter-spacing: .5px;
     color: #0091D5;
-    margin: 0 0 0 10%;
+    margin: 1% 25%;
+    width: 100%;
+    text-align: left;;
 }
-
 .h2UserControl {
     font-family: LTCTouristAlt;
     font-size: 3em;
     letter-spacing: .5px;
     color: #ED1C24;
-    margin: 3% 0 0 10%;
+    margin: 2% auto;
+    width: 55%;
+    text-align: left;
 }
 
 .pUserControl {
+    font-family:LTCTouristAlt;
+    font-size: 2.5em;
+    color: black;
+    padding: 2% 4% 2% 4%;
+    margin: 0 auto;
+
+}
+.pastUserControl {
     font-family:LTCTouristAlt;
     font-size: 2em;
     color: black;
     margin: 0 0 0 10%;
 }
-.pastUserControl {
-    font-family:LTCTouristAlt;
-    font-size: 1.8em;
-    color: black;
-    margin: 0 0 0 10%;
-}
 
 .divUserControl{
-    margin: 1.5% 0 3% 0;
+    margin: 2% auto;
+    width: 60%;
+    text-align: left;
 }
 
 .reservationDisclaimer {
@@ -67,7 +75,9 @@ body{
     font-size: 1.7em;
     letter-spacing: .5px;
     color: #0091D5;
-    margin: 2% 0 3% 10%;
+    margin: 2% auto;
+    width: 55%;
+    text-align: left;
 }
 
 .customerInfo {
@@ -75,62 +85,74 @@ body{
     font-size: 1.25em;
     letter-spacing: .5px;
     color: black;
-    margin: 2% 10%;
+    margin: 0 auto;
 }
 .userControlButton{
-    font-size: 2em;
-    font-weight: bold;
+    font-family: LTCTouristAlt;
+    font-size: 2.5em;
     text-align: center;
     color: #ED1C24;
     background-color: #FFE300;
-    padding: .3% 2%;
+    padding: 0.75% 3%;
     text-decoration: none;
-    border-radius: 0;
-    margin: 1% 10% ;
+    border-radius: 0px;
+    margin: 0px auto;
+    display: block;
+    border: medium none transparent;
+    letter-spacing: 2px;
 }
 .userControlButton:hover {
     color: #FFE300;
     background-color: #ED1C24;
 }
 .userEditButton{
-    font-size: 1.2em;
-    font-weight: bold;
+    font-family: LTCTouristAlt;
+    font-size: 2.5em;
     text-align: center;
     color: #ED1C24;
     background-color: #FFE300;
+    padding: 0.75% 3%;
     text-decoration: none;
-    border-radius: 0;
-    width: 40%;
-    height: 70px;
-    float: left;
+    border-radius: 0px;
+    margin: 0px auto;
+    display: block;
+    border: medium none transparent;
+    letter-spacing: 2px;
 }
 
 .userCloseEditButton {
-    font-size: 1.2em;
-    font-weight: bold;
+    font-family: LTCTouristAlt;
+    font-size: 2.5em;
     text-align: center;
     color: #ED1C24;
     background-color: #FFE300;
+    padding: 0.75% 3%;
     text-decoration: none;
-    border-radius: 0;
-    width: 40%;
-    height: 70px;
-    float: right;
+    border-radius: 0px;
+    margin: 0px auto;
+    display: block;
+    border: medium none transparent;
+    letter-spacing: 2px;
 }
 
 .userEditButtons {
-    font-size: 1.2em;
-    font-weight: bold;
+    font-family: LTCTouristAlt;
+    font-size: 2.5em;
     text-align: center;
+    color: #ED1C24;
+    background-color: #FFE300;
+    padding: 0.75% 3%;
     text-decoration: none;
-    border-radius: 0;
-    height: 80px;
-    margin-bottom: 40px;
+    border-radius: 0px;
+    margin: 0px auto;
+    display: block;
+    border: medium none transparent;
+    letter-spacing: 2px;
 }
 
 /*.userEditButton:hover, .usercloseEditButton:hover {*/
-    /*color: #FFE300;*/
-    /*background-color: #ED1C24;*/
+/*color: #FFE300;*/
+/*background-color: #ED1C24;*/
 /*}*/
 
 #checkboxes{
@@ -145,21 +167,24 @@ body{
 
 /*iphone5, 5s*/
 @media only screen and (max-width: 320px) {
-    body{
-            font-size: 77%;
-            font-family: LTCTouristAlt;
+    .userControlMain   {
+        font-size: 80%;
+        font-family: LTCTouristAlt;
     }
     .h1UserControl {
-
-            color: #0091D5;
-            margin: 2% 10%;
-
+        color: #0091D5;
+        margin: 0 auto;
     }
 
     .h2UserControl {
-            font-family: LTCTouristAlt;
-            color: #ED1C24;
-            margin: 1% 5%;
+        font-family: LTCTouristAlt;
+        color: #ED1C24;
+        width: 100%;
+        margin: 3% 10% 0;
+    }
+
+    .redUC {
+        padding: 0 2%;
     }
 
     .divUserControl{
@@ -167,12 +192,16 @@ body{
     }
 
     .pUserControl {
-        color: black;
-        margin: 0 5% 0 5%;
+        color: #000;
+        padding: 2% 0px;
+        margin: 3px 15%;
+        font-size: 2.6em;
+        width: 100%;
     }
 
     .reservationDisclaimer {
         color: #0091D5;
+        font-size: 10%;
     }
 
     .customerInfo {
@@ -185,7 +214,8 @@ body{
         color: #ED1C24;
         background-color: #FFE300;
         text-decoration: none;
-        margin: 3% 5% 2% 5%;
+        margin: 2% 25% 5%;
+        padding: 0% 25%;
     }
     .userButton {
         font-weight: bold;
@@ -194,6 +224,7 @@ body{
         background-color: #FFE300;
         text-decoration: none;
     }
+
 }
 
 
@@ -203,32 +234,32 @@ body{
     body {
         font-size: 75%;
     }
-.userEditButton {
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-    /* color: #ED1C24; */
-    /* background-color: #FFE300; */
-    /* padding: 0.75% 0%; */
-    text-decoration: none;
-    border-radius: 0;
-    /* width: 100%; */
-    float: left;
-    /* margin: 4% 4%; */
-}
-.userCloseEditButton {
-
-}
-
-/*iphone6 plus*/
-@media only screen and (max-width: 414px) {
-    body {
-        font-size: 80%;
+    .userEditButton {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: center;
+        /* color: #ED1C24; */
+        /* background-color: #FFE300; */
+        /* padding: 0.75% 0%; */
+        text-decoration: none;
+        border-radius: 0;
+        /* width: 100%; */
+        float: left;
+        /* margin: 4% 4%; */
     }
-    .h2UserControl {
-        margin: 3% 5% 0 5%;
+    .userCloseEditButton {
+
     }
-}
+
+    /*iphone6 plus*/
+    @media only screen and (max-width: 414px) {
+        body {
+            font-size: 80%;
+        }
+        .h2UserControl {
+            margin: 3% 5% 0 5%;
+        }
+    }
 }
 /*most android phones*/
 @media only screen and (max-width: 360px) {
@@ -243,3 +274,254 @@ and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 1) {
 
 }
+
+
+
+
+
+/*!* blue #0091D5 *!*/
+/*!* red #ED1C24 *!*/
+/*!* yellow #FFE300 *!*/
+
+/*!*@import url('https://fonts.googleapis.com/css?family=Oswald');*!*/
+
+/*@font-face{*/
+    /*font-family: LTCTourist;*/
+    /*src: url('LTCTouristGothic-Regular.ttf');*/
+/*}*/
+/*@font-face{*/
+    /*font-family: LTCTouristAlt;*/
+    /*src:url('LTCTouristGothic-Alternate.ttf');*/
+/*}*/
+
+/*!* this is a border hack *!*/
+/**, *:before, *:after {*/
+    /*box-sizing: inherit;*/
+/*}*/
+/*!* hack to stop blue hue on button and input clicks *!*/
+/*button:focus {outline:0;}*/
+/*input:focus {outline:0;}*/
+
+/*body{*/
+    /*font-family: LTCTouristAlt, Oswald, Helvetica, Arial, sans-serif;*/
+    /*text-align: center;*/
+/*}*/
+
+
+/*!*///////////////////////////////////////!*/*/
+/*!*usercontrol page*!*/
+
+/*.h1UserControl {*/
+    /*font-family:LTCTouristAlt;*/
+    /*font-size: 7em;*/
+    /*letter-spacing: .5px;*/
+    /*color: #0091D5;*/
+    /*margin: 0 0 0 10%;*/
+/*}*/
+
+/*.h2UserControl {*/
+    /*font-family: LTCTouristAlt;*/
+    /*font-size: 3em;*/
+    /*letter-spacing: .5px;*/
+    /*color: #ED1C24;*/
+    /*margin: 0% 0 0 10%;*/
+/*}*/
+
+/*.pUserControl {*/
+    /*font-family:LTCTouristAlt;*/
+    /*font-size: 2em;*/
+    /*color: black;*/
+    /*margin: 0 0 0 10%;*/
+/*}*/
+/*.pastUserControl {*/
+    /*font-family:LTCTouristAlt;*/
+    /*font-size: 2em;*/
+    /*color: black;*/
+    /*margin: 0 0 0 10%;*/
+/*}*/
+
+/*.divUserControl{*/
+    /*margin: 1.5% 0 3% 0;*/
+/*}*/
+
+/*.reservationDisclaimer {*/
+    /*font-family: LTCTouristAlt;*/
+    /*font-size: 1.7em;*/
+    /*letter-spacing: .5px;*/
+    /*color: #0091D5;*/
+    /*margin: 2% 0 3% 10%;*/
+/*}*/
+
+/*.customerInfo {*/
+    /*font-family: LTCTouristAlt;*/
+    /*font-size: 1.25em;*/
+    /*letter-spacing: .5px;*/
+    /*color: black;*/
+    /*margin: 2% 10%;*/
+/*}*/
+/*.userControlButton{*/
+    /*font-size: 2em;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*color: #ED1C24;*/
+    /*background-color: #FFE300;*/
+    /*padding: .3% 2%;*/
+    /*text-decoration: none;*/
+    /*border-radius: 0;*/
+    /*margin: 1% 10% ;*/
+/*}*/
+/*.userControlButton:hover {*/
+    /*color: #FFE300;*/
+    /*background-color: #ED1C24;*/
+/*}*/
+/*.userEditButton{*/
+    /*font-size: 1.2em;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*color: #ED1C24;*/
+    /*background-color: #FFE300;*/
+    /*text-decoration: none;*/
+    /*border-radius: 0;*/
+    /*width: 40%;*/
+    /*height: 70px;*/
+    /*float: left;*/
+/*}*/
+
+/*.userCloseEditButton {*/
+    /*font-size: 1.2em;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*color: #ED1C24;*/
+    /*background-color: #FFE300;*/
+    /*text-decoration: none;*/
+    /*border-radius: 0;*/
+    /*width: 40%;*/
+    /*height: 70px;*/
+    /*float: right;*/
+/*}*/
+
+/*.userEditButtons {*/
+    /*font-size: 1.2em;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*text-decoration: none;*/
+    /*border-radius: 0;*/
+    /*height: 80px;*/
+    /*margin-bottom: 40px;*/
+/*}*/
+
+/*!*.userEditButton:hover, .usercloseEditButton:hover {*!*/
+    /*!*color: #FFE300;*!*/
+    /*!*background-color: #ED1C24;*!*/
+/*!*}*!*/
+
+/*#checkboxes{*/
+    /*float: right;*/
+    /*margin: 0 0 2em 0;*/
+    /*color: black;*/
+/*}*/
+
+
+/*!*////////////////////////////////////!*/*/
+/*!* media queries *!*/
+
+/*!*iphone5, 5s*!*/
+/*@media only screen and (max-width: 320px) {*/
+    /*body{*/
+            /*font-size: 77%;*/
+            /*font-family: LTCTouristAlt;*/
+    /*}*/
+    /*.h1UserControl {*/
+
+            /*color: #0091D5;*/
+            /*margin: 2% 10%;*/
+
+    /*}*/
+
+    /*.h2UserControl {*/
+            /*font-family: LTCTouristAlt;*/
+            /*color: #ED1C24;*/
+            /*margin: 1% 5%;*/
+    /*}*/
+
+    /*.divUserControl{*/
+        /*margin: 3% 0 6% 0;*/
+    /*}*/
+
+    /*.pUserControl {*/
+        /*color: black;*/
+        /*margin: 0 5% 0 5%;*/
+    /*}*/
+
+    /*.reservationDisclaimer {*/
+        /*color: #0091D5;*/
+    /*}*/
+
+    /*.customerInfo {*/
+        /*color: black;*/
+    /*}*/
+
+    /*.userControlButton {*/
+        /*font-family: LTCTouristAlt;*/
+        /*text-align: center;*/
+        /*color: #ED1C24;*/
+        /*background-color: #FFE300;*/
+        /*text-decoration: none;*/
+        /*margin: 3% 5% 2% 5%;*/
+    /*}*/
+    /*.userButton {*/
+        /*font-weight: bold;*/
+        /*text-align: center;*/
+        /*color: #ED1C24;*/
+        /*background-color: #FFE300;*/
+        /*text-decoration: none;*/
+    /*}*/
+/*}*/
+
+
+
+/*!*iphone6*!*/
+/*@media only screen and (max-width: 375px) {*/
+    /*body {*/
+        /*font-size: 75%;*/
+    /*}*/
+/*.userEditButton {*/
+    /*font-size: 1.2em;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*!* color: #ED1C24; *!*/
+    /*!* background-color: #FFE300; *!*/
+    /*!* padding: 0.75% 0%; *!*/
+    /*text-decoration: none;*/
+    /*border-radius: 0;*/
+    /*!* width: 100%; *!*/
+    /*float: left;*/
+    /*!* margin: 4% 4%; *!*/
+/*}*/
+/*.userCloseEditButton {*/
+
+/*}*/
+
+/*!*iphone6 plus*!*/
+/*@media only screen and (max-width: 414px) {*/
+    /*body {*/
+        /*font-size: 80%;*/
+    /*}*/
+    /*.h2UserControl {*/
+        /*margin: 3% 5% 0 5%;*/
+    /*}*/
+/*}*/
+/*}*/
+/*!*most android phones*!*/
+/*@media only screen and (max-width: 360px) {*/
+    /*body {*/
+    /*}*/
+/*}*/
+
+/*!*ipad portrait and landscape*!*/
+/*@media only screen*/
+/*and (min-device-width: 768px)*/
+/*and (max-device-width: 1024px)*/
+/*and (-webkit-min-device-pixel-ratio: 1) {*/
+
+/*}*/

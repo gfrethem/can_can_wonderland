@@ -33,7 +33,11 @@ module.exports = function(grunt) {
                     "slick-carousel/slick/*",
                     "moment/min/moment.min.js",
                     "angular-cookies/angular-cookies.min.js",
-                    "angular-ui-mask/dist/mask.min.js"
+                    "angular-ui-mask/dist/mask.min.js",
+                    "vex-js/js/vex.combined.min.js",
+                    "vex-js/css/vex.css",
+                    "vex-js/css/vex-theme-default.css"
+
                 ],
                 "dest": "public/vendor/"
             }

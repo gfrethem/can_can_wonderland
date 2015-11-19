@@ -25,6 +25,7 @@
     "angularjs-datepicker": "^0.2.12",
     "bcrypt": "^0.8.5",
     "body-parser": "^1.14.1",
+    "cron": "^1.0.9",
     "express": "^4.13.3",
     "express-session": "^1.12.1",
     "jquery": "^2.1.4",
@@ -36,6 +37,7 @@
     "path": "^0.12.7",
     "sequelize": "^3.13.0",
     "slick-carousel": "^1.5.8",
-    "twilio": "^2.5.2"
+    "twilio": "^2.5.2",
+    "vex-js": "^2.3.3"
   }
 }
