@@ -17,6 +17,7 @@
         <script src="/vendor/slick-carousel/slick/slick.min.js"></script>
         <script src="/vendor/angular-slick-carousel/dist/angular-slick.min.js"></script>
         <script src="/vendor/moment/min/moment.min.js"></script>
+        <script src="vendor/vex-js/js/vex.combined.min.js"></script>
         <script src="/javascripts/customerView.js"></script>
 
 
@@ -27,6 +28,8 @@
         <link rel="stylesheet" href="/stylesheets/calendarStyles.css"/>
         <link rel="stylesheet" href="/stylesheets/usercontrol.css"/>
         <link rel="stylesheet" href="/stylesheets/style.css"/>
+        <link rel="stylesheet" href="/vendor/vex-js/css/vex.css">
+        <link rel="stylesheet" href="/vendor/vex-js/css/vex-theme-default.css">
         <base href="/">
     </head>
     <body ng-controller="MainController as main">
@@ -47,16 +50,18 @@
                 </div>
             </div>
         </header>
-        <a href="/guests">This is for testing!</a>
-        <a href="/frontdesk">This is for testing the cashier calendar view!</a>
-        <a href="/login"></a>
-        <a href="/confirmReservation">confirm page test</a>
-        <a href="/userControl">user control</a>
+        <!--<a href="/guests">This is for testing!</a>-->
+        <!--<a href="/frontdesk">This is for testing the cashier calendar view!</a>-->
+        <!--<a href="/login"></a>-->
+        <!--<a href="/confirmReservation">confirm page test</a>-->
+        <!--<a href="/userControl">user control</a>-->
         <div id="customerViewMain">
             <ng-view>
 
 
             </ng-view>
         </div>
+
+    <script>vex.defaultOptions.className = 'vex-theme-default';</script>
     </body>
 </html>

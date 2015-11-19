@@ -163,18 +163,18 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
     vm.showNumAlert = function(){
         if(vm.totalAdults == 0 && vm.totalChildren == 0){
             event.preventDefault();
-            return alert("Please select number of adults and/or children");
+            return vex.dialog.alert("Please select number of adults and/or children.");
         }
         if(vm.totalPeople > 12){
             vm.numCheck = 'info';
-            return alert('You group is larger than 12 people, please call to schedule');
+            return vex.dialog.alert('You group is larger than 12 people, please call to reserve a tee time!');
         }
         if(captureRes.newReservation.slotcheck < captureRes.newReservation.numslots){
             vm.numCheck = 'customerCalendar';
-            alert('You selected more people and need more slots, please reconfirm date selection.');
+            vex.dialog.alert('Selected more people and need more tee times, please reconfirm date selection.');
         } else if(captureRes.newReservation.slotcheck > captureRes.newReservation.numslots){
             vm.numCheck = 'customerCalendar';
-            alert('You selected fewer people, please reconfirm date selection.');
+            vex.dialog.alert('Selected fewer people, please reconfirm date selection.');
         }
     };
 
@@ -219,7 +219,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     vm.buttonTime = function() {
         if(vm.slotsNeeded == 0) {
             vm.mainTime = false;
-            alert('Please select a party size');
+            vex.dialog.alert('Please select a party size!');
         } else {
             vm.mainTime = true;
             var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
@@ -252,9 +252,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         var sloppyDate = moment(newDateTime, 'YYYY-MM-DD HH:mm');
         sloppyDate.hour(hour);
         var databaseDate = sloppyDate.format('YYYY-MM-DD HH:mm');
-        console.log(databaseDate);
         vm.yourDate = sloppyDate.format('dddd, MMM DD, YYYY h:mm A');
-        console.log(vm.yourDate);
         captureRes.newReservation.datetime = databaseDate;
         captureRes.newReservation.humandate = vm.yourDate;
     };
@@ -285,7 +283,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     vm.confirmDateSelection = function(){
         if(!vm.yourDate){
             event.preventDefault();
-            alert('Please chose a time.');
+            vex.dialog.alert('Please choose a tee time.');
         }
     }
 }]);
@@ -327,7 +325,7 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
 
 }]);
 
-app.controller("UserControlController", ["$scope", "currentUser", "$http", function($scope, currentUser, $http){
+app.controller("UserControlController", ["$scope", "currentUser", "$http", "$location", function($scope, currentUser, $http, $location){
     var vm = this;
     vm.currentReservations = [];
     vm.pastReservations = [];
@@ -361,27 +359,37 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
                     vm.currentReservations.splice(i, 1);
                 }
             }
-            alert('Success!');
+            vex.dialog.alert('Success!');
 
             getReservations();
         })
     };
 
     vm.deleteAccount = function(){
-        if(confirm('Are you sure you want to delete your account and reservations?')){
-            $http.get("/user/deleteUser/" + vm.myUser.id).then(function(response){
-                if(response){
-                    currentUser.user = null;
-                    alert('Your account has been deleted');
+        var deleteConfirm;
+            vex.dialog.confirm({
+                message: 'Are you sure you want to delete your account and reservations?',
+                callback: function(value) {
+                    if(value){
+                        $http.get("/user/deleteUser/" + vm.myUser.id).then(function(response){
+                            if(response){
+                                currentUser.user = null;
+                                vex.dialog.alert('Your account has been deleted!');
+                            }
+                            $location.path('/')
+                        });
+                    } else {
+                        event.preventDefault();
+                    }
                 }
             });
-        }
-    }
+    };
 
     vm.updateAccount = function(){
         $http.put('/user/updateUser', vm.myUser).then(function(response){
             if(response){
-                alert("Successfully updated your account!");
+                vex.dialog.alert("Successfully updated your account!");
+                vm.showCustomerInfo = false;
             }
         })
     }

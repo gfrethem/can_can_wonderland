@@ -1,14 +1,9 @@
 /* Slider */
-
-button:focus {outline:0;}
-input:focus {outline:0;}
-*:focus {outline:0;}
-
 .slick-slider
 {
-    /*position: relative;*/
+    position: relative;
 
-    /*display: block;*/
+    display: block;
 
     -moz-box-sizing: border-box;
          box-sizing: border-box;
@@ -122,4 +117,3 @@ input:focus {outline:0;}
 .slick-arrow.slick-hidden {
     display: none;
 }
-
