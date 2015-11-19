@@ -167,21 +167,24 @@ input:focus {outline:0;}
 
 /*iphone5, 5s*/
 @media only screen and (max-width: 320px) {
-    body{
-        font-size: 70%;
+    .userControlMain   {
+        font-size: 80%;
         font-family: LTCTouristAlt;
     }
     .h1UserControl {
-
         color: #0091D5;
-        margin: 2% 10%;
-
+        margin: 0 auto;
     }
 
     .h2UserControl {
         font-family: LTCTouristAlt;
         color: #ED1C24;
-        margin: 1% 5%;
+        width: 100%;
+        margin: 3% 10% 0;
+    }
+
+    .redUC {
+        padding: 0 2%;
     }
 
     .divUserControl{
@@ -189,12 +192,16 @@ input:focus {outline:0;}
     }
 
     .pUserControl {
-        color: black;
-        margin: 0 5% 0 5%;
+        color: #000;
+        padding: 2% 0px;
+        margin: 3px 15%;
+        font-size: 2.6em;
+        width: 100%;
     }
 
     .reservationDisclaimer {
         color: #0091D5;
+        font-size: 10%;
     }
 
     .customerInfo {
@@ -207,7 +214,8 @@ input:focus {outline:0;}
         color: #ED1C24;
         background-color: #FFE300;
         text-decoration: none;
-        margin: 3% 5% 2% 5%;
+        margin: 2% 25% 5%;
+        padding: 0% 25%;
     }
     .userButton {
         font-weight: bold;
@@ -216,6 +224,7 @@ input:focus {outline:0;}
         background-color: #FFE300;
         text-decoration: none;
     }
+
 }
 
 
