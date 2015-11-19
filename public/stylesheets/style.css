@@ -252,7 +252,8 @@ a {
 
  li {
     list-style: none;
-     font-size: 1.25em;
+     font-size: 1.75em;
+     letter-spacing: .75px;
 }
 
  .datepicker{
@@ -263,16 +264,16 @@ a {
  .dateButton{
      display:block;
      margin: 2% auto 0;
-     color: black;
+     color: #ED1C24;
      border: none;
      font-size: 5em;
      text-align: center;
      background-color: white;
-     font-family: LTCTourist;
+     font-family: LTCTouristAlt;
  }
 
 .dateButton:hover{
-    color:#ED1C24;
+    color:black;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -293,7 +294,8 @@ a {
 .submitButton{
     border: transparent;
     font-size: 2em;
-    font-family: LTCTourist, Helvetica, Ariel, san-serif;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
+    letter-spacing: 2px;
     text-align: center;
     margin: 7% auto;
     display: block;
@@ -307,7 +309,6 @@ ul{
 }
 
 .mainHour{
-    font-size: 1.25em;
     background-color: white;
     border: 4px solid black;
     width: 70%;
@@ -316,7 +317,7 @@ ul{
 }
 
 .quarterHour{
-    background-color: white;
+    background-color: #cce5ff;
     border: 4px solid black;
     border-left: none;
     border-right: none;
@@ -334,53 +335,104 @@ ul{
     display: block;
 }
 
-/*.infoName{*/
-    /*float:left;*/
-/*}*/
-.adultNumber{
-    margin: 0 2px 0 0;
-}
-
-.infoButton{
-    font-size: 1em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: white;
-    border: 2px solid black;
-    padding: 3px 6px;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 0 3%;
-}
-
-.infoButton:hover{
-    background-color: #ED1C24;
-}
-
 .available{
-    float:right;
-    clear:both;
-    margin-right: 3%;
-    margin-top: -1.4em;
+    float: right;
+    clear: both;
+    margin-right: 2%;
 }
 
 .numAvailable{
-    font-weight: bold;
     color: #ED1C24;
+    background-color: white;
     float: right;
     border: 4px solid black;
     text-align: center;
-    /*padding: .15em .15em;*/
-    width: 1.75em;
-    height: 1.75em;
-    margin: -4% 0 0 1em;
-    line-height: 1.75em;
+    width: 1.45em;
+    height: 1.45em;
+    line-height: 1.5;
+    margin: -4% 0 0 .5em;
 }
+.infoContainer{
+    color: black;
+    margin: 1% 1.5%;
+    font-size:1.25em;
+    height: 46px;
+}
+
+.infoForm{
+    margin: 0% 4% 4% 4%;
+    font-family: LTCTouristAlt;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    width: 70%;
+    text-align: center;
+}
+.inputForm{
+    background-color: black;
+    width: 30%;
+}
+.inputname{
+    margin: 12px 0 0 0;
+    padding: 10px 0 0 0;
+}
+.labelInfo{
+    width: 30%;
+}
+
+.infoButton{
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
+    font-size: 1em;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-align: center;
+    color: #0091D5;
+    background-color: white;
+    border: 4px solid black;
+    padding: .5% 1.25%;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 0 3%;
+    float:right;
+}
+
+.infoButton:hover{
+    background-color: #FFE300;
+}
+
+/*input[type="checkbox"] {*/
+    /*font-size: 50px;*/
+/*}*/
 
 #checkboxes{
     float: right;
     color: black;
+    margin: 1% -1%;
+}
+
+.check-in{
+    width: 2em;
+}
+.red{
+    color:#ED1C24;
+    font-size: 1.25em;
+    margin-left: 12px;
+}
+.cancelButton{
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
+    font-size: 1em;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-align: center;
+    color: #FFE300;
+    background-color: #ED1C24;
+    border: 4px solid black;
+    padding: .5% 1.25%;
+    text-decoration: none;
+    border-radius: 0;
+    margin: -54px 0px;
+    /* display: block; */
+    float: right;
+    clear: both;
 }
 
 /*////////////////////////////////////////////*/
@@ -438,7 +490,7 @@ ul{
 .partySizeButton{
     margin: 2% auto 1%;
     display: block;
-    font-family: LTCTourist;
+    font-family: LTCTouristAlt;
     font-size: 4.1em;
     text-align: center;
     color: black;
@@ -457,7 +509,7 @@ ul{
 .pickTime{
     margin: 9% auto 1%;
     display: block;
-    font-family: LTCTourist;
+    font-family: LTCTouristAlt;
     font-size: 4.1em;
     text-align: center;
     color: black;
@@ -749,12 +801,6 @@ ul{
     /*color: #FFE300;*/
     /*background-color: #ED1C24;*/
 /*}*/
-
-#checkboxes{
-    float: right;
-    margin: 0 0 2em 0;
-    color: black;
-}
 
 
 /*/////////////////////////////////////*/
