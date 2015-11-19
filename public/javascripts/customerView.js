@@ -94,7 +94,6 @@ app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', 
     $cookies.put('resDatetime', captureRes.newReservation.datetime);
     $cookies.put('resNumslots', captureRes.newReservation.numslots);
     $cookies.put('resHumanDate', captureRes.newReservation.humandate);
-
 }]);
 
 app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $http){
@@ -126,6 +125,7 @@ app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $h
         vm.currentSettings.suopen = moment().hour(vm.currentSettings.suopen.substring(0,2)).format("hh A");
         vm.currentSettings.suclose = moment().hour(vm.currentSettings.suclose.substring(0,2)).format("hh A");
     });
+
 }]);
 
 app.controller("NumberController", ["$scope", "captureRes", function($scope, captureRes){
