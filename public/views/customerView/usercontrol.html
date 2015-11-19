@@ -17,8 +17,8 @@
     <h2 class="h2UserControl">YOUR PAST RESERVATIONS</h2>
     <div class="pastReservationContainer" ng-repeat="pastRes in control.pastReservations">
             <div class="divUserControl">
-                <p class="pastUserControl">TEE TIME: {{pastRes.humantime}}</p>
-                <p class="pastUserControl">{{pastRes.numslots}} Group(s) {{pastRes.adultnumber}} Adults {{pastRes.childnumber}} Children</p>
+                <p class="pUserControl">TEE TIME: {{pastRes.humantime}}</p>
+                <p class="pUserControl">{{pastRes.numslots}} Group(s) {{pastRes.adultnumber}} Adults {{pastRes.childnumber}} Children</p>
             </div>
     </div>
     <div>
@@ -32,9 +32,9 @@
             <li editable-text="control.myUser.phonenumber">PHONE NUMBER: {{control.myUser.phonenumber || 'Add a Phone Number!'}}</li>
         </ul>
         <div class="userEditButtons">
-        <button class="userEditButton" ng-click="control.updateAccount()">SUBMIT CHANGES</button>
-        <button class="userEditButton" ng-click="control.deleteAccount()">DELETE MY ACCOUNT</button>
-        <button class="userCloseEditButton" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
+            <button class="userEditButton" ng-click="control.updateAccount()">SUBMIT CHANGES</button>
+            <button class="userEditButton" ng-click="control.deleteAccount()">DELETE MY ACCOUNT</button>
+            <button class="userEditButton" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
         </div>
     </div>
 </div>
