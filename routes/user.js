@@ -5,6 +5,7 @@ var express = require('express');
 var router = express.Router();
 var models = require('../models');
 var User = models.User;
+var Reservation = models.Reservation;
 
 //GET A LOGGED IN USER
 router.get('/getUser', function(req, res , next){
@@ -25,20 +26,48 @@ router.get('/user/:email?', function(req, res, next){
 });
 
 //DELETE ACCOUNT
-router.get('/deleteUser/:email?', function(req, res, next) {
-    var userEmail = req.params.email;
-    User.destroy({
-        where: {
-            email: userEmail
+router.get('/deleteUser/:id?', function(req, res, next) {
+    var userId = req.params.id;
+    User.findOne({
+        where : {
+            id: userId
         }
-    }).then(function (response) {
-        res.send(200);
-    });
+    }).then(function(response){
+        var userEmail = response.email;
+        Reservation.destroy({
+            where: {
+                email: userEmail
+            }
+        });
+
+        User.destroy({
+            where: {
+                id: userId
+            }
+        }).then(function (response) {
+            req.logOut();
+            req.session.destroy();
+            res.send(200);
+        });
+    })
 });
 
-//CONFIRM LOGIN INFO / REGISTRATION INFO / FACEBOOK INFO
-
-//LOGIN / REGISTER / FACEBOOK LOGIN
+//UPDATE A USER
+router.put('/updateUser', function(req, res, next){
+    var user = req.body;
+    User.findOne({
+        where: {
+            id: user.id
+        }
+    }).then(function(response){
+        response.name = user.name;
+        response.email = user.email;
+        response.phonenumber = user.phonenumber;
+        response.save();
+    }).then(function(response){
+        res.send(response);
+    })
+});
 
 
 module.exports = router;
