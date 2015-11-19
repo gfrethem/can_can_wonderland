@@ -22,13 +22,16 @@
     </head>
     <body ng-controller="AdminController as admin">
         <header>
-            <a href="/info">
-                <img src="/images/redYellow_sm.png" alt="Golf ball image, takes you to tee time registration" class="starLogo">
-            </a>
-            <a class="logoutButton" ng-click="admin.logout()" href="/">LOGOUT</a>
 
-            <!--<button class="logoutButton" ng-click="admin.logout()">LOGOUT</button>-->
-
+            <div class="homeNav">
+                <a href="/">
+                    <i class="fa fa-bars "></i>
+                </a>
+                <a href="/info">
+                    <img src="/images/redYellow_sm.png" alt="Golf ball image, takes you to tee time registration" class="starLogo">
+                </a>
+                     <a class="logoutButton" ng-click="admin.logout()" href="/">LOGOUT</a>
+            </div>
         </header>
         <div class='adminHeader grid grid-pad'>
             <a href="/admin" class="col-1-3 adminLink">Calendar</a>

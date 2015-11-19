@@ -4,36 +4,28 @@ var app = angular.module('customerApp', ['ngRoute', 'xeditable', 'slickCarousel'
 app.config(function($routeProvider, $locationProvider){
     $routeProvider
         .when('/', {
-            templateUrl: "../views/home.html",
-            controller: "MainController"
+            templateUrl: "../views/home.html"
         })
         .when('/login', {
-            templateUrl: "../views/login.html",
-            controller: 'LoginController'
+            templateUrl: "../views/login.html"
         })
         .when('/info', {
-            templateUrl: "../views/customerView/info.html",
-            controller: "CustomerInfoController"
+            templateUrl: "../views/customerView/info.html"
         })
         .when('/guests', {
-            templateUrl: "../views/customerView/numbercheck.html",
-            controller: "NumberController"
+            templateUrl: "../views/customerView/numbercheck.html"
         })
         .when('/register', {
-            templateUrl: "../views/customerView/register.html",
-            controller: "RegisterController"
+            templateUrl: "../views/customerView/register.html"
         })
         .when('/customerCalendar', {
-            templateUrl: "../views/customerView/calendar.html",
-            controller: "CustomerCalendarController"
+            templateUrl: "../views/customerView/calendar.html"
         })
         .when('/confirmReservation', {
-            templateUrl: "../views/customerView/confirmation.html",
-            controller: "ConfirmController"
+            templateUrl: "../views/customerView/confirmation.html"
         })
         .when('/userControl', {
-            templateUrl: "../views/customerView/usercontrol.html",
-            controller: "UserControlController"
+            templateUrl: "../views/customerView/usercontrol.html"
         });
 
     $locationProvider.html5Mode(true);
@@ -224,8 +216,13 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
             vm.mainTime = true;
             var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
             $http.get('/reservation/getCalendar/' + thisDate).then(function (response) {
-                vm.currentDate = response.data;
-                console.log(vm.currentDate);
+                if(response.data == "Closed"){
+                    vm.yourDate = "";
+                    vm.closed = response.data;
+                } else {
+                    vm.closed = "";
+                    vm.currentDate = response.data;
+                }
             });
         }
     };
@@ -393,4 +390,8 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", "$loc
             }
         })
     }
+
+    vex.dialog.open(
+
+    )
 }]);
