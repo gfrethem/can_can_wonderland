@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING
         },
         phonenumber: {
-            type: DataTypes.STRING
+            type: DataTypes.INTEGER
         },
         facetoken: {
             type: DataTypes.STRING
