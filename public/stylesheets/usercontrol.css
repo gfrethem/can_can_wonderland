@@ -21,7 +21,7 @@
 button:focus {outline:0;}
 input:focus {outline:0;}
 
-body{
+.userControlMain {
     font-family: LTCTouristAlt, Oswald, Helvetica, Arial, sans-serif;
     text-align: center;
 }
