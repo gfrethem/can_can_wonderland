@@ -224,8 +224,13 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
             vm.mainTime = true;
             var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
             $http.get('/reservation/getCalendar/' + thisDate).then(function (response) {
-                vm.currentDate = response.data;
-                console.log(vm.currentDate);
+                if(response.data == "Closed"){
+                    vm.yourDate = "";
+                    vm.closed = response.data;
+                } else {
+                    vm.closed = "";
+                    vm.currentDate = response.data;
+                }
             });
         }
     };
