@@ -381,7 +381,7 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", funct
     vm.updateAccount = function(){
         $http.put('/user/updateUser', vm.myUser).then(function(response){
             if(response){
-                alert("Succesfully updated your account!");
+                alert("Successfully updated your account!");
             }
         })
     }
