@@ -3,11 +3,11 @@
     <h2 class="h2UserControl">YOUR RESERVATIONS</h2>
     <div ng-repeat="curRes in control.currentReservations" class="futureReservationContainer">
                 <div class="divUserControl">
-                        <p class="pUserControl">TEE TIME:</p>
-                        <p class="pUserControl">{{curRes.humantime}}</p>
-                        <p class="pUserControl">{{curRes.numslots}} Group(s)</p>
-                        <p class="pUserControl">{{curRes.adultnumber}} Adults</p>
-                        <p class="pUserControl">{{curRes.childnumber}} Children</p>
+                        <p class="pUserControl">TEE TIME: {{curRes.humantime}}</p>
+                        <!--<p class="pUserControl">{{curRes.humantime}}</p>-->
+                        <p class="pUserControl"><span class="redUC">{{curRes.numslots}}</span> Group(s) <span class="redUC">{{curRes.adultnumber}}</span> Adults <span class="redUC">{{curRes.childnumber}}</span> Children</p>
+                        <!--<p class="pUserControl">{{curRes.adultnumber}} Adults</p>-->
+                        <!--<p class="pUserControl">{{curRes.childnumber}} Children</p>-->
                         <button class="userControlButton" ng-click="control.cancelReservation(curRes.id)">CANCEL</button>
                 </div>
     </div>
@@ -17,11 +17,8 @@
     <h2 class="h2UserControl">YOUR PAST RESERVATIONS</h2>
     <div class="pastReservationContainer" ng-repeat="pastRes in control.pastReservations">
             <div class="divUserControl">
-                <p class="pastUserControl">TEE TIME:</p>
-                <p class="pastUserControl">{{pastRes.humantime}}</p>
-                <p class="pastUserControl">{{pastRes.numslots}} Group(s)</p>
-                <p class="pastUserControl">{{pastRes.adultnumber}} Adults</p>
-                <p class="pastUserControl">{{pastRes.childnumber}} Children</p>
+                <p class="pastUserControl">TEE TIME: {{pastRes.humantime}}</p>
+                <p class="pastUserControl">{{pastRes.numslots}} Group(s) {{pastRes.adultnumber}} Adults {{pastRes.childnumber}} Children</p>
             </div>
     </div>
     <div>
