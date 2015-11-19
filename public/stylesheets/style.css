@@ -128,12 +128,91 @@ a {
     margin: 1px 0 0 0;
 }
 
-/*.slick-arrow {*/
-    /*color: #ED1C24 !important;*/
-/*}*/
+/*///////////////////////////////////////*/
+/*lOGIN*/
+#emailMain{
+    font-family: georgia;
+    letter-spacing: 2px;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #ED1C24;
+    border-color: transparent;
+    margin: 8px 0;
+    padding: 8px 0 11px;
+    width: 100%;
+}
+
+input#emailMain::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+    font-family: LTCTouristAlt;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#emailMain:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#emailMain::-moz-placeholder{ /* Mozilla Firefox 19+ */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#emailMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+/*////////////////////////////////*/
+
+#passwordMain{
+    font-family: georgia;
+    letter-spacing: 2px;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #ED1C24;
+    border-color: transparent;
+    margin: 8px 0 41px 0;
+    padding: 8px 0 11px;
+    width: 100%;
+}
+/*////////////////////////////////*/
+input#passwordMain::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+    font-family: LTCTouristAlt;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#passwordMain:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#passwordMain::-moz-placeholder{ /* Mozilla Firefox 19+ */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#passwordMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
 
 /*/////////////////////////////////*/
 /*REGISTER*/
+
+
 .newUser{
     font-size: 3em;
     color: #0091D5;
@@ -151,42 +230,39 @@ a {
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: #ED1C24;
+    background-color: #0091D5;
     border-color: transparent;
     margin: 8px 0;
     padding: 8px 0 11px;
     width: 100%;
-
-
 }
 /*////////////////////////////////*/
 
-input#email::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+input.pholder::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    white;
     font-family: LTCTouristAlt;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
-input#email:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+input.pholder:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
     color:    white;
     font-family: LTCTourist;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
-input#email::-moz-placeholder{ /* Mozilla Firefox 19+ */
+input.pholder::-moz-placeholder{ /* Mozilla Firefox 19+ */
     color:    white;
     font-family: LTCTourist;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
-input#email:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+input.pholder:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     color:    white;
     font-family: LTCTourist;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
 /*////////////////////////////////*/
-
 
 #password{
     font-family: georgia;
@@ -195,38 +271,12 @@ input#email:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: #ED1C24;
+    background-color: #0091D5;
     border-color: transparent;
     margin: 8px 0 8px 0;
     padding: 8px 0 11px;
     width: 100%;
 }
-/*////////////////////////////////*/
-input#password::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    white;
-    font-family: LTCTouristAlt;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#password:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#password::-moz-placeholder{ /* Mozilla Firefox 19+ */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#password:-ms-input-placeholder{ /* Internet Explorer 10-11 */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-/*////////////////////////////////*/
 
 #password2{
     font-family: georgia;
@@ -235,37 +285,12 @@ input#password:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: #ED1C24;
+    background-color: #0091D5;
     border-color: transparent;
-    margin: 8px 0 37px;
+    margin: 8px 0 41px;
     padding: 8px 0 11px;
     width: 100%;
 }
-input#password2::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    white;
-    font-family: LTCTouristAlt;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#password2:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#password2::-moz-placeholder{ /* Mozilla Firefox 19+ */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#password2:-ms-input-placeholder{ /* Internet Explorer 10-11 */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-/*////////////////////////////////*/
 
 #name{
     font-family: georgia;
@@ -274,37 +299,12 @@ input#password2:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: #ED1C24;
+    background-color:#0091D5;
     border-color: transparent;
     margin: 8px 0;
     padding: 8px 0 11px;
     width: 100%;
 }
-input#name::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    white;
-    font-family: LTCTouristAlt;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#name:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#name::-moz-placeholder{ /* Mozilla Firefox 19+ */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#name:-ms-input-placeholder{ /* Internet Explorer 10-11 */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-/*////////////////////////////////*/
 
 #username{
     font-family: georgia;
@@ -313,37 +313,12 @@ input#name:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: #ED1C24;
+    background-color: #0091D5;
     border-color: transparent;
     margin: 8px 0;
     padding: 8px 0 11px;
     width: 100%;
 }
-input#username::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    white;
-    font-family: LTCTouristAlt;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#username:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#username::-moz-placeholder{ /* Mozilla Firefox 19+ */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#username:-ms-input-placeholder{ /* Internet Explorer 10-11 */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-/*////////////////////////////////*/
 
 #phone{
     font-family: georgia;
@@ -352,37 +327,12 @@ input#username:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: #ED1C24;
+    background-color: #0091D5;
     border-color: transparent;
     margin: 8px 0;
     padding: 8px 0 11px;
     width: 100%;
 }
-input#phone::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    white;
-    font-family: LTCTouristAlt;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#phone:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#phone::-moz-placeholder{ /* Mozilla Firefox 19+ */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-input#phone:-ms-input-placeholder{ /* Internet Explorer 10-11 */
-    color:    white;
-    font-family: LTCTourist;
-    letter-spacing: 3px;
-    font-size: 1.25em;
-}
-/*////////////////////////////////*/
 
 .passwordAlert {
     color: #ED1C24;
