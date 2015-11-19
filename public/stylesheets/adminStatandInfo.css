@@ -1,2 +1,22 @@
 
-.
+.setNew{
+    font-family: LTCTourist;
+    font-size: 3em;
+    color:#0091D5;
+    margin: 10px 0 -4px;
+}
+
+.setNewSm{
+    font-family: georgia;
+    font-size: 2em;
+    margin: 0 0 0 0;
+}
+
+.center{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+.black{
+    color: black;
+}
