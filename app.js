@@ -2,11 +2,13 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
+var moment = require('moment');
 //var Sequelize = require('sequelize');
 
 // SEQUELIZE
 var models = require("./models");
 var User = models.User;
+var Reservation = models.Reservation;
 
 //REQUIRE PASSPORT, etc --Liz
 var passport = require('passport');
@@ -94,7 +96,7 @@ passport.use(new FacebookStrategy({
         clientID: configAuth.facebookAuth.clientID,
         clientSecret: configAuth.facebookAuth.clientSecret,
         callbackURL: configAuth.facebookAuth.callbackURL,
-        enableProof:true,
+        enableProof: true,
         profileFields: ["emails", "displayName"]
 
     },
@@ -106,7 +108,11 @@ passport.use(new FacebookStrategy({
         process.nextTick(function () {
 
             // find the user in the database based on their facebook id
-            User.findOne({'facebook.id': profile.id}, function (err, user) {
+            User.find({
+                where: {
+                    'faceid': profile.id
+                }
+            }).then(function (user, err) {
 
                 // if there is an error, stop everything and return that
                 // ie an error connecting to the database
@@ -118,7 +124,7 @@ passport.use(new FacebookStrategy({
                     return done(null, user); // user found, return that user
                 } else {
                     // if there is no user found with that facebook id, create them
-                    var newUser = new User();
+                    var newUser = {};
 
                     // set all of the facebook information in our user model
                     newUser.faceid = profile.id; // set the users facebook id
@@ -127,19 +133,26 @@ passport.use(new FacebookStrategy({
                     newUser.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
 
                     // save our user to the database
-                    newUser.save(function (err) {
-                        if (err)
-                            throw err;
+                    User.create(newUser)
+                        .catch(function (err) {
+                            if (err) {
+                                console.log(err);
+                            }
+                        })
+                        .then(function (user) {
+                            return done(null, user);
+                        });
 
-                        // if successful, return the new user
-                        return done(null, newUser);
-                    });
+                    //// if successful, return the new user
+                    //return done(null, newUser);
                 }
 
-            });
-        });
+            })
 
-    }));
+        });
+    }
+));
+
 
 
 
@@ -195,29 +208,73 @@ app.use('/guests', guests);
 var ACCOUNT_SID = 'ACa191532f90a93e915f16da74ef789a7a';
 var AUTH_TOKEN = 'e9ccd52f2d96b3801435c108ca0470ba';
 
-var client = require('twilio')('ACa191532f90a93e915f16da74ef789a7a', 'e9ccd52f2d96b3801435c108ca0470ba');
+var client = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
+var CronJob = require('cron').CronJob;
+var job = new CronJob('5 * * * * *', function(){
+    var todayDate = moment();
+    var nextDayStart = moment(todayDate).add('days', 1).set('hour', 00).set('minute', 00).format('YYYY-MM-DD HH:mm');
+    var nextDayEnd = moment(todayDate).add('days', 1).set('hour', 23).set('minute', 59).format('YYYY-MM-DD HH:mm');
+    var tomorrowFormatted = moment(nextDayStart).format("dddd, MMM DD, YYYY");
+    Reservation.findAll({
+        where : {
+            datetime: {
+                $between: [nextDayStart, nextDayEnd]
+            }
+        }
+    }).then(function(response){
+        var reservationsList = response;
 
-// Uncomment below to send SMS
+        for(var i = 0; i < reservationsList.length; i++) {
+            var resTime = moment(reservationsList[i].datetime).format("h:mm A");
+            var resName = reservationsList[i].name;
+            var resPhoneNumber = reservationsList[i].phonenumber;
+            console.log(resPhoneNumber);
+            if(resPhoneNumber != ""){
+                checkName();
+            }
 
-////Send an SMS text message
-//client.sendMessage({
-//
-//    to:'+16513384912', // Any number Twilio can deliver to
-//    from: '+16513831380', // A number you bought from Twilio and can use for outbound communication
-//    body: 'Because we can can can!' // body of the SMS message
-//
-//}, function(err, responseData) { //this function is executed when a response is received from Twilio
-//
-//    if (!err) { // "err" is an error received during the request, if any
-//
-//        // "responseData" is a JavaScript object containing data received from Twilio.
-//        // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
-//        // http://www.twilio.com/docs/api/rest/sending-sms#example-1
-//
-//        console.log(responseData.from); // outputs "+14506667788"
-//        console.log(responseData.body); // outputs "word to your mother."
-//
-//    }
-//});
+        function checkName() {
+                if (resName == null) {
+                    sendReminder('friend', resPhoneNumber, resTime, tomorrowFormatted);
+                } else {
+                    sendReminder(resName, resPhoneNumber, resTime, tomorrowFormatted);
+                }
+            }
+        }
+
+        function sendReminder(name, phonenumber, time, date) {
+            var to = '+1' + phonenumber;
+            var body = 'Hello ' + name + ", this is a friendly reminder that you have scheduled a tee time at Can Can Wonderland for " + time + " tomorrow, " + date + "."
+            console.log(to);
+            console.log(body);
+        }
+
+    //Send an SMS text message
+    //    function sendReminder(name, phonenumber, time, date) {
+    //        client.sendMessage({
+    //
+    //            to: '+1' + phonenumber, // Any number Twilio can deliver to
+    //            from: '+16513831380', // A number you bought from Twilio and can use for outbound communication
+    //            body: 'Hello ' + name + ", this is a friendly reminder that you have scheduled a tee time at Can Can Wonderland for " + time + " tomorrow, " + date + "." // body of the SMS message
+    //
+    //        }, function (err, responseData) { //this function is executed when a response is received from Twilio
+    //
+    //            if (!err) { // "err" is an error received during the request, if any
+    //
+    //                // "responseData" is a JavaScript object containing data received from Twilio.
+    //                // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
+    //                // http://www.twilio.com/docs/api/rest/sending-sms#example-1
+    //
+    //                console.log(responseData.from); // outputs "+14506667788"
+    //                console.log(responseData.body); // outputs "word to your mother."
+    //
+    //            }
+    //        });
+    //    }
+    });
+}, null, true, "America/Los_Angeles");
+job.start();
+//00 00 14 * * 0-6
+
 
 module.exports = app;

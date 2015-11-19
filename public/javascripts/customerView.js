@@ -59,7 +59,7 @@ app.factory('captureRes', function(){
     }
 });
 app.factory('currentUser', ['$http', function($http){
-    var user;
+    var user = {};
 
     return {
         user : user
@@ -77,8 +77,17 @@ app.controller("MainController", ["$scope", "$http", "currentUser", "$cookies", 
         $cookies.remove('resHumanDate');
         captureRes.newReservation = {};
         currentUser.user = null;
+        vm.user = null;
         $http.get("/login/logout");
     };
+
+    $http.get('/user/getUser').then(function(response){
+        vm.user = response.data;
+        currentUser.user = response.data;
+        console.log(response.data);
+    });
+
+    //vm.user = currentUser.user;
     // Not sure I like this yet - G
     //currentUser.fetchUserDetails();
     //vm.user = currentUser.user;
@@ -94,7 +103,6 @@ app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', 
     $cookies.put('resDatetime', captureRes.newReservation.datetime);
     $cookies.put('resNumslots', captureRes.newReservation.numslots);
     $cookies.put('resHumanDate', captureRes.newReservation.humandate);
-
 }]);
 
 app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $http){
