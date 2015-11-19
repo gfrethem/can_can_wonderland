@@ -2,11 +2,11 @@
     <h1 class="h1UserControl">Hello, {{control.myUser.name}}</h1>
     <h2 class="h2UserControl">YOUR RESERVATIONS</h2>
     <div ng-repeat="curRes in control.currentReservations" class="futureReservationContainer">
-                <div class="divUserControl">
+                <p class="divUserControl">
                         <p class="pUserControl">TEE TIME: {{curRes.humantime}}</p>
                         <!--<p class="pUserControl">{{curRes.humantime}}</p>-->
-                        <p class="pUserControl"><span class="redUC">{{curRes.numslots}}</span> Group(s) <span class="redUC">{{curRes.adultnumber}}</span> Adults <span class="redUC">{{curRes.childnumber}}</span> Children</p>
-                        <!--<p class="pUserControl">{{curRes.adultnumber}} Adults</p>-->
+                        <p class="pUserControl"><span class="redUC">{{curRes.adultnumber}}</span> Adults <span class="redUC">{{curRes.childnumber}}</span> Children<span class="redUC">{{curRes.numslots}}</span>Group(s)</p>
+                    <!--<p class="pUserControl">{{curRes.adultnumber}} Adults</p>-->
                         <!--<p class="pUserControl">{{curRes.childnumber}} Children</p>-->
                         <button class="userControlButton" ng-click="control.cancelReservation(curRes.id)">CANCEL</button>
                 </div>
@@ -32,9 +32,11 @@
             <li editable-text="control.myUser.phonenumber">PHONE NUMBER: {{control.myUser.phonenumber || 'Add a Phone Number!'}}</li>
         </ul>
         <div class="userEditButtons">
+
             <button class="userEditButton" ng-click="control.updateAccount()">SUBMIT CHANGES</button>
             <button class="userEditButton" ng-click="control.deleteAccount()">DELETE MY ACCOUNT</button>
             <button class="userEditButton" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
+
         </div>
     </div>
 </div>
