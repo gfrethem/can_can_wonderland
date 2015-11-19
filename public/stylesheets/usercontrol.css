@@ -30,7 +30,7 @@ body{
 /*usercontrol page*/
 
 .h1UserControl {
-    font-family: LTCTourist;
+    font-family:LTCTouristAlt;
     font-size: 4em;
     letter-spacing: .5px;
     color: #0091D5;
@@ -38,65 +38,100 @@ body{
 }
 
 .h2UserControl {
-    font-family: LTCTourist;
+    font-family: LTCTouristAlt;
     font-size: 3em;
     letter-spacing: .5px;
     color: #ED1C24;
-    margin: 3% 0 0 11.5%;
+    margin: 3% 0 0 10%;
 }
 
 .pUserControl {
-    font-family: LTCTourist;
-    font-size: 1.5em;
-    letter-spacing: 1px;
+    font-family:LTCTouristAlt;
+    font-size: 2em;
     color: black;
     margin: 0 0 0 10%;
-    width: 40%;
+}
+.pastUserControl {
+    font-family:LTCTouristAlt;
+    font-size: 1.8em;
+    color: black;
+    margin: 0 0 0 10%;
+}
+
+.divUserControl{
+    margin: 1.5% 0 3% 0;
 }
 
 .reservationDisclaimer {
-    font-family: LTCTourist;
-    font-size: 1.5em;
+    font-family: LTCTouristAlt;
+    font-size: 1.7em;
     letter-spacing: .5px;
     color: #0091D5;
-    width: 40%;
-    margin: 2% 0 0 11.5%;
+    margin: 2% 0 3% 10%;
 }
 
 .customerInfo {
-    font-family: LTCTourist;
+    font-family: LTCTouristAlt;
     font-size: 1.25em;
     letter-spacing: .5px;
     color: black;
-    margin: 0 0 0 10%;
+    margin: 2% 10%;
 }
-.confirmButton{
+.userControlButton{
     font-size: 2em;
     font-weight: bold;
     text-align: center;
     color: #ED1C24;
     background-color: #FFE300;
-    padding: .75% 3%;
+    padding: .3% 2%;
     text-decoration: none;
     border-radius: 0;
-    margin: 2% auto ;
+    margin: 1% 10% ;
 }
-.userButton{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 2% auto ;
-}
-
-.userButton:hover {
+.userControlButton:hover {
     color: #FFE300;
     background-color: #ED1C24;
 }
+.userEditButton{
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    color: #ED1C24;
+    background-color: #FFE300;
+    text-decoration: none;
+    border-radius: 0;
+    width: 40%;
+    height: 70px;
+    float: left;
+}
+
+.userCloseEditButton {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    color: #ED1C24;
+    background-color: #FFE300;
+    text-decoration: none;
+    border-radius: 0;
+    width: 40%;
+    height: 70px;
+    float: right;
+}
+
+.userEditButtons {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0;
+    height: 80px;
+    margin-bottom: 40px;
+}
+
+/*.userEditButton:hover, .usercloseEditButton:hover {*/
+    /*color: #FFE300;*/
+    /*background-color: #ED1C24;*/
+/*}*/
 
 #checkboxes{
     float: right;
@@ -111,23 +146,29 @@ body{
 /*iphone5, 5s*/
 @media only screen and (max-width: 320px) {
     body{
-        font-size: 50%;
-        font-family: LTCTouristAlt;
+            font-size: 77%;
+            font-family: LTCTouristAlt;
     }
-
     .h1UserControl {
 
-        color: #0091D5;
+            color: #0091D5;
+            margin: 2% 10%;
 
     }
 
     .h2UserControl {
-        font-family: LTCTouristAlt;
-        color: #ED1C24;
+            font-family: LTCTouristAlt;
+            color: #ED1C24;
+            margin: 1% 5%;
+    }
+
+    .divUserControl{
+        margin: 3% 0 6% 0;
     }
 
     .pUserControl {
         color: black;
+        margin: 0 5% 0 5%;
     }
 
     .reservationDisclaimer {
@@ -138,15 +179,14 @@ body{
         color: black;
     }
 
-    .confirmButton {
+    .userControlButton {
         font-family: LTCTouristAlt;
-        font-weight: bold;
         text-align: center;
         color: #ED1C24;
         background-color: #FFE300;
         text-decoration: none;
+        margin: 3% 5% 2% 5%;
     }
-
     .userButton {
         font-weight: bold;
         text-align: center;
@@ -154,24 +194,41 @@ body{
         background-color: #FFE300;
         text-decoration: none;
     }
-
-    .userButton:hover {
-        color: #FFE300;
-        background-color: #ED1C24;
-    }
 }
 
 
 
 /*iphone6*/
 @media only screen and (max-width: 375px) {
+    body {
+        font-size: 75%;
+    }
+.userEditButton {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    /* color: #ED1C24; */
+    /* background-color: #FFE300; */
+    /* padding: 0.75% 0%; */
+    text-decoration: none;
+    border-radius: 0;
+    /* width: 100%; */
+    float: left;
+    /* margin: 4% 4%; */
+}
+.userCloseEditButton {
 
 }
 
 /*iphone6 plus*/
 @media only screen and (max-width: 414px) {
     body {
+        font-size: 80%;
     }
+    .h2UserControl {
+        margin: 3% 5% 0 5%;
+    }
+}
 }
 /*most android phones*/
 @media only screen and (max-width: 360px) {

@@ -1,7 +1,9 @@
 <div ng-controller="LoginController as login">
     <form role="form" action ="/login" method="POST" id="login-form">
         <div>
-            <button class="fb" value="fb"> <img src="/images/fb.png" alt="facebook logo" width="50"> Login with Facebook</button>
+           <a href="/auth/facebook">
+               <button class="fb" value="fb"> <img src="/images/fb.png" alt="facebook logo" width="50"> Login with Facebook</button>
+           </a>
         </div>
         <div>
             <input class="login" type="text" name="email" id="email" placeholder = "EMAIL" required="required"/>

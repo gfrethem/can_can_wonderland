@@ -161,6 +161,10 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
     };
 //Alert customer if they have more than 12 people in their party
     vm.showNumAlert = function(){
+        if(vm.totalAdults == 0 && vm.totalChildren == 0){
+            event.preventDefault();
+            return alert("Please select number of adults and/or children");
+        }
         if(vm.totalPeople > 12){
             vm.numCheck = 'info';
             return alert('You group is larger than 12 people, please call to schedule');
@@ -204,7 +208,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 
     vm.partySize = 0;
     vm.showPartySize = true;
-    vm.partyList = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+    vm.partyList = [2,3,4,5,6,7,8,9,10,11,12];
     vm.slotsNeeded = 0;
     vm.date = '';
     vm.mainTime = false;
@@ -212,13 +216,18 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     vm.quarterSlots = false;
 
 //SHOW TIME SLOTS FOR A SPECIFIC DAY
-    vm.buttonTime = function(){
-        var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
-        $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
-            vm.currentDate = response.data;
+    vm.buttonTime = function() {
+        if(vm.slotsNeeded == 0) {
+            vm.mainTime = false;
+            alert('Please select a party size');
+        } else {
             vm.mainTime = true;
-            console.log(vm.currentDate);
-        });
+            var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
+            $http.get('/reservation/getCalendar/' + thisDate).then(function (response) {
+                vm.currentDate = response.data;
+                console.log(vm.currentDate);
+            });
+        }
     };
 
 //PICK A TIME AND SAVE TO RES FACTORY
@@ -226,8 +235,26 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         vm.mainTime = false;
         vm.quarterSlots = false;
         var newDateTime = makeDateTime(vm.date, time);
-        var databaseDate = moment(newDateTime).format('YYYY-MM-DD HH:mm');
-        vm.yourDate = moment(newDateTime).format('dddd, MMM DD, YYYY h:mm A');
+        if(time.length == 7){
+            var meridian = time.substring(5, 7);
+            var hour = parseInt(time.substring(0,1));
+        } else {
+            meridian = time.substring(6, 8);
+            hour = parseInt(time.substring(0,2));
+        }
+        if(meridian == "PM" && hour == 12){
+            hour = 12;
+        }
+        else if(meridian == "PM"){
+            hour += 12;
+        }
+
+        var sloppyDate = moment(newDateTime, 'YYYY-MM-DD HH:mm');
+        sloppyDate.hour(hour);
+        var databaseDate = sloppyDate.format('YYYY-MM-DD HH:mm');
+        console.log(databaseDate);
+        vm.yourDate = sloppyDate.format('dddd, MMM DD, YYYY h:mm A');
+        console.log(vm.yourDate);
         captureRes.newReservation.datetime = databaseDate;
         captureRes.newReservation.humandate = vm.yourDate;
     };
@@ -241,17 +268,11 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 
 //Toggles party size selector, choose party size, and determines number of slots needed
     vm.findPartySize = function(party){
-        console.log(party);
+        vm.mainTime = false;
         vm.partySize = party;
         vm.slotsNeeded = Math.ceil(vm.partySize / 4);
         captureRes.newReservation.slotcheck = vm.slotsNeeded;
     };
-
-//SHOW QUARTER HOURS
-    vm.showSlots = function(index){
-        vm.quarterSlots[index] = !vm.quarterSlots[index];
-    };
-
 
 //SLICK CAROUSEL CONFIG
     vm.slickConfig = {
@@ -261,9 +282,12 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         arrows: true,
         method: {}
     };
-
-
-
+    vm.confirmDateSelection = function(){
+        if(!vm.yourDate){
+            event.preventDefault();
+            alert('Please chose a time.');
+        }
+    }
 }]);
 
 
