@@ -4,28 +4,28 @@ var app = angular.module('customerApp', ['ngRoute', 'xeditable', 'slickCarousel'
 app.config(function($routeProvider, $locationProvider){
     $routeProvider
         .when('/', {
-            templateUrl: "../views/home.html",
+            templateUrl: "../views/home.html"
         })
         .when('/login', {
-            templateUrl: "../views/login.html",
+            templateUrl: "../views/login.html"
         })
         .when('/info', {
-            templateUrl: "../views/customerView/info.html",
+            templateUrl: "../views/customerView/info.html"
         })
         .when('/guests', {
-            templateUrl: "../views/customerView/numbercheck.html",
+            templateUrl: "../views/customerView/numbercheck.html"
         })
         .when('/register', {
-            templateUrl: "../views/customerView/register.html",
+            templateUrl: "../views/customerView/register.html"
         })
         .when('/customerCalendar', {
-            templateUrl: "../views/customerView/calendar.html",
+            templateUrl: "../views/customerView/calendar.html"
         })
         .when('/confirmReservation', {
-            templateUrl: "../views/customerView/confirmation.html",
+            templateUrl: "../views/customerView/confirmation.html"
         })
         .when('/userControl', {
-            templateUrl: "../views/customerView/usercontrol.html",
+            templateUrl: "../views/customerView/usercontrol.html"
         });
 
     $locationProvider.html5Mode(true);
