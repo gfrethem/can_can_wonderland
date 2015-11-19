@@ -58,7 +58,8 @@ button:focus {outline:0;}
 }
 
 ._720kb-datepicker-calendar._720kb-datepicker-open {
-    visibility: visible
+    visibility: visible;
+    position: relative;
 }
 
 ._720kb-datepicker-calendar-header {

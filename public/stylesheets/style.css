@@ -15,7 +15,7 @@
 
 /* this is a border hack */
 *, *:before, *:after {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 /* hack to stop blue hue on button and input clicks */
 button:focus {outline:0;}
@@ -109,6 +109,7 @@ a {
 }
 
 .fb{
+    border-color: transparent;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
@@ -118,6 +119,8 @@ a {
     text-decoration: none;
     border-radius: 0;
     margin: 3% auto;
+    width: 100%;
+
 }
 
 /*.slick-arrow {*/
@@ -146,6 +149,9 @@ a {
     border-color: transparent;
     margin: 8px 0;
     padding: 8px 0 11px;
+    width: 100%;
+
+
 }
 /*////////////////////////////////*/
 
@@ -187,6 +193,7 @@ input#email:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     border-color: transparent;
     margin: 8px 0;
     padding: 8px 0 11px;
+    width: 100%;
 }
 /*////////////////////////////////*/
 input#password::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -226,6 +233,7 @@ input#password:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     border-color: transparent;
     margin: 8px 0 37px;
     padding: 8px 0 11px;
+    width: 100%;
 }
 input#password2::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    white;
@@ -264,6 +272,7 @@ input#password2:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     border-color: transparent;
     margin: 8px 0;
     padding: 8px 0 11px;
+    width: 100%;
 }
 input#name::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    white;
@@ -302,6 +311,7 @@ input#name:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     border-color: transparent;
     margin: 8px 0;
     padding: 8px 0 11px;
+    width: 100%;
 }
 input#username::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    white;
@@ -340,6 +350,7 @@ input#username:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     border-color: transparent;
     margin: 8px 0;
     padding: 8px 0 11px;
+    width: 100%;
 }
 input#phone::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    white;
@@ -402,6 +413,7 @@ input#phone:-ms-input-placeholder{ /* Internet Explorer 10-11 */
      text-align: center;
      background-color: white;
      font-family: LTCTouristAlt;
+     width: 100%;
  }
 
 .dateButton:hover{
@@ -615,6 +627,7 @@ ul{
 .calendarDiv{
     width:70%;
     margin: 0 auto 3%;
+    overflow: hidden;
 }
 .buttonCalendar{
     text-align: center;
@@ -640,7 +653,7 @@ ul{
     width: 318px;
     height: 7px;
     display: block;
-    margin: -21px auto 37px;
+    margin: 0 auto 37px;
 
 }
 
@@ -730,7 +743,7 @@ ul{
 .right{
     color: #0091D5;
     float:right;
-    margin: -2% 23% 0 0;
+    margin: -3% 20% 0 0;
 }
 /*//////////////////////////////*/
 

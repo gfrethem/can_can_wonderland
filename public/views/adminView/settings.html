@@ -1,12 +1,12 @@
 <div ng-controller="AdminEditController as edit">
     <div class="adjustHours">
-        <p editable-text="edit.settings.mopen"> Monday Hours: {{edit.settings.mopen || 'empty'}} to <p editable-text="edit.settings.mclose">{{edit.settings.mclose || 'empty'}}</p></p>
-        <p editable-text="edit.settings.tuopen"> Tuesday Hours: {{edit.settings.tuopen || 'empty'}} to <p editable-text="edit.settings.tuclose">{{edit.settings.tuclose || 'empty'}}</p></p>
-        <p editable-text="edit.settings.wopen"> Wednesday Hours: {{edit.settings.wopen || 'empty'}} to <p editable-text="edit.settings.wclose">{{edit.settings.wclose || 'empty'}}</p></p>
-        <p editable-text="edit.settings.thopen"> Thursday Hours: {{edit.settings.thopen || 'empty'}} to <p editable-text="edit.settings.thclose">{{edit.settings.thclose || 'empty'}}</p></p>
-        <p editable-text="edit.settings.fopen"> Friday Hours: {{edit.settings.fopen || 'empty'}} to <p editable-text="edit.settings.fclose">{{edit.settings.fclose || 'empty'}}</p></p>
-        <p editable-text="edit.settings.saopen"> Saturday Hours: {{edit.settings.saopen || 'empty'}} to <p editable-text="edit.settings.saclose">{{edit.settings.saclose || 'empty'}}</p></p>
-        <p editable-text="edit.settings.suopen"> Sunday Hours: {{edit.settings.suopen || 'empty'}} to <p editable-text="edit.settings.suclose">{{edit.settings.suclose || 'empty'}}</p></p>
+        <p class="setDay" editable-text="edit.settings.mopen"> Monday Hours: <p class="setTimeeditable-text="edit.settings.mclose">{{edit.settings.mopen || 'empty'}} to {{edit.settings.mclose || 'empty'}}</p></p>
+        <p class="setTime" class="pSettings"editable-text="edit.settings.tuopen"> Tuesday Hours: {{edit.settings.tuopen || 'empty'}} to <p editable-text="edit.settings.tuclose">{{edit.settings.tuclose || 'empty'}}</p></p>
+        <p class="setTime" editable-text="edit.settings.wopen"> Wednesday Hours: {{edit.settings.wopen || 'empty'}} to <p editable-text="edit.settings.wclose">{{edit.settings.wclose || 'empty'}}</p></p>
+        <p class="setTime" editable-text="edit.settings.thopen"> Thursday Hours: {{edit.settings.thopen || 'empty'}} to <p editable-text="edit.settings.thclose">{{edit.settings.thclose || 'empty'}}</p></p>
+        <p class="setTime" editable-text="edit.settings.fopen"> Friday Hours: {{edit.settings.fopen || 'empty'}} to <p editable-text="edit.settings.fclose">{{edit.settings.fclose || 'empty'}}</p></p>
+        <p class="setTime" editable-text="edit.settings.saopen"> Saturday Hours: {{edit.settings.saopen || 'empty'}} to <p editable-text="edit.settings.saclose">{{edit.settings.saclose || 'empty'}}</p></p>
+        <p class="setTime" editable-text="edit.settings.suopen"> Sunday Hours: {{edit.settings.suopen || 'empty'}} to <p editable-text="edit.settings.suclose">{{edit.settings.suclose || 'empty'}}</p></p>
         <p class="timeSettingsNote">Keep times in military format</p>
     </div>
 
