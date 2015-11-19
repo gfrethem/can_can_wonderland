@@ -37,6 +37,7 @@
     "path": "^0.12.7",
     "sequelize": "^3.13.0",
     "slick-carousel": "^1.5.8",
-    "twilio": "^2.5.2"
+    "twilio": "^2.5.2",
+    "vex-js": "^2.3.3"
   }
 }
