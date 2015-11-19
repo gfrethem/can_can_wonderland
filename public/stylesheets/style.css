@@ -32,7 +32,7 @@ body{
 }
 .fa {
     color:black;
-    font-size: 4em;
+    font-size: 3.5em;
     margin: -1em .5em 0 8%;
 }
 
@@ -127,103 +127,245 @@ a {
 /*/////////////////////////////////*/
 /*REGISTER*/
 .newUser{
-    font-size: 2em;
+    font-size: 2.5em;
     color: #0091D5;
     font-weight: bold;
     text-align: center;
-    margin: 1% auto 3% auto;
+    margin: 21px auto 25px auto;
     display: block;
 }
 
 #email{
+    font-family: georgia;
+    letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: #0091D5;
-    padding: 1% 2%;
+    background-color: #ED1C24;
     border-color: transparent;
-    /*text-decoration: none;*/
-    /*border*/
-    border-radius: 0;
-    margin: 2% auto 2% auto;
-    display: block;
+    margin: 8px 0;
+    padding: 8px 0 11px;
 }
+/*////////////////////////////////*/
+
+input#email::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+    font-family: LTCTouristAlt;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#email:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#email::-moz-placeholder{ /* Mozilla Firefox 19+ */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#email:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+/*////////////////////////////////*/
+
 
 #password{
+    font-family: georgia;
+    letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: #0091D5;
-    padding: 1% 2%;
+    background-color: #ED1C24;
     border-color: transparent;
-    /*text-decoration: none;*/
-    /*border*/
-    border-radius: 0;
-    margin: 0 auto 2% auto;
-    display: block;
+    margin: 8px 0;
+    padding: 8px 0 11px;
 }
+/*////////////////////////////////*/
+input#password::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+    font-family: LTCTouristAlt;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#password:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#password::-moz-placeholder{ /* Mozilla Firefox 19+ */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#password:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+/*////////////////////////////////*/
 
 #password2{
+    font-family: georgia;
+    letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: #0091D5;
-    padding: 1% 2%;
+    background-color: #ED1C24;
     border-color: transparent;
-    /*text-decoration: none;*/
-    /*border*/
-    border-radius: 0;
-    margin: 0 auto 2% auto;
-    display: block;
+    margin: 8px 0 37px;
+    padding: 8px 0 11px;
 }
+input#password2::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+    font-family: LTCTouristAlt;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#password2:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#password2::-moz-placeholder{ /* Mozilla Firefox 19+ */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#password2:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+/*////////////////////////////////*/
 
 #name{
+    font-family: georgia;
+    letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: #0091D5;
-    padding: 1% 2%;
+    background-color: #ED1C24;
     border-color: transparent;
-    /*text-decoration: none;*/
-    /*border*/
-    border-radius: 0;
-    margin: 0 auto 2% auto;
-    display: block;
+    margin: 8px 0;
+    padding: 8px 0 11px;
 }
+input#name::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+    font-family: LTCTouristAlt;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#name:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#name::-moz-placeholder{ /* Mozilla Firefox 19+ */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#name:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+/*////////////////////////////////*/
 
 #username{
+    font-family: georgia;
+    letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: #0091D5;
-    padding: 1% 2%;
+    background-color: #ED1C24;
     border-color: transparent;
-    /*text-decoration: none;*/
-    /*border*/
-    border-radius: 0;
-    margin: 0 auto 2% auto;
-    display: block;
+    margin: 8px 0;
+    padding: 8px 0 11px;
 }
+input#username::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+    font-family: LTCTouristAlt;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#username:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#username::-moz-placeholder{ /* Mozilla Firefox 19+ */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#username:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+/*////////////////////////////////*/
 
 #phone{
+    font-family: georgia;
+    letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: #0091D5;
-    padding: 1% 2%;
+    background-color: #ED1C24;
     border-color: transparent;
-    /*text-decoration: none;*/
-    /*border*/
-    border-radius: 0;
-    margin: 0 auto 2% auto;
-    display: block;
+    margin: 8px 0;
+    padding: 8px 0 11px;
 }
+input#phone::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+    font-family: LTCTouristAlt;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#phone:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#phone::-moz-placeholder{ /* Mozilla Firefox 19+ */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+input#phone:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+    color:    white;
+    font-family: LTCTourist;
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+/*////////////////////////////////*/
 
 .passwordAlert {
     color: #ED1C24;
@@ -231,20 +373,10 @@ a {
     font-family: LTCTourist;
     text-transform: uppercase;
 }
-
-::-webkit-input-placeholder #name #password #password2 #username #phone{ /* WebKit, Blink, Edge */
-    color:    white;
-}
-:-moz-placeholder #name #password #password2 #username #phone{ /* Mozilla Firefox 4 to 18 */
-    color:   white;
-    /*opacity:  1;*/
-}
-::-moz-placeholder #name #password #password2 #username #phone{ /* Mozilla Firefox 19+ */
-    color:    white;
-    /*opacity:  1;*/
-}
-:-ms-input-placeholder #name #password #password2 #username #phone{ /* Internet Explorer 10-11 */
-    color:   white;
+.loginPlaceholders{
+    width: 40%;
+    display: block;
+    margin: 0 auto;
 }
 
 /*/////////////////////////////////////*/
@@ -263,8 +395,8 @@ a {
 
  .dateButton{
      display:block;
-     margin: 2% auto 0;
-     color: #ED1C24;
+     margin: 22px auto 0;
+     color: black;
      border: none;
      font-size: 5em;
      text-align: center;
@@ -502,12 +634,18 @@ ul{
     letter-spacing: 2px;
 }
 
-/*.partySizeButton:hover{*/
-    /*color:#ED1C24;*/
-/*}*/
+.underline{
+    border-top: 5px solid #ED1C24;
+    border-bottom: 5px solid #ED1C24;
+    width: 318px;
+    height: 7px;
+    display: block;
+    margin: -21px auto 37px;
+
+}
 
 .pickTime{
-    margin: 9% auto 1%;
+    margin: 12px auto 1%;
     display: block;
     font-family: LTCTouristAlt;
     font-size: 4.1em;
