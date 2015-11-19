@@ -390,4 +390,8 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", "$loc
             }
         })
     }
+
+    vex.dialog.open(
+
+    )
 }]);
