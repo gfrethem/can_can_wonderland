@@ -20,6 +20,7 @@
 /* hack to stop blue hue on button and input clicks */
 button:focus {outline:0;}
 input:focus {outline:0;}
+input.sliders.active:active{outline:0;}
 
 body{
     font-family: LTCTouristAlt, Oswald, Helvetica, Arial, sans-serif;
@@ -30,7 +31,7 @@ body{
 .homeNav{
     padding: 2em 0;
 }
-.fa {
+.homeBars  {
     color:black;
     font-size: 3.5em;
     margin: -1em .5em 0 8%;
@@ -119,7 +120,7 @@ a {
     padding: 7px 0 0 0;
     text-decoration: none;
     border-radius: 0;
-    margin: 8px 0;
+    margin: 16px 0 41px;
     width: 100%;
     letter-spacing: 2px;
 }
@@ -131,7 +132,7 @@ a {
 /*///////////////////////////////////////*/
 /*lOGIN*/
 #emailMain{
-    font-family: georgia;
+    font-family: LTCTouristAlt;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -171,7 +172,7 @@ input#emailMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
 /*////////////////////////////////*/
 
 #passwordMain{
-    font-family: georgia;
+    font-family: LTCTouristAlt;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -179,7 +180,7 @@ input#emailMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     color: white;
     background-color: #ED1C24;
     border-color: transparent;
-    margin: 8px 0 41px 0;
+    margin: 8px 0 8px 0;
     padding: 8px 0 11px;
     width: 100%;
 }
@@ -265,7 +266,7 @@ input.pholder:-ms-input-placeholder{ /* Internet Explorer 10-11 */
 /*////////////////////////////////*/
 
 #password{
-    font-family: georgia;
+    font-family: LTCTouristAlt;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -279,7 +280,7 @@ input.pholder:-ms-input-placeholder{ /* Internet Explorer 10-11 */
 }
 
 #password2{
-    font-family: georgia;
+    font-family: LTCTouristAlt;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -293,7 +294,7 @@ input.pholder:-ms-input-placeholder{ /* Internet Explorer 10-11 */
 }
 
 #name{
-    font-family: georgia;
+    font-family: LTCTouristAlt;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -307,7 +308,7 @@ input.pholder:-ms-input-placeholder{ /* Internet Explorer 10-11 */
 }
 
 #username{
-    font-family: georgia;
+    font-family: LTCTouristAlt;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -321,7 +322,7 @@ input.pholder:-ms-input-placeholder{ /* Internet Explorer 10-11 */
 }
 
 #phone{
-    font-family: georgia;
+    font-family: LTCTouristAlt;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -582,14 +583,14 @@ ul{
 
 .calendarDiv{
     width:70%;
-    margin: 0 auto 3%;
+    margin: 0 auto 0;
     overflow: hidden;
 }
 .buttonCalendar{
     text-align: center;
 }
 .partySizeButton{
-    margin: 2% auto 1%;
+    margin: 2% auto 0;
     display: block;
     font-family: LTCTouristAlt;
     font-size: 4.1em;
@@ -604,17 +605,16 @@ ul{
 }
 
 .underline{
-    border-top: 5px solid #ED1C24;
-    border-bottom: 5px solid #ED1C24;
+    border-top: 4px solid #ED1C24;
+    border-bottom: 4px solid #ED1C24;
     width: 318px;
-    height: 7px;
+    height: 12px;
     display: block;
-    margin: 0 auto 37px;
-
+    margin: 0 auto 12px;
 }
 
 .pickTime{
-    margin: 12px auto 1%;
+    margin: 12px auto 0;
     display: block;
     font-family: LTCTouristAlt;
     font-size: 4.1em;
@@ -689,7 +689,7 @@ ul{
 .slide-prev{
     color: #0091D5;
     float:left;
-    margin: -2% 0 0 25.5%;
+    margin: -37px 0 0 26.5%;
 }
 
 .fa-caret-right:before{
@@ -699,7 +699,7 @@ ul{
 .right{
     color: #0091D5;
     float:right;
-    margin: -3% 20% 0 0;
+    margin: -37px 26.5% 0 0;
 }
 /*//////////////////////////////*/
 
