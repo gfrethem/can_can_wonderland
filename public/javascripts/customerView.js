@@ -5,35 +5,27 @@ app.config(function($routeProvider, $locationProvider){
     $routeProvider
         .when('/', {
             templateUrl: "../views/home.html",
-            controller: "MainController"
         })
         .when('/login', {
             templateUrl: "../views/login.html",
-            controller: 'LoginController'
         })
         .when('/info', {
             templateUrl: "../views/customerView/info.html",
-            controller: "CustomerInfoController"
         })
         .when('/guests', {
             templateUrl: "../views/customerView/numbercheck.html",
-            controller: "NumberController"
         })
         .when('/register', {
             templateUrl: "../views/customerView/register.html",
-            controller: "RegisterController"
         })
         .when('/customerCalendar', {
             templateUrl: "../views/customerView/calendar.html",
-            controller: "CustomerCalendarController"
         })
         .when('/confirmReservation', {
             templateUrl: "../views/customerView/confirmation.html",
-            controller: "ConfirmController"
         })
         .when('/userControl', {
             templateUrl: "../views/customerView/usercontrol.html",
-            controller: "UserControlController"
         });
 
     $locationProvider.html5Mode(true);
