@@ -124,7 +124,7 @@ a {
     padding: 7px 0 0 0;
     text-decoration: none;
     border-radius: 0;
-    margin: 16px 0 41px;
+    margin: 16px 0 8px;
     width: 100%;
     letter-spacing: 2px;
 }
@@ -184,7 +184,7 @@ input#emailMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     color: white;
     background-color: #ED1C24;
     border-color: transparent;
-    margin: 8px 0 8px 0;
+    margin: 8px 0 37px 0;
     padding: 8px 0 11px;
     width: 100%;
 }
@@ -619,6 +619,14 @@ ul{
     height: 12px;
     display: block;
     margin: 0 auto 12px;
+}
+.underline-last{
+    border-top: 4px solid #ED1C24;
+    border-bottom: 4px solid #ED1C24;
+    width: 318px;
+    height: 12px;
+    display: block;
+    margin: 0 auto 37px;
 }
 
 .pickTime{
