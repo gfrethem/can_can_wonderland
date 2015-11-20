@@ -1,22 +1,27 @@
 <div ng-controller="LoginController as login">
-    <form role="form" action ="/login" method="POST" id="login-form">
+    <form role="form" action="/login" method="POST" id="login-form">
         <div class="loginPlaceholders">
-
-           <a href="/auth/facebook">
-               <button class="fb" value="fb"> <img src="/images/fb.png" alt="facebook logo" width="50"> Login with Facebook</button>
-           </a>
-
-
-            <input type="text" name="email" id="email" placeholder = "EMAIL" required="required"/>
-
-
-            <!--TODO: Change from type text to type password//-->
-            <input type="password" name="password" id="password" placeholder = "PASSWORD" required="required"/>
-
-            <a href="/register" class="newUser">NEW USER?</a>
-       </div>
-        <div>
-            <button class="continueButton" type="submit" ng-click="login.getUser()">CONTINUE</button>
+            <div>
+                <a href="/register" class="newUser">NEW USER?</a>
+            </div>
+            <div>
+                <a href="/auth/facebook" target="_self">
+                    <button class="fb" value="fb" type="button"><img src="/images/fb.png" alt="facebook logo"
+                                                                     width="50">
+                        Login with Facebook
+                    </button>
+                </a>
+            </div>
+            <div>
+                <input type="text" name="email" id="emailMain" class="pholder" placeholder="EMAIL" required="required"/>
+            </div>
+            <div>
+                <input type="password" name="password" id="passwordMain" class="pholder" placeholder="PASSWORD"
+                       required="required"/>
+            </div>
+            <div>
+                <button class="continueButton" type="submit" ng-click="login.getUser()">CONTINUE</button>
+            </div>
         </div>
     </form>
 </div>

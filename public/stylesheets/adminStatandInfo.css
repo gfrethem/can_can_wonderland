@@ -20,3 +20,44 @@
 .black{
     color: black;
 }
+.submitAdminUpdates {
+    font-family: LTCTouristAlt;
+    font-size: 2.5em;
+    text-align: center;
+    color: #ED1C24;
+    background-color: #FFE300;
+    padding: 8px 22px 2px;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 33px auto 0;
+    display: block;
+    border: transparent;
+    letter-spacing: 2px;
+}
+
+.editable-buttons button{
+    background-color: #0091D5;
+    font-family: georgia;
+    font-size: 16px;
+    color: white;
+    border-color: transparent;
+    margin: 10px 9px 0 13px;
+    padding: 4px 11px;
+}
+.editable-input{
+    font-family: georgia;
+    font-weight: bold;
+    color: #ED1C24;
+    font-size: 1.5em;
+    width: 40%;
+    text-align: center;
+    padding: 3px 0 3px 0;
+    margin: 0 14px 0 0;
+}
+.black-underline {
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    width: 420px;
+    height: 12px;
+    margin: 19px 0 0 0;
+}

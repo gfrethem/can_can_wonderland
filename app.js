@@ -96,7 +96,7 @@ passport.use(new FacebookStrategy({
         clientID: configAuth.facebookAuth.clientID,
         clientSecret: configAuth.facebookAuth.clientSecret,
         callbackURL: configAuth.facebookAuth.callbackURL,
-        enableProof:true,
+        enableProof: true,
         profileFields: ["emails", "displayName"]
 
     },
@@ -108,7 +108,11 @@ passport.use(new FacebookStrategy({
         process.nextTick(function () {
 
             // find the user in the database based on their facebook id
-            User.findOne({'faceid': profile.id}, function (err, user) {
+            User.find({
+                where: {
+                    'faceid': profile.id
+                }
+            }).then(function (user, err) {
 
                 // if there is an error, stop everything and return that
                 // ie an error connecting to the database
@@ -120,7 +124,7 @@ passport.use(new FacebookStrategy({
                     return done(null, user); // user found, return that user
                 } else {
                     // if there is no user found with that facebook id, create them
-                    var newUser = new User();
+                    var newUser = {};
 
                     // set all of the facebook information in our user model
                     newUser.faceid = profile.id; // set the users facebook id
@@ -129,19 +133,26 @@ passport.use(new FacebookStrategy({
                     newUser.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
 
                     // save our user to the database
-                    newUser.save(function (err) {
-                        if (err)
-                            throw err;
+                    User.create(newUser)
+                        .catch(function (err) {
+                            if (err) {
+                                console.log(err);
+                            }
+                        })
+                        .then(function (user) {
+                            return done(null, user);
+                        });
 
-                        // if successful, return the new user
-                        return done(null, newUser);
-                    });
+                    //// if successful, return the new user
+                    //return done(null, newUser);
                 }
 
-            });
-        });
+            })
 
-    }));
+        });
+    }
+));
+
 
 
 
@@ -192,12 +203,12 @@ app.use('/userControl', userControl);
 app.use('/info', info);
 app.use('/customerCalendar', customerCalendar);
 app.use('/guests', guests);
-
-//require the Twilio module and create a REST client
-var ACCOUNT_SID = 'ACa191532f90a93e915f16da74ef789a7a';
-var AUTH_TOKEN = 'e9ccd52f2d96b3801435c108ca0470ba';
-
-var client = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
+//
+////require the Twilio module and create a REST client
+//var ACCOUNT_SID = 'ACa191532f90a93e915f16da74ef789a7a';
+//var AUTH_TOKEN = 'e9ccd52f2d96b3801435c108ca0470ba';
+//
+//var client = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
 //var CronJob = require('cron').CronJob;
 //var job = new CronJob('5 * * * * *', function(){
 //    var todayDate = moment();
