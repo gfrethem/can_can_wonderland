@@ -76,7 +76,6 @@ app.controller("MainController", ["$scope", "$http", "currentUser", "$cookies", 
     $http.get('/user/getUser').then(function(response){
         vm.user = response.data;
         currentUser.user = response.data;
-        console.log(response.data);
     });
 
     //vm.user = currentUser.user;

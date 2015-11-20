@@ -43,8 +43,6 @@ var server = app.listen(3000, function () {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-
-
 //USE SESSION --Liz
 app.use(session({
     secret: 'secret',
@@ -61,8 +59,6 @@ app.use(passport.session());
 //PASSPORT USE --Liz
 passport.use('local', new localStrategy({passReqToCallback: true, usernameField: 'email'},
     function (req, email, password, done) {
-        console.log('Passport Start');
-        console.log(email, password);
         User.find({
             where: {
                 'email': email
