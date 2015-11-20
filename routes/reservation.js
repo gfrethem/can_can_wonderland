@@ -45,6 +45,7 @@ router.post('/makeReservation', function(req, res, next){
     var newReservation = req.body;
 
     Reservation.build({
+            name: newReservation.name,
             email: newReservation.email,
             phonenumber: newReservation.phonenumber,
             adultnumber: newReservation.adultnumber,

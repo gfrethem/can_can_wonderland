@@ -18,7 +18,7 @@
     <div class="pastReservationContainer" ng-repeat="pastRes in control.pastReservations">
             <div class="divUserControl">
                 <p class="pUserControl">TEE TIME: {{pastRes.humantime}}</p>
-                <p class="pUserControl">{{pastRes.numslots}} Group(s) {{pastRes.adultnumber}} Adults {{pastRes.childnumber}} Children</p>
+                <p class="pUserControl">{{pastRes.numslots}} Group(s) <span ng-if="pastRes.adultnumber = 0">{{pastRes.adultnumber}}</span> Adults <span ng-if="pastRes.childnumber = 0">{{pastRes.childnumber}}</span> Children</p>
             </div>
     </div>
     <div>

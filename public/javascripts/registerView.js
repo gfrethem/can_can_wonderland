@@ -45,7 +45,7 @@ app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http
             hour += 12;
         }
         var newDate = moment(vm.date).hour(hour).minute(minute).format('YYYY-MM-DD HH:mm');
-        console.log(newDate);
+        console.log(vm.name[time + index]);
             var newReservation = {
                 name: vm.name[time + index],
                 email: vm.email[time + index],
