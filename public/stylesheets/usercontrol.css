@@ -23,7 +23,10 @@ input:focus {outline:0;}
 
 .userControlMain {
     font-family: LTCTouristAlt, Oswald, Helvetica, Arial, sans-serif;
-    text-align: center;
+    text-align: left;
+    margin: 0 25%;
+    width: 80%;
+    /*text-align: center;*/
 }
 .redUC{
     color:#ED1C24;
@@ -32,36 +35,40 @@ input:focus {outline:0;}
 
 .h1UserControl {
     font-family:LTCTouristAlt;
-    font-size: 6em;
+    font-size: 4.25em;
     letter-spacing: .5px;
     color: #0091D5;
-    margin: 1% 25%;
-    width: 100%;
-    text-align: left;;
+    margin: 4% 0 -1% 0;
+    /*width: 100%;*/
+    /*text-align: left;*/
 }
 .h2UserControl {
     font-family: LTCTouristAlt;
     font-size: 3em;
     letter-spacing: .5px;
     color: #ED1C24;
-    margin: 2% auto;
-    width: 55%;
-    text-align: left;
+    margin: 5% 0 0.5% 0;
+    /*width: 55%;*/
+    /*text-align: left;*/
 }
 
 .pUserControl {
     font-family:LTCTouristAlt;
     font-size: 2.5em;
     color: black;
-    padding: 2% 4% 2% 4%;
-    margin: 0 auto;
+    margin: 1% -33%;
+    /*padding: 2% 4% 2% 4%;*/
+    /*margin: 0 auto;*/
 
+}
+.futureReservationContainer{
+    padding: 0 0 2% 0;
 }
 .pastUserControl {
     font-family:LTCTouristAlt;
     font-size: 2em;
     color: black;
-    margin: 0 0 0 10%;
+    /*margin: 0 0 0 10%;*/
 }
 
 .divUserControl{
@@ -72,12 +79,9 @@ input:focus {outline:0;}
 
 .reservationDisclaimer {
     font-family: LTCTouristAlt;
-    font-size: 1.7em;
+    font-size: 2em;
     letter-spacing: .5px;
     color: #0091D5;
-    margin: 2% auto;
-    width: 55%;
-    text-align: left;
 }
 
 .customerInfo {
@@ -85,18 +89,17 @@ input:focus {outline:0;}
     font-size: 1.25em;
     letter-spacing: .5px;
     color: black;
-    margin: 0 auto;
 }
 .userControlButton{
     font-family: LTCTouristAlt;
-    font-size: 2.5em;
+    font-size: 2em;
     text-align: center;
     color: #ED1C24;
     background-color: #FFE300;
-    padding: 0.75% 3%;
+    padding: .5% 3%;
     text-decoration: none;
     border-radius: 0px;
-    margin: 0px auto;
+    margin: 12px auto;
     display: block;
     border: medium none transparent;
     letter-spacing: 2px;
@@ -107,47 +110,22 @@ input:focus {outline:0;}
 }
 .userEditButton{
     font-family: LTCTouristAlt;
-    font-size: 2.5em;
+    font-size: 1.3em;
     text-align: center;
     color: #ED1C24;
     background-color: #FFE300;
     padding: 0.75% 3%;
     text-decoration: none;
     border-radius: 0px;
-    margin: 0px auto;
+    margin: 0px auto 12px auto;
     display: block;
     border: medium none transparent;
     letter-spacing: 2px;
 }
 
-.userCloseEditButton {
-    font-family: LTCTouristAlt;
-    font-size: 2.5em;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: 0.75% 3%;
-    text-decoration: none;
-    border-radius: 0px;
-    margin: 0px auto;
-    display: block;
-    border: medium none transparent;
-    letter-spacing: 2px;
-}
 
 .userEditButtons {
-    font-family: LTCTouristAlt;
-    font-size: 2.5em;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: 0.75% 3%;
-    text-decoration: none;
-    border-radius: 0px;
-    margin: 0px auto;
-    display: block;
-    border: medium none transparent;
-    letter-spacing: 2px;
+
 }
 
 /*.userEditButton:hover, .usercloseEditButton:hover {*/
