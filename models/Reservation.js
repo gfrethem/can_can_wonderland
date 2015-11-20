@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
                 type: DataTypes.STRING
             },
             phonenumber: {
-                type: DataTypes.INTEGER
+                type: DataTypes.STRING
             },
             adultnumber: {
                 type: DataTypes.INTEGER
