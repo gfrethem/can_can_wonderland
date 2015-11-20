@@ -43,16 +43,14 @@
                     <a href="/info">
                         <img src="/images/redYellow_sm.png" alt="Golf ball image, takes you to tee time registration" class="starLogo">
                     </a>
-                <a class="loginButton" ng-click="main.logout()" href="/login" ng-hide="main.user">LOGIN</a>
-                <a class="logoutButton" ng-click="main.logout()" href="/" ng-hide="!main.user">LOGOUT</a>
+                    <div class='loginOut'>
+                        <a class="loginButton" ng-click="main.logout()" href="/login" ng-hide="main.user">LOGIN</a>
+                        <a class="logoutButton" ng-click="main.logout()" href="/" ng-hide="!main.user">LOGOUT</a>
+                    </div>
                 </div>
             </div>
         </header>
-        <!--<a href="/guests">This is for testing!</a>-->
-        <!--<a href="/frontdesk">This is for testing the cashier calendar view!</a>-->
-        <!--<a href="/login"></a>-->
-        <!--<a href="/confirmReservation">confirm page test</a>-->
-        <!--<a href="/userControl">user control</a>-->
+
         <div id="customerViewMain">
             <ng-view>
 

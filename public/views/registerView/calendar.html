@@ -25,8 +25,7 @@
     <body ng-controller="FrontDeskController as frontDesk">
         <header>
             <img src="/images/yellowBlue.png" class="starLogo" ng-click="admin.goHome()">
-            <!--<button class="logoutButton" ng-click="admin.logout()">LOGOUT</button>-->
-            <a class="logoutButton" ng-click="admin.logout()">LOGOUT</a>
+            <a class="logoutButton" ng-click="frontDesk.logout()" href="/">LOGOUT</a>
         </header>
 
         <div class="calendarDiv">

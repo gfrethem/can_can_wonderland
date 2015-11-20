@@ -36,6 +36,10 @@ body{
     font-size: 3.5em;
     margin: -1em .5em 0 8%;
 }
+.loginOut{
+    float: right;
+    margin: -0.5em 8% 0 0.5em;
+}
 
 .mainLogo{
     display: block;
@@ -225,7 +229,7 @@ input#passwordMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
 }
 
 #email{
-    font-family: georgia;
+    font-family: LTCTouristAlt;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -262,6 +266,10 @@ input.pholder:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     font-family: LTCTourist;
     letter-spacing: 3px;
     font-size: 1.25em;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #ED1C24 inset;
+    -webkit-text-fill-color: white !important;
 }
 /*////////////////////////////////*/
 
@@ -469,7 +477,7 @@ ul{
     text-align: center;
 }
 .inputForm{
-    background-color: black;
+    background-color: white;
     width: 30%;
 }
 .inputname{

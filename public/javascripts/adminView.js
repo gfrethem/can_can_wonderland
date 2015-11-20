@@ -122,7 +122,10 @@ app.controller("AdminEditController", ["$scope", "$http", function($scope, $http
     });
 //SUBMIT ALL SETTINGS CHANGES ON SUBMIT
     vm.submitUpdates = function(){
-      $http.put('/settings/updateSettings', vm.settings);
+      $http.put('/settings/updateSettings', vm.settings).then(function(){
+          alert('Success!');
+      });
+
     };
 }]);
 

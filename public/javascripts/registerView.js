@@ -88,4 +88,9 @@ app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http
             vm.submitTime();
         });
     };
+
+//LOGOUT
+    vm.logout = function(){
+        $http.get("/login/logout");
+    }
 }]);

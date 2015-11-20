@@ -152,7 +152,7 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
         updateTotals();
     };
 
-    // THIS SHOULD BE DYNAMIC // LIZ 4 LIFE
+    // THIS SHOULD BE DYNAMIC
     var updateTotals = function(){
         vm.price = ((vm.totalAdults * 12) + (vm.totalChildren * 8));
         vm.totalPeople = vm.totalAdults + vm.totalChildren;
@@ -164,17 +164,18 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
         if(vm.totalAdults == 0 && vm.totalChildren == 0){
             event.preventDefault();
             return vex.dialog.alert("Please select number of adults and/or children.");
-        }
-        if(vm.totalPeople > 12){
+        } else if(vm.totalPeople > 12){
             vm.numCheck = 'info';
             return vex.dialog.alert('You group is larger than 12 people, please call to reserve a tee time!');
-        }
-        if(captureRes.newReservation.slotcheck < captureRes.newReservation.numslots){
+        } else if(captureRes.newReservation.slotcheck < captureRes.newReservation.numslots){
             vm.numCheck = 'customerCalendar';
             vex.dialog.alert('Selected more people and need more tee times, please reconfirm date selection.');
         } else if(captureRes.newReservation.slotcheck > captureRes.newReservation.numslots){
             vm.numCheck = 'customerCalendar';
             vex.dialog.alert('Selected fewer people, please reconfirm date selection.');
+        } else if (vm.totalPeople < 2){
+            event.preventDefault();
+            vex.dialog.alert('Party size must be 2 or greater.');
         }
     };
 
@@ -194,10 +195,9 @@ app.controller("RegisterController", ["$scope", "$timeout", function($scope, $ti
     vm.passwordCheck = function(){
         if(vm.password1 != vm.password2){
             event.preventDefault();
-            vm.passFail = true;
-            $timeout(function () {
-                vm.passFail = false;
-            }, 10000);
+            vex.dialog.alert("Passwords didn't match, please try again!");
+            vm.password1 = "";
+            vm.password2 = "";
         }
     }
 }]);
