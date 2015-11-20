@@ -30,7 +30,7 @@
 
         <div class="underline"></div>
         <button class="pickTime" ng-click="calendar.buttonTime()"> PICK A TIME </button>
-        <div class="underline"></div>
+        <div class="underline-last"></div>
 
         <div ng-show="calendar.closed"><h1>CLOSED</h1></div>
         <div ng-hide="calendar.closed" ng-show="calendar.mainTime" class="timeSlotContainer" ng-repeat="hour in calendar.currentDate track by $index">
