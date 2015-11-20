@@ -125,7 +125,7 @@ input:focus {outline:0;}
 
 
 .userEditButtons {
-
+  margin: 10px 0;
 }
 
 /*.userEditButton:hover, .usercloseEditButton:hover {*/
