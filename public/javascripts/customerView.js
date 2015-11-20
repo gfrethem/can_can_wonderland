@@ -389,9 +389,5 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", "$loc
                 vm.showCustomerInfo = false;
             }
         })
-    }
-
-    vex.dialog.open(
-
-    )
+    };
 }]);

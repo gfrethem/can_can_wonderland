@@ -7,6 +7,7 @@ var router = express.Router();
 //var Sequelize = require('sequelize');
 var models = require('../models');
 var Settings = models.Setting;
+var Users = models.User;
 
 //CHANGE INFO (HOURS, PRICES, SPECIAL MESSAGE)
 router.put('/updateSettings', function(req, res, next) {
@@ -37,10 +38,13 @@ router.get('/getSettings', function(req, res, next){
         })
 });
 
-//PULL IN PREDEFINED STATS
-router.get('/stats', function(req, res, next){
-    var statsObject = {};
-
+//GRAB ALL EMAILS
+router.get('/list', function(req, res, next){
+    Users.findAll({
+        attributes: ['email']
+    }).then(function(response){
+        res.send(response);
+    })
 });
 //BLOCK OUT LARGE TIME SLOTS
 module.exports = router;

@@ -9,7 +9,6 @@ var Reservation = models.Reservation;
 
 //GET A LOGGED IN USER
 router.get('/getUser', function(req, res , next){
-    console.log("THIS ONE!");
     var currentUser = req.user;
          res.send(currentUser);
 });

@@ -1,10 +1,10 @@
-<div class="statsMain">
+<div class="statsMain" ng-controller="AdminStatsController as stats">
     <h1>Statistics</h1>
 
     <div class="statsContainer">
-        <p>Total Walkups: {{}}</p>
-        <p>Total Cancelations: {{}}</p>
-        <p>Total No-Shows: {{}}</p>
-        <p>Total Number of Players: {{}}</p>
+        <button ng-click="stats.getList()">GET EMAILS</button>
+        <div ng-repeat="email in stats.emailList">
+            <h3>{{email}},</h3>
+        </div>
     </div>
 </div>

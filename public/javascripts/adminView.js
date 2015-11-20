@@ -4,16 +4,13 @@ var app = angular.module('adminApp', ['ngRoute', 'xeditable', '720kb.datepicker'
 app.config(function($routeProvider, $locationProvider){
     $routeProvider
         .when('/admin', {
-            templateUrl: "../views/adminView/calendar.html",
-            controller: "AdminCalendarController"
+            templateUrl: "../views/adminView/calendar.html"
         })
         .when('/adminInfo', {
-            templateUrl: "../views/adminView/settings.html",
-            controller: 'AdminEditController'
+            templateUrl: "../views/adminView/settings.html"
         })
         .when('/stats', {
-            templateUrl: "../views/adminView/stats.html",
-            controller: "AdminStatsController"
+            templateUrl: "../views/adminView/stats.html"
         });
 
     $locationProvider.html5Mode(true);
@@ -133,8 +130,17 @@ app.controller("AdminEditController", ["$scope", "$http", function($scope, $http
 
 app.controller("AdminStatsController", ["$scope", "$http", function($scope, $http){
     var vm = this;
-    $http.get('/admin/stats', function(response){
-        vm.stats = response.data;
-    })
+    vm.getList = function() {
+        $http.get('/settings/list').then(function(response){
+            vm.emailList = [];
+            for(var i = 0; i < response.data.length; i++){
+                if(response.data[i].email != 'admin'){
+                    if(response.data[i].email != 'frontdesk') {
+                        vm.emailList.push(response.data[i].email);
+                    }
+                }
+            }
+        });
+    }
 }]);
 
