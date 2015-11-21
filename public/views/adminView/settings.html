@@ -1,31 +1,25 @@
 <div ng-controller="AdminEditController as edit">
     <div class="center">
         <div class="black-underline"></div>
-        <p class="setNew" editable-text="edit.settings.mopen"> Monday Hours: <p class="setNewSm" editable-text="edit.settings.mclose">{{edit.settings.mopen || 'empty'}} to {{edit.settings.mclose || 'empty'}}</p></p>
-        <p class="setNew" editable-text="edit.settings.tuopen"> Tuesday Hours: <p class="setNewSm" editable-text="edit.settings.tuclose">{{edit.settings.tuopen || 'empty'}} to {{edit.settings.tuclose || 'empty'}}</p></p>
-        <p class="setNew" editable-text="edit.settings.wopen"> Wednesday Hours: <p class="setNewSm" editable-text="edit.settings.wclose">{{edit.settings.wopen || 'empty'}} to {{edit.settings.wclose || 'empty'}}</p></p>
-        <p class="setNew" editable-text="edit.settings.thopen"> Thursday Hours: <p class="setNewSm" editable-text="edit.settings.thclose">{{edit.settings.thopen || 'empty'}} to {{edit.settings.thclose || 'empty'}}</p></p>
-        <p class="setNew" editable-text="edit.settings.fopen"> Friday Hours: <p class="setNewSm" editable-text="edit.settings.fclose">{{edit.settings.fopen || 'empty'}} to {{edit.settings.fclose || 'empty'}}</p></p>
-        <p class="setNew" editable-text="edit.settings.saopen"> Saturday Hours: <p class="setNewSm" editable-text="edit.settings.saclose">{{edit.settings.saopen || 'empty'}} to {{edit.settings.saclose || 'empty'}}</p></p>
-        <p class="setNew" editable-text="edit.settings.suopen"> Sunday Hours: <p class="setNewSm" editable-text="edit.settings.suclose">{{edit.settings.suopen || 'empty'}} to {{edit.settings.suclose || 'empty'}}</p></p>
-        <p class="timeSettingsNote">Keep times in military format</p>
-    </div>
+            <p class="setNew" editable-text="edit.settings.mopen"> Monday Hours: <p class="setNewSm" editable-text="edit.settings.mclose">{{edit.settings.mopen || 'empty'}} to {{edit.settings.mclose || 'empty'}}</p></p>
+            <p class="setNew" editable-text="edit.settings.tuopen"> Tuesday Hours: <p class="setNewSm" editable-text="edit.settings.tuclose">{{edit.settings.tuopen || 'empty'}} to {{edit.settings.tuclose || 'empty'}}</p></p>
+            <p class="setNew" editable-text="edit.settings.wopen"> Wednesday Hours: <p class="setNewSm" editable-text="edit.settings.wclose">{{edit.settings.wopen || 'empty'}} to {{edit.settings.wclose || 'empty'}}</p></p>
+            <p class="setNew" editable-text="edit.settings.thopen"> Thursday Hours: <p class="setNewSm" editable-text="edit.settings.thclose">{{edit.settings.thopen || 'empty'}} to {{edit.settings.thclose || 'empty'}}</p></p>
+            <p class="setNew" editable-text="edit.settings.fopen"> Friday Hours: <p class="setNewSm" editable-text="edit.settings.fclose">{{edit.settings.fopen || 'empty'}} to {{edit.settings.fclose || 'empty'}}</p></p>
+            <p class="setNew" editable-text="edit.settings.saopen"> Saturday Hours: <p class="setNewSm" editable-text="edit.settings.saclose">{{edit.settings.saopen || 'empty'}} to {{edit.settings.saclose || 'empty'}}</p></p>
+            <p class="setNew" editable-text="edit.settings.suopen"> Sunday Hours: <p class="setNewSm" editable-text="edit.settings.suclose">{{edit.settings.suopen || 'empty'}} to {{edit.settings.suclose || 'empty'}}</p></p>
+            <p class="timeSettingsNote">Keep times in military format</p>
         <div class="black-underline"></div>
-    <div class="adjustPrice">
-        <p class="setNew" editable-text="edit.settings.adultprice">Adult: <span class="black"> ${{edit.settings.adultprice || 'empty'}}</span></p>
-        <p class="setNew" editable-text="edit.settings.childprice">Children: <span class="black"> ${{edit.settings.childprice || 'empty'}}</span></p>
+        <div class="adjustPrice">
+            <p class="setNew" editable-text="edit.settings.adultprice">Adult: <span class="black"> ${{edit.settings.adultprice || 'empty'}}</span></p>
+            <p class="setNew" editable-text="edit.settings.childprice">Children: <span class="black"> ${{edit.settings.childprice || 'empty'}}</span></p>
+        </div>
+            <div class="black-underline"></div>
+        <div class="adjustMessage">
+            <p class="setNew"> Special Message: <p class="setNewSm" editable-text="edit.settings.specialmessage"> {{edit.settings.specialmessage || 'Add a special message'}}</p></p>
+            <div class="black-underline"></div>
+        </div>
+        <button class="submitAdminUpdates" ng-click="edit.submitUpdates()">SUBMIT CHANGES</button>
     </div>
-        <div class="black-underline"></div>
-    <div class="adjustMessage">
-        <p class="setNew"> Special Message: <p class="setNewSm" editable-text="edit.settings.specialmessage"> {{edit.settings.specialmessage || 'Add a special message'}}</p></p>
-        <div class="black-underline"></div>
-    <div class="availableTimeSlots">
-        <p class="setNew" editable-text="edit.settings.walkuptimeslots">No. of Walkup Time Slots: <span class="black">{{edit.settings.walkuptimeslots || 'Empty'}}</span></p>
-        <p class="setNew" editable-text="edit.settings.onlinerestimeslots">No. of Reservable Time Slots: <span class="black">{{edit.settings.onlinerestimeslots || 'Empty'}}</span></p>
-        <p class="setNew" editable-text="edit.settings.minperslot">Min. Golfers per Slot: <span class="black">{{edit.settings.minperslot || 'Empty'}}</span></p>
-        <p class="setNew" editable-text="edit.settings.maxperslot">Max. Golfers Per Slot: <span class="black">{{edit.settings.maxperslot || 'Empty'}}</span></p>
-    </div>
-    </div>
-    <button class="submitAdminUpdates" ng-click="edit.submitUpdates()">SUBMIT CHANGES</button>
-    </div>
+</div>
 

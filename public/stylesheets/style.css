@@ -940,17 +940,26 @@ ul{
     }
 }
 
-/*iphone6 plus*/
-@media only screen and (max-width: 414px) {
-    body {
-    }
-}
-/*most android phones*/
-@media only screen and (max-width: 360px) {
-    body {
-    }
-}
 
+/*most android phones*/
+@media screen and (max-width: 360px) {
+    body {
+    }
+}
+/*ipad portrait*/
+@media screen and (max-width: 768px) {
+    .loginPlaceholders{
+        width: 50%;
+    }
+}
+/*iphone6 plus*/
+@media screen and (max-width: 414px) {
+    body {
+    }
+    .loginPlaceholders{
+        width: 90%;
+    }
+}
 /*ipad portrait and landscape*/
 @media only screen
 and (min-device-width: 768px)

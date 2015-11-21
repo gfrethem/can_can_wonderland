@@ -62,7 +62,7 @@
 
 
                         <div class="infoContainer">
-                           {{info.email}} <span class="red">{{info.adultnumber}}</span> Adults <span class="red">{{info.childnumber}}</span> Children
+                           {{info.name}} <span class="red">{{info.adultnumber}}</span> Adults <span class="red">{{info.childnumber}}</span> Children
                             <span id="checkboxes">check-in <input type="checkbox" class="check-in" name="check-in" value="check-in" ng-model="frontDesk.checked[quarter.quarter + $index]" ng-change="frontDesk.checkedin(info.id)"></span>
                             <button ng-click="resInfo = !resInfo" class="infoButton" >INFO</button>
                         </div>
