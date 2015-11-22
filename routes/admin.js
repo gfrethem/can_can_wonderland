@@ -8,6 +8,7 @@ var router = express.Router();
 var models = require('../models');
 var Settings = models.Setting;
 var Users = models.User;
+var Reservations = models.Reservation;
 
 //CHANGE INFO (HOURS, PRICES, SPECIAL MESSAGE)
 router.put('/updateSettings', function(req, res, next) {
@@ -46,6 +47,23 @@ router.get('/list', function(req, res, next){
         res.send(response);
     })
 });
-//BLOCK OUT LARGE TIME SLOTS
+
+//DELETE ACCOUNT
+router.get('/delete/:email?', function(req, res, next) {
+    var userEmail = req.params.email;
+    Reservations.destroy({
+        where: {
+            email: userEmail
+        }
+    });
+
+    Users.destroy({
+        where: {
+            email: userEmail
+        }
+    }).then(function (response) {
+        res.send(200);
+    });
+});
 module.exports = router;
 

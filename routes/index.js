@@ -16,6 +16,26 @@ router.get('/admin', function(req, res, next){
     }
 });
 
+router.get('/admininfo', function(req, res, next){
+    if (!req.user) {
+        res.redirect('/login');
+    } else if(req.user.email == 'admin') {
+        res.sendFile(path.join(__dirname, '../public/views/adminView/adminIndex.html'));
+    } else {
+        res.send('Unauthorized');
+    }
+});
+
+router.get('/stats', function(req, res, next){
+    if (!req.user) {
+        res.redirect('/login');
+    } else if(req.user.email == 'admin') {
+        res.sendFile(path.join(__dirname, '../public/views/adminView/adminIndex.html'));
+    } else {
+        res.send('Unauthorized');
+    }
+});
+
 router.get('/frontdesk', function(req, res, next){
     if (!req.user) {
         res.redirect('/login');

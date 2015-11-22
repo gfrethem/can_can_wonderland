@@ -133,6 +133,7 @@ app.controller("AdminEditController", ["$scope", "$http", function($scope, $http
 
 app.controller("AdminStatsController", ["$scope", "$http", function($scope, $http){
     var vm = this;
+    vm.userEmail = "";
     vm.getList = function() {
         $http.get('/settings/list').then(function(response){
             vm.emailList = [];
@@ -144,6 +145,15 @@ app.controller("AdminStatsController", ["$scope", "$http", function($scope, $htt
                 }
             }
         });
+    };
+
+    vm.deleteUser = function(){
+        $http.get('/settings/delete/' + vm.userEmail).then(function(response){
+            if(response){
+                vm.userEmail = "";
+                vex.dialog.alert("Success!");
+            }
+        })
     }
 }]);
 

@@ -229,7 +229,7 @@ input#passwordMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
 }
 
 #email{
-    font-family: LTCTouristAlt;
+    font-family: georgia;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -269,7 +269,7 @@ input.pholder:-ms-input-placeholder{ /* Internet Explorer 10-11 */
 }
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #ED1C24 inset;
-    -webkit-text-fill-color: white !important;
+
 }
 /*////////////////////////////////*/
 
@@ -477,7 +477,7 @@ ul{
     text-align: center;
 }
 .inputForm{
-    background-color: white;
+    background-color: black;
     width: 30%;
 }
 .inputname{
@@ -930,34 +930,30 @@ ul{
 /* media queries */
 
 /*iphone5, 5s*/
-@media only screen and (max-width: 320px) {
+@media screen and (max-width: 320px) {
 
 }
 
 /*iphone6*/
-@media only screen and (max-width: 375px) {
+@media screen and (max-width: 375px) {
     body {
     }
 }
 
-
+/*iphone6 plus*/
+@media screen and (max-width: 500px) {
+    .loginPlaceholders {
+        width: 90%;
+    }
+}
 /*most android phones*/
 @media screen and (max-width: 360px) {
     body {
     }
 }
-/*ipad portrait*/
-@media screen and (max-width: 768px) {
+@media screen and (width: 768px){
     .loginPlaceholders{
-        width: 50%;
-    }
-}
-/*iphone6 plus*/
-@media screen and (max-width: 414px) {
-    body {
-    }
-    .loginPlaceholders{
-        width: 90%;
+        width: 60%;
     }
 }
 /*ipad portrait and landscape*/
@@ -965,6 +961,8 @@ ul{
 and (min-device-width: 768px)
 and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 1) {
-
+    .loginPlaceholders{
+        width: 60%;
+    }
 }
 

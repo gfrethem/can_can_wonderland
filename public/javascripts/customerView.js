@@ -89,11 +89,21 @@ app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', 
         $location.path('/confirmReservation')
     }
     var vm = this;
+
+    if(captureRes.newReservation.datetime == ""){
+        captureRes.newReservation.adultnumber = $cookies.get('resAdults');
+        captureRes.newReservation.childnumber = $cookies.get('resChildren');
+        captureRes.newReservation.datetime = $cookies.get('resDatetime');
+        captureRes.newReservation.numslots = $cookies.get('resNumslots');
+        captureRes.newReservation.humandate = $cookies.get('resHumanDate');
+    }
+
     $cookies.put('resAdults', captureRes.newReservation.adultnumber);
     $cookies.put('resChildren', captureRes.newReservation.childnumber);
     $cookies.put('resDatetime', captureRes.newReservation.datetime);
     $cookies.put('resNumslots', captureRes.newReservation.numslots);
     $cookies.put('resHumanDate', captureRes.newReservation.humandate);
+
 }]);
 
 app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $http){
@@ -189,9 +199,16 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
     };
     }]);
 
-app.controller("RegisterController", ["$scope", "$timeout", function($scope, $timeout){
+app.controller("RegisterController", ["$scope", '$cookies', "captureRes", function($scope, $cookies, captureRes){
     var vm = this;
     vm.passFail = false;
+
+    $cookies.put('resAdults', captureRes.newReservation.adultnumber);
+    $cookies.put('resChildren', captureRes.newReservation.childnumber);
+    $cookies.put('resDatetime', captureRes.newReservation.datetime);
+    $cookies.put('resNumslots', captureRes.newReservation.numslots);
+    $cookies.put('resHumanDate', captureRes.newReservation.humandate);
+
     vm.passwordCheck = function(){
         if(vm.password1 != vm.password2){
             event.preventDefault();
@@ -296,7 +313,6 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 
 
 app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUser", "$cookies", '$location', function($scope, captureRes, $http, currentUser, $cookies, $location){
-
     if(!$cookies.get('resDatetime')){
         $location.path('/userControl')
     }
