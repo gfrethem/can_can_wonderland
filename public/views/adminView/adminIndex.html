@@ -9,11 +9,14 @@
         <script src="/vendor/angular-ui-mask/dist/mask.min.js"></script>
         <script src="/vendor/angular-xeditable/xeditable.min.js"></script>
         <script src="/vendor/moment/min/moment.min.js"></script>
+        <script src="vendor/vex-js/js/vex.combined.min.js"></script>
         <script src="/vendor/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
         <script src="/javascripts/adminView.js"></script>
 
         <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
         <link rel="stylesheet" href="/vendor/angularjs-datepicker/dist/angular-datepicker.min.css"/>
+        <link rel="stylesheet" href="/vendor/vex-js/css/vex.css">
+        <link rel="stylesheet" href="/vendor/vex-js/css/vex-theme-default.css">
         <link rel="stylesheet" href="/stylesheets/calendarStyles.css"/>
         <link rel="stylesheet" href="/stylesheets/adminStatandInfo.css"/>
         <link rel="stylesheet" href="/stylesheets/style.css"/>
@@ -43,5 +46,6 @@
 
             </ng-view>
         </div>
+        <script>vex.defaultOptions.className = 'vex-theme-default';</script>
     </body>
 </html>

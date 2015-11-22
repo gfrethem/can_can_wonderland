@@ -14,8 +14,6 @@ router.get('/registerLanding', function(req, res, next){
 });
 
 router.post('/', function(req, res, next){
-    console.log(req.body);
-
     User.create(req.body).catch(function(err){
         if(err) {
             console.log(err);
