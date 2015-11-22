@@ -89,13 +89,21 @@ app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', 
         $location.path('/confirmReservation')
     }
     var vm = this;
-    console.log(captureRes.newReservation.adultnumber);
+
+    if(captureRes.newReservation.datetime == ""){
+        captureRes.newReservation.adultnumber = $cookies.get('resAdults');
+        captureRes.newReservation.childnumber = $cookies.get('resChildren');
+        captureRes.newReservation.datetime = $cookies.get('resDatetime');
+        captureRes.newReservation.numslots = $cookies.get('resNumslots');
+        captureRes.newReservation.humandate = $cookies.get('resHumanDate');
+    }
+
     $cookies.put('resAdults', captureRes.newReservation.adultnumber);
     $cookies.put('resChildren', captureRes.newReservation.childnumber);
     $cookies.put('resDatetime', captureRes.newReservation.datetime);
     $cookies.put('resNumslots', captureRes.newReservation.numslots);
     $cookies.put('resHumanDate', captureRes.newReservation.humandate);
-    console.log($cookies.get('resHumanDate'));
+
 }]);
 
 app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $http){
