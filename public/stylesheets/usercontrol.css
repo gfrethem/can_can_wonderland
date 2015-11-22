@@ -148,18 +148,20 @@ input:focus {outline:0;}
     .userControlMain   {
         font-size: 80%;
         font-family: LTCTouristAlt;
+        margin: 0 3% 0 5%;
+        width:100%
     }
     .h1UserControl {
         color: #0091D5;
-        margin: 0 auto;
+        margin: 0 5%;
         width: 100%;
     }
 
     .h2UserControl {
         font-family: LTCTouristAlt;
         color: #ED1C24;
-        width: 100%;
-        margin: 3% 10% 0;
+        width: 90%;
+        margin: 5% 10% 0;
     }
 
     .redUC {
@@ -189,11 +191,12 @@ input:focus {outline:0;}
     .userControlButton {
         font-family: LTCTouristAlt;
         text-align: center;
+        font-size: 25px;
         color: #ED1C24;
         background-color: #FFE300;
         text-decoration: none;
-        margin: 3% 15% 5%;
-        padding: 0% 25%;
+        margin: 4% 15% 5%;
+        padding: 1% 25%;
     }
     .userButton {
         font-weight: bold;
@@ -201,6 +204,9 @@ input:focus {outline:0;}
         color: #ED1C24;
         background-color: #FFE300;
         text-decoration: none;
+    }
+    .userEditButtons {
+
     }
 
 }
