@@ -277,8 +277,9 @@ and (-webkit-min-device-pixel-ratio: 1) {
 /*CONFIRMATION PAGE*/
 
 
-.confirmationMain {
-    .confirmButton{
+/*.confirmationMain {*/
+
+.confirmButton {
     font-family: LTCTouristAlt;
     font-size: 1.75em;
     text-align: center;
@@ -290,10 +291,9 @@ and (-webkit-min-device-pixel-ratio: 1) {
     margin: 12px 45%;
     border: medium none transparent;
     letter-spacing: 1px;
-
-}
 }
 
+/*}*/
 /* media queries */
 
 /*iphone5, 5s*/

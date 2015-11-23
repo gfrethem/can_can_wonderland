@@ -23,8 +23,12 @@
     </head>
     <body ng-controller="FrontDeskController as frontDesk">
         <header>
-            <img src="/images/yellowBlue.png" class="starLogo" ng-click="admin.goHome()">
+            <div class="logOutFrontdesk">
             <a class="logoutButton" ng-click="frontDesk.logout()" href="/">LOGOUT</a>
+            </div>
+
+            <img src="/images/longLogo.png" class="longLogo" ng-click="admin.goHome()">
+
         </header>
 
         <div class="calendarDiv">
@@ -81,8 +85,12 @@
                                       <div><label class="labelInfo">Number of Groups</label> <input class="inputForm" type="text" placeholder="{{info.numslots}}" ng-model="frontDesk.numslots[quarter.quarter + $index]"></div>
                                           <div><label class="labelInfo">Notes</label> <input class="inputForm" type="text" placeholder="{{info.notes}}" ng-model="frontDesk.notes[quarter.quarter + $index]"></div>
                                               <div><label class="labelInfo">Reservation?</label> <input type="checkbox" placeholder="{{info.reservation}}" ng-model="frontDesk.reservation[quarter.quarter + $index]"></div>
-                                <button ng-hide="info.email" class="cancelButton" ng-click="frontDesk.submitReservation(quarter.quarter, $index)">Create New Tee Time</button>
-                                <button class="cancelButton" ng-click="frontDesk.cancelReservation(info.id)">Cancel Tee Time</button>
+
+                                </div>
+                                <div class="teeButtons">
+                                <button ng-hide="info.email" class="createNew" ng-click="frontDesk.submitReservation(quarter.quarter, $index)">NEW TEE TIME</button>
+                                    <button class="cancelButton" ng-click="frontDesk.cancelReservation(info.id)">CANCEL TEE TIME</button>
+
                                 </div>
                             </form>
                     </div>
