@@ -36,7 +36,7 @@
         <header>
             <div>
                 <div class="homeNav">
-                    <a href="/">
+                    <a  ng-hide='!main.user' href="/userControl">
                      <i class="fa fa-bars homeBars"></i>
                     </a>
 
@@ -44,6 +44,7 @@
                         <img src="/images/redYellow_sm.png" alt="Golf ball image, takes you to tee time registration" class="starLogo">
                     </a>
                     <div class='loginOut'>
+                        <!--<a class="loginButton" href="/userControl" ng-hide="!main.user">MY ACCOUNT</a>-->
                         <a class="loginButton" ng-click="main.logout()" href="/login" ng-hide="main.user">LOGIN</a>
                         <a class="logoutButton" ng-click="main.logout()" href="/" ng-hide="!main.user">LOGOUT</a>
                     </div>
