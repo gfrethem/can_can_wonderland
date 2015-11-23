@@ -4,10 +4,7 @@
     <div ng-repeat="curRes in control.currentReservations" class="futureReservationContainer">
                 <div class="divUserControl">
                         <div class="pUserControl">TEE TIME: {{curRes.humantime}}</div>
-                        <!--<p class="pUserControl">{{curRes.humantime}}</p>-->
                         <div class="pUserControl"><span class="redUC">{{curRes.adultnumber}}</span> Adults <span class="redUC">{{curRes.childnumber}}</span> Children <span class="redUC">{{curRes.numslots}}</span> Group(s)</div>
-                    <!--<p class="pUserControl">{{curRes.adultnumber}} Adults</p>-->
-                        <!--<p class="pUserControl">{{curRes.childnumber}} Children</p>-->
                         <button class="userControlButton" ng-click="control.cancelReservation(curRes.id)">CANCEL</button>
                 </div>
     </div>
@@ -17,12 +14,12 @@
     <h2 class="h2UserControl">YOUR PAST RESERVATIONS</h2>
     <div class="pastReservationContainer" ng-repeat="pastRes in control.pastReservations">
             <div class="divUserControl">
-                <p class="pUserControl">TEE TIME: {{pastRes.humantime}}</p>
-                <p class="pUserControl">{{pastRes.numslots}} Group(s) <span ng-if="control.pastRes.adultnumber">{{pastRes.adultnumber}} Adults </span><span ng-="control.pastRes.childnumber">{{pastRes.childnumber}} Children</span></p>
+                <div class="pUserControl">TEE TIME: {{pastRes.humantime}}</div>
+                <div class="pUserControl">{{pastRes.numslots}} Group(s) <span ng-if="control.pastRes.adultnumber">{{pastRes.adultnumber}} Adults </span><span ng-="control.pastRes.childnumber">{{pastRes.childnumber}} Children</span></div>
             </div>
     </div>
     <div>
-        <button class='userControlButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT MY INFO</button>
+        <button class='userEditButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT MY INFO</button>
     </div>
 
     <div class="customerInfo" ng-show="showCustomerInfo">
@@ -31,12 +28,12 @@
             <li editable-text="control.myUser.email">EMAIL: {{control.myUser.email}}</li>
             <li editable-text="control.myUser.phonenumber">PHONE NUMBER: {{control.myUser.phonenumber || 'Add a Phone Number!'}}</li>
         </ul>
-        <div class="userEditButtons">
+        <!--<div class="divEditButtons">-->
 
             <button class="userEditButton" ng-click="control.updateAccount()">SUBMIT CHANGES</button>
             <button class="userEditButton" ng-click="control.deleteAccount()">DELETE MY ACCOUNT</button>
             <button class="userEditButton" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
 
-        </div>
+        <!--</div>-->
     </div>
 </div>

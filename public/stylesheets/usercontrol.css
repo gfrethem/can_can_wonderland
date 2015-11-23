@@ -36,30 +36,22 @@ input:focus {outline:0;}
 .h1UserControl {
     font-family:LTCTouristAlt;
     font-size: 4.25em;
-    letter-spacing: .5px;
+    letter-spacing: 1px;
     color: #0091D5;
     margin: 4% 0 -1% 0;
-    /*width: 100%;*/
-    /*text-align: left;*/
 }
 .h2UserControl {
     font-family: LTCTouristAlt;
     font-size: 3em;
-    letter-spacing: .5px;
+    letter-spacing: 1px;
     color: #ED1C24;
     margin: 5% 0 0.5% 0;
-    /*width: 55%;*/
-    /*text-align: left;*/
 }
-
 .pUserControl {
     font-family:LTCTouristAlt;
-    font-size: 2.5em;
+    font-size: 2.4em;
     color: black;
     margin: 1% -33%;
-    /*padding: 2% 4% 2% 4%;*/
-    /*margin: 0 auto;*/
-
 }
 .futureReservationContainer{
     padding: 0 0 2% 0;
@@ -76,33 +68,31 @@ input:focus {outline:0;}
     width: 60%;
     text-align: left;
 }
-
 .reservationDisclaimer {
     font-family: LTCTouristAlt;
     font-size: 2em;
-    letter-spacing: .5px;
+    letter-spacing: 1px;
     color: #0091D5;
+    margin: 0 auto;
 }
-
 .customerInfo {
     font-family: LTCTouristAlt;
     font-size: 1.25em;
-    letter-spacing: .5px;
+    letter-spacing: 1px;
     color: black;
 }
 .userControlButton{
     font-family: LTCTouristAlt;
-    font-size: 2em;
+    font-size: 1.75em;
     text-align: center;
     color: #ED1C24;
     background-color: #FFE300;
     padding: .5% 3%;
     text-decoration: none;
-    border-radius: 0px;
-    margin: 12px auto;
-    display: block;
+    border-radius: 0;
+    margin: 12px 45%;
     border: medium none transparent;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 .userControlButton:hover {
     color: #FFE300;
@@ -110,37 +100,20 @@ input:focus {outline:0;}
 }
 .userEditButton{
     font-family: LTCTouristAlt;
-    font-size: 1.3em;
+    font-size: 2em;
     text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: 0.75% 3%;
+    border: medium none transparent;
+    letter-spacing: 1px;
     text-decoration: none;
     border-radius: 0px;
-    margin: 0px auto 12px auto;
-    display: block;
-    border: medium none transparent;
-    letter-spacing: 2px;
-}
+    display: flex;
+    width: 40%;
+    margin: 5% 20.6%;
+    padding: 1.5% 0;
+    color: #ED1C24;
+    background-color: #FFE300;
+    }
 
-
-.userEditButtons {
-  margin: 10px 0;
-}
-
-/*.userEditButton:hover, .usercloseEditButton:hover {*/
-/*color: #FFE300;*/
-/*background-color: #ED1C24;*/
-/*}*/
-
-#checkboxes{
-    float: right;
-    margin: 0 0 2em 0;
-    color: black;
-}
-
-
-/*/////////////////////////////////////*/
 /* media queries */
 
 /*iphone5, 5s*/
@@ -168,26 +141,82 @@ input:focus {outline:0;}
         padding: 0 2%;
     }
 
-    .divUserControl{
+    .divUserControl {
         margin: 3% 0 6% 0;
     }
 
     .pUserControl {
-        color: #000;
-        padding: 2% 0px;
+        padding: 2% 0;
         margin: 3px 15%;
         font-size: 2.6em;
         width: 100%;
     }
+    .userControlButton {
+        font-family: LTCTouristAlt;
+        text-align: center;
+        display: flex;
+        font-size: 25px;
+        color: #ED1C24;
+        background-color: #FFE300;
+        text-decoration: none;
+        margin: 0 12%;
+        padding: 2% 14%;
+    }
 
-    .reservationDisclaimer {
+    .userEditButton {
+        font-size: 1.5em;
+        margin: 5% 15px 12px;
+        padding: 2% 14%;
+        width: 60%
+    }
+    /*.divEditButtons {*/
+        /*font-weight: bold;*/
+        /*text-align: center;*/
+        /*text-decoration: none;*/
+        /*border-radius: 0;*/
+        /*padding: 1% 10%;*/
+        /*width: 50%;*/
+        /*font-size: 2em;*/
+        /*margin: 4% 20%;*/
+    /*}*/
+
+}
+
+/*iphone6*/
+@media only screen and (max-width: 375px) {
+    .userControlMain   {
+        font-size: 80%;
+        font-family: LTCTouristAlt;
+        margin: 0 3% 0 5%;
+        width:100%
+    }
+    .h1UserControl {
         color: #0091D5;
+        margin: 0 5%;
+        width: 100%;
     }
 
-    .customerInfo {
-        color: black;
+    .h2UserControl {
+        font-family: LTCTouristAlt;
+        color: #ED1C24;
+        width: 90%;
+        margin: 5% 10% 0;
     }
 
+    .redUC {
+        padding: 0 2%;
+    }
+
+    .divUserControl {
+        margin: 3% 0 6% 0;
+    }
+
+    .pUserControl {
+        padding: 2% 0;
+        margin: 3px 15%;
+        font-size: 2.4em;
+        width: 100%;
+    }
     .userControlButton {
         font-family: LTCTouristAlt;
         text-align: center;
@@ -195,59 +224,39 @@ input:focus {outline:0;}
         color: #ED1C24;
         background-color: #FFE300;
         text-decoration: none;
-        margin: 4% 15% 5%;
-        padding: 1% 25%;
-    }
-    .userButton {
-        font-weight: bold;
-        text-align: center;
-        color: #ED1C24;
-        background-color: #FFE300;
-        text-decoration: none;
-    }
-    .userEditButtons {
-
+        margin: 0 12%;
+        padding: 2% 14%;
     }
 
 }
 
-
-
-/*iphone6*/
-@media only screen and (max-width: 375px) {
-    body {
-        font-size: 75%;
-    }
-    .userEditButton {
-        font-size: 1.2em;
-        font-weight: bold;
-        text-align: center;
-        /* color: #ED1C24; */
-        /* background-color: #FFE300; */
-        /* padding: 0.75% 0%; */
-        text-decoration: none;
-        border-radius: 0;
-        /* width: 100%; */
-        float: left;
-        /* margin: 4% 4%; */
-    }
-    .userCloseEditButton {
-
-    }
-
-    /*iphone6 plus*/
-    @media only screen and (max-width: 414px) {
-        body {
-            font-size: 80%;
-        }
+/*iphone6 plus*/
+@media only screen and (max-width: 414px) {
         .h2UserControl {
             margin: 3% 5% 0 5%;
         }
-    }
 }
+
 /*most android phones*/
 @media only screen and (max-width: 360px) {
-    body {
+    .userControlMain{
+        font-size: 70%;
+    }
+    .reservationDisclaimer{
+        margin: 0 5%;
+    }
+    .userEditButton{
+        padding: 1.75% 7%;
+        text-decoration: none;
+        border-radius: 0px;
+        margin: 5% 0 12px;
+        border: medium none transparent;
+        letter-spacing: 1px;
+        font-family: LTCTouristAlt;
+        font-size: 2em;
+        text-align: center;
+        color: #ED1C24;
+        background-color: #FFE300;
     }
 }
 
@@ -263,249 +272,50 @@ and (-webkit-min-device-pixel-ratio: 1) {
 
 
 
-/*!* blue #0091D5 *!*/
-/*!* red #ED1C24 *!*/
-/*!* yellow #FFE300 *!*/
-
-/*!*@import url('https://fonts.googleapis.com/css?family=Oswald');*!*/
-
-/*@font-face{*/
-    /*font-family: LTCTourist;*/
-    /*src: url('LTCTouristGothic-Regular.ttf');*/
-/*}*/
-/*@font-face{*/
-    /*font-family: LTCTouristAlt;*/
-    /*src:url('LTCTouristGothic-Alternate.ttf');*/
-/*}*/
-
-/*!* this is a border hack *!*/
-/**, *:before, *:after {*/
-    /*box-sizing: inherit;*/
-/*}*/
-/*!* hack to stop blue hue on button and input clicks *!*/
-/*button:focus {outline:0;}*/
-/*input:focus {outline:0;}*/
-
-/*body{*/
-    /*font-family: LTCTouristAlt, Oswald, Helvetica, Arial, sans-serif;*/
-    /*text-align: center;*/
-/*}*/
 
 
-/*///////////////////////////////////////!*/
-/*!*usercontrol page*!*/
-
-/*.h1UserControl {*/
-    /*font-family:LTCTouristAlt;*/
-    /*font-size: 7em;*/
-    /*letter-spacing: .5px;*/
-    /*color: #0091D5;*/
-    /*margin: 0 0 0 10%;*/
-/*}*/
-
-/*.h2UserControl {*/
-    /*font-family: LTCTouristAlt;*/
-    /*font-size: 3em;*/
-    /*letter-spacing: .5px;*/
-    /*color: #ED1C24;*/
-    /*margin: 0% 0 0 10%;*/
-/*}*/
-
-/*.pUserControl {*/
-    /*font-family:LTCTouristAlt;*/
-    /*font-size: 2em;*/
-    /*color: black;*/
-    /*margin: 0 0 0 10%;*/
-/*}*/
-/*.pastUserControl {*/
-    /*font-family:LTCTouristAlt;*/
-    /*font-size: 2em;*/
-    /*color: black;*/
-    /*margin: 0 0 0 10%;*/
-/*}*/
-
-/*.divUserControl{*/
-    /*margin: 1.5% 0 3% 0;*/
-/*}*/
-
-/*.reservationDisclaimer {*/
-    /*font-family: LTCTouristAlt;*/
-    /*font-size: 1.7em;*/
-    /*letter-spacing: .5px;*/
-    /*color: #0091D5;*/
-    /*margin: 2% 0 3% 10%;*/
-/*}*/
-
-/*.customerInfo {*/
-    /*font-family: LTCTouristAlt;*/
-    /*font-size: 1.25em;*/
-    /*letter-spacing: .5px;*/
-    /*color: black;*/
-    /*margin: 2% 10%;*/
-/*}*/
-/*.userControlButton{*/
-    /*font-size: 2em;*/
-    /*font-weight: bold;*/
-    /*text-align: center;*/
-    /*color: #ED1C24;*/
-    /*background-color: #FFE300;*/
-    /*padding: .3% 2%;*/
-    /*text-decoration: none;*/
-    /*border-radius: 0;*/
-    /*margin: 1% 10% ;*/
-/*}*/
-/*.userControlButton:hover {*/
-    /*color: #FFE300;*/
-    /*background-color: #ED1C24;*/
-/*}*/
-/*.userEditButton{*/
-    /*font-size: 1.2em;*/
-    /*font-weight: bold;*/
-    /*text-align: center;*/
-    /*color: #ED1C24;*/
-    /*background-color: #FFE300;*/
-    /*text-decoration: none;*/
-    /*border-radius: 0;*/
-    /*width: 40%;*/
-    /*height: 70px;*/
-    /*float: left;*/
-/*}*/
-
-/*.userCloseEditButton {*/
-    /*font-size: 1.2em;*/
-    /*font-weight: bold;*/
-    /*text-align: center;*/
-    /*color: #ED1C24;*/
-    /*background-color: #FFE300;*/
-    /*text-decoration: none;*/
-    /*border-radius: 0;*/
-    /*width: 40%;*/
-    /*height: 70px;*/
-    /*float: right;*/
-/*}*/
-
-/*.userEditButtons {*/
-    /*font-size: 1.2em;*/
-    /*font-weight: bold;*/
-    /*text-align: center;*/
-    /*text-decoration: none;*/
-    /*border-radius: 0;*/
-    /*height: 80px;*/
-    /*margin-bottom: 40px;*/
-/*}*/
-
-/*!*.userEditButton:hover, .usercloseEditButton:hover {*!*/
-    /*!*color: #FFE300;*!*/
-    /*!*background-color: #ED1C24;*!*/
-/*!*}*!*/
-
-/*#checkboxes{*/
-    /*float: right;*/
-    /*margin: 0 0 2em 0;*/
-    /*color: black;*/
-/*}*/
+/*CONFIRMATION PAGE*/
 
 
-/*///////////////////////////////////*/
-/*!* media queries *!*/
+.confirmationMain {
+    .confirmButton{
+    font-family: LTCTouristAlt;
+    font-size: 1.75em;
+    text-align: center;
+    color: #ED1C24;
+    background-color: #FFE300;
+    padding: .5% 3%;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 12px 45%;
+    border: medium none transparent;
+    letter-spacing: 1px;
 
-/*!*iphone5, 5s*!*/
-/*@media only screen and (max-width: 320px) {*/
-    /*body{*/
-            /*font-size: 77%;*/
-            /*font-family: LTCTouristAlt;*/
-    /*}*/
-    /*.h1UserControl {*/
+}
+}
 
-            /*color: #0091D5;*/
-            /*margin: 2% 10%;*/
+/* media queries */
 
-    /*}*/
-
-    /*.h2UserControl {*/
-            /*font-family: LTCTouristAlt;*/
-            /*color: #ED1C24;*/
-            /*margin: 1% 5%;*/
-    /*}*/
-
-    /*.divUserControl{*/
-        /*margin: 3% 0 6% 0;*/
-    /*}*/
-
-    /*.pUserControl {*/
-        /*color: black;*/
-        /*margin: 0 5% 0 5%;*/
-    /*}*/
-
-    /*.reservationDisclaimer {*/
-        /*color: #0091D5;*/
-    /*}*/
-
-    /*.customerInfo {*/
-        /*color: black;*/
-    /*}*/
-
-    /*.userControlButton {*/
-        /*font-family: LTCTouristAlt;*/
-        /*text-align: center;*/
-        /*color: #ED1C24;*/
-        /*background-color: #FFE300;*/
-        /*text-decoration: none;*/
-        /*margin: 3% 5% 2% 5%;*/
-    /*}*/
-    /*.userButton {*/
-        /*font-weight: bold;*/
-        /*text-align: center;*/
-        /*color: #ED1C24;*/
-        /*background-color: #FFE300;*/
-        /*text-decoration: none;*/
-    /*}*/
-/*}*/
+/*iphone5, 5s*/
+@media only screen and (max-width: 320px) {
 
 
+}
 
-/*!*iphone6*!*/
-/*@media only screen and (max-width: 375px) {*/
-    /*body {*/
-        /*font-size: 75%;*/
-    /*}*/
-/*.userEditButton {*/
-    /*font-size: 1.2em;*/
-    /*font-weight: bold;*/
-    /*text-align: center;*/
-    /*!* color: #ED1C24; *!*/
-    /*!* background-color: #FFE300; *!*/
-    /*!* padding: 0.75% 0%; *!*/
-    /*text-decoration: none;*/
-    /*border-radius: 0;*/
-    /*!* width: 100%; *!*/
-    /*float: left;*/
-    /*!* margin: 4% 4%; *!*/
-/*}*/
-/*.userCloseEditButton {*/
 
-/*}*/
+/*iphone6*/
+@media only screen and (max-width: 375px) {
 
-/*!*iphone6 plus*!*/
-/*@media only screen and (max-width: 414px) {*/
-    /*body {*/
-        /*font-size: 80%;*/
-    /*}*/
-    /*.h2UserControl {*/
-        /*margin: 3% 5% 0 5%;*/
-    /*}*/
-/*}*/
-/*}*/
-/*!*most android phones*!*/
-/*@media only screen and (max-width: 360px) {*/
-    /*body {*/
-    /*}*/
-/*}*/
 
-/*!*ipad portrait and landscape*!*/
-/*@media only screen*/
-/*and (min-device-width: 768px)*/
-/*and (max-device-width: 1024px)*/
-/*and (-webkit-min-device-pixel-ratio: 1) {*/
+}
 
-/*}*/
+/*iphone6 plus*/
+@media only screen and (max-width: 414px) {
+
+
+}
+
+/*most android phones*/
+@media only screen and (max-width: 360px) {
+
+}
