@@ -33,7 +33,10 @@
             </datepicker>
              <button ng-click="frontDesk.submitTime()"  class="submitButton">SUBMIT</button>
         </div>
-        <div class="mainHour"  ng-repeat="hour in frontDesk.currentDate" >
+        <div class='center' ng-show="frontDesk.closed">
+            <h1>CLOSED</h1>
+        </div>
+        <div ng-hide="frontDesk.closed" class="mainHour"  ng-repeat="hour in frontDesk.currentDate" >
            <ul>
                <li ng-click="quarterHour = ! quarterHour">
                   {{hour.hour}}
