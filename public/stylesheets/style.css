@@ -812,48 +812,48 @@ ul{
 /*////////////////////////////////*/
 /*CONFIRMATION PAGE*/
 
-.res{
-    font-size: 3.7em;
-    font-weight: bold;
-    color: #ED1C24;
-    margin: 2% 0 0 10%;
-}
-.info{
-    font-size: 2.5em;
-    font-weight: bold;
-    color: black;
-    margin: 1% 0 0 10%;
-}
+/*.res{*/
+    /*font-size: 3.7em;*/
+    /*font-weight: bold;*/
+    /*color: #ED1C24;*/
+    /*margin: 2% 0 0 10%;*/
+/*}*/
+/*.info{*/
+    /*font-size: 2.5em;*/
+    /*font-weight: bold;*/
+    /*color: black;*/
+    /*margin: 1% 0 0 10%;*/
+/*}*/
 
-.groupSize{
-    font-size: 2.4em;
-    font-weight: bold;
-    color: #ED1C24;
-    margin:2% 0 6% 10%;
-}
+/*.groupSize{*/
+    /*font-size: 2.4em;*/
+    /*font-weight: bold;*/
+    /*color: #ED1C24;*/
+    /*margin:2% 0 6% 10%;*/
+/*}*/
 
-.changeButton{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding:.75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 2% auto ;
-}
-.confirmButton{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 2% auto ;
-}
+/*.changeButton{*/
+    /*font-size: 2em;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*color: #ED1C24;*/
+    /*background-color: #FFE300;*/
+    /*padding:.75% 3%;*/
+    /*text-decoration: none;*/
+    /*border-radius: 0;*/
+    /*margin: 2% auto ;*/
+/*}*/
+/*.confirmButton{*/
+    /*font-size: 2em;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*color: #ED1C24;*/
+    /*background-color: #FFE300;*/
+    /*padding: .75% 3%;*/
+    /*text-decoration: none;*/
+    /*border-radius: 0;*/
+    /*margin: 2% auto ;*/
+/*}*/
 
 /*!//////////////////////////////////////!**/
 /*!*usercontrol page*!*/
