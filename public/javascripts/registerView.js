@@ -15,14 +15,20 @@ app.controller('FrontDeskController', ["$scope", "$http", function($scope, $http
     vm.name = "";
     vm.email = "";
     vm.phonenumber = "";
+    vm.closed = false;
 
 //on submit, do a server call,
     //SHOW TIME SLOTS FOR A SPECIFIC DAY
     vm.submitTime = function(){
         var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
         $http.get('/reservation/getCalendar/' + thisDate).then(function(response){
-            vm.currentDate = response.data;
-            vm.mainTime = ! vm.mainTime;
+            vm.closed = false;
+            if(response.data == 'Closed'){
+                vm.closed = true;
+            } else {
+                vm.currentDate = response.data;
+                vm.mainTime = !vm.mainTime;
+            }
         });
     };
 

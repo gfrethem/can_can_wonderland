@@ -185,9 +185,7 @@ app.get('/auth/facebook/callback',
     })
 );
 
-
 //ROUTES
-
 app.use('/', index);
 app.use('/user', user);
 app.use('/reservation', reservation);
@@ -204,6 +202,7 @@ app.use('/guests', guests);
 var ACCOUNT_SID = 'ACa191532f90a93e915f16da74ef789a7a';
 var AUTH_TOKEN = 'e9ccd52f2d96b3801435c108ca0470ba';
 
+//SETUP CRON JOB FOR TWILIO
 var client = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
 var CronJob = require('cron').CronJob;
 var job = new CronJob('00 00 14 * * 0-6', function(){
