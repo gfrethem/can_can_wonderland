@@ -50,6 +50,7 @@ app.factory('captureRes', function(){
         newReservation : newReservation
     }
 });
+//ANGULAR SERVICE TO STORE A LOGGED IN USER
 app.factory('currentUser', ['$http', function($http){
     var user = {};
 
@@ -61,6 +62,7 @@ app.factory('currentUser', ['$http', function($http){
 //DEFINE CONTROLLERS
 app.controller("MainController", ["$scope", "$http", "currentUser", "$cookies", "captureRes", function($scope, $http, currentUser, $cookies, captureRes){
     var vm = this;
+//ON LOGOUT, REMOVE COOKIES
     vm.logout = function(){
         $cookies.remove('resAdults');
         $cookies.remove('resChildren');
@@ -72,24 +74,21 @@ app.controller("MainController", ["$scope", "$http", "currentUser", "$cookies", 
         vm.user = null;
         $http.get("/login/logout");
     };
-
+//CHECK TO SEE IF USER IS LOGGED IN, IF TRUE, GET THAT USER
     $http.get('/user/getUser').then(function(response){
         vm.user = response.data;
         currentUser.user = response.data;
     });
 
-    //vm.user = currentUser.user;
-    // Not sure I like this yet - G
-    //currentUser.fetchUserDetails();
-    //vm.user = currentUser.user;
 }]);
 
 app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', 'currentUser', '$location', function($scope, $http, captureRes, $cookies, currentUser, $location){
+//SKIP LOGIN VIEW IF ALREADY LOGGED IN
     if(currentUser.user){
         $location.path('/confirmReservation')
     }
     var vm = this;
-
+//IF CAPTURERES FACTORY IS EMPTY AFTER NEW USER, REINITIALIZE
     if(captureRes.newReservation.datetime == ""){
         captureRes.newReservation.adultnumber = $cookies.get('resAdults');
         captureRes.newReservation.childnumber = $cookies.get('resChildren');
@@ -97,7 +96,7 @@ app.controller("LoginController", ["$scope", "$http", 'captureRes', '$cookies', 
         captureRes.newReservation.numslots = $cookies.get('resNumslots');
         captureRes.newReservation.humandate = $cookies.get('resHumanDate');
     }
-
+//SET CATURERES FACTORY INFO. TO COOKIES TO CARRY THROUGH LOGIN PROCESS
     $cookies.put('resAdults', captureRes.newReservation.adultnumber);
     $cookies.put('resChildren', captureRes.newReservation.childnumber);
     $cookies.put('resDatetime', captureRes.newReservation.datetime);
@@ -140,7 +139,7 @@ app.controller("CustomerInfoController", ["$scope", "$http", function($scope, $h
 
 app.controller("NumberController", ["$scope", "captureRes", function($scope, captureRes){
     var vm = this;
-
+//INITIALIZE VARIABLES FOR ANGULAR
     vm.numAdults = [0,1,2,3,4,5,6,7,8,9,10,11,12];
     vm.numChildren = [0,1,2,3,4,5,6,7,8,9,10,11,12];
     vm.totalAdults =  0;
@@ -162,7 +161,7 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
         updateTotals();
     };
 
-    // THIS SHOULD BE DYNAMIC
+// UPDATE TOTAL PARTY SIZE AND DETERMINE THE NUMBER OF TEE TIMES NEED FOR THE PARTY
     var updateTotals = function(){
         vm.price = ((vm.totalAdults * 12) + (vm.totalChildren * 8));
         vm.totalPeople = vm.totalAdults + vm.totalChildren;
@@ -189,7 +188,7 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
         }
     };
 
-    //SLICK CAROUSEL CONFIG
+//SLICK CAROUSEL CONFIG FOR NUMBER SELECTORS
     vm.slickConfig = {
         infinite: true,
         slidesToShow: 3,
@@ -202,13 +201,14 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
 app.controller("RegisterController", ["$scope", '$cookies', "captureRes", function($scope, $cookies, captureRes){
     var vm = this;
     vm.passFail = false;
-
+//RESET COOKIES WHEN NEW USERS ARE CREATED
     $cookies.put('resAdults', captureRes.newReservation.adultnumber);
     $cookies.put('resChildren', captureRes.newReservation.childnumber);
     $cookies.put('resDatetime', captureRes.newReservation.datetime);
     $cookies.put('resNumslots', captureRes.newReservation.numslots);
     $cookies.put('resHumanDate', captureRes.newReservation.humandate);
 
+//CHECK TO SEE IF PASSWORDS MATCH
     vm.passwordCheck = function(){
         if(vm.password1 != vm.password2){
             event.preventDefault();
@@ -222,7 +222,7 @@ app.controller("RegisterController", ["$scope", '$cookies', "captureRes", functi
 app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", function($scope, captureRes, $http){
     $scope.Math = window.Math;
     var vm = this;
-
+//INITIALIZE VARIABLES FOR ANGULAR
     vm.partySize = 0;
     vm.showPartySize = true;
     vm.partyList = [2,3,4,5,6,7,8,9,10,11,12];
@@ -313,10 +313,12 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
 
 
 app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUser", "$cookies", '$location', function($scope, captureRes, $http, currentUser, $cookies, $location){
+//IF NO RESERVATION IN PROGRESS, SKIP TO USER ACCOUNT PAGE
     if(!$cookies.get('resDatetime')){
         $location.path('/userControl')
     }
      var vm = this;
+//GET USER INFORMATION FOR RESERVATION
     $http.get('/user/getUser').then(function(response){
         vm.myUser = response.data;
         currentUser.user = response.data;
@@ -324,7 +326,7 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
         captureRes.newReservation.phonenumber = vm.myUser.phonenumber;
         captureRes.newReservation.name = vm.myUser.name;
     });
-
+//GET RESERVATION INFORMATION OFF THE COOKIES
      captureRes.newReservation.adultnumber = $cookies.get('resAdults');
      captureRes.newReservation.childnumber = $cookies.get('resChildren');
      captureRes.newReservation.datetime = $cookies.get('resDatetime');
@@ -333,6 +335,7 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
 
     vm.resConfirm = captureRes.newReservation;
     vm.resConfirm.reservation = true;
+//SAVE A NEW RESERVATION TO THE DATABASE
     vm.confirmReservation = function(){
         $http.post('/reservation/makeReservation', vm.resConfirm).then(function(){
             $cookies.remove('resAdults');
@@ -352,6 +355,7 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", "$loc
     vm.pastReservations = [];
     vm.myUser = {};
 
+//GET USER INFO.
     $http.get('/user/getUser').then(function(response){
         vm.myUser = response.data;
         currentUser.user = response.data;
