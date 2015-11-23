@@ -148,7 +148,13 @@ app.controller("NumberController", ["$scope", "captureRes", function($scope, cap
     vm.totalPeople = 0;
     vm.slots = 0;
     vm.numCheck = 'login';
-
+    vm.showChildSelect = true;
+//CHECK SELECTED TIME, HIDE CHILD SELECTOR IF PAST 20
+    var resTime = moment(captureRes.newReservation.datetime).format('HH');
+    console.log(resTime);
+    if(resTime >= 20){
+        vm.showChildSelect = false;
+    }
 //Determine number of adults and children, as well as get total number of people and slots taken up
     vm.numberOfAdults = function(num){
         vm.totalAdults = num;

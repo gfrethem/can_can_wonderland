@@ -26,6 +26,10 @@ body{
     font-family: LTCTouristAlt, Oswald, Helvetica, Arial, sans-serif;
 }
 
+.center{
+    margin: 0 auto;
+    text-align: center;
+}
 /*//////////////////////////////////*/
 /*home page css*/
 .homeNav{

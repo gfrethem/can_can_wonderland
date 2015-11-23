@@ -20,8 +20,10 @@
             <i class="fa fa-caret-right"></i>
         </a>
     </div>
-
-    <div class="numChildren">
+    <div class="center" ng-hide="num.showChildSelect">
+        <h1>No Children after 8:00 pm</h1>
+    </div>
+    <div ng-show='num.showChildSelect' class="numChildren">
         <div class="checkChildrenNums"> CHILDREN </div>
         <div class="children12">( 12 and under )</div>
         <slick class="slider" settings="num.slickConfig" prev-arrow=".slide-prevChild" next-arrow=".rightChild">
@@ -30,12 +32,12 @@
             </div>
         </slick>
     </div>
-    <div class="slide-prev">
+    <div class="slide-prev" ng-show='num.showChildSelect'>
         <a href="" class="slide-prevChild">
             <i class="fa fa-caret-left"></i>
         </a>
     </div>
-    <div class="right">
+    <div class="right" ng-show='num.showChildSelect'>
         <a href="" class="rightChild">
             <i class="fa fa-caret-right"></i>
         </a>
