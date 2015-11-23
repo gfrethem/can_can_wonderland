@@ -28,12 +28,10 @@
             <li editable-text="control.myUser.email">EMAIL: {{control.myUser.email}}</li>
             <li editable-text="control.myUser.phonenumber">PHONE NUMBER: {{control.myUser.phonenumber || 'Add a Phone Number!'}}</li>
         </ul>
-        <!--<div class="divEditButtons">-->
-
+        <div class="editingButtons">
             <button class="userEditButton" ng-click="control.updateAccount()">SUBMIT CHANGES</button>
             <button class="userEditButton" ng-click="control.deleteAccount()">DELETE MY ACCOUNT</button>
             <button class="userEditButton" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
-
-        <!--</div>-->
+        </div>
     </div>
 </div>

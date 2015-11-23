@@ -98,6 +98,9 @@ input:focus {outline:0;}
     color: #FFE300;
     background-color: #ED1C24;
 }
+.editingButtons {
+    font-size: 80%;
+}
 .userEditButton{
     font-family: LTCTouristAlt;
     font-size: 2em;
@@ -106,7 +109,6 @@ input:focus {outline:0;}
     letter-spacing: 1px;
     text-decoration: none;
     border-radius: 0px;
-    display: flex;
     width: 40%;
     margin: 5% 20.6%;
     padding: 1.5% 0;
@@ -154,7 +156,6 @@ input:focus {outline:0;}
     .userControlButton {
         font-family: LTCTouristAlt;
         text-align: center;
-        display: flex;
         font-size: 25px;
         color: #ED1C24;
         background-color: #FFE300;
@@ -278,20 +279,41 @@ and (-webkit-min-device-pixel-ratio: 1) {
 
 
 .confirmationMain {
-    .confirmButton{
+
+}
+.res{
+    font-size: 3.7em;
+    font-weight: bold;
+    color: #ED1C24;
+    margin: 2% 0 0 10%;
+}
+.info{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: black;
+    margin: 1% 0 0 10%;
+}
+
+.groupSize{
+    font-size: 2.4em;
+    font-weight: bold;
+    color: #ED1C24;
+    margin:2% 0 6% 10%;
+}
+
+
+.confirmButton{
     font-family: LTCTouristAlt;
-    font-size: 1.75em;
+    font-size: 2em;
     text-align: center;
     color: #ED1C24;
     background-color: #FFE300;
     padding: .5% 3%;
     text-decoration: none;
     border-radius: 0;
-    margin: 12px 45%;
+    margin: 12px 10%;
     border: medium none transparent;
     letter-spacing: 1px;
-
-}
 }
 
 /* media queries */
