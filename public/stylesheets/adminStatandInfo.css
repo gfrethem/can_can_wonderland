@@ -1,13 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Arvo);
+
 
 .setNew{
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Arial, sans-serif;
     font-size: 3em;
     color:#0091D5;
     margin: 10px 0 -4px;
 }
 
 .setNewSm{
-    font-family: georgia;
+    font-family: Arvo, georgia, serif;
     font-size: 2em;
     margin: 0 0 0 0;
 }
@@ -21,7 +23,7 @@
     color: black;
 }
 .submitAdminUpdates {
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Arial, sans-serif;
     font-size: 2.5em;
     text-align: center;
     color: #ED1C24;
@@ -37,7 +39,7 @@
 
 .editable-buttons button{
     background-color: #0091D5;
-    font-family: georgia;
+    font-family: Arvo, georgia, serif;
     font-size: 16px;
     color: white;
     border-color: transparent;
@@ -45,7 +47,7 @@
     padding: 4px 11px;
 }
 .editable-input{
-    font-family: georgia;
+    font-family: Arvo, georgia, serif;
     font-weight: bold;
     color: #ED1C24;
     font-size: 1.5em;
@@ -60,4 +62,37 @@
     width: 420px;
     height: 12px;
     margin: 19px 0 0 0;
+}
+
+.cal a{
+    font-size: 2.5em;
+    color: black;
+    margin: 0 0 0 48px;
+    letter-spacing: 2px;
+}
+
+.cal a:hover{
+    color:#ED1C24;
+}
+
+.infoAdmin a{
+    font-size: 2.5em;
+    color: black;
+    margin: 0 0 0 48px;
+    letter-spacing: 2px;
+}
+
+.infoAdmin a:hover{
+    color:#ED1C24;
+}
+
+.stats a{
+    font-size: 2.5em;
+    color: black;
+    margin: 0 0 0 48px;
+    letter-spacing: 2px;
+}
+
+.stats a:hover{
+    color:#ED1C24;
 }
