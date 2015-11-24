@@ -34,21 +34,21 @@ input:focus {outline:0;}
 }
 
 .h1UserControl {
-    font-family:LTCTouristAlt;
+    font-family:LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 4.25em;
     letter-spacing: 1px;
     color: #0091D5;
     margin: 4% 0 -1% 0;
 }
 .h2UserControl {
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 3em;
     letter-spacing: 1px;
     color: #ED1C24;
     margin: 5% 0 0.5% 0;
 }
 .pUserControl {
-    font-family:LTCTouristAlt;
+    font-family:LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 2.4em;
     color: black;
     margin: 1% -33%;
@@ -57,7 +57,7 @@ input:focus {outline:0;}
     padding: 0 0 2% 0;
 }
 .pastUserControl {
-    font-family:LTCTouristAlt;
+    font-family:LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 2em;
     color: black;
     /*margin: 0 0 0 10%;*/
@@ -69,20 +69,20 @@ input:focus {outline:0;}
     text-align: left;
 }
 .reservationDisclaimer {
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 2em;
     letter-spacing: 1px;
     color: #0091D5;
     margin: 0 auto;
 }
 .customerInfo {
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 1.25em;
     letter-spacing: 1px;
     color: black;
 }
 .userControlButton{
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 1.75em;
     text-align: center;
     color: #ED1C24;
@@ -120,7 +120,7 @@ input:focus {outline:0;}
 @media only screen and (max-width: 320px) {
     .userControlMain   {
         font-size: 80%;
-        font-family: LTCTouristAlt;
+        font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
         margin: 0 3% 0 5%;
         width:100%
     }
@@ -131,7 +131,7 @@ input:focus {outline:0;}
     }
 
     .h2UserControl {
-        font-family: LTCTouristAlt;
+        font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
         color: #ED1C24;
         width: 90%;
         margin: 5% 10% 0;
@@ -152,7 +152,7 @@ input:focus {outline:0;}
         width: 100%;
     }
     .userControlButton {
-        font-family: LTCTouristAlt;
+        font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
         text-align: center;
         display: flex;
         font-size: 25px;
@@ -186,7 +186,7 @@ input:focus {outline:0;}
 @media only screen and (max-width: 375px) {
     .userControlMain   {
         font-size: 80%;
-        font-family: LTCTouristAlt;
+        font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
         margin: 0 3% 0 5%;
         width:100%
     }
@@ -197,7 +197,7 @@ input:focus {outline:0;}
     }
 
     .h2UserControl {
-        font-family: LTCTouristAlt;
+        font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
         color: #ED1C24;
         width: 90%;
         margin: 5% 10% 0;
@@ -218,7 +218,7 @@ input:focus {outline:0;}
         width: 100%;
     }
     .userControlButton {
-        font-family: LTCTouristAlt;
+        font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
         text-align: center;
         font-size: 25px;
         color: #ED1C24;
@@ -252,7 +252,7 @@ input:focus {outline:0;}
         margin: 5% 0 12px;
         border: medium none transparent;
         letter-spacing: 1px;
-        font-family: LTCTouristAlt;
+        font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
         font-size: 2em;
         text-align: center;
         color: #ED1C24;
@@ -280,7 +280,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
 /*.confirmationMain {*/
 
 .confirmButton {
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 1.75em;
     text-align: center;
     color: #ED1C24;

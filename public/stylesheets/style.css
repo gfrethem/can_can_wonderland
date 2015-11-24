@@ -2,6 +2,7 @@
 /* red #ED1C24 */
 /* yellow #FFE300 */
 
+@import url(https://fonts.googleapis.com/css?family=Arvo);
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 
 @font-face{
@@ -29,7 +30,7 @@ body{
 /*//////////////////////////////////*/
 /*home page css*/
 .homeNav{
-    padding: 2em 0;
+    padding: 2em 0 1em 0;
 }
 .homeBars  {
     color:black;
@@ -49,7 +50,7 @@ body{
 }
 
 .starLogo {
-    margin: 0 5% -.6% 2%;
+    margin: -5px 5px 0 47px;
     width: 5%;
     min-width: 3em;
 }
@@ -82,13 +83,13 @@ h3{
 }
 
 p{
-    font: 14px Georgia,serif;
+    font: 14px Arvo, Georgia,serif;
     color: black;
     margin: 2px 0 5px 5%;
 }
 
 .continueButton{
-    font-family:  LTCTouristAlt;
+    font-family:  LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 2.5em;
     text-align: center;
     color: #ED1C24;
@@ -114,7 +115,7 @@ a {
 }
 
 .fb{
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     border-color: transparent;
     font-size: 2em;
     font-weight: bold;
@@ -130,13 +131,13 @@ a {
 }
 
 .fbImage{
-    margin: 1px 0 0 0;
+    margin: 1px 9px 0 0px;
 }
 
 /*///////////////////////////////////////*/
 /*lOGIN*/
 #emailMain{
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -151,32 +152,32 @@ a {
 
 input#emailMain::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    white;
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
 input#emailMain:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
     color:    white;
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
 input#emailMain::-moz-placeholder{ /* Mozilla Firefox 19+ */
     color:    white;
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
 input#emailMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     color:    white;
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
 /*////////////////////////////////*/
 
 #passwordMain{
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -191,25 +192,25 @@ input#emailMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
 /*////////////////////////////////*/
 input#passwordMain::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    white;
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
 input#passwordMain:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
     color:    white;
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
 input#passwordMain::-moz-placeholder{ /* Mozilla Firefox 19+ */
     color:    white;
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
 input#passwordMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     color:    white;
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
@@ -229,7 +230,7 @@ input#passwordMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
 }
 
 #email{
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -245,25 +246,25 @@ input#passwordMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
 
 input.pholder::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    white;
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
 input.pholder:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
     color:    white;
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
 input.pholder::-moz-placeholder{ /* Mozilla Firefox 19+ */
     color:    white;
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
 input.pholder:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     color:    white;
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     letter-spacing: 3px;
     font-size: 1.25em;
 }
@@ -274,7 +275,7 @@ input:-webkit-autofill {
 /*////////////////////////////////*/
 
 #password{
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -288,7 +289,7 @@ input:-webkit-autofill {
 }
 
 #password2{
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -302,7 +303,7 @@ input:-webkit-autofill {
 }
 
 #name{
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -316,7 +317,7 @@ input:-webkit-autofill {
 }
 
 #username{
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -330,7 +331,7 @@ input:-webkit-autofill {
 }
 
 #phone{
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: bold;
@@ -346,7 +347,7 @@ input:-webkit-autofill {
 .passwordAlert {
     color: #ED1C24;
     text-align: center;
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
     text-transform: uppercase;
 }
 .loginPlaceholders{
@@ -377,7 +378,7 @@ li {
     font-size: 5em;
     text-align: center;
     background-color: white;
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     width: 100%;
 }
 
@@ -470,7 +471,7 @@ ul{
 
 .infoForm{
     margin: 0 auto 46px 19px;
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 1.5em;
      letter-spacing: 1px;
     width: 66%;
@@ -579,7 +580,7 @@ ul{
 
 
 .businessinfo {
-    font-family: Georgia;
+    font-family: Arvo, Georgia, serif;
     font-size: 1.5em;
     margin: 0 0 2% 10%;
 }
@@ -615,7 +616,7 @@ ul{
 .partySizeButton{
     margin: 2% auto 0;
     display: block;
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 4.1em;
     text-align: center;
     color: black;
@@ -647,7 +648,7 @@ ul{
 .pickTime{
     margin: 12px auto 0;
     display: block;
-    font-family: LTCTouristAlt;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 4.1em;
     text-align: center;
     color: black;
@@ -785,7 +786,7 @@ ul{
     border: transparent;
     letter-spacing: 2px;
     margin: 5% auto 0;
-    font-family: LTCTourist;
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
 }
 
 .numPickButton:hover {
@@ -973,7 +974,7 @@ ul{
     .partySizeButton {
         margin: 2% auto 0;
         display: block;
-        font-family: LTCTouristAlt;
+        font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
         font-size: 4.1em;
         text-align: center;
         color: black;
