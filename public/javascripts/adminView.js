@@ -134,9 +134,11 @@ app.controller("AdminEditController", ["$scope", "$http", function($scope, $http
 app.controller("AdminStatsController", ["$scope", "$http", function($scope, $http){
     var vm = this;
     vm.userEmail = "";
+
     vm.getList = function() {
         $http.get('/settings/list').then(function(response){
             vm.emailList = [];
+            vm.showEmails = !vm.showEmails;
             for(var i = 0; i < response.data.length; i++){
                 if(response.data[i].email != 'admin'){
                     if(response.data[i].email != 'frontdesk') {

@@ -887,7 +887,14 @@ ul{
     background-size: 80%;
 }
 /*!//////////////////////////////////////!**/
-/*!*usercontrol page*!*/
+/*!*admin page*!*/
+.statsButton {
+    font-size: 1em;
+}
+.statsContainer {
+    margin: 0 auto;
+    text-align: center;
+}
 
 /*.h2usercontrol {*/
 /*font-family: LTCTourist;*/
