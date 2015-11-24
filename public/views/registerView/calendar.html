@@ -21,15 +21,10 @@
         <link rel="stylesheet" href="/stylesheets/style.css"/>
         <base href="/">
     </head>
-    <body ng-controller="FrontDeskController as frontDesk">
-        <header>
-            <div class="logOutFrontdesk">
-            <a class="logoutButton" ng-click="frontDesk.logout()" href="/">LOGOUT</a>
-            </div>
-
-            <img src="/images/longLogo.png" class="longLogo" ng-click="admin.goHome()">
-
-        </header>
+    <body ng-controller="FrontDeskController as frontDesk" class="frontDeskMain">
+        <!--<header>-->
+            <!--<img src="/images/longLogo.png" class="longLogo">-->
+        <!--</header>-->
 
         <div class="calendarDiv">
             <datepicker  date-format="MMM dd, yyyy">

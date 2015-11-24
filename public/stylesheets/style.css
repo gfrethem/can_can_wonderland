@@ -420,7 +420,7 @@ ul{
 .mainHour{
     background-color: white;
     border: 4px solid black;
-    width: 70%;
+    width: 60%;
     margin: 0 auto -4px;
     display: block;
 }
@@ -881,18 +881,10 @@ ul{
 
 /*FRONTDESK PAGE*/
 /*///////////////////////////////////////////*/
-.logOutFrontdesk{
-    float: right;
-    margin: -0.5em 8% 0 0.5em;
+.frontDeskMain{
+    background:#FFFFFF url('/images/longLogo.png') no-repeat center center fixed;
+    background-size: 80%;
 }
-
-.longLogo{
-    width: 50%;
-    display: block;
-    margin: 0 auto;
-    padding: 20px 0 ;
-}
-
 /*!//////////////////////////////////////!**/
 /*!*usercontrol page*!*/
 
@@ -1011,6 +1003,9 @@ ul{
 @media screen and (max-width: 768px) {
     .loginPlaceholders{
         width: 50%;
+    }
+    .mainHour {
+        width: 85%;
     }
 }
 /*iphone6 plus*/
