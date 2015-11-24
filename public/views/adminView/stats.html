@@ -1,14 +1,15 @@
 <div class="statsMain" ng-controller="AdminStatsController as stats">
-    <h1>Statistics</h1>
-
     <div class="statsContainer">
-        <button ng-click="stats.getList()">GET EMAILS</button>
-        <div ng-repeat="email in stats.emailList">
-            <h3>{{email}},</h3>
+        <button class='continueButton statsButton' ng-click="stats.getList()">GET EMAILS</button>
+        <div ng-show="stats.showEmails" ng-repeat="email in stats.emailList">
+            <span>{{email}}, </span>
         </div>
     </div>
-    <div class="adminUserControl">
-        User Email: <input type="text" ng-model="stats.userEmail">
-        <button class="userEditButton" ng-click="stats.deleteUser()">DELETE USER</button>
+    <div class="adminUserControl children12">
+        <h4 ng-click="stats.removeUser = !stats.removeUser">DELETE A USER</h4>
+        <div ng-show="stats.removeUser">
+            User Email: <input type="text" ng-model="stats.userEmail">
+            <button class="continueButton statsButton" ng-click="stats.deleteUser()">DELETE USER</button>
+        </div>
     </div>
 </div>
