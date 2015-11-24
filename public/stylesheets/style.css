@@ -513,7 +513,7 @@ ul{
 /*font-size: 50px;*/
 /*}*/
 
-#checkboxes{
+.checkboxes{
     float: right;
     color: black;
     margin: 1% -1%;

@@ -1,102 +1,98 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="frontDeskApp">
-    <head>
-        <meta charset="UTF-8">
-        <title>Can Can Wonderland Scheduler</title>
-        <script src="/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="/vendor/angular/angular.min.js"></script>
-        <script src="/vendor/angular-route/angular-route.min.js"></script>
-        <script src="/vendor/angular-xeditable/xeditable.min.js"></script>
-        <script src="/vendor/angular-ui-mask/dist/mask.min.js"></script>
-        <script src="/vendor/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
-        <script src="/javascripts/registerView.js"></script>
-        <script src="/vendor/moment/min/moment.min.js"></script>
-        <script src="/vendor/slick-carousel/slick/slick.min.js"></script>
-        <script src="/vendor/angular-slick-carousel/dist/angular-slick.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Can Can Wonderland Scheduler</title>
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/vendor/angular/angular.min.js"></script>
+    <script src="/vendor/angular-route/angular-route.min.js"></script>
+    <script src="/vendor/angular-xeditable/xeditable.min.js"></script>
+    <script src="/vendor/angular-ui-mask/dist/mask.min.js"></script>
+    <script src="/vendor/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
+    <script src="/javascripts/registerView.js"></script>
+    <script src="/vendor/moment/min/moment.min.js"></script>
+    <script src="/vendor/slick-carousel/slick/slick.min.js"></script>
+    <script src="/vendor/angular-slick-carousel/dist/angular-slick.min.js"></script>
 
-        <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
-        <link rel="stylesheet" href="/vendor/angularjs-datepicker/dist/angular-datepicker.min.css"/>
-        <link rel="stylesheet" href="/vendor/slick-carousel/slick/slick.css"/>
-        <link rel="stylesheet" href="/stylesheets/calendarStyles.css"/>
-        <link rel="stylesheet" href="/stylesheets/style.css"/>
-        <base href="/">
-    </head>
-    <body ng-controller="FrontDeskController as frontDesk">
-        <header>
-            <div class="logOutFrontdesk">
-            <a class="logoutButton" ng-click="frontDesk.logout()" href="/">LOGOUT</a>
-            </div>
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/vendor/angularjs-datepicker/dist/angular-datepicker.min.css"/>
+    <link rel="stylesheet" href="/vendor/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" href="/stylesheets/calendarStyles.css"/>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <base href="/">
+</head>
+<body ng-controller="FrontDeskController as frontDesk" class="frontDeskMain">
+<!--<header>-->
+<!--<img src="/images/longLogo.png" class="longLogo">-->
+<!--</header>-->
 
-            <img src="/images/longLogo.png" class="longLogo" ng-click="admin.goHome()">
-
-        </header>
-
-        <div class="calendarDiv">
-            <datepicker  date-format="MMM dd, yyyy">
-                <input class='dateButton' ng-model="frontDesk.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
-            </datepicker>
-                 <button ng-click="frontDesk.submitTime()"  class="submitButton">SUBMIT</button>
-        </div>
+<div class="calendarDiv">
+    <datepicker  date-format="MMM dd, yyyy">
+        <input class='dateButton' ng-model="frontDesk.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
+    </datepicker>
+    <button ng-click="frontDesk.submitTime()"  class="submitButton">SUBMIT</button>
+</div>
 <!--//////////////-->
-                    <!--ON THIS CLICK, SHOW QUARTER HOURS BELOW IT-->
-            <div class="mainHour"  ng-repeat="hour in frontDesk.currentDate" >
-               <ul>
-                   <li ng-click="quarterHour = ! quarterHour">
-                      {{hour.hour}}
-                        <div class="available">AVAILABLE <div class="numAvailable"> {{hour.totalSlotsRemaining}}</div></div>
-                   </li>
-               </ul>
+<!--ON THIS CLICK, SHOW QUARTER HOURS BELOW IT-->
+<div class="mainHour"  ng-repeat="hour in frontDesk.currentDate" >
+    <ul>
+        <li ng-click="quarterHour = ! quarterHour">
+            {{hour.hour}}
+            <div class="available">AVAILABLE <div class="numAvailable"> {{hour.totalSlotsRemaining}}</div></div>
+        </li>
+    </ul>
 
-<!--//////////////-->
+    <!--//////////////-->
 
-                <!-- ON THIS CLICK SHOW RESERVATIONS-->
-                <div class="quarterHour" ng-show="quarterHour" ng-repeat="quarter in hour.quarters">
-                    <ul>
-                        <li ng-click="reservation = !reservation">
-                             {{quarter.quarter}}
-                                <div class="available">AVAILABLE <div class="numAvailable"> {{quarter.remainingSlots}}</div></div>
-                        </li>
-                     </ul>
-
-
-                <div class="reservation" ng-show="reservation" ng-repeat="info in quarter.reservations track by $index" >
-
-                    <div class="infoName">
-                        <div class="infoContainer">
+    <!-- ON THIS CLICK SHOW RESERVATIONS-->
+    <div class="quarterHour" ng-show="quarterHour" ng-repeat="quarter in hour.quarters">
+        <ul>
+            <li ng-click="reservation = !reservation">
+                {{quarter.quarter}}
+                <div class="available">AVAILABLE <div class="numAvailable"> {{quarter.remainingSlots}}</div></div>
+            </li>
+        </ul>
 
 
-                        <div class="infoContainer">
-                           {{info.name}} <span class="red">{{info.adultnumber}}</span> Adults <span class="red">{{info.childnumber}}</span> Children
-                            <span id="checkboxes">check-in <input type="checkbox" class="check-in" name="check-in" value="check-in" ng-model="frontDesk.checked[quarter.quarter + $index]" ng-change="frontDesk.checkedin(info.id)"></span>
-                            <button ng-click="resInfo = !resInfo" class="infoButton" >INFO</button>
-                        </div>
+        <div class="reservation" ng-show="reservation" ng-repeat="info in quarter.reservations track by $index" >
 
-                        </div>
+            <div class="infoName">
+                <div class="infoContainer">
+
+
+                    <div class="infoContainer">
+                        {{info.name}} <span class="red">{{info.adultnumber}}</span> Adults <span class="red">{{info.childnumber}}</span> Children
+                        <span id="checkboxes">check-in <input type="checkbox" class="check-in" name="check-in" value="check-in" ng-model="frontDesk.checked[quarter.quarter + $index]" ng-change="frontDesk.checkedin(info.id)"></span>
+                        <button ng-click="resInfo = !resInfo" class="infoButton" >INFO</button>
                     </div>
 
-                    <div ng-show="resInfo" class="reservationInfo">
-                            <form class="reservationForm">
-                                <div class="infoForm">
-                              <div class="inputname"> <label class="labelInfo">Name</label> <input class="inputForm" type="text" placeholder="{{info.name}}" ng-model="frontDesk.name[quarter.quarter + $index]"> </div>
-                               <label class="labelInfo">Email</label> <input class="inputForm" type="email" placeholder="{{info.email}}" ng-model="frontDesk.email[quarter.quarter + $index]">
-                              <div> <label class="labelInfo">Phone Number</label> <input class="inputForm" type="text" placeholder="{{info.phonenumber}}" ng-model="frontDesk.phonenumber[quarter.quarter + $index]" ui-mask="(999) 999-9999"  ui-mask-placeholder ui-mask-placeholder-char="_"></div>
-                              <div><label class="labelInfo">Number of Adults</label> <input class="inputForm" type="text" placeholder="{{info.adultnumber}}" ng-model="frontDesk.adultnumber[quarter.quarter + $index]"></div>
-                                  <div><label class="labelInfo">Number of Children</label> <input class="inputForm" type="text" placeholder="{{info.childnumber}}" ng-model="frontDesk.childnumber[quarter.quarter + $index]"></div>
-                                      <div><label class="labelInfo">Number of Groups</label> <input class="inputForm" type="text" placeholder="{{info.numslots}}" ng-model="frontDesk.numslots[quarter.quarter + $index]"></div>
-                                          <div><label class="labelInfo">Notes</label> <input class="inputForm" type="text" placeholder="{{info.notes}}" ng-model="frontDesk.notes[quarter.quarter + $index]"></div>
-                                              <div><label class="labelInfo">Reservation?</label> <input type="checkbox" placeholder="{{info.reservation}}" ng-model="frontDesk.reservation[quarter.quarter + $index]"></div>
-
-                                </div>
-                                <div class="teeButtons">
-                                <button ng-hide="info.email" class="createNew" ng-click="frontDesk.submitReservation(quarter.quarter, $index)">NEW TEE TIME</button>
-                                    <button class="cancelButton" ng-click="frontDesk.cancelReservation(info.id)">CANCEL TEE TIME</button>
-
-                                </div>
-                            </form>
-                    </div>
                 </div>
             </div>
+
+            <div ng-show="resInfo" class="reservationInfo">
+                <form class="reservationForm">
+                    <div class="infoForm">
+                        <div class="inputname"> <label class="labelInfo">Name</label> <input class="inputForm" type="text" placeholder="{{info.name}}" ng-model="frontDesk.name[quarter.quarter + $index]"> </div>
+                        <label class="labelInfo">Email</label> <input class="inputForm" type="email" placeholder="{{info.email}}" ng-model="frontDesk.email[quarter.quarter + $index]">
+                        <div> <label class="labelInfo">Phone Number</label> <input class="inputForm" type="text" placeholder="{{info.phonenumber}}" ng-model="frontDesk.phonenumber[quarter.quarter + $index]" ui-mask="(999) 999-9999"  ui-mask-placeholder ui-mask-placeholder-char="_"></div>
+                        <div><label class="labelInfo">Number of Adults</label> <input class="inputForm" type="text" placeholder="{{info.adultnumber}}" ng-model="frontDesk.adultnumber[quarter.quarter + $index]"></div>
+                        <div><label class="labelInfo">Number of Children</label> <input class="inputForm" type="text" placeholder="{{info.childnumber}}" ng-model="frontDesk.childnumber[quarter.quarter + $index]"></div>
+                        <div><label class="labelInfo">Number of Groups</label> <input class="inputForm" type="text" placeholder="{{info.numslots}}" ng-model="frontDesk.numslots[quarter.quarter + $index]"></div>
+                        <div><label class="labelInfo">Notes</label> <input class="inputForm" type="text" placeholder="{{info.notes}}" ng-model="frontDesk.notes[quarter.quarter + $index]"></div>
+                        <div><label class="labelInfo">Reservation?</label> <input type="checkbox" placeholder="{{info.reservation}}" ng-model="frontDesk.reservation[quarter.quarter + $index]"></div>
+
+                    </div>
+                    <div class="teeButtons">
+                        <button ng-hide="info.email" class="createNew" ng-click="frontDesk.submitReservation(quarter.quarter, $index)">NEW TEE TIME</button>
+                        <button class="cancelButton" ng-click="frontDesk.cancelReservation(info.id)">CANCEL TEE TIME</button>
+
+                    </div>
+                </form>
+            </div>
         </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>
+
 
