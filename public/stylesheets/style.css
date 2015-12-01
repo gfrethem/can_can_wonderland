@@ -101,8 +101,6 @@ p{
     display: block;
     border: transparent;
     letter-spacing: 2px;
-
-
 }
 
 .continueButton:hover {
@@ -377,7 +375,7 @@ li {
     border: none;
     font-size: 5em;
     text-align: center;
-    background-color: white;
+    background-color: transparent;
     font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     width: 100%;
 }
@@ -705,6 +703,9 @@ ul{
     background-color: #0091D5;
 }
 
+.calendarContinue{
+    margin-top: 29px;
+}
 
 
 .results{
