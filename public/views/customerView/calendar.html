@@ -21,14 +21,52 @@
         </a>
     </div>
 
-    <div class="calendarDiv">
-        <datepicker  date-format="MMM dd, yyyy">
-            <input class='dateButton' ng-model="calendar.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
-        </datepicker>
+    <button class="pickTime" ng-click="calendar.showDateSelector()"> PICK A DATE </button>
+    <div class="underline-last"></div>
+
+    <div ng-show="calendar.dateSelector">
+
+        <div ng-hide="calendar.daysMonth">
+            <slick class="slider" settings="calendar.slickConfig" prev-arrow=".month-prev" next-arrow=".month-next">
+                <div ng-repeat="month in calendar.monthList">
+                    <div class ="partySize sliders" ng-click="calendar.selectMonth(month)">{{month}}</div>
+                </div>
+            </slick>
+        </div>
+
+        <div class="month-prev">
+        <a href="" class="month-prev">
+            <i class="fa fa-caret-left"></i>
+        </a>
+        </div>
+        <div class="month-next">
+            <a href="" class="month-next">
+                <i class="fa fa-caret-right"></i>
+            </a>
+        </div>
+
+        <div ng-show="calendar.daysMonth" >
+            <slick class="slider" settings="calendar.slickConfig" prev-arrow=".day-prev" next-arrow=".day-next">
+                <div ng-repeat="day in calendar.daysInMonthList">
+                    <div class ="partySize sliders" ng-click="calendar.selectDay(day)">{{day}}</div>
+                </div>
+            </slick>
+        </div>
+
+        <div class="day-prev">
+            <a href="" class="day-prev">
+                <i class="fa fa-caret-left"></i>
+            </a>
+        </div>
+        <div class="day-next">
+            <a href="" class="day-next">
+                <i class="fa fa-caret-right"></i>
+            </a>
+        </div>
 
     </div>
 
-        <div class="underline"></div>
+
         <button class="pickTime" ng-click="calendar.buttonTime()"> PICK A TIME </button>
         <div class="underline-last"></div>
 
@@ -48,6 +86,6 @@
 
     <h2 ng-show="calendar.yourDate"  class="results"> {{calendar.partySize}} people on {{calendar.yourDate}}</h2>
         <div class="continue">
-            <a href='/guests'> <button class="continueButton" ng-click="calendar.confirmDateSelection()"type="submit">CONTINUE</button></a>
+            <a href='/guests'> <button class="continueButton calendarContinue" ng-click="calendar.confirmDateSelection()"type="submit">CONTINUE</button></a>
         </div>
     </div>

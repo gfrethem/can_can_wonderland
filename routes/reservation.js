@@ -3,7 +3,6 @@
  */
 var express = require('express');
 var router = express.Router();
-//var Sequelize = require('sequelize');
 var moment = require('moment');
 var models = require('../models');
 var Reservation = models.Reservation;
