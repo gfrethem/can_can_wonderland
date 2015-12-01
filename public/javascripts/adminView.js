@@ -1,4 +1,4 @@
-var app = angular.module('adminApp', ['ngRoute', 'xeditable', '720kb.datepicker', 'ui.mask']);
+var app = angular.module('adminApp', ['ngRoute', 'xeditable', '720kb.datepicker', 'ui.mask', 'ngSanitize', 'ngCsv']);
 
 //Sets specific html view to load and sets an Angular controller to each page
 app.config(function($routeProvider, $locationProvider){
@@ -145,6 +145,16 @@ app.controller("AdminStatsController", ["$scope", "$http", function($scope, $htt
                         vm.emailList.push(response.data[i].email);
                     }
                 }
+            }
+        });
+    };
+
+    vm.getReservationsList = function() {
+        $http.get('/settings/listReservations').then(function(response){
+            vm.reservationsList = [];
+            vm.showReservations = !vm.showReservations;
+            for(var i = 0; i < response.data.length; i++){
+                vm.reservationsList.push(response.data[i]);
             }
         });
     };

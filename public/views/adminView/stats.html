@@ -4,12 +4,29 @@
         <div ng-show="stats.showEmails" ng-repeat="email in stats.emailList">
             <span>{{email}}, </span>
         </div>
-    </div>
-    <div class="adminUserControl children12">
-        <h4 ng-click="stats.removeUser = !stats.removeUser">DELETE A USER</h4>
-        <div ng-show="stats.removeUser">
-            User Email: <input type="text" ng-model="stats.userEmail">
-            <button class="continueButton statsButton" ng-click="stats.deleteUser()">DELETE USER</button>
+        <!--<button type="button" ng-csv="stats.emailList" csv-header="['Email Address']" filename="emails.csv">Export to-->
+            <!--CSV-->
+        <!--</button>-->
+
+
+        <div>
+            <button class='continueButton statsButton' ng-click="stats.getReservationsList()">GET Reservations</button>
+            <div ng-show="stats.showReservations">
+                <button type="button" ng-csv="stats.reservationsList" csv-header="['', 'Name', 'Email Address', 'Phone',
+                '# of Adults', '# of Children', 'Checked In', 'In Advance', 'Date', 'Notes', '# of Slots']"
+                        filename="reservations.csv">Export to CSV
+                </button>
+            </div>
+
+        </div>
+
+        <div class="adminUserControl children12">
+            <h4 ng-click="stats.removeUser = !stats.removeUser">DELETE A USER</h4>
+
+            <div ng-show="stats.removeUser">
+                User Email: <input type="text" ng-model="stats.userEmail">
+                <button class="continueButton statsButton" ng-click="stats.deleteUser()">DELETE USER</button>
+            </div>
         </div>
     </div>
 </div>

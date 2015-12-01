@@ -48,6 +48,14 @@ router.get('/list', function(req, res, next){
     })
 });
 
+//GRAB ALL RESERVATIONS
+router.get('/listReservations', function(req, res, next){
+    Reservations.findAll({
+    }).then(function(response){
+        res.send(response);
+    })
+});
+
 //DELETE ACCOUNT
 router.get('/delete/:email?', function(req, res, next) {
     var userEmail = req.params.email;
