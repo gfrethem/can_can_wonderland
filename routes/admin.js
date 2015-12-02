@@ -42,7 +42,7 @@ router.get('/getSettings', function(req, res, next){
 //GRAB ALL EMAILS
 router.get('/list', function(req, res, next){
     Users.findAll({
-        attributes: ['email']
+        attributes: ['name', 'email', 'phonenumber']
     }).then(function(response){
         res.send(response);
     })

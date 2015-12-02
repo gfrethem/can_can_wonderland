@@ -1,20 +1,20 @@
 <div class="statsMain" ng-controller="AdminStatsController as stats">
     <div class="statsContainer">
         <button class='continueButton statsButton' ng-click="stats.getList()">GET EMAILS</button>
-        <div ng-show="stats.showEmails" ng-repeat="email in stats.emailList">
-            <span>{{email}}, </span>
+        <div ng-show="stats.showEmails">
+            <button class='continueButton statsButton' type="button" ng-csv="stats.emailList"
+                    csv-header="['Name', 'Email Address', 'Phone Number']" filename="emails.csv">Export Emails to CSV
+            </button>
         </div>
-        <!--<button type="button" ng-csv="stats.emailList" csv-header="['Email Address']" filename="emails.csv">Export to-->
-            <!--CSV-->
-        <!--</button>-->
 
 
         <div>
             <button class='continueButton statsButton' ng-click="stats.getReservationsList()">GET Reservations</button>
             <div ng-show="stats.showReservations">
-                <button type="button" ng-csv="stats.reservationsList" csv-header="['', 'Name', 'Email Address', 'Phone',
-                '# of Adults', '# of Children', 'Checked In', 'In Advance', 'Date', 'Notes', '# of Slots']"
-                        filename="reservations.csv">Export to CSV
+                <button class='continueButton statsButton' type="button" ng-csv="stats.reservationsList"
+                        csv-header="['', 'Name', 'Email Address', 'Phone', '# of Adults', '# of Children',
+                         'Checked In', 'In Advance', 'Date', 'Notes', '# of Slots']"
+                        filename="reservations.csv">Export Reservations to CSV
                 </button>
             </div>
 

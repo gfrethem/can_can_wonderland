@@ -142,7 +142,7 @@ app.controller("AdminStatsController", ["$scope", "$http", function($scope, $htt
             for(var i = 0; i < response.data.length; i++){
                 if(response.data[i].email != 'admin'){
                     if(response.data[i].email != 'frontdesk') {
-                        vm.emailList.push(response.data[i].email);
+                        vm.emailList.push(response.data[i]);
                     }
                 }
             }
