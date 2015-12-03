@@ -149,9 +149,6 @@ passport.use(new FacebookStrategy({
     }
 ));
 
-
-
-
 passport.serializeUser(function (user, done) {
     done(null, user.id)
 });
@@ -205,10 +202,9 @@ var AUTH_TOKEN = 'e9ccd52f2d96b3801435c108ca0470ba';
 //SETUP CRON JOB FOR TWILIO
 var client = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
 var CronJob = require('cron').CronJob;
-var job = new CronJob('00 00 14 * * 0-6', function(){
-    var todayDate = moment();
-    var nextDayStart = moment(todayDate).add('days', 1).set('hour', 00).set('minute', 00).format('YYYY-MM-DD HH:mm');
-    var nextDayEnd = moment(todayDate).add('days', 1).set('hour', 23).set('minute', 59).format('YYYY-MM-DD HH:mm');
+var job = new CronJob('00 00 14 * * *', function(){
+    var nextDayStart = moment().add('days', 1).set('hour', 00).set('minute', 00).format('YYYY-MM-DD HH:mm');
+    var nextDayEnd = moment().add('days', 1).set('hour', 23).set('minute', 59).format('YYYY-MM-DD HH:mm');
     var tomorrowFormatted = moment(nextDayStart).format("dddd, MMM DD, YYYY");
     Reservation.findAll({
         where : {
@@ -237,32 +233,25 @@ var job = new CronJob('00 00 14 * * 0-6', function(){
             }
 
             //Send an SMS text message
-            //    function sendReminder(name, phonenumber, time, date) {
+            //    function sendReminder(phonenumber, time, date) {
             //        client.sendMessage({
             //
             //            to: '+1' + phonenumber, // Any number Twilio can deliver to
             //            from: '+16513831380', // A number you bought from Twilio and can use for outbound communication
-            //              body: "This is a friendly reminder that you have scheduled a tee time at Can Can Wonderland for " + time + " tomorrow, " + date + ". See you on the green!";
-            // body of the SMS message
+        //                body: "This is a friendly reminder that you have scheduled a tee time at Can Can Wonderland for " + time + " tomorrow, " + date + ". See you on the green!";
             //
             //        }, function (err, responseData) { //this function is executed when a response is received from Twilio
             //
-            //            if (!err) { // "err" is an error received during the request, if any
-            //
-            //                // "responseData" is a JavaScript object containing data received from Twilio.
-            //                // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
-            //                // http://www.twilio.com/docs/api/rest/sending-sms#example-1
-            //
+            //            if (!err) {
             //                console.log(responseData.from); // outputs "+14506667788"
             //                console.log(responseData.body); // outputs "word to your mother."
-            //
             //            }
             //        });
             //    }
         }
     });
-}, null, true, "America/Los_Angeles");
-//job.start();
+}, null, true);
+job.start();
 
 
 
