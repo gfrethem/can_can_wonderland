@@ -2,12 +2,12 @@
 
     <div class="partySize">
         <button class="partySizeButton" ng-model="date" type="text" ng-click="calendar.showPartySize = !calendar.showPartySize">PARTY SIZE</button>
-               <div class="underline"></div>
-                <slick class="slider" settings="calendar.slickConfig" prev-arrow=".slide-prev" next-arrow=".right">
-                    <div ng-repeat="party in calendar.partyList track by $index">
-                        <div class='partySize sliders' ng-click="calendar.findPartySize(party)" ng-class="{active:calendar.partySize == party}">{{party}}</div>
-                    </div>
-                </slick>
+        <div class="underline"></div>
+        <slick class="slider" settings="calendar.slickConfig" prev-arrow=".slide-prev" next-arrow=".right">
+            <div ng-repeat="party in calendar.partyList track by $index">
+                <div class='partySize sliders' ng-click="calendar.findPartySize(party)" ng-class="{active:calendar.partySize == party}">{{party}}</div>
+            </div>
+        </slick>
     </div>
 
     <div class="slide-prev">
@@ -21,71 +21,31 @@
         </a>
     </div>
 
-    <button class="pickTime" ng-click="calendar.showDateSelector()"> PICK A DATE </button>
+    <div class="calendarDiv">
+        <datepicker  date-format="MMM dd, yyyy">
+            <input class='dateButton' ng-model="calendar.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
+        </datepicker>
+    </div>
+
+    <button class="pickTime" ng-click="calendar.buttonTime()"> PICK A TIME </button>
     <div class="underline-last"></div>
 
-    <div ng-show="calendar.dateSelector">
-
-        <div ng-hide="calendar.daysMonth">
-            <slick class="slider" settings="calendar.slickConfig" prev-arrow=".month-prev" next-arrow=".month-next">
-                <div ng-repeat="month in calendar.monthList">
-                    <div class ="partySize sliders" ng-click="calendar.selectMonth(month)">{{month}}</div>
-                </div>
-            </slick>
+    <div ng-show="calendar.closed"><h1>CLOSED</h1></div>
+    <div ng-hide="calendar.closed" ng-show="calendar.mainTime" class="timeSlotContainer" ng-repeat="hour in calendar.currentDate track by $index">
+        <div ng-click="calendar.quarterSlots[hour.hour] = !calendar.quarterSlots[hour.hour]">
+            <div>{{hour.hour}}</div>
         </div>
-
-        <div class="month-prev">
-        <a href="" class="month-prev">
-            <i class="fa fa-caret-left"></i>
-        </a>
+        <div ng-show='calendar.quarterSlots[hour.hour]' class="quarterContainer" ng-repeat="quarter in hour.quarters">
+            <div>
+                <div ng-click="calendar.selectTime(quarter.quarter)" ng-if="(quarter.remainingSlots-2) >= calendar.slotsNeeded">{{quarter.quarter}}</div>
+                <div ng-if="quarter.remainingSlots <= 2">{{quarter.quarter}} || WALKUPS ONLY</div>
+                <div ng-if="quarter.remainingSlots > 2 && (quarter.remainingSlots - 2) < calendar.slotsNeeded">{{quarter.quarter}} || UNAVAILABLE</div>
+            </div>
         </div>
-        <div class="month-next">
-            <a href="" class="month-next">
-                <i class="fa fa-caret-right"></i>
-            </a>
-        </div>
-
-        <div ng-show="calendar.daysMonth" >
-            <slick class="slider" settings="calendar.slickConfig" prev-arrow=".day-prev" next-arrow=".day-next">
-                <div ng-repeat="day in calendar.daysInMonthList">
-                    <div class ="partySize sliders" ng-click="calendar.selectDay(day)">{{day}}</div>
-                </div>
-            </slick>
-        </div>
-
-        <div class="day-prev">
-            <a href="" class="day-prev">
-                <i class="fa fa-caret-left"></i>
-            </a>
-        </div>
-        <div class="day-next">
-            <a href="" class="day-next">
-                <i class="fa fa-caret-right"></i>
-            </a>
-        </div>
-
     </div>
-
-
-        <button class="pickTime" ng-click="calendar.buttonTime()"> PICK A TIME </button>
-        <div class="underline-last"></div>
-
-        <div ng-show="calendar.closed"><h1>CLOSED</h1></div>
-        <div ng-hide="calendar.closed" ng-show="calendar.mainTime" class="timeSlotContainer" ng-repeat="hour in calendar.currentDate track by $index">
-            <div ng-click="calendar.quarterSlots[hour.hour] = !calendar.quarterSlots[hour.hour]">
-                <div>{{hour.hour}}</div>
-            </div>
-            <div ng-show='calendar.quarterSlots[hour.hour]' class="quarterContainer" ng-repeat="quarter in hour.quarters">
-                <div>
-                    <div ng-click="calendar.selectTime(quarter.quarter)" ng-if="(quarter.remainingSlots-2) >= calendar.slotsNeeded">{{quarter.quarter}}</div>
-                    <div ng-if="quarter.remainingSlots <= 2">{{quarter.quarter}} || WALKUPS ONLY</div>
-                    <div ng-if="quarter.remainingSlots > 2 && (quarter.remainingSlots - 2) < calendar.slotsNeeded">{{quarter.quarter}} || UNAVAILABLE</div>
-                </div>
-            </div>
-        </div>
 
     <h2 ng-show="calendar.yourDate"  class="results"> {{calendar.partySize}} people on {{calendar.yourDate}}</h2>
-        <div class="continue">
-            <a href='/guests'> <button class="continueButton calendarContinue" ng-click="calendar.confirmDateSelection()"type="submit">CONTINUE</button></a>
-        </div>
+    <div class="continue">
+        <a href='/guests'> <button class="continueButton calendarContinue" ng-click="calendar.confirmDateSelection()"type="submit">CONTINUE</button></a>
     </div>
+</div>

@@ -226,57 +226,17 @@ app.controller("RegisterController", ["$scope", '$cookies', "captureRes", functi
 }]);
 
 app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", function($scope, captureRes, $http){
-    $scope.Math = window.Math;
     var vm = this;
+
 //INITIALIZE VARIABLES FOR ANGULAR
     vm.partySize = 0;
     vm.showPartySize = true;
     vm.partyList = [2,3,4,5,6,7,8,9,10,11,12];
     vm.slotsNeeded = 0;
-    var date = '';
+    vm.date = '';
     vm.mainTime = false;
     vm.currentDate = [];
     vm.quarterSlots = false;
-    vm.monthList = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEPT", "OCT", "NOV", "DEC"];
-    var monthChoice = "";
-    var dayChoice = "";
-    var yearChoice = "";
-    vm.daysMonth = false;
-    vm.daysInMonthList = [];
-
-//SHOW DATE SELECTOR
-    vm.showDateSelector = function(){
-        vm.dateSelector = !vm.dateSelector;
-    };
-
-//DETERMINE NUMBER OF DAYS IN MONTH
-    vm.selectMonth = function(month){
-        var numDays = daysInMonth(month);
-        for(var i = 1; i <= numDays; i++){
-            vm.daysInMonthList.push(i);
-        }
-        vm.daysMonth = true;
-    };
-
-    function daysInMonth(month) {
-        var currentDate = moment();
-        var year = currentDate.year();
-
-        var selectedDate = moment().set('year', year).set('month', month);
-
-        if(selectedDate < currentDate){
-            year = year + 1;
-        }
-        yearChoice = year;
-        monthChoice = selectedDate.month();
-        return new Date(year, monthChoice, 0).getDate();
-    }
-
-//SELECT A DAY OF THE MONTH
-    vm.selectDay = function(day){
-        dayChoice = day;
-        vm.daysMonth = false;
-    };
 
 //SHOW TIME SLOTS FOR A SPECIFIC DAY
     vm.buttonTime = function() {
@@ -285,8 +245,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
             vex.dialog.alert('Please select a party size!');
         } else {
             vm.mainTime = true;
-            var thisDate = moment().set('date', dayChoice).set('month', monthChoice).set('year', yearChoice).set('hour', 0).set('minute', 0).format('YYYY-MM-DD HH:mm');
-            date = thisDate;
+            var thisDate = moment(vm.date).format('YYYY-MM-DD HH:mm');
             $http.get('/reservation/getCalendar/' + thisDate).then(function (response) {
                 if(response.data == "Closed"){
                     vm.yourDate = "";
@@ -303,7 +262,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
     vm.selectTime = function(time){
         vm.mainTime = false;
         vm.quarterSlots = false;
-        var newDateTime = makeDateTime(date , time);
+        var newDateTime = makeDateTime(vm.date , time);
         if(time.length == 7){
             var meridian = time.substring(5, 7);
             var hour = parseInt(time.substring(0,1));
