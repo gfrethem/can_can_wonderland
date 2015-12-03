@@ -47,7 +47,7 @@
 
         <div ng-show="calendar.daysMonth" >
             <slick class="slider" settings="calendar.slickConfig" prev-arrow=".day-prev" next-arrow=".day-next">
-                <div ng-repeat="day in calendar.daysInMonthList">
+                <div ng-repeat="day in calendar.daysInMonthList track by $index">
                     <div class ="partySize sliders" ng-click="calendar.selectDay(day)">{{day}}</div>
                 </div>
             </slick>

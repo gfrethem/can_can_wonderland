@@ -21,7 +21,6 @@ router.get('/getDate/:date?', function(req, res, next) {
             }
         }
     }).then(function(response) {
-        console.log(response);
         res.send(200);
     });
 });
@@ -61,6 +60,7 @@ router.post('/makeReservation', function(req, res, next){
             // Ooops, do some error-handling
         });
     });
+
 
 //CANCEL RESERVATION
 router.get('/cancelReservation/:id?', function(req, res, next) {
@@ -133,7 +133,6 @@ router.get('/getCalendar/:date?', function(req, res, next) {
 
         //SWITCH TO GET OPEN AND CLOSE HOURS
         Settings.findAll({}).then(function (response) {
-            console.log(moment(date).day());
             switch (moment(date).day()) {
                 case 1:
                     openHours = response[0].mopen.substring(0, 2);
@@ -186,37 +185,22 @@ router.get('/getCalendar/:date?', function(req, res, next) {
 
                 for (var it = 0; it < quarterHours.length; it++) {
 
-                    //FIND THE CURRENT QUARTER HOUR TO MATCH WITH RESERVATIONS
+                    //FIND THE CURRENT QUARTER HOUR
                     var currentTime = operationHours[i] + ":" + quarterHours[it];
-                    //console.log(currentTime);
                     var hour = currentTime.substring(0,2);
                     var minute = currentTime.substring(3,5);
                     var formatTime = moment().set('hour', hour).set('minute', minute).format('h:mm A');
                     //SET CURRENT QUARTER HOUR
                     quarterObject.quarter = formatTime;
 
-                    for (var iter = 0; iter < reservations.length; iter++) {
-                        //GET DATETIME FOR RESERVATION AND CONVERT TO BE COMPARED TO TIME
-                        var resTime = moment(reservations[iter].datetime).format('HH:mm');
-                        var currentReservation = reservations[iter].dataValues;
-
-                        //PUSH ALL MATCHING RESERVATION TIMES TO THE CURRENT QUARTER HOUR AND UPDATE SLOT TOTALS
-                        if (resTime === currentTime) {
-                            reservations.splice(iter, 1);
-                            hourObject.totalSlotsRemaining -= currentReservation.numslots;
-                            quarterObject.remainingSlots -= currentReservation.numslots;
-                            quarterObject.reservations.push(currentReservation);
-                        }
-                    }
-                    //FILL REMAINING RESERVATIONS FOR QUARTER HOUR WITH EMPTY RESERVATIONS
-                    var emptyRes = quarterObject.remainingSlots;
+                    //FILL RESERVATIONS FOR QUARTER HOUR WITH EMPTY RESERVATIONS
                     var iterator = 0;
-                    while(iterator < emptyRes){
+                    while(iterator < 5){
                         quarterObject.reservations.push(emptyReservation);
                         iterator++;
                     }
                     hourObject.quarters.push(quarterObject);
-                    //REINITIALIZE REMAINING SLOTS FOR QUARTER HOUR
+                    //REINITIALIZE QUARTER HOUR OBJECT
                     quarterObject = {
                         quarter: "",
                         remainingSlots : 5,
@@ -230,8 +214,32 @@ router.get('/getCalendar/:date?', function(req, res, next) {
                     quarters: [],
                     totalSlotsRemaining: 20
                 };
-                //REINITIALIZE REMAINING SLOTS FOR WHOLE HOUR
-                hourObject.totalSlotsRemaining = 20;
+            }
+
+            for (var iter = 0; iter < reservations.length; iter++) {
+                //GET DATETIME FOR RESERVATION AND CONVERT TO BE COMPARED TO TIME
+                var resTime = moment(reservations[iter].datetime).format('h:mm A');
+                if(resTime.length === 7){
+                    var resTimeHour = resTime.substring(0,1) + ":00 " + resTime.substring(5,7);
+                } else {
+                    resTimeHour = resTime.substring(0,2) + ":00 " + resTime.substring(6,8);
+                }
+                var currentReservation = reservations[iter].dataValues;
+                //FIND MATCHING TIME FOR RESERVATION AND PUSH IT TO THE CURRENT QUARTER HOUR AND UPDATE SLOT TOTALS
+                for(var i = 0; i < currentDate.length; i++){
+                    if(currentDate[i].hour === resTimeHour){
+                        for(var it = 0; it < currentDate[i].quarters.length; it++){
+                            if(currentDate[i].quarters[it].quarter === resTime){
+                                currentDate[i].totalSlotsRemaining -= currentReservation.numslots;
+                                currentDate[i].quarters[it].remainingSlots -= currentReservation.numslots;
+                                currentDate[i].quarters[it].reservations.push(currentReservation);
+
+                                //REMOVE EMPTY RESERVATIONS FROM THE LIST EQUAL TO SLOTS TAKEN UP BY THE RESERVATION
+                                currentDate[i].quarters[it].reservations.splice(0, currentReservation.numslots);
+                            }
+                        }
+                    }
+                }
             }
         }).then(function () {
             res.send(currentDate);
