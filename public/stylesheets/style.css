@@ -688,11 +688,11 @@ ul{
 
 .currentReservation{
     display: block;
-    width: 43%;
+    width: 50%;
     margin: 0 auto;
 }
 .res{
-    font-size: 3.6em;
+    font-size: 3.3em;
     font-weight: bold;
     color: #ED1C24;
     margin: 40px 0 0 0;
@@ -705,10 +705,11 @@ ul{
 }
 
 .groupSize{
-    font-size: 2.4em;
+    font-size: 2em;
     font-weight: bold;
     color: #ED1C24;
     margin:22px 0 0 0;
+    text-align: center;
 }
 
 
@@ -835,7 +836,26 @@ and (-webkit-min-device-pixel-ratio: 1) {
     color:#ED1C24;
     cursor: pointer;
 }
-
+.teeButton{
+    font-family:  LTCTouristAlt, Helvetica, Ariel, san-serif;
+    font-size: 2.5em;
+    text-align: center;
+    color: #ED1C24;
+    background-color: #FFE300;
+    padding: 8px 22px 2px;;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 29px auto 0;
+    display: block;
+    border: transparent;
+    letter-spacing: 2px;
+    width: 83%;
+    cursor: pointer;
+}
+.teeButton:hover {
+    color: #FFE300;
+    background-color:#ED1C24;
+}
 .continueButton{
     font-family:  LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 2.5em;
@@ -849,7 +869,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     display: block;
     border: transparent;
     letter-spacing: 2px;
-    width: 70%;
+    width: 66%;
     cursor: pointer;
 }
 
@@ -959,6 +979,12 @@ and (-webkit-min-device-pixel-ratio: 1) {
     background-color: #ED1C24;
 
 }
+.editable-input{
+    width: 157px;
+    height: 27px;
+    font-size: 1em;
+    font-family: arvo;
+}
 
 .logoutButton{
     text-decoration: none;
@@ -1044,9 +1070,29 @@ and (-webkit-min-device-pixel-ratio: 1) {
     padding: 7px 0 10px;
 }
 
+.userControlButton{
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
+    font-size: 1.75em;
+    text-align: center;
+    color: #FFE300;
+    background-color: #ED1C24;
+    padding: .5% 3%;
+    text-decoration: none;
+    border-radius: 0;
+    border: medium none transparent;
+    letter-spacing: 1px;
+    float: right;
+    margin: 0 0 35px 0;
+}
+.userControlButton:hover {
+    color: #ED1C24;
+    background-color: #FFE300;
+
+}
+
 .editButton{
     font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 1.87em;
+    font-size: 2.5em;
     text-align: center;
     color: #ED1C24;
     background-color: #FFE300;
@@ -1057,11 +1103,41 @@ and (-webkit-min-device-pixel-ratio: 1) {
     display: block;
     border: transparent;
     letter-spacing: 2px;
-    width: 100%;
+    width: 66%;
     cursor: pointer;
 }
 
 .editButton:hover{
     color: #FFE300;
     background-color: #ED1C24;
+}
+
+.blue-button{
+    color: white;
+    background-color:#0091D5;
+}
+.blue-button:hover{
+    color: #0091D5;
+    background-color:#FFE300;
+}
+
+.red-button{
+    color: #FFE300;
+    background-color:#ED1C24;
+}
+.red-button:hover{
+    color: #ED1C24;
+    background-color:#FFE300;
+}
+.yellow-button:hover{
+    color: white;
+    background-color:#0091D5;
+}
+
+.edit-text{
+    color:#ED1C24;
+    cursor: pointer;
+}
+.edit-text:hover{
+    color: #0091D5;
 }

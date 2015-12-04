@@ -44,7 +44,7 @@
     </div>
 
 
-    <div class="estimatedPrice" ng-show="num.price"><span class="black">Estimated Price:</span> ${{num.price}} for {{num.totalAdults}} adults and {{num.totalChildren}} children</div>
+    <div class="estimatedPrice" ng-show="num.price"><span class="black">Estimated Price:</span></br> <span class="black">${{num.price}}</span> for <span class="black">{{num.totalAdults}}</span> adults and <span class="black">{{num.totalChildren}}</span> children</div>
     <a ng-click='num.showNumAlert()' ng-href="/{{num.numCheck}}"><button class="continueButton"> CONTINUE </button></a>
 </div>
-</div>
+    </div>

@@ -37,6 +37,7 @@ input:focus {outline:0;}
     color: #0091D5;
     margin: 4% 0 -1% 0;
 }
+
 .h2UserControl {
     font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 3em;
@@ -44,6 +45,7 @@ input:focus {outline:0;}
     color: #ED1C24;
     margin: 5% 0 0.5% 0;
 }
+
 .pUserControl {
     font-size: 2.4em;
     clear: both;
@@ -74,27 +76,10 @@ input:focus {outline:0;}
     font-size: 2em;
     letter-spacing: 1px;
     color: black;
-    margin: 14px 0;
+    margin: 15px 0 1px 0;
+    cursor: pointer;
 }
-.userControlButton{
-    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 1.75em;
-    text-align: center;
-    color: #FFE300;
-    background-color: #ED1C24;
-    padding: .5% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    border: medium none transparent;
-    letter-spacing: 1px;
-    float: right;
-    margin: 0 0 35px 0;
-}
-.userControlButton:hover {
-    color: #ED1C24;
-    background-color: #FFE300;
 
-}
 
 /* media queries */
 
@@ -113,10 +98,10 @@ input:focus {outline:0;}
     }
 
     .h2UserControl {
-        font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
+        font-size: 3.5em;
+        letter-spacing: 2px;
         color: #ED1C24;
-        width: 90%;
-        margin: 5% 10% 0;
+        margin: 5% 0 0.5% 0;
     }
 
     .redUC {

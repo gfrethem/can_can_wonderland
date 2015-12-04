@@ -24,14 +24,14 @@
 
     <div ng-show="showCustomerInfo">
         <ul>
-            <li class="customerInfo" editable-text="control.myUser.name">NAME: {{control.myUser.name || 'Add your name!'}}</li>
-            <li class="customerInfo" editable-text="control.myUser.email">EMAIL: {{control.myUser.email}}</li>
-            <li class="customerInfo" editable-text="control.myUser.phonenumber">PHONE NUMBER: {{control.myUser.phonenumber || 'Add a Phone Number!'}}</li>
+            <li class="customerInfo" editable-text="control.myUser.name"> <span class="edit-text"> NAME: </span> {{control.myUser.name || 'Add your name!'}}</li>
+            <li class="customerInfo" editable-text="control.myUser.email"><span class="edit-text"> EMAIL: </span> {{control.myUser.email}}</li>
+            <li class="customerInfo" editable-text="control.myUser.phonenumber"><span class="edit-text"> PHONE NUMBER: </span> {{control.myUser.phonenumber || 'Add a Phone Number!'}}</li>
         </ul>
 
-            <button class="editButton" ng-click="control.updateAccount()">SUBMIT CHANGES</button>
-            <button class="editButton" ng-click="control.deleteAccount()">DELETE ACCOUNT</button>
-            <button class="editButton" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
+            <button class="editButton blue-button" ng-click="control.updateAccount()">SUBMIT CHANGES</button>
+            <button class="editButton red-button" ng-click="control.deleteAccount()">DELETE ACCOUNT</button>
+            <button class="editButton yellow-button" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
 
     </div>
 </div>
