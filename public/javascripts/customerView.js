@@ -253,6 +253,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
                 } else {
                     vm.closed = "";
                     vm.currentDate = response.data;
+                    console.log(vm.currentDate);
                 }
             });
         }
@@ -283,6 +284,7 @@ app.controller("CustomerCalendarController", ["$scope", "captureRes",  "$http", 
         vm.yourDate = sloppyDate.format('dddd, MMM DD, YYYY h:mm A');
         captureRes.newReservation.datetime = databaseDate;
         captureRes.newReservation.humandate = vm.yourDate;
+        console.log(captureRes.newReservation.datetime);
     };
 
 //COMBINE DATE AND TIME
@@ -343,6 +345,7 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
     vm.resConfirm.reservation = true;
 //SAVE A NEW RESERVATION TO THE DATABASE
     vm.confirmReservation = function(){
+        console.log(vm.resConfirm);
         $http.post('/reservation/makeReservation', vm.resConfirm).then(function(){
             $cookies.remove('resAdults');
             $cookies.remove('resChildren');
