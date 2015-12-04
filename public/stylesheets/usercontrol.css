@@ -31,7 +31,6 @@ input:focus {outline:0;}
 }
 
 .h1UserControl {
-    font-family:LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 4.25em;
     letter-spacing: 1px;
     color: #0091D5;
@@ -39,11 +38,12 @@ input:focus {outline:0;}
 }
 
 .h2UserControl {
-    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 3em;
     letter-spacing: 1px;
     color: #ED1C24;
-    margin: 5% 0 0.5% 0;
+    margin: 24px 0 -14px 0;
+    clear: both;
+
 }
 
 .pUserControl {
@@ -68,8 +68,8 @@ input:focus {outline:0;}
     font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 2em;
     letter-spacing: 1px;
-    color: #0091D5;
-    margin: 49px auto 0;
+    color: #ED1C24;
+    margin: 10px auto 34px;
     clear: both;
 }
 .customerInfo {
