@@ -1,9 +1,10 @@
+
+
 /* blue #0091D5 */
 /* red #ED1C24 */
 /* yellow #FFE300 */
 
 @import url(https://fonts.googleapis.com/css?family=Arvo);
-@import url(https://fonts.googleapis.com/css?family=Oswald);
 
 @font-face{
     font-family: LTCTourist;
@@ -28,7 +29,7 @@ body{
 }
 
 /*//////////////////////////////////*/
-/*home page css*/
+/* HOME PAGE */
 .homeNav{
     padding: 2em 0 1em 0;
 }
@@ -55,57 +56,18 @@ body{
     min-width: 3em;
 }
 
-.loginButton{
-    text-decoration: none;
-    font-size: 3em;
-    letter-spacing: 2px;
-    font-weight: bold;
-    color: black;
-    /*float: right;*/
-    margin: 0 5% 0 1%;
-}
-
-.logoutButton {
-    text-decoration: none;
-    font-size: 3em;
-    letter-spacing: 2px;
-    font-weight: bold;
-    color: black;
-    background:white;
-    border: none;
-}
 
 h3{
     font-size: 20px;
     font-weight: bold;
     color: #ED1C24;
-    margin: 15px 0 5px 5%;
+    /*margin: 15px 0 5px 5%;*/
 }
 
 p{
     font: 14px Arvo, Georgia,serif;
     color: black;
     margin: 2px 0 5px 5%;
-}
-
-.continueButton{
-    font-family:  LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 2.5em;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: 8px 22px 2px;;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 0 auto ;
-    display: block;
-    border: transparent;
-    letter-spacing: 2px;
-}
-
-.continueButton:hover {
-    color: #FFE300;
-    background-color:#ED1C24;
 }
 
 a {
@@ -133,7 +95,7 @@ a {
 }
 
 /*///////////////////////////////////////*/
-/*lOGIN*/
+/* lOGIN */
 #emailMain{
     font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     letter-spacing: 2px;
@@ -225,7 +187,12 @@ input#passwordMain:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     margin: 20px auto 11px auto;
     display: block;
     letter-spacing: 2px;
+    width: 64%;
 }
+.newUser:hover{
+    color:#ED1C24;
+}
+
 
 #email{
     font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
@@ -355,7 +322,7 @@ input:-webkit-autofill {
 }
 
 /*/////////////////////////////////////*/
-/*//cashier Calander View*/
+/*// CASHIER CALENDAR VIEW */
 
 li {
     list-style: none;
@@ -366,22 +333,6 @@ li {
 .datepicker{
     text-align: center;
     font-size: 3em;
-}
-
-.dateButton{
-    display:block;
-    margin: 22px auto 0;
-    color: black;
-    border: none;
-    font-size: 5em;
-    text-align: center;
-    background-color: transparent;
-    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    width: 100%;
-}
-
-.dateButton:hover{
-    color:black;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -397,19 +348,6 @@ li {
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color:   black;
-}
-
-.submitButton{
-    border: transparent;
-    font-size: 2em;
-    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    letter-spacing: 2px;
-    text-align: center;
-    margin: 7% auto;
-    display: block;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .15em .5em;
 }
 
 ul{
@@ -471,7 +409,7 @@ ul{
     margin: 0 auto 46px 19px;
     font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 1.5em;
-     letter-spacing: 1px;
+    letter-spacing: 1px;
     width: 66%;
     text-align: right;
 }
@@ -487,29 +425,6 @@ ul{
     width: 30%;
 }
 
-.infoButton{
-    font-family: LTCTourist, Helvetica, Ariel, san-serif;
-    font-size: 1em;
-    letter-spacing: 1px;
-    font-weight: bold;
-    text-align: center;
-    color: #0091D5;
-    background-color: white;
-    border: 4px solid black;
-    padding: .5% 1.25%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 0 3%;
-    float:right;
-}
-
-.infoButton:hover{
-    background-color: #FFE300;
-}
-
-/*input[type="checkbox"] {*/
-/*font-size: 50px;*/
-/*}*/
 
 .checkboxes{
     float: right;
@@ -525,68 +440,43 @@ ul{
     font-size: 1.25em;
     margin-left: 12px;
 }
-.cancelButton{
-    font-family: LTCTourist, Helvetica, Ariel, san-serif;
-    font-size: 1.5em;
-    letter-spacing: 1px;
-    font-weight: bold;
-    text-align: center;
-    color: #FFE300;
-    background-color: #ED1C24;
-    border: 4px solid black;
-    padding: 3px 16px;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 0 41px;
 
-}
-.createNew{
-    font-family: LTCTourist, Helvetica, Ariel, san-serif;
-    font-size: 1.5em;
-    letter-spacing: 1px;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    background-color: #0091D5;
-    border: 4px solid black;
-    padding: 3px 20px;
-    text-decoration: none;
-    margin: 0 0 0 34px;
-}
-
-.teeButtons {
-    padding: 34px 0 10px;
-}
 
 /*////////////////////////////////////////////*/
-/*customer hours and price info*/
+/* CUSTOMER HOURS AND PRICE INFO */
+.infoMain{
+    width: 40%;
+    margin: 0 auto;
+    display: block;
+
+}
+
 .h3info {
     font-size: 2.7em;
     font-weight: bold;
     color: #ED1C24;
-    margin: 2% 0 0 10%;
+    margin: 15px 0 1px 0;
     letter-spacing: 2px;
 }
 
 .h4info {
     font-size: 3em;
     color: #0091D5;
-    margin: 2% 10% -2% 10%;;
-    width: 100%;
     letter-spacing: 2px;
+    margin: 40px 0 -14px 0;
 }
 
 
 .businessinfo {
     font-family: Arvo, Georgia, serif;
     font-size: 1.5em;
-    margin: 0 0 2% 10%;
+    /*margin: 0 0 2% 10%;*/
 }
 
 .messageinfo {
     font-size: 2em;
     color: #0091D5;
-    margin: 2% 0 4% 10%;
+    /*margin: 2% 0 4% 10%;*/
     letter-spacing: 2px;
 }
 
@@ -600,30 +490,21 @@ ul{
 }
 
 /*///////////////////////////////////////////*/
-/*CUSOTMER CALANDER VIEW*/
+/* CUSOTMER CALANDER VIEW*/
+.divMain{
+    width: 50%;
+    margin: 0 auto;
+    display: block;
 
+}
 
 .calendarDiv{
-    width:70%;
+    width:100%;
     margin: 0 auto 0;
     overflow: hidden;
 }
 .buttonCalendar{
     text-align: center;
-}
-.partySizeButton{
-    margin: 2% auto 0;
-    display: block;
-    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 4.1em;
-    text-align: center;
-    color: black;
-    background-color: white;
-    padding: .75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    border: transparent;
-    letter-spacing: 2px;
 }
 
 .underline{
@@ -643,36 +524,12 @@ ul{
     margin: 0 auto 37px;
 }
 
-.pickTime{
-    margin: 12px auto 0;
-    display: block;
-    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 4.1em;
-    text-align: center;
-    color: black;
-    background-color: white;
-    padding: .75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    border: transparent;
-    letter-spacing: 2px;
-
-}
-
-.pickTime:hover{
-    color:#ED1C24;
-}
-
-.customerPickTIme{
-    margin-bottom:33px;
-}
-
 .timeSlotContainer{
     font-size: 2em;
     text-align: center;
     background-color: white;
     border: 4px solid black;
-    width: 50%;
+    width: 66%;
     margin: 0 auto -4px;
     display: block;
 }
@@ -703,9 +560,9 @@ ul{
     background-color: #0091D5;
 }
 
-.calendarContinue{
-    margin-top: 29px;
-}
+/*.calendarContinue{*/
+/*margin-top: 29px;*/
+/*}*/
 
 
 .results{
@@ -714,6 +571,7 @@ ul{
     color: #ED1C24;
 }
 /*//////////////////////////////*/
+
 .fa-caret-right{
     font-size: 5em;
 }
@@ -721,14 +579,35 @@ ul{
     font-size: 5em;
 }
 
-/*.fa-caret-left:before{*/
-    /*color:#0091D5;*/
-/*}*/
-
 .slide-prev{
     color: #0091D5;
     float:left;
-    margin: -37px 0 0 26.5%;
+    margin: -37px 0 0 10px;
+}
+.right{
+    color: #0091D5;
+    float:right;
+    margin: -37px 10px 0 0;
+}
+.month-prev{
+    color: #0091D5;
+    float:left;
+    margin: -37px 0 0 10px;
+}
+.month-next{
+    color: #0091D5;
+    float:right;
+    margin: -37px 10px 0 0;
+}
+.day-prev{
+    color: #0091D5;
+    float:left;
+    margin: -37px 0 0 10px;
+}
+.day-next{
+    color: #0091D5;
+    float:right;
+    margin: -37px 10px 0 0;
 }
 
 .fa-caret-right:hover{
@@ -738,11 +617,7 @@ ul{
     color:#ED1C24;
 }
 
-.right{
-    color: #0091D5;
-    float:right;
-    margin: -37px 26.5% 0 0;
-}
+
 /*//////////////////////////////*/
 
 .slide-prevAdult{
@@ -770,50 +645,23 @@ ul{
     margin: -37px 26.5% 0 0;
 }
 
-.numPickButton{
-    margin: 5% 0 0 0;
-}
-
-.numPickButton {
-    font-size: 2.5em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    display: block;
-    border: transparent;
-    letter-spacing: 2px;
-    margin: 5% auto 0;
-    font-family: LTCTourist, Helvetica, Ariel, san-serif;
-}
-
-.numPickButton:hover {
-    color: #FFE300;
-    background-color:#ED1C24;
-}
-
-.slick-picker{
-    margin: 0 auto;
-}
-
 /*////////////////////////////////////*/
-/*CHECK NUMBERS FOR CHILDREN AND ADULTS*/
+/* CHECK NUMBERS FOR CHILDREN AND ADULTS */
 
 .checkNums{
     font-size: 3em;
+    letter-spacing: 2px;
     font-weight: bold;
     text-align: center;
-    color: #ED1C24;
+    color: black;
     margin: 0 0 1% 0;
 }
 .checkChildrenNums{
     font-size: 3em;
+    letter-spacing: 2px;
     font-weight: bold;
     text-align: center;
-    color: #ED1C24;
+    color: black;
     margin: 3% 0 0 0;
 }
 
@@ -828,141 +676,68 @@ ul{
 .estimatedPrice{
     text-align: center;
     color: #0091D5;
-    font-size:3em ;
+    font-size:2.1em ;
     margin-top: 3%;
 }
 
 .black{
     color:black;
 }
+
 /*////////////////////////////////*/
 /*CONFIRMATION PAGE*/
 
+
+.currentReservation{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
 .res{
-    font-size: 3.7em;
+    font-size: 3.3em;
     font-weight: bold;
     color: #ED1C24;
-    margin: 2% 0 0 10%;
+    margin: 40px 0 -14px 0;
 }
 .info{
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: bold;
     color: black;
-    margin: 1% 0 0 10%;
+    margin: 4px 0 0 0;
 }
 
 .groupSize{
-    font-size: 2.4em;
-    font-weight: bold;
-    color: #ED1C24;
-    margin:2% 0 6% 10%;
-}
-
-.changeButton{
     font-size: 2em;
     font-weight: bold;
-    text-align: center;
     color: #ED1C24;
-    background-color: #FFE300;
-    padding:.75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 2% auto ;
-}
-.confirmButton{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .75% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 2% auto ;
+    margin:22px 0 0 0;
 }
 
-/*FRONTDESK PAGE*/
+
+/*/////////////////////////////*/
+/*USER CONTROL*/
+
+.userControlMain{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+
+/*.editingButtonsDiv{*/
+    /*width: 72%;*/
+    /*margin: 0 auto;*/
+    /*display: block;*/
+/*}*/
+
+
+/* FRONTDESK PAGE */
 /*///////////////////////////////////////////*/
+
 .frontDeskMain{
     background:#FFFFFF url('/images/longLogo.png') no-repeat center center fixed;
     background-size: 80%;
 }
-/*!//////////////////////////////////////!**/
-/*!*admin page*!*/
-.statsButton {
-    font-size: 1em;
-}
-.statsContainer {
-    margin: 0 auto;
-    text-align: center;
-}
-
-/*.h2usercontrol {*/
-/*font-family: LTCTourist;*/
-
-/*font-size: 3em;*/
-/*letter-spacing: .5px;*/
-/*color: #ED1C24;*/
-/*margin: 2% 0 5% 10%;*/
-/*}*/
-
-/*.h2UserControl {*/
-/*font-size: 3em;*/
-/*letter-spacing: .5px;*/
-/*color: #ED1C24;*/
-/*margin: 2% 0 5% 10%;*/
-/*}*/
-
-/*.divUserControl {*/
-/*font-family: LTCTourist;*/
-/*font-size: 1.25em;*/
-/*letter-spacing: 1px;*/
-/*color: black;*/
-/*margin: 2% 0 5% 10%;*/
-/*}*/
-
-/*.reservationDisclaimer {*/
-/*font-family: LTCTourist;*/
-/*font-size: 1.5em;*/
-/*letter-spacing: .5px;*/
-/*color: #0091D5;*/
-/*margin: 2% 0 5% 10%;*/
-/*}*/
-
-/*.customerInfo {*/
-/*font-family: LTCTourist;*/
-/*font-size: 1.25em;*/
-/*letter-spacing: .5px;*/
-/*color: black;*/
-/*margin: 2% 0 5% 10%;*/
-/*}*/
-/*.confirmButton{*/
-/*font-size: 2em;*/
-/*font-weight: bold;*/
-/*text-align: center;*/
-/*color: #ED1C24;*/
-/*background-color: #FFE300;*/
-/*padding: .75% 3%;*/
-/*text-decoration: none;*/
-/*border-radius: 0;*/
-/*margin: 2% auto ;*/
-/*}*/
-/*.userButton{*/
-/*font-size: 2em;*/
-/*font-weight: bold;*/
-/*text-align: center;*/
-/*color: #ED1C24;*/
-/*background-color: #FFE300;*/
-/*padding: .75% 3%;*/
-/*text-decoration: none;*/
-/*border-radius: 0;*/
-/*margin: 2% auto ;*/
-/*}*/
-
-/*.userButton:hover {*/
-/*color: #FFE300;*/
-/*background-color: #ED1C24;*/
-/*}*/
 
 
 /*/////////////////////////////////////*/
@@ -1024,14 +799,14 @@ ul{
     .loginPlaceholders {
         width: 90%;
     }
-        .mainLogo{
+    .mainLogo{
         width: 81%;
         margin-top: 19px;
     }
-        .loginButton{
-            font-size:2em;
-            margin-top: 20px
-        }
+    .loginButton{
+        font-size:2em;
+        margin-top: 20px
+    }
 }
 /*ipad portrait and landscape*/
 @media only screen
@@ -1047,3 +822,331 @@ and (-webkit-min-device-pixel-ratio: 1) {
 
 }
 
+.button-main{
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    font-size: 3.75em;
+    letter-spacing: 2px;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}
+.button-main:hover{
+    color:#ED1C24;
+    cursor: pointer;
+}
+.teeButton{
+    font-family:  LTCTouristAlt, Helvetica, Ariel, san-serif;
+    font-size: 2.5em;
+    text-align: center;
+    color: #ED1C24;
+    background-color: #FFE300;
+    padding: 8px 22px 2px;;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 29px auto 0;
+    display: block;
+    border: transparent;
+    letter-spacing: 2px;
+    width: 83%;
+    cursor: pointer;
+}
+.teeButton:hover {
+    color: #FFE300;
+    background-color:#ED1C24;
+}
+.continueButton{
+    font-family:  LTCTouristAlt, Helvetica, Ariel, san-serif;
+    font-size: 2.5em;
+    text-align: center;
+    color: #ED1C24;
+    background-color: #FFE300;
+    padding: 8px 22px 2px;;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 29px auto 0;
+    display: block;
+    border: transparent;
+    letter-spacing: 2px;
+    width: 66%;
+    cursor: pointer;
+}
+
+.continueButton:hover {
+    color: #FFE300;
+    background-color:#ED1C24;
+}
+
+.submitButton{
+    border: transparent;
+    font-size: 2em;
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 7% auto;
+    display: block;
+    color: #ED1C24;
+    background-color: #FFE300;
+    padding: .15em .5em;
+    cursor: pointer;
+}
+
+.stats-buttons{
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
+    font-size: 2em;
+    letter-spacing: 2px;
+    width: 40%;
+    display: block;
+    margin: 12px auto;
+    border: none;
+    background-color: #FFE300;
+    color:#ED1C24;
+    padding: 5px 0 4px;
+    cursor: pointer;
+}
+
+.stats-buttons:hover {
+    color: #FFE300;
+    background-color:#ED1C24;
+}
+
+
+.stats-button-blue{
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
+    font-size: 2em;
+    letter-spacing: 2px;
+    width: 40%;
+    display: block;
+    margin: 12px auto;
+    border: none;
+    background-color: #0091D5;
+    color:white;
+    padding: 5px 0 4px;
+    cursor: pointer;
+}
+
+.stats-button-blue:hover {
+    color: #0091D5;
+    background-color:#FFE300;
+}
+
+.delete-button-user{
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
+    font-size: 2em;
+    letter-spacing: 2px;
+    width: 22%;
+    display: block;
+    margin: 12px auto;
+    border: none;
+    background-color: #ED1C24;
+    color:white;
+    padding: 5px 0 4px;
+    cursor: pointer;
+}
+.delete-button-user:hover {
+    color: #ED1C24;
+    background-color:#FFE300;
+}
+
+.delete-email{
+    font-family: Arvo;
+    width: 40%;
+    margin: 0 auto;
+    display: block;
+    font-size: 1.3em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.email-input{
+    width: 65%;
+
+}
+
+.editable-buttons button{
+    background-color: #0091D5;
+    font-family: Arvo, georgia, serif;
+    font-size: 16px;
+    color: white;
+    border-color: transparent;
+    margin: 10px 9px 0 13px;
+    padding: 4px 11px;
+    cursor: pointer;
+}
+.editable-buttons button:hover{
+    color: white;
+    background-color: #ED1C24;
+
+}
+.editable-input{
+    width: 157px;
+    height: 27px;
+    font-size: 1em;
+    font-family: arvo;
+}
+
+.logoutButton{
+    text-decoration: none;
+    font-size: 3em;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: black;
+    background:white;
+    border: none;
+    cursor: pointer;
+}
+
+.logoutButton:hover{
+    color: #ED1C24;
+
+}
+.loginButton{
+    text-decoration: none;
+    font-size: 3em;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: black;
+    margin: 0 5% 0 1%;
+    cursor: pointer;
+}
+.loginButton:hover{
+    color: #ED1C24;
+}
+
+.infoButton{
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
+    font-size: 1em;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-align: center;
+    color: #0091D5;
+    background-color: white;
+    border: 4px solid black;
+    padding: .5% 1.25%;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 0 3%;
+    float:right;
+    cursor: pointer;
+}
+
+.infoButton:hover{
+    background-color: #FFE300;
+}
+
+.cancelButton{
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-align: center;
+    color: #FFE300;
+    background-color: #ED1C24;
+    border: 4px solid black;
+    padding: 3px 16px;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 0 41px;
+    cursor: pointer;
+}
+
+.addNew{
+    font-family: LTCTourist, Helvetica, Ariel, san-serif;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #0091D5;
+    border: 4px solid black;
+    padding: 3px 20px;
+    text-decoration: none;
+    margin: 0 0 0 34px;
+    cursor: pointer;
+}
+
+.teeButtons {
+    padding: 7px 0 10px;
+}
+
+.userControlButton{
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
+    font-size: 1.75em;
+    text-align: center;
+    color: #FFE300;
+    background-color: #ED1C24;
+    padding: .5% 3%;
+    text-decoration: none;
+    border-radius: 0;
+    border: medium none transparent;
+    letter-spacing: 1px;
+    float: right;
+    margin: 0 0 35px 0;
+}
+.userControlButton:hover {
+    color: #ED1C24;
+    background-color: #FFE300;
+
+}
+
+.editButton{
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
+    font-size: 2.5em;
+    text-align: center;
+    color: #ED1C24;
+    background-color: #FFE300;
+    padding: 8px 22px 2px;
+    text-decoration: none;
+    border-radius: 0;
+    margin: 21px auto 0;
+    display: block;
+    border: transparent;
+    letter-spacing: 2px;
+    width: 66%;
+    cursor: pointer;
+}
+
+.editButton:hover{
+    color: #FFE300;
+    background-color: #ED1C24;
+}
+
+.blue-button{
+    color: white;
+    background-color:#0091D5;
+}
+.blue-button:hover{
+    color: #0091D5;
+    background-color:#FFE300;
+}
+
+.red-button{
+    color: #FFE300;
+    background-color:#ED1C24;
+}
+.red-button:hover{
+    color: #ED1C24;
+    background-color:#FFE300;
+}
+.yellow-button:hover{
+    color: white;
+    background-color:#0091D5;
+}
+
+.edit-text{
+    color:#ED1C24;
+    cursor: pointer;
+}
+.edit-text:hover{
+    color: #0091D5;
+}
+
+.black-underline {
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    width: 100%;
+    height: 12px;
+    margin: 19px 0 0 0;
+}

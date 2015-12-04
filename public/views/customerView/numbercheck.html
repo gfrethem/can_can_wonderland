@@ -1,7 +1,8 @@
 <div class="numberCheckMain" ng-controller="NumberController as num">
-
+<div class="divMain">
     <div class="numAdults">
         <div class="checkNums"> ADULTS </div>
+        <div class="underline"></div>
         <slick class="slider" settings="num.slickConfig" prev-arrow=".slide-prevAdult" next-arrow=".rightAdult">
             <div ng-repeat="number in num.numAdults track by $index">
                 <div class ="partySize sliders" ng-click="num.numberOfAdults(number)" ng-class="{active:num.totalAdults == number}">{{number}}</div>
@@ -26,6 +27,7 @@
     <div ng-show='num.showChildSelect' class="numChildren">
         <div class="checkChildrenNums"> CHILDREN </div>
         <div class="children12">( 12 and under )</div>
+        <div class="underline"></div>
         <slick class="slider" settings="num.slickConfig" prev-arrow=".slide-prevChild" next-arrow=".rightChild">
             <div ng-repeat="number in num.numChildren track by $index">
                 <div class ="partySize sliders" ng-click="num.numberOfChildren(number)" ng-class="{active:num.totalChildren == number}">{{number}}</div>
@@ -44,6 +46,7 @@
     </div>
 
 
-    <div class="estimatedPrice" ng-show="num.price"><span class="black">Estimated Price:</span> ${{num.price}} for {{num.totalAdults}} adults and {{num.totalChildren}} children</div>
-    <a ng-click='num.showNumAlert()' ng-href="/{{num.numCheck}}"><button class="numPickButton"> CONTINUE </button></a>
+    <div class="estimatedPrice" ng-show="num.price"><span class="black">Estimated Price:</span></br> <span class="black">${{num.price}}</span> for <span class="black">{{num.totalAdults}}</span> adults and <span class="black">{{num.totalChildren}}</span> children</div>
+    <a ng-click='num.showNumAlert()' ng-href="/{{num.numCheck}}"><button class="continueButton"> CONTINUE </button></a>
 </div>
+    </div>

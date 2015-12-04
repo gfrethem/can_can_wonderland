@@ -77,8 +77,8 @@ input:focus {outline:0;}
 
 ._720kb-datepicker-calendar-header {
     text-align: center;
-    font-size: 4em;
-    padding: 25px 0 0 0;
+    font-size: 3em;
+    padding: 12px 0 0 0;
 }
 
 ._720kb-datepicker-calendar-header:nth-child(odd) {
@@ -259,8 +259,8 @@ input:focus {outline:0;}
 }
 
 .slick-list{
-    width: 36%;
-    display:block;
+    width: 70%;
+    display: block;
     margin: 0 auto;
 }
 
@@ -278,4 +278,6 @@ input:focus {outline:0;}
     color: #ED1C24;
     background-color: #FFE300;
 }
+
+
 

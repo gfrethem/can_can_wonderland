@@ -1,9 +1,9 @@
 <div ng-controller="AdminCalendarController as adminCal">
     <div class="calendarDiv">
         <datepicker  date-format="MMM dd, yyyy">
-            <input class='dateButton' ng-model="adminCal.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
+            <input class='button-main dateButton' ng-model="adminCal.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
         </datepicker>
-        <button ng-click="adminCal.submitTime()"  class="submitButton">Submit</button>
+        <button ng-click="adminCal.submitTime()"  class="submitButton">SUBMIT</button>
     </div>
 
     <!--ON THIS CLICK, SHOW QUARTER HOURS BELOW IT-->
@@ -21,50 +21,42 @@
             <ul>
                 <li ng-click="reservation = !reservation">
                     {{quarter.quarter}}
-                        <div class="available">AVAILABLE <div class="numAvailable"> {{quarter.remainingSlots}}</div></div>
-                    </li>
-                </ul>
+                    <div class="available">AVAILABLE <div class="numAvailable"> {{quarter.remainingSlots}}</div></div>
+                </li>
+            </ul>
             <div class="reservation" ng-show="reservation" ng-repeat="info in quarter.reservations track by $index" >
                 <div class="infoName">
                     <div class="infoContainer">
 
                         <div class="infoContainer">
-                        {{info.name}}
+                            {{info.name}}
                             <span class="red">{{info.adultnumber}}</span> Adults <span class="red">{{info.childnumber}}</span> Children
                             <span class="checkboxes">check-in <input type="checkbox" class="check-in" name="check-in" value="check-in" ng-model="frontDesk.checked[quarter.quarter + $index]" ng-change="frontDesk.checkedin(info.id)"></span>
                             <button ng-click="resInfo = !resInfo" class="infoButton" >INFO</button>
                         </div>
                     </div>
-                    <!--<div class="adultNumber infoContainer">-->
-                        <!--{{info.adultnumber}} Adults {{info.childnumber}} Children-->
-                    <!--</div>-->
-                    <!--<div class="infoContainer">-->
-                        <!--<button ng-click="resInfo = !resInfo" class="infoButton">INFO</button>-->
-                    <!--</div>-->
-                    <!--<div id="checkboxes" class="infoContainer">-->
-                        <!--check-in<input type="checkbox" class="check-in" name="check-in" value="check-in" ng-model="adminCal.checked[quarter.quarter + $index]" ng-change="adminCal.checkedin(info.id)">-->
-                    <!--</div>-->
-                <!--</div>-->
                 <div ng-show="resInfo" class="reservationInfo">
                     <form class="reservationForm">
                         <div class="infoForm">
-                            <div class="inputname"> <label class="labelInfo">Name</label> <input class="inputForm" type="text" placeholder="{{info.name}}" ng-model="frontDesk.name[quarter.quarter + $index]"> </div>
-                            <label class="labelInfo">Email</label> <input class="inputForm" type="email" placeholder="{{info.email}}" ng-model="frontDesk.email[quarter.quarter + $index]">
-                            <div> <label class="labelInfo">Phone Number</label> <input class="inputForm" type="text" placeholder="{{info.phonenumber}}" ng-model="frontDesk.phonenumber[quarter.quarter + $index]" ui-mask="(999) 999-9999"  ui-mask-placeholder ui-mask-placeholder-char="_"></div>
-                            <div><label class="labelInfo">Number of Adults</label> <input class="inputForm" type="text" placeholder="{{info.adultnumber}}" ng-model="frontDesk.adultnumber[quarter.quarter + $index]"></div>
-                            <div><label class="labelInfo">Number of Children</label> <input class="inputForm" type="text" placeholder="{{info.childnumber}}" ng-model="frontDesk.childnumber[quarter.quarter + $index]"></div>
-                            <div><label class="labelInfo">Number of Groups</label> <input class="inputForm" type="text" placeholder="{{info.numslots}}" ng-model="frontDesk.numslots[quarter.quarter + $index]"></div>
-                            <div><label class="labelInfo">Notes</label> <input class="inputForm" type="text" placeholder="{{info.notes}}" ng-model="frontDesk.notes[quarter.quarter + $index]"></div>
-                            <div><label class="labelInfo">Reservation?</label> <input type="checkbox" placeholder="{{info.reservation}}" ng-model="frontDesk.reservation[quarter.quarter + $index]"></div>
-
+                            <div class="inputname"> <label class="labelInfo">Name</label> <input class="inputForm" type="text" placeholder="{{info.name}}" ng-model="adminCal.name[quarter.quarter + $index]"> </div>
+                            <label class="labelInfo">Email</label> <input class="inputForm" type="email" placeholder="{{info.email}}" ng-model="adminCal.email[quarter.quarter + $index]">
+                            <div> <label class="labelInfo">Phone Number</label> <input class="inputForm" type="text" placeholder="{{info.phonenumber}}" ng-model="adminCal.phonenumber[quarter.quarter + $index]" ui-mask="(999) 999-9999"  ui-mask-placeholder ui-mask-placeholder-char="_"></div>
+                            <div><label class="labelInfo">Number of Adults</label> <input class="inputForm" type="text" placeholder="{{info.adultnumber}}" ng-model="adminCal.adultnumber[quarter.quarter + $index]"></div>
+                            <div><label class="labelInfo">Number of Children</label> <input class="inputForm" type="text" placeholder="{{info.childnumber}}" ng-model="adminCal.childnumber[quarter.quarter + $index]"></div>
+                            <div><label class="labelInfo">Number of Groups</label> <input class="inputForm" type="text" placeholder="{{info.numslots}}" ng-model="adminCal.numslots[quarter.quarter + $index]"></div>
+                            <div><label class="labelInfo">Notes</label> <input class="inputForm" type="text" placeholder="{{info.notes}}" ng-model="adminCal.notes[quarter.quarter + $index]"></div>
+                            <div><label class="labelInfo">Reservation?</label> <input type="checkbox" placeholder="{{info.reservation}}" ng-model="adminCal.reservation[quarter.quarter + $index]"></div>
                         </div>
-
+                        <div class="teeButtons">
+                            <button ng-hide="info.email" class="addNew" ng-click="adminCal.submitReservation(quarter.quarter, $index)">NEW TEE TIME</button>
+                            <button class="cancelButton" ng-click="adminCal.cancelReservation(info.id)">CANCEL TEE TIME</button>
+                            <button ng-if="hour.totalSlotsRemaining === 20" class="addNew" ng-click="adminCal.bookFullHour(quarter.quarter, $index, hour.totalSlotsRemaining)">BOOK FULL HOUR</button>
+                        </div>
                     </form>
                 </div>
             </div>
-    </div>
 
-</div>
         </div>
+    </div>
 
 </div>

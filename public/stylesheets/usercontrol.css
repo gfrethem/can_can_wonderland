@@ -2,8 +2,6 @@
 /* red #ED1C24 */
 /* yellow #FFE300 */
 
-/*@import url('https://fonts.googleapis.com/css?family=Oswald');*/
-
 @font-face{
     font-family: LTCTourist;
     src: url('LTCTouristGothic-Regular.ttf');
@@ -30,89 +28,58 @@ input:focus {outline:0;}
 }
 .redUC{
     color:#ED1C24;
-
 }
 
 .h1UserControl {
-    font-family:LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 425%;
+    font-size: 4.25em;
     letter-spacing: 1px;
     color: #0091D5;
     margin: 4% 0 -1% 0;
 }
+
 .h2UserControl {
-    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 300%;
+    font-size: 3em;
     letter-spacing: 1px;
     color: #ED1C24;
-    margin: 5% 0 0.5% 0;
+    margin: 24px 0 -14px 0;
+    clear: both;
+
 }
+
 .pUserControl {
-    font-family:LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 225%;
-    color: black;
-    margin: 1% -33%;
+    font-size: 2.4em;
+    clear: both;
+
 }
 .futureReservationContainer{
     padding: 0 0 2% 0;
 }
 .pastUserControl {
     font-family:LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 200%;
+    font-size: 2em;
     color: black;
     /*margin: 0 0 0 10%;*/
 }
 
 .divUserControl{
     margin: 2% auto;
-    width: 60%;
-    text-align: left;
 }
 .reservationDisclaimer {
     font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 200%;
+    font-size: 2em;
     letter-spacing: 1px;
-    color: #0091D5;
-    margin: 0 auto;
+    color: #ED1C24;
+    margin: 10px auto 34px;
+    clear: both;
 }
 .customerInfo {
-    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 125%;
+    font-size: 2em;
     letter-spacing: 1px;
     color: black;
+    margin: 15px 0 1px 0;
+    cursor: pointer;
 }
-.userControlButton{
-    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 155%;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .5% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 10% 38%;
-    border: medium none transparent;
-    letter-spacing: 1px;
-}
-.userControlButton:hover {
-    color: #FFE300;
-    background-color: #ED1C24;
-}
-.userEditButton {
-    font-family: LTCTouristAlt;
-    font-size: 155%;
-    text-align: center;
-    border: medium none transparent;
-    letter-spacing: 1px;
-    text-decoration: none;
-    border-radius: 0px;
-    display: flex;
-    width: 25%;
-    margin: 8% 25%;
-    padding: 1.5% 5%;
-    color: #ED1C24;
-    background-color: #FFE300;
-}
+
 
 /* media queries */
 
@@ -131,10 +98,10 @@ input:focus {outline:0;}
     }
 
     .h2UserControl {
-        font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
+        font-size: 3.5em;
+        letter-spacing: 2px;
         color: #ED1C24;
-        width: 90%;
-        margin: 5% 10% 0;
+        margin: 5% 0 0.5% 0;
     }
 
     .redUC {
@@ -169,16 +136,7 @@ input:focus {outline:0;}
         padding: 2% 14%;
         width: 60%
     }
-    /*.divEditButtons {*/
-        /*font-weight: bold;*/
-        /*text-align: center;*/
-        /*text-decoration: none;*/
-        /*border-radius: 0;*/
-        /*padding: 1% 10%;*/
-        /*width: 50%;*/
-        /*font-size: 2em;*/
-        /*margin: 4% 20%;*/
-    /*}*/
+
 
 }
 
@@ -243,7 +201,7 @@ input:focus {outline:0;}
         font-size: 70%;
     }
     .reservationDisclaimer{
-        margin: 0 5%;
+        margin: 63px auto 10px;
     }
     .userEditButton{
         padding: 1.75% 7%;
@@ -268,32 +226,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
 
 }
 
-
-
-
-
-
-
-/*CONFIRMATION PAGE*/
-
-
-/*.confirmationMain {*/
-
-.confirmButton {
-    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 1.75em;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: .5% 3%;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 12px 45%;
-    border: medium none transparent;
-    letter-spacing: 1px;
-}
-
-/*}*/
 /* media queries */
 
 /*iphone5, 5s*/

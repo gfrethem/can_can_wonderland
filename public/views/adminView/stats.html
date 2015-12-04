@@ -1,15 +1,32 @@
 <div class="statsMain" ng-controller="AdminStatsController as stats">
     <div class="statsContainer">
-        <button class='continueButton statsButton' ng-click="stats.getList()">GET EMAILS</button>
-        <div ng-show="stats.showEmails" ng-repeat="email in stats.emailList">
-            <span>{{email}}, </span>
+        <button class='stats-buttons statsButton' ng-click="stats.getList()">GET EMAILS</button>
+        <div ng-show="stats.showEmails">
+            <button class='stats-button-blue statsButton' type="button" ng-csv="stats.emailList"
+                    csv-header="['Name', 'Email Address', 'Phone Number']" filename="emails.csv">EXPORT EMAILS TO CSV
+            </button>
         </div>
-    </div>
-    <div class="adminUserControl children12">
-        <h4 ng-click="stats.removeUser = !stats.removeUser">DELETE A USER</h4>
-        <div ng-show="stats.removeUser">
-            User Email: <input type="text" ng-model="stats.userEmail">
-            <button class="continueButton statsButton" ng-click="stats.deleteUser()">DELETE USER</button>
+
+
+        <div>
+            <button class='stats-buttons statsButton' ng-click="stats.getReservationsList()">GET RESERVATIONS</button>
+            <div ng-show="stats.showReservations">
+                <button class='stats-button-blue statsButton' type="button" ng-csv="stats.reservationsList"
+                        csv-header="['', 'Name', 'Email Address', 'Phone', '# of Adults', '# of Children',
+                         'Checked In', 'In Advance', 'Date', 'Notes', '# of Slots']"
+                        filename="reservations.csv">EXPORT RESERVATIONS TO CSV
+                </button>
+            </div>
+
+        </div>
+
+        <div class="adminUserControl">
+            <button class="delete-button-user" type="button" ng-click="stats.removeUser = !stats.removeUser">DELETE A USER</button>
+
+            <div ng-show="stats.removeUser">
+                <div class="delete-email">User Email: <input class="email-input" type="text" ng-model="stats.userEmail"></div>
+                <button class="delete-button-user statsButton" ng-click="stats.deleteUser()">DELETE USER</button>
+            </div>
         </div>
     </div>
 </div>

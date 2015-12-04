@@ -36,7 +36,10 @@ module.exports = function(grunt) {
                     "angular-ui-mask/dist/mask.min.js",
                     "vex-js/js/vex.combined.min.js",
                     "vex-js/css/vex.css",
-                    "vex-js/css/vex-theme-default.css"
+                    "vex-js/css/vex-theme-default.css",
+                    "angular-sanitize/angular-sanitize.min.js",
+                    "angular-sanitize/angular-sanitize.min.js.map",
+                    "ng-csv/build/ng-csv.min.js"
 
                 ],
                 "dest": "public/vendor/"

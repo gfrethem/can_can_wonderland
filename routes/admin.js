@@ -4,6 +4,7 @@
 
 var express = require('express');
 var router = express.Router();
+var moment = require('moment');
 //var Sequelize = require('sequelize');
 var models = require('../models');
 var Settings = models.Setting;
@@ -42,7 +43,15 @@ router.get('/getSettings', function(req, res, next){
 //GRAB ALL EMAILS
 router.get('/list', function(req, res, next){
     Users.findAll({
-        attributes: ['email']
+        attributes: ['name', 'email', 'phonenumber']
+    }).then(function(response){
+        res.send(response);
+    })
+});
+
+//GRAB ALL RESERVATIONS
+router.get('/listReservations', function(req, res, next){
+    Reservations.findAll({
     }).then(function(response){
         res.send(response);
     })
@@ -65,5 +74,31 @@ router.get('/delete/:email?', function(req, res, next) {
         res.send(200);
     });
 });
+
+//BOOK A FULL HOUR
+router.post('/fullHour', function(req, res, next){
+    console.log(req.body);
+    var newReservation = req.body;
+    var quarterList = [0, 15, 30, 45];
+
+    for(var i = 0; i < quarterList.length; i++) {
+        var newDatetime = moment(req.body.datetime).set('minute', quarterList[i]);
+        console.log(newDatetime);
+        Reservations.build({
+            name: newReservation.name,
+            email: newReservation.email,
+            phonenumber: newReservation.phonenumber,
+            adultnumber: 0,
+            childnumber: 0,
+            datetime: newDatetime,
+            notes: newReservation.notes,
+            numslots: 5,
+            reservation: true
+        }).save().then(function(){
+            res.send(200);
+        });
+    }
+});
+
 module.exports = router;
 

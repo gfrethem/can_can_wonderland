@@ -1,4 +1,4 @@
-var app = angular.module('adminApp', ['ngRoute', 'xeditable', '720kb.datepicker', 'ui.mask']);
+var app = angular.module('adminApp', ['ngRoute', 'xeditable', '720kb.datepicker', 'ui.mask', 'ngSanitize', 'ngCsv']);
 
 //Sets specific html view to load and sets an Angular controller to each page
 app.config(function($routeProvider, $locationProvider){
@@ -96,6 +96,9 @@ app.controller("AdminCalendarController", ["$scope", "$http",  function($scope, 
             vm.childnumber;
             vm.numslots;
             vm.notes;
+        }).then(function(){
+            vm.submitTime();
+            vex.dialog.alert("Success!");
         });
     };
 
@@ -108,9 +111,62 @@ app.controller("AdminCalendarController", ["$scope", "$http",  function($scope, 
 //CANCEL A RESERVATION
     vm.cancelReservation = function(id){
         $http.get("/reservation/cancelReservation/" + id).then(function(){
+            vex.dialog.alert("Success!");
             vm.submitTime();
         });
     };
+
+//BOOK A FULL HOUR
+    vm.bookFullHour = function(time, index, slots) {
+        if(slots != 20){
+            vex.dialog.alert("Already a reservation created for this hour. Need 20 slots.");
+        } else {
+            if (time.length == 7) {
+                var hour = parseInt(time.substring(0, 1));
+                var minute = parseInt(time.substring(2, 4));
+                var meridian = time.substring(5, 7);
+            } else {
+                var hour = parseInt(time.substring(0, 2));
+                var minute = parseInt(time.substring(3, 5));
+                var meridian = time.substring(6, 8);
+            }
+
+            if (meridian == "PM" && hour == 12) {
+                hour = 12;
+            }
+            else if (meridian == "PM") {
+                hour += 12;
+            }
+            var newDate = moment(vm.date).hour(hour).minute(minute).format('YYYY-MM-DD HH:mm');
+            var newReservation = {
+                name: vm.name[time + index],
+                email: vm.email[time + index],
+                phonenumber: vm.phonenumber[time + index],
+                datetime: newDate,
+                notes: vm.notes[time + index],
+                reservation: false
+            };
+
+            if (vm.reservation[time + index]) {
+                newReservation.reservation = true;
+            }
+            $http.post("/settings/fullHour", newReservation).then(function () {
+                vm.currentDate = [];
+                vm.submitTime();
+
+                vm.name;
+                vm.email;
+                vm.phonenumber;
+                vm.adultnumber;
+                vm.childnumber;
+                vm.numslots;
+                vm.notes;
+            }).then(function(){
+                vm.submitTime();
+                vex.dialog.alert("Success!");
+            });
+        }
+    }
 }]);
 
 app.controller("AdminEditController", ["$scope", "$http", function($scope, $http) {
@@ -123,7 +179,7 @@ app.controller("AdminEditController", ["$scope", "$http", function($scope, $http
 //SUBMIT ALL SETTINGS CHANGES ON SUBMIT
     vm.submitUpdates = function(){
       $http.put('/settings/updateSettings', vm.settings).then(function(){
-          alert('Success!');
+          vex.dialog.alert('Success!');
       });
 
     };
@@ -142,9 +198,19 @@ app.controller("AdminStatsController", ["$scope", "$http", function($scope, $htt
             for(var i = 0; i < response.data.length; i++){
                 if(response.data[i].email != 'admin'){
                     if(response.data[i].email != 'frontdesk') {
-                        vm.emailList.push(response.data[i].email);
+                        vm.emailList.push(response.data[i]);
                     }
                 }
+            }
+        });
+    };
+
+    vm.getReservationsList = function() {
+        $http.get('/settings/listReservations').then(function(response){
+            vm.reservationsList = [];
+            vm.showReservations = !vm.showReservations;
+            for(var i = 0; i < response.data.length; i++){
+                vm.reservationsList.push(response.data[i]);
             }
         });
     };
@@ -157,5 +223,6 @@ app.controller("AdminStatsController", ["$scope", "$http", function($scope, $htt
             }
         })
     }
+
 }]);
 
