@@ -1,5 +1,5 @@
 <div ng-Controller="CustomerCalendarController as calendar">
-
+<div class="divMain">
     <div class="partySize">
         <button class="button-main" ng-model="date" type="text" ng-click="calendar.showPartySize = !calendar.showPartySize">PARTY SIZE</button>
         <div class="underline"></div>
@@ -21,11 +21,13 @@
         </a>
     </div>
 
+
     <div class="calendarDiv">
         <datepicker  date-format="MMM dd, yyyy">
             <input class='button-main' ng-model="calendar.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
         </datepicker>
     </div>
+    <div class="underline"></div>
 
     <button class="button-main" ng-click="calendar.buttonTime()"> PICK A TIME </button>
     <div class="underline-last"></div>
@@ -48,4 +50,5 @@
     <div class="continue">
         <a href='/guests'> <button class="continueButton calendarContinue" ng-click="calendar.confirmDateSelection()"type="submit">CONTINUE</button></a>
     </div>
+</div>
 </div>

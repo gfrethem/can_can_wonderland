@@ -18,20 +18,20 @@
                 <div class="pUserControl">{{pastRes.numslots}} Group(s) <span ng-if="control.pastRes.adultnumber">{{pastRes.adultnumber}} Adults </span><span ng-="control.pastRes.childnumber">{{pastRes.childnumber}} Children</span></div>
             </div>
     </div>
-    <div>
-        <button class='continueButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT MY INFO</button>
-    </div>
 
-    <div class="customerInfo" ng-show="showCustomerInfo">
+        <button class='editButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT MY INFO</button>
+
+
+    <div ng-show="showCustomerInfo">
         <ul>
-            <li editable-text="control.myUser.name">NAME: {{control.myUser.name || 'Add your name!'}}</li>
-            <li editable-text="control.myUser.email">EMAIL: {{control.myUser.email}}</li>
-            <li editable-text="control.myUser.phonenumber">PHONE NUMBER: {{control.myUser.phonenumber || 'Add a Phone Number!'}}</li>
+            <li class="customerInfo" editable-text="control.myUser.name">NAME: {{control.myUser.name || 'Add your name!'}}</li>
+            <li class="customerInfo" editable-text="control.myUser.email">EMAIL: {{control.myUser.email}}</li>
+            <li class="customerInfo" editable-text="control.myUser.phonenumber">PHONE NUMBER: {{control.myUser.phonenumber || 'Add a Phone Number!'}}</li>
         </ul>
-        <div class="editingButtonsDiv">
+
             <button class="editButton" ng-click="control.updateAccount()">SUBMIT CHANGES</button>
             <button class="editButton" ng-click="control.deleteAccount()">DELETE ACCOUNT</button>
             <button class="editButton" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
-        </div>
+
     </div>
 </div>

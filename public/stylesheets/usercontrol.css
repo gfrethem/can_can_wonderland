@@ -71,10 +71,10 @@ input:focus {outline:0;}
     clear: both;
 }
 .customerInfo {
-    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 1.25em;
+    font-size: 2em;
     letter-spacing: 1px;
     color: black;
+    margin: 14px 0;
 }
 .userControlButton{
     font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;

@@ -1,5 +1,5 @@
 <div class="numberCheckMain" ng-controller="NumberController as num">
-
+<div class="divMain">
     <div class="numAdults">
         <div class="checkNums"> ADULTS </div>
         <slick class="slider" settings="num.slickConfig" prev-arrow=".slide-prevAdult" next-arrow=".rightAdult">
@@ -46,4 +46,5 @@
 
     <div class="estimatedPrice" ng-show="num.price"><span class="black">Estimated Price:</span> ${{num.price}} for {{num.totalAdults}} adults and {{num.totalChildren}} children</div>
     <a ng-click='num.showNumAlert()' ng-href="/{{num.numCheck}}"><button class="continueButton"> CONTINUE </button></a>
+</div>
 </div>

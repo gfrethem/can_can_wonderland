@@ -491,10 +491,15 @@ ul{
 
 /*///////////////////////////////////////////*/
 /* CUSOTMER CALANDER VIEW*/
+.divMain{
+    width: 50%;
+    margin: 0 auto;
+    display: block;
 
+}
 
 .calendarDiv{
-    width:70%;
+    width:100%;
     margin: 0 auto 0;
     overflow: hidden;
 }
@@ -524,7 +529,7 @@ ul{
     text-align: center;
     background-color: white;
     border: 4px solid black;
-    width: 50%;
+    width: 66%;
     margin: 0 auto -4px;
     display: block;
 }
@@ -577,32 +582,32 @@ ul{
 .slide-prev{
     color: #0091D5;
     float:left;
-    margin: -37px 0 0 26.5%;
+    margin: -37px 0 0 10px;
 }
 .right{
     color: #0091D5;
     float:right;
-    margin: -37px 26.5% 0 0;
+    margin: -37px 10px 0 0;
 }
 .month-prev{
     color: #0091D5;
     float:left;
-    margin: -37px 0 0 26.5%;
+    margin: -37px 0 0 10px;
 }
 .month-next{
     color: #0091D5;
     float:right;
-    margin: -37px 26.5% 0 0;
+    margin: -37px 10px 0 0;
 }
 .day-prev{
     color: #0091D5;
     float:left;
-    margin: -37px 0 0 26.5%;
+    margin: -37px 0 0 10px;
 }
 .day-next{
     color: #0091D5;
     float:right;
-    margin: -37px 26.5% 0 0;
+    margin: -37px 10px 0 0;
 }
 
 .fa-caret-right:hover{
@@ -669,7 +674,7 @@ ul{
 .estimatedPrice{
     text-align: center;
     color: #0091D5;
-    font-size:3em ;
+    font-size:2.1em ;
     margin-top: 3%;
 }
 
@@ -706,11 +711,6 @@ ul{
     margin:22px 0 0 0;
 }
 
-.confirmControl{
-    width: 43%;
-    display: block;
-    margin: 0 auto;
-}
 
 /*/////////////////////////////*/
 /*USER CONTROL*/
@@ -722,11 +722,11 @@ ul{
 }
 
 
-.editingButtonsDiv{
-    width: 72%;
-    margin: 0 auto;
-    display: block;
-}
+/*.editingButtonsDiv{*/
+    /*width: 72%;*/
+    /*margin: 0 auto;*/
+    /*display: block;*/
+/*}*/
 
 
 /* FRONTDESK PAGE */
@@ -836,7 +836,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     cursor: pointer;
 }
 
-
 .continueButton{
     font-family:  LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 2.5em;
@@ -850,6 +849,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     display: block;
     border: transparent;
     letter-spacing: 2px;
+    width: 70%;
     cursor: pointer;
 }
 
