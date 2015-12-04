@@ -50,7 +50,7 @@
                         <div class="teeButtons">
                             <button ng-hide="info.email" class="addNew" ng-click="adminCal.submitReservation(quarter.quarter, $index)">NEW TEE TIME</button>
                             <button class="cancelButton" ng-click="adminCal.cancelReservation(info.id)">CANCEL TEE TIME</button>
-                            <button ng-if="hour.totalSlotsRemaining === 20" class="createNew" ng-click="adminCal.bookFullHour(quarter.quarter, $index, hour.totalSlotsRemaining)">BOOK FULL HOUR</button>
+                            <button ng-if="hour.totalSlotsRemaining === 20" class="addNew" ng-click="adminCal.bookFullHour(quarter.quarter, $index, hour.totalSlotsRemaining)">BOOK FULL HOUR</button>
                         </div>
                     </form>
                 </div>
