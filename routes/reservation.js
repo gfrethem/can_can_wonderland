@@ -246,9 +246,5 @@ router.get('/getCalendar/:date?', function(req, res, next) {
         });
     });
 });
-//CHANGE RESERVATION - STRETCH GOAL!
-
-
-
 
 module.exports = router;
