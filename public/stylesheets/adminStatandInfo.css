@@ -5,13 +5,14 @@
     font-family: LTCTourist, Helvetica, Arial, sans-serif;
     font-size: 3em;
     color:#0091D5;
-    margin: 10px 0 -4px;
+    margin: 10px 0 -4px 34px;
+    cursor: pointer;
 }
 
 .setNewSm{
     font-family: Arvo, georgia, serif;
     font-size: 2em;
-    margin: 0 0 0 0;
+    cursor: pointer;
 }
 
 .center{
@@ -22,30 +23,21 @@
 .black{
     color: black;
 }
-.submitAdminUpdates {
-    font-family: LTCTouristAlt, Helvetica, Arial, sans-serif;
-    font-size: 2.5em;
-    text-align: center;
-    color: #ED1C24;
-    background-color: #FFE300;
-    padding: 8px 22px 2px;
-    text-decoration: none;
-    border-radius: 0;
-    margin: 33px auto 0;
-    display: block;
-    border: transparent;
-    letter-spacing: 2px;
-}
+/*.submitAdminUpdates {*/
+/*font-family: LTCTouristAlt, Helvetica, Arial, sans-serif;*/
+/*font-size: 2.5em;*/
+/*text-align: center;*/
+/*color: #ED1C24;*/
+/*background-color: #FFE300;*/
+/*padding: 8px 22px 2px;*/
+/*text-decoration: none;*/
+/*border-radius: 0;*/
+/*margin: 33px auto 0;*/
+/*display: block;*/
+/*border: transparent;*/
+/*letter-spacing: 2px;*/
+/*}*/
 
-.editable-buttons button{
-    background-color: #0091D5;
-    font-family: Arvo, georgia, serif;
-    font-size: 16px;
-    color: white;
-    border-color: transparent;
-    margin: 10px 9px 0 13px;
-    padding: 4px 11px;
-}
 .editable-input{
     font-family: Arvo, georgia, serif;
     font-weight: bold;
@@ -59,7 +51,7 @@
 .black-underline {
     border-top: 4px solid black;
     border-bottom: 4px solid black;
-    width: 420px;
+    width: 100%;
     height: 12px;
     margin: 19px 0 0 0;
 }

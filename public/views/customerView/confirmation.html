@@ -1,14 +1,15 @@
 <div class="confirmationMain" ng-controller="ConfirmController as confirm">
-    <h3 class="res"> CURRENT RESERVATION </h3>
+
     <div class="currentReservation">
+        <h3 class="res"> CURRENT RESERVATION </h3>
         <h4 class="info"> TIME SLOT : {{confirm.resConfirm.humandate}} </h4>
         <h4 class="info"> SLOTS : {{confirm.resConfirm.numslots}}  </h4>
         <h4 class="info" ng-show="confirm.resConfirm.adultnumber"> ADULTS : {{confirm.resConfirm.adultnumber}}</h4>
         <h4 class="info" ng-show="confirm.resConfirm.childnumber"> CHILDREN : {{confirm.resConfirm.childnumber}}</h4>
         <h2 class="groupSize">Groups of more than 4 will have a 3 minute difference in tee time.</h2>
         <div class='confirmControl'>
-            <a href="/customerCalendar"> <button class="confirmButton"> CHANGE </button></a>
-            <a ng-click="confirm.confirmReservation()" href='/userControl'> <button class="confirmButton"> CONFIRM </button></a>
+            <a href="/customerCalendar"> <button class="editButton"> CHANGE </button></a>
+            <a ng-click="confirm.confirmReservation()" href='/userControl'> <button class="editButton"> CONFIRM </button></a>
         </div>
     </div>
 </div>

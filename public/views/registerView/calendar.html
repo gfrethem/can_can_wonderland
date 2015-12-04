@@ -28,7 +28,7 @@
 
 <div class="calendarDiv">
     <datepicker  date-format="MMM dd, yyyy">
-        <input class='dateButton' ng-model="frontDesk.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
+        <input class='button-main' ng-model="frontDesk.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
     </datepicker>
     <button ng-click="frontDesk.submitTime()"  class="submitButton">SUBMIT</button>
 </div>
@@ -84,7 +84,7 @@
 
                     </div>
                     <div class="teeButtons">
-                        <button ng-hide="info.email" class="createNew" ng-click="frontDesk.submitReservation(quarter.quarter, $index)">NEW TEE TIME</button>
+                        <button ng-hide="info.email" class="addNew" ng-click="frontDesk.submitReservation(quarter.quarter, $index)">NEW TEE TIME</button>
                         <button class="cancelButton" ng-click="frontDesk.cancelReservation(info.id)">CANCEL TEE TIME</button>
 
                     </div>

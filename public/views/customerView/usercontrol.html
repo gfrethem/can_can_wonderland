@@ -19,7 +19,7 @@
             </div>
     </div>
     <div>
-        <button class='userEditButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT MY INFO</button>
+        <button class='continueButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT MY INFO</button>
     </div>
 
     <div class="customerInfo" ng-show="showCustomerInfo">
@@ -28,10 +28,10 @@
             <li editable-text="control.myUser.email">EMAIL: {{control.myUser.email}}</li>
             <li editable-text="control.myUser.phonenumber">PHONE NUMBER: {{control.myUser.phonenumber || 'Add a Phone Number!'}}</li>
         </ul>
-        <div class="editingButtons">
-            <button class="userEditButton" ng-click="control.updateAccount()">SUBMIT CHANGES</button>
-            <button class="userEditButton" ng-click="control.deleteAccount()">DELETE MY ACCOUNT</button>
-            <button class="userEditButton" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
+        <div class="editingButtonsDiv">
+            <button class="editButton" ng-click="control.updateAccount()">SUBMIT CHANGES</button>
+            <button class="editButton" ng-click="control.deleteAccount()">DELETE ACCOUNT</button>
+            <button class="editButton" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
         </div>
     </div>
 </div>
