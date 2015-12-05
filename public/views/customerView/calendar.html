@@ -3,11 +3,13 @@
     <div class="partySize">
         <button class="button-main" ng-model="date" type="text" ng-click="calendar.showPartySize = !calendar.showPartySize">PARTY SIZE</button>
         <div class="underline"></div>
+        <div class="slider-class">
         <slick class="slider" settings="calendar.slickConfig" prev-arrow=".slide-prev" next-arrow=".right">
             <div ng-repeat="party in calendar.partyList track by $index">
                 <div class='partySize sliders' ng-click="calendar.findPartySize(party)" ng-class="{active:calendar.partySize == party}">{{party}}</div>
             </div>
         </slick>
+            </div>
     </div>
 
     <div class="slide-prev">
@@ -24,7 +26,7 @@
 
     <div class="calendarDiv">
         <datepicker  date-format="MMM dd, yyyy">
-            <input class='button-main' ng-model="calendar.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
+            <input class='button-main input' ng-model="calendar.date" type="text" name="datebutton" placeholder="PICK A DATE"/>
         </datepicker>
     </div>
     <div class="underline"></div>
