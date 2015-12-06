@@ -1,13 +1,13 @@
 <div ng-controller="AdminEditController as edit">
     <div class="center">
         <div class="black-underline"></div>
-        <p class="setNew" editable-text="edit.settings.mopen"> Monday Hours: <p class="setNewSm" editable-text="edit.settings.mclose">{{edit.settings.mopen || 'empty'}} to {{edit.settings.mclose || 'empty'}}</p></p>
-        <p class="setNew" editable-text="edit.settings.tuopen"> Tuesday Hours: <p class="setNewSm" editable-text="edit.settings.tuclose">{{edit.settings.tuopen || 'empty'}} to {{edit.settings.tuclose || 'empty'}}</p></p>
-        <p class="setNew" editable-text="edit.settings.wopen"> Wednesday Hours: <p class="setNewSm" editable-text="edit.settings.wclose">{{edit.settings.wopen || 'empty'}} to {{edit.settings.wclose || 'empty'}}</p></p>
-        <p class="setNew" editable-text="edit.settings.thopen"> Thursday Hours: <p class="setNewSm" editable-text="edit.settings.thclose">{{edit.settings.thopen || 'empty'}} to {{edit.settings.thclose || 'empty'}}</p></p>
-        <p class="setNew" editable-text="edit.settings.fopen"> Friday Hours: <p class="setNewSm" editable-text="edit.settings.fclose">{{edit.settings.fopen || 'empty'}} to {{edit.settings.fclose || 'empty'}}</p></p>
-        <p class="setNew" editable-text="edit.settings.saopen"> Saturday Hours: <p class="setNewSm" editable-text="edit.settings.saclose">{{edit.settings.saopen || 'empty'}} to {{edit.settings.saclose || 'empty'}}</p></p>
-        <p class="setNew" editable-text="edit.settings.suopen"> Sunday Hours: <p class="setNewSm" editable-text="edit.settings.suclose">{{edit.settings.suopen || 'empty'}} to {{edit.settings.suclose || 'empty'}}</p></p>
+        <p class="setNew" editable-text="edit.settings.mopen"> Monday Hours: <p class="setNewSm" editable-text="edit.settings.mclose"><span class="info-edit">{{edit.settings.mopen || 'empty'}} </span> to <span class="info-edit"> {{edit.settings.mclose || 'empty'}} </span></p></p>
+        <p class="setNew" editable-text="edit.settings.tuopen"> Tuesday Hours: <p class="setNewSm" editable-text="edit.settings.tuclose"><span class="info-edit">{{edit.settings.tuopen || 'empty'}} </span> to <span class="info-edit"> {{edit.settings.tuclose || 'empty'}} </span></p></p>
+        <p class="setNew" editable-text="edit.settings.wopen"> Wednesday Hours: <p class="setNewSm" editable-text="edit.settings.wclose"><span class="info-edit">{{edit.settings.wopen || 'empty'}} </span> to <span class="info-edit"> {{edit.settings.wclose || 'empty'}} <span class="info-edit"></p></p>
+        <p class="setNew" editable-text="edit.settings.thopen"> Thursday Hours: <p class="setNewSm" editable-text="edit.settings.thclose"><span class="info-edit">{{edit.settings.thopen || 'empty'}} </span> to <span class="info-edit"> {{edit.settings.thclose || 'empty'}} </span></p></p>
+        <p class="setNew" editable-text="edit.settings.fopen"> Friday Hours: <p class="setNewSm" editable-text="edit.settings.fclose"><span class="info-edit">{{edit.settings.fopen || 'empty'}} </span> to <span class="info-edit"> {{edit.settings.fclose || 'empty'}} </span></p></p>
+        <p class="setNew" editable-text="edit.settings.saopen"> Saturday Hours: <p class="setNewSm" editable-text="edit.settings.saclose"><span class="info-edit">{{edit.settings.saopen || 'empty'}} </span> to <span class="info-edit"> {{edit.settings.saclose || 'empty'}} </span></p></p>
+        <p class="setNew" editable-text="edit.settings.suopen"> Sunday Hours: <p class="setNewSm" editable-text="edit.settings.suclose"><span class="info-edit">{{edit.settings.suopen || 'empty'}} </span> to <span class="info-edit"> {{edit.settings.suclose || 'empty'}} </span></p></p>
         <p class="timeSettingsNote">Keep times in military format</p>
         <div class="black-underline"></div>
         <div class="adjustPrice">
@@ -16,7 +16,7 @@
         </div>
         <div class="black-underline"></div>
         <div class="adjustMessage">
-            <p class="setNew"> Special Message: <p class="setNewSm" editable-text="edit.settings.specialmessage"> {{edit.settings.specialmessage || 'Add a special message'}}</p></p>
+            <p class="setNew"> Special Message: <p class="setNewSm" editable-text="edit.settings.specialmessage"> <span class="info-edit"> {{edit.settings.specialmessage || 'Add a special message'}} </span></p></p>
             <div class="black-underline"></div>
         </div>
         <button class="continueButton" ng-click="edit.submitUpdates()">SUBMIT CHANGES</button>

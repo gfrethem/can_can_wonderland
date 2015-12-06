@@ -15,6 +15,10 @@
     cursor: pointer;
 }
 
+.info-edit:hover{
+    color: #ED1C24;
+}
+
 .center{
     display: block;
     width: 50%;
@@ -23,20 +27,9 @@
 .black{
     color: black;
 }
-/*.submitAdminUpdates {*/
-/*font-family: LTCTouristAlt, Helvetica, Arial, sans-serif;*/
-/*font-size: 2.5em;*/
-/*text-align: center;*/
-/*color: #ED1C24;*/
-/*background-color: #FFE300;*/
-/*padding: 8px 22px 2px;*/
-/*text-decoration: none;*/
-/*border-radius: 0;*/
-/*margin: 33px auto 0;*/
-/*display: block;*/
-/*border: transparent;*/
-/*letter-spacing: 2px;*/
-/*}*/
+.black:hover{
+    color: #ED1C24;
+}
 
 .editable-input{
     font-family: Arvo, georgia, serif;
@@ -60,6 +53,9 @@
 .cal a:hover{
     color:#ED1C24;
 }
+.cal a:focus{
+    color:#ED1C24;
+}
 
 .infoAdmin a{
     font-size: 2.5em;
@@ -69,6 +65,9 @@
 }
 
 .infoAdmin a:hover{
+    color:#ED1C24;
+}
+.infoAdmin a:focus{
     color:#ED1C24;
 }
 
@@ -82,3 +81,7 @@
 .stats a:hover{
     color:#ED1C24;
 }
+.stats a:focus{
+    color:#ED1C24;
+}
+
