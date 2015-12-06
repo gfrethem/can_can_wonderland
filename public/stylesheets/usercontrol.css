@@ -486,9 +486,6 @@
 
 /*ipad portrait*/
 @media screen and (max-width: 768px) {
-    /*.loginPlaceholders{*/
-        /*width: 50%;*/
-    /*}*/
     .mainHour {
         width: 85%;
     }
