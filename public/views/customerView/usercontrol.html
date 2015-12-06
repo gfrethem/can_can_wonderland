@@ -1,26 +1,27 @@
-<div ng-controller="UserControlController as control" class="userControlMain">
+<div class="userControlMain">
+<div ng-controller="UserControlController as control">
     <h1 class="h1UserControl">Hello, {{control.myUser.name}}</h1>
     <h2 class="h2UserControl">YOUR RESERVATIONS</h2>
     <div class="black-underline"></div>
     <p class="reservationDisclaimer">Groups of 4 or more will tee off separately.</p>
     <div ng-repeat="curRes in control.currentReservations" class="futureReservationContainer">
-                <div class="divUserControl">
-                        <div class="pUserControl">TEE TIME: {{curRes.humantime}}</div>
-                        <div class="pUserControl"><span class="redUC">{{curRes.adultnumber}}</span> Adults <span class="redUC">{{curRes.childnumber}}</span> Children <span class="redUC">{{curRes.numslots}}</span> Group(s)</div>
-                        <button class="userControlButton" ng-click="control.cancelReservation(curRes.id)">CANCEL</button>
-                </div>
+        <div class="divUserControl">
+            <div class="pUserControl">TEE TIME: {{curRes.humantime}}</div>
+            <div class="pUserControl"><span class="redUC">{{curRes.adultnumber}}</span> Adults <span class="redUC">{{curRes.childnumber}}</span> Children <span class="redUC">{{curRes.numslots}}</span> Group(s)</div>
+            <button class="userControlButton" ng-click="control.cancelReservation(curRes.id)">CANCEL</button>
+        </div>
     </div>
 
     <h2 class="h2UserControl">PAST RESERVATIONS</h2>
     <div class="black-underline"></div>
     <div class="pastReservationContainer" ng-repeat="pastRes in control.pastReservations">
-            <div class="divUserControl">
-                <div class="pUserControl">TEE TIME: {{pastRes.humantime}}</div>
-                <div class="pUserControl">{{pastRes.numslots}} Group(s) <span ng-if="control.pastRes.adultnumber">{{pastRes.adultnumber}} Adults </span><span ng-="control.pastRes.childnumber">{{pastRes.childnumber}} Children</span></div>
-            </div>
+        <div class="divUserControl">
+            <div class="pUserControl">TEE TIME: {{pastRes.humantime}}</div>
+            <div class="pUserControl">{{pastRes.numslots}} Group(s) <span ng-if="control.pastRes.adultnumber">{{pastRes.adultnumber}} Adults </span><span ng-="control.pastRes.childnumber">{{pastRes.childnumber}} Children</span></div>
+        </div>
     </div>
 
-        <button class='editButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT INFO</button>
+    <button class='editButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT INFO</button>
 
 
     <div ng-show="showCustomerInfo">
@@ -30,9 +31,10 @@
             <li class="customerInfo" editable-text="control.myUser.phonenumber"><span class="edit-text"> PHONE NUMBER: </span> {{control.myUser.phonenumber || 'Add a Phone Number!'}}</li>
         </ul>
 
-            <button class="editButton blue-button" ng-click="control.updateAccount()">SUBMIT CHANGES</button>
-            <button class="editButton red-button" ng-click="control.deleteAccount()">DELETE ACCOUNT</button>
-            <button class="editButton yellow-button" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
+        <button class="editButton blue-button" ng-click="control.updateAccount()">SUBMIT CHANGES</button>
+        <button class="editButton red-button" ng-click="control.deleteAccount()">DELETE ACCOUNT</button>
+        <button class="editButton yellow-button" ng-click="showCustomerInfo = !showCustomerInfo">CLOSE</button>
 
     </div>
+</div>
 </div>
