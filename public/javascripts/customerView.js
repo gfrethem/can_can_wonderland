@@ -343,7 +343,7 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
 
     vm.resConfirm = captureRes.newReservation;
     vm.resConfirm.reservation = true;
-    vm.resTime = moment(vm.resConfirm.humandate).format("H:mm A");
+    vm.resTime = moment(vm.resConfirm.datetime).format("hg:mm A");
     vm.resDate = moment(vm.resConfirm.humandate).format("dddd, MMM DD, YYYY");
 //SAVE A NEW RESERVATION TO THE DATABASE
     vm.confirmReservation = function(){
