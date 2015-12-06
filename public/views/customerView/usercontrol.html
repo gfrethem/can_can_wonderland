@@ -17,12 +17,11 @@
     <div class="pastReservationContainer" ng-repeat="pastRes in control.pastReservations">
         <div class="divUserControl">
             <div class="pUserControl">TEE TIME: {{pastRes.humantime}}</div>
-            <div class="pUserControl">{{pastRes.numslots}} Group(s) <span ng-if="control.pastRes.adultnumber">{{pastRes.adultnumber}} Adults </span><span ng-="control.pastRes.childnumber">{{pastRes.childnumber}} Children</span></div>
+            <div class="pUserControl">{{pastRes.numslots}} Group(s)</div>
         </div>
     </div>
 
     <button class='editButton' ng-click="showCustomerInfo = !showCustomerInfo">EDIT INFO</button>
-
 
     <div ng-show="showCustomerInfo">
         <ul>

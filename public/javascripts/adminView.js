@@ -20,6 +20,11 @@ app.controller("AdminController", ["$scope", "$http", function($scope, $http){
     var vm = this;
     vm.logout = function(){
         $http.get("/login/logout");
+    };
+
+    vm.toHome = function(){
+        console.log('click');
+        $http.get("/");
     }
 }]);
 
