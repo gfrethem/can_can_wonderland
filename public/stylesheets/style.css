@@ -385,6 +385,7 @@ input:-webkit-autofill {
     width: 100%;
     margin: 0 auto 0;
     display: block;
+    clear: both;
 }
 .calendarDiv {
     width: 74%;
