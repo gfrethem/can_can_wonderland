@@ -450,7 +450,8 @@ input:-webkit-autofill {
 }
 
 .results{
-    font-size: 2em;
+    font-family: arvo;
+    font-size: 1.5em;
     text-align: center;
     color: #ED1C24;
 }
@@ -592,10 +593,12 @@ input:-webkit-autofill {
 }
 
 .groupSize{
-    font-size: 2em;
+    font-family: arvo;
+    font-size: 1.5em;
     font-weight: bold;
     color: #ED1C24;
-    margin:22px 0 0 0;
+    margin: 22px 0 0 0;
+
 }
 
 
@@ -614,14 +617,14 @@ input:-webkit-autofill {
 
 .h1UserControl {
     font-size: 4.25em;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
     color: #0091D5;
     margin: 4% 0 -1% 0;
 }
 
 .h2UserControl {
     font-size: 3em;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
     color: #ED1C24;
     margin: 24px 0 -14px 0;
     clear: both;
@@ -646,8 +649,7 @@ input:-webkit-autofill {
     margin: 2% auto;
 }
 .reservationDisclaimer {
-    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
-    font-size: 2em;
+    font-size: 1.4em;
     letter-spacing: 1px;
     color: #ED1C24;
     margin: 10px auto 34px;
@@ -802,6 +804,7 @@ ul{
     margin: 0 auto;
     display: block;
     cursor: pointer;
+    clear: both;
 }
 .button-main:hover{
     color:#ED1C24;
@@ -1051,7 +1054,7 @@ ul{
     text-decoration: none;
     border-radius: 0;
     border: medium none transparent;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     float: right;
     margin: 0 0 35px 0;
 }
