@@ -322,124 +322,7 @@ input:-webkit-autofill {
 }
 
 /*/////////////////////////////////////*/
-/*// CASHIER CALENDAR VIEW */
 
-li {
-    list-style: none;
-    font-size: 1.75em;
-    letter-spacing: .75px;
-}
-
-.datepicker{
-    text-align: center;
-    font-size: 3em;
-}
-
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    black;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:   black;
-    /*opacity:  1;*/
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    black;
-    /*opacity:  1;*/
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color:   black;
-}
-
-ul{
-    margin: .75em 0 .75em 0;
-    /*padding: 0 0 0 0;*/
-}
-
-.mainHour{
-    background-color: white;
-    border: 4px solid black;
-    width: 60%;
-    margin: 0 auto -4px;
-    display: block;
-}
-
-.quarterHour{
-    background-color: #cce5ff;
-    border: 4px solid black;
-    border-left: none;
-    border-right: none;
-    margin: 0 auto -4px;
-    display: block;
-    color: #ED1C24;
-}
-
-.reservation{
-    background-color: white;
-    border: 4px solid black;
-    border-left: none;
-    border-right: none;
-    margin: 0 auto -4px;
-    display: block;
-}
-
-.available{
-    float: right;
-    clear: both;
-    margin-right: 2%;
-}
-
-.numAvailable{
-    color: #ED1C24;
-    background-color: white;
-    float: right;
-    border: 4px solid black;
-    text-align: center;
-    width: 1.45em;
-    height: 1.45em;
-    line-height: 1.25;
-    margin: -4% 0 0 .5em;
-}
-.infoContainer{
-    color: black;
-    margin: 1% 1.5%;
-    font-size:1.25em;
-    height: 46px;
-}
-
-.infoForm{
-    margin: 0 auto 46px 19px;
-    font-size: 1.5em;
-    letter-spacing: 1px;
-    width: 66%;
-    text-align: right;
-}
-.inputForm{
-    background-color: white;
-    width: 46%;
-}
-.inputname{
-    margin: 12px 0 0 0;
-    padding: 10px 0 0 0;
-}
-.labelInfo{
-    width: 30%;
-}
-
-
-.checkboxes{
-    float: right;
-    color: black;
-    margin: 1% -1%;
-}
-
-.check-in{
-    width: 2em;
-}
-.red{
-    color:#ED1C24;
-    font-size: 1.25em;
-    margin-left: 12px;
-}
 
 
 /*////////////////////////////////////////////*/
@@ -504,7 +387,7 @@ ul{
     display: block;
 }
 .calendarDiv {
-    width: 100%;
+    width: 74%;
     margin: 0 auto 0;
     overflow: hidden;
     display: block;
@@ -565,11 +448,6 @@ ul{
     color: #ED1C24;
     background-color: #0091D5;
 }
-
-/*.calendarContinue{*/
-/*margin-top: 29px;*/
-/*}*/
-
 
 .results{
     font-size: 2em;
@@ -724,19 +602,195 @@ ul{
 /*/////////////////////////////*/
 /*USER CONTROL*/
 
-.userControlMain{
-    display: block;
-    margin: 0 auto;
-    width: 50%;
+.userControlMain {
+    font-family: LTCTouristAlt, Oswald, Helvetica, Arial, sans-serif;
+    text-align: left;
+    margin: 0 25%;
+    width: 80%;
+}
+.redUC{
+    color:#ED1C24;
 }
 
-/* FRONTDESK PAGE */
-/*///////////////////////////////////////////*/
+.h1UserControl {
+    font-size: 4.25em;
+    letter-spacing: 1px;
+    color: #0091D5;
+    margin: 4% 0 -1% 0;
+}
+
+.h2UserControl {
+    font-size: 3em;
+    letter-spacing: 1px;
+    color: #ED1C24;
+    margin: 24px 0 -14px 0;
+    clear: both;
+
+}
+
+.pUserControl {
+    font-size: 2.4em;
+    clear: both;
+
+}
+.futureReservationContainer{
+    padding: 0 0 2% 0;
+}
+.pastUserControl {
+    font-size: 2em;
+    color: black;
+    /*margin: 0 0 0 10%;*/
+}
+
+.divUserControl{
+    margin: 2% auto;
+}
+.reservationDisclaimer {
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
+    font-size: 2em;
+    letter-spacing: 1px;
+    color: #ED1C24;
+    margin: 10px auto 34px;
+    clear: both;
+}
+.customerInfo {
+    font-size: 2em;
+    letter-spacing: 1px;
+    color: black;
+    margin: 15px 0 1px 0;
+    cursor: pointer;
+}
+
+/*////////////////////////////////////////////////////////////*/
+/*// CASHIER CALENDAR VIEW */
 
 .frontDeskMain{
     background:#FFFFFF url('/images/longLogo.png') no-repeat center center fixed;
     background-size: 80%;
 }
+
+
+li {
+    list-style: none;
+    font-size: 1.75em;
+    letter-spacing: .75px;
+}
+
+.datepicker{
+    text-align: center;
+    font-size: 3em;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    black;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:   black;
+    /*opacity:  1;*/
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    black;
+    /*opacity:  1;*/
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:   black;
+}
+
+ul{
+    margin: .75em 0 .75em 0;
+    /*padding: 0 0 0 0;*/
+}
+
+.mainHour{
+    background-color: white;
+    border: 4px solid black;
+    width: 60%;
+    margin: 0 auto -4px;
+    display: block;
+}
+
+.quarterHour{
+    background-color: #cce5ff;
+    border: 4px solid black;
+    border-left: none;
+    border-right: none;
+    margin: 0 auto -4px;
+    display: block;
+    color: #ED1C24;
+}
+
+.reservation{
+    background-color: white;
+    border: 4px solid black;
+    border-left: none;
+    border-right: none;
+    margin: 0 auto -4px;
+    display: block;
+}
+
+.available{
+    float: right;
+    clear: both;
+    margin-right: 2%;
+}
+
+.numAvailable{
+    color: #ED1C24;
+    background-color: white;
+    float: right;
+    border: 4px solid black;
+    text-align: center;
+    width: 1.45em;
+    height: 1.45em;
+    line-height: 1.25;
+    margin: -4% 0 0 .5em;
+}
+.infoContainer{
+    color: black;
+    margin: 1% 1.5%;
+    font-size:1.25em;
+    height: 46px;
+}
+
+.infoForm{
+    margin: 0 auto 46px 19px;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    width: 66%;
+    text-align: right;
+}
+.inputForm{
+    background-color: white;
+    width: 46%;
+}
+.inputname{
+    margin: 12px 0 0 0;
+    padding: 10px 0 0 0;
+}
+.labelInfo{
+    width: 30%;
+}
+
+
+.checkboxes{
+    float: right;
+    color: black;
+    margin: 1% -1%;
+}
+
+.check-in{
+    width: 2em;
+}
+.red{
+    color:#ED1C24;
+    font-size: 1.25em;
+    margin-left: 12px;
+}
+
+
+/*//////////////////////////////////////////////////////*/
+
+/* BUTTONS */
 
 .button-main{
     font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
@@ -933,6 +987,7 @@ ul{
 }
 
 .infoButton{
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 1em;
     letter-spacing: 1px;
     font-weight: bold;
@@ -953,6 +1008,7 @@ ul{
 }
 
 .cancelButton{
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 1.5em;
     letter-spacing: 1px;
     font-weight: bold;
@@ -968,6 +1024,7 @@ ul{
 }
 
 .addNew{
+    font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 1.5em;
     letter-spacing: 1px;
     font-weight: bold;
@@ -979,10 +1036,6 @@ ul{
     text-decoration: none;
     margin: 0 0 0 34px;
     cursor: pointer;
-}
-
-.teeButtons {
-    padding: 7px 0 10px;
 }
 
 .userControlButton{
@@ -1063,657 +1116,4 @@ ul{
     width: 100%;
     height: 12px;
     margin: 19px 0 0 0;
-}
-
-
-
-
-/*/////////////////////////////////////*/
-/* media queries */
-
-/* iphone5, 5s PORTRAIT */
-@media only screen and (max-width: 414px) {
-
-    .homeNav {
-        padding: 1em 0 1em 0;
-    }
-    .mainLogo {
-        margin: 5% auto;
-        width: 93%;
-    }
-
-    .homeBars {
-        font-size: 2.5em;
-        margin: 0 0 0 6%;
-    }
-
-    .starLogo {
-        margin: -5px 0 0 23px;
-    }
-
-    .loginButton {
-        font-size: 2.5em;
-    }
-
-    .logoutButton {
-        font-size: 2.5em;
-    }
-
-    .infoMain {
-        width: 80%;
-    }
-
-    .h4info {
-        font-size: 1.89em;
-        letter-spacing: 1px;
-        margin: 17px 0 -19px 0;
-    }
-
-    .h3info {
-        font-size: 2.5em;
-        margin: 9px 0 1px 0;
-    }
-
-    .businessinfo {
-        font-family: Arvo, Georgia, serif;
-        font-size: 1em;
-    }
-
-    .teeButton {
-        font-size: 2.5em;
-        width: 100%;
-    }
-
-    .divMain {
-        width: 80%;
-        margin: 0 auto;
-        display: block;
-    }
-
-    .button-main {
-        font-size: 2.75em;
-    }
-
-    .continueButton {
-        font-size: 2.5em;
-        width: 90%;
-    }
-
-    .underline {
-        width: 88%;
-    }
-
-    .underline-last {
-        width: 88%;
-        margin: 0 auto 17px;
-    }
-    .results {
-        font-size: 2em;
-        text-align: center;
-        color: #ED1C24;
-        margin: 0 0 0 0;
-    }
-
-    .sliders {
-        padding: 2.1% .07%;
-    }
-
-    .slide-prev {
-        margin: -37px 0 0 -10px;
-    }
-
-    .right {
-        margin: -37px -10px 0 0;
-    }
-
-    .slider-class {
-        width: 100%;
-    }
-
-    .slick-list {
-        width: 81%;
-    }
-
-    .timeSlotContainer {
-        width: 86%;
-    }
-
-    .continueButton {
-        width: 100%;
-    }
-
-    .slide-prevAdult {
-        margin: -37px 0 0 -10%;
-    }
-
-    .slide-prevChild {
-        margin: -37px 0 0 -10%;
-    }
-
-    .rightChild {
-        margin: -37px -10% 0 0;
-    }
-
-    .rightAdult {
-        margin: -37px -10% 0 0;
-    }
-
-    .estimatedPrice {
-        font-size: 2.5em;
-    }
-
-    .currentReservation {
-        width: 80%;
-    }
-
-    .res {
-        font-size: 1.95em;
-    }
-
-    .info {
-        font-size: 2em;
-    }
-    .customerInfo {
-        font-size: 2em;
-        letter-spacing: 1px;
-        color: black;
-        margin: 15px 0 1px 0;
-        cursor: pointer;
-    }
-
-    .editButton {
-        width: 100%;
-        font-size: 2.5em;
-    }
-
-    .groupSize {
-        font-size: 2em;
-        margin: 8px 0 0 0;
-        line-height: 1;
-    }
-
-    .userControlMain {
-        display: block;
-        margin: 0 auto;
-        width: 80%;
-    }
-
-    .h1UserControl {
-        font-size: 2.4em;
-    }
-
-    .h2UserControl {
-        font-size: 2em;
-    }
-
-    .reservationDisclaimer {
-        font-size: 1.5em;
-        margin: 18px 0 17px 0;
-        line-height: 1;
-    }
-
-    .pUserControl {
-        font-size: 1.4em;
-        clear: both;
-    }
-    .userControlButton {
-        font-size: 2em;
-        margin: 14px 0 26px 0;
-    }
-    .blue-button {
-        font-size: 1.7em;
-        padding: 12px;
-    }
-    .red-button {
-        font-size: 1.7em;
-        padding: 12px;
-    }
-
-    .loginPlaceholders {
-        width: 80%;
-    }
-    .newUser {
-        font-size: 2.7em;
-        margin: 20px auto -6px auto;
-        width: 88%;
-    }
-    .fb {
-        font-size: 1.25em;
-        padding: 12px 0 5px 0;
-    }
-    .fbImage {
-        margin: 1px 9px 0 0;
-        width:  39px;
-    }
-    #emailMain {
-        font-size: 1.75em;
-    }
-    #passwordMain{
-        font-size: 1.75em;
-    }
-    #name{
-        font-size: 1.75em;
-    }
-    #email{
-        font-size: 1.75em;
-    }
-    #phone{
-        font-size: 1.45em;
-    }
-    #password{
-        font-size: 1.75em;
-    }
-    #password2{
-        font-size: 1.3em;
-    }
-
-}
-
-
-/*/////////////////////////////////////////////////////////////////////////////////////*/
-
-
-/* iphone5, 5s LANDSCAPE*/
-@media only screen and (max-width: 667px) {
-
-    .homeNav {
-        padding: 1em 0 1em 0;
-    }
-    .mainLogo {
-        margin: 5% auto;
-        width: 93%;
-    }
-
-    .homeBars {
-        font-size: 2.5em;
-        margin: 0 0 0 6%;
-    }
-
-    .starLogo {
-        margin: -5px 0 0 23px;
-    }
-
-    .loginButton {
-        font-size: 2.5em;
-    }
-
-    .logoutButton {
-        font-size: 2.5em;
-    }
-
-    .infoMain {
-        width: 80%;
-    }
-
-    .h4info {
-        font-size: 3.89em;
-        letter-spacing: 1px;
-        margin: 17px 0 -19px 0;
-    }
-
-    .h3info {
-        font-size: 3.5em;
-        margin: 9px 0 1px 0;
-    }
-
-    .businessinfo {
-        font-family: Arvo, Georgia, serif;
-        font-size: 1.4em;
-    }
-
-    .teeButton {
-        font-size: 2.5em;
-        width: 68%;
-    }
-
-    .divMain {
-        width: 80%;
-        margin: 0 auto;
-        display: block;
-    }
-
-    .button-main {
-        font-size: 3.75em;
-    }
-
-    .continueButton {
-        font-size: 2.5em;
-        width: 90%;
-    }
-
-    .underline {
-        width: 88%;
-    }
-
-    .underline-last {
-        width: 88%;
-        margin: 0 auto 17px;
-    }
-    .results {
-        font-size: 2em;
-        text-align: center;
-        color: #ED1C24;
-        margin: 0 0 0 0;
-    }
-
-    .sliders {
-        padding: 2.1% .07%;
-    }
-
-    .slide-prev {
-        margin: -37px 0 0 -10px;
-    }
-
-    .right {
-        margin: -37px -10px 0 0;
-    }
-
-    .slider-class {
-        width: 100%;
-    }
-
-    .slick-list {
-        width: 81%;
-    }
-
-    .timeSlotContainer {
-        width: 65%;
-    }
-
-    .continueButton {
-        width: 68%;
-    }
-
-    .slide-prevAdult {
-        margin: -37px 0 0 -10%;
-    }
-
-    .slide-prevChild {
-        margin: -37px 0 0 -10%;
-    }
-
-    .rightChild {
-        margin: -37px -10% 0 0;
-    }
-
-    .rightAdult {
-        margin: -37px -10% 0 0;
-    }
-
-    .estimatedPrice {
-        font-size: 2.5em;
-    }
-
-    .currentReservation {
-        width: 80%;
-    }
-
-    .res {
-        font-size: 3.5em;
-    }
-
-    .info {
-        font-size: 2em;
-    }
-    .customerInfo {
-        font-size: 2em;
-        letter-spacing: 1px;
-        color: black;
-        margin: 15px 0 1px 0;
-        cursor: pointer;
-    }
-
-    .editButton {
-        width: 68%;
-        font-size: 2.5em;
-    }
-
-    .groupSize {
-        font-size: 2em;
-        margin: 8px 0 0 0;
-        line-height: 1;
-    }
-
-    .userControlMain {
-        display: block;
-        margin: 0 auto;
-        width: 80%;
-    }
-
-    .h1UserControl {
-        font-size: 2.4em;
-    }
-
-    .h2UserControl {
-        font-size: 3.4em;
-    }
-
-    .reservationDisclaimer {
-        font-size: 2em;
-        margin: 18px 0 17px 0;
-        line-height: 1;
-    }
-
-    .pUserControl {
-        font-size: 2.4em;
-        clear: both;
-    }
-    .userControlButton {
-        font-size: 2em;
-        margin: 14px 0 26px 0;
-    }
-    .blue-button {
-        font-size: 2.5em;
-    }
-    .red-button {
-        font-size: 2.5em;
-    }
-
-    .loginPlaceholders {
-        width: 80%;
-    }
-    .newUser {
-        font-size: 2.7em;
-        margin: 20px auto -6px auto;
-        width: 88%;
-    }
-    .fb {
-        font-size: 1.25em;
-        padding: 12px 0 5px 0;
-    }
-    .fbImage {
-        margin: 1px 9px 0 0;
-        width:  39px;
-    }
-    #emailMain {
-        font-size: 1.75em;
-    }
-    #passwordMain{
-        font-size: 1.75em;
-    }
-    #name{
-        font-size: 1.75em;
-    }
-    #email{
-        font-size: 1.75em;
-    }
-    #phone{
-        font-size: 1.45em;
-    }
-    #password{
-        font-size: 1.75em;
-    }
-    #password2{
-        font-size: 1.3em;
-    }
-
-}
-
-
-
-/*///////////////////////////////////////////////////////////////////////////////////////*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*iphone6*/
-@media only screen and (max-width: 375px) {
-    body {
-    }
-}
-
-
-/*most android phones*/
-@media screen and (max-width: 360px) {
-    body {
-    }
-}
-/*ipad portrait*/
-@media screen and (max-width: 768px) {
-    /*.loginPlaceholders{*/
-        /*width: 50%;*/
-    /*}*/
-    /*.mainHour {*/
-        /*width: 85%;*/
-    /*}*/
-}
-
-
-
-
-/* media queries */
-
-
-
-/*/!*iphone6*!/*/
-/*@media only screen and (max-width: 375px) {*/
-    /*.userControlMain   {*/
-        /*font-size: 80%;*/
-        /*font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;*/
-        /*margin: 0 3% 0 5%;*/
-        /*width:100%*/
-    /*}*/
-    /*.h1UserControl {*/
-        /*color: #0091D5;*/
-        /*margin: 0 5%;*/
-        /*width: 100%;*/
-    /*}*/
-
-    /*.h2UserControl {*/
-        /*font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;*/
-        /*color: #ED1C24;*/
-        /*width: 90%;*/
-        /*margin: 5% 10% 0;*/
-    /*}*/
-
-    /*.redUC {*/
-        /*padding: 0 2%;*/
-    /*}*/
-
-    /*.divUserControl {*/
-        /*margin: 3% 0 6% 0;*/
-    /*}*/
-
-    /*.pUserControl {*/
-        /*padding: 2% 0;*/
-        /*margin: 3px 15%;*/
-        /*font-size: 2.4em;*/
-        /*width: 100%;*/
-    /*}*/
-    /*.userControlButton {*/
-        /*font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;*/
-        /*text-align: center;*/
-        /*font-size: 25px;*/
-        /*color: #ED1C24;*/
-        /*background-color: #FFE300;*/
-        /*text-decoration: none;*/
-        /*margin: 0 12%;*/
-        /*padding: 2% 14%;*/
-    /*}*/
-
-/*}*/
-
-/*/!*iphone6 plus*!/*/
-/*@media only screen and (max-width: 414px) {*/
-    /*.h2UserControl {*/
-        /*margin: 3% 5% 0 5%;*/
-    /*}*/
-/*}*/
-
-/*/!*most android phones*!/*/
-/*@media only screen and (max-width: 360px) {*/
-    /*.userControlMain{*/
-        /*font-size: 70%;*/
-    /*}*/
-    /*.reservationDisclaimer{*/
-        /*margin: 63px auto 10px;*/
-    /*}*/
-    /*.userEditButton{*/
-        /*padding: 1.75% 7%;*/
-        /*text-decoration: none;*/
-        /*border-radius: 0px;*/
-        /*margin: 5% 0 12px;*/
-        /*border: medium none transparent;*/
-        /*letter-spacing: 1px;*/
-        /*font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;*/
-        /*font-size: 2em;*/
-        /*text-align: center;*/
-        /*color: #ED1C24;*/
-        /*background-color: #FFE300;*/
-    /*}*/
-/*}*/
-
-/*ipad portrait and landscape*/
-@media only screen
-and (min-device-width: 768px)
-and (max-device-width: 1024px)
-and (-webkit-min-device-pixel-ratio: 1) {
-
-}
-
-/* media queries */
-
-/*iphone5, 5s*/
-@media only screen and (max-width: 320px) {
-
-
-}
-
-
-/*iphone6*/
-@media only screen and (max-width: 375px) {
-
-
-}
-
-/*iphone6 plus*/
-@media only screen and (max-width: 414px) {
-
-
-}
-
-/*most android phones*/
-@media only screen and (max-width: 360px) {
-
 }
