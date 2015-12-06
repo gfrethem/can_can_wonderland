@@ -827,6 +827,9 @@ ul{
     color: #FFE300;
     background-color:#ED1C24;
 }
+.teeButtons {
+    padding: 14px 0;
+}
 .continueButton{
     font-family: LTCTouristAlt, Helvetica, Ariel, san-serif;
     font-size: 2.5em;
