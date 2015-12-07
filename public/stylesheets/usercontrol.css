@@ -486,9 +486,6 @@
 
 /*ipad portrait*/
 @media screen and (max-width: 768px) {
-    .loginPlaceholders{
-        width: 50%;
-    }
     .mainHour {
         width: 85%;
     }
@@ -505,7 +502,9 @@ and (-webkit-min-device-pixel-ratio: 1) {
 
 /*iphone6*/
 @media only screen and (max-width: 375px) {
-
+    .loginPlaceholders{
+        width: 80%;
+    }
 }
 
 /*iphone6 plus*/

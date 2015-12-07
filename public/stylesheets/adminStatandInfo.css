@@ -43,45 +43,15 @@
 }
 
 
-.cal a{
+
+.adminLink{
     font-size: 2.5em;
     color: black;
     margin: 0 0 0 48px;
     letter-spacing: 2px;
 }
 
-.cal a:hover{
-    color:#ED1C24;
-}
-.cal a:focus{
-    color:#ED1C24;
-}
-
-.infoAdmin a{
-    font-size: 2.5em;
-    color: black;
-    margin: 0 0 0 48px;
-    letter-spacing: 2px;
-}
-
-.infoAdmin a:hover{
-    color:#ED1C24;
-}
-.infoAdmin a:focus{
-    color:#ED1C24;
-}
-
-.stats a{
-    font-size: 2.5em;
-    color: black;
-    margin: 0 0 0 48px;
-    letter-spacing: 2px;
-}
-
-.stats a:hover{
-    color:#ED1C24;
-}
-.stats a:focus{
+.adminLink:hover, .adminLink:focus{
     color:#ED1C24;
 }
 

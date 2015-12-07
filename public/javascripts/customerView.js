@@ -343,9 +343,10 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
 
     vm.resConfirm = captureRes.newReservation;
     vm.resConfirm.reservation = true;
+    vm.resTime = moment(vm.resConfirm.datetime).format("hg:mm A");
+    vm.resDate = moment(vm.resConfirm.humandate).format("dddd, MMM DD, YYYY");
 //SAVE A NEW RESERVATION TO THE DATABASE
     vm.confirmReservation = function(){
-        console.log(vm.resConfirm);
         $http.post('/reservation/makeReservation', vm.resConfirm).then(function(){
             $cookies.remove('resAdults');
             $cookies.remove('resChildren');
