@@ -342,6 +342,7 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
      captureRes.newReservation.humandate = $cookies.get('resHumanDate');
 
     vm.resConfirm = captureRes.newReservation;
+    console.log(vm.resConfirm);
     vm.resConfirm.reservation = true;
     vm.resTime = moment(vm.resConfirm.datetime).format("h:mm A");
     vm.resDate = moment(vm.resConfirm.humandate).format("dddd, MMM DD, YYYY");

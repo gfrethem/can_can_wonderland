@@ -41,7 +41,6 @@ router.get('/getReservations/:email?', function(req, res, next){
 //CREATE A NEW RESERVATION
 router.post('/makeReservation', function(req, res, next){
     var newReservation = req.body;
-
     Reservation.build({
             name: newReservation.name,
             email: newReservation.email,
@@ -54,7 +53,7 @@ router.post('/makeReservation', function(req, res, next){
             reservation: newReservation.reservation
         })
         .save()
-        .then(function(anotherTask) {
+        .then(function(response) {
             res.redirect('/userControl');
         }).catch(function(error) {
             // Ooops, do some error-handling
@@ -91,8 +90,8 @@ router.put('/checkin/:id?', function(req, res, next) {
 
 //POPULATE THE CALENDAR
 router.get('/getCalendar/:date?', function(req, res, next) {
-    var date = moment(req.params.date).format('YYYY-MM-DD HH:mm');
-    var nextDate = moment(date).hour(23).minute(59).format('YYYY-MM-DD HH');
+    var date = moment(req.params.date).hour(6).format('YYYY-MM-DD HH:mm');
+    var nextDate = moment(date).hour(29).minute(59).format('YYYY-MM-DD HH:mm');
     var reservations =[];
     var currentDate = [];
     var openHours;
