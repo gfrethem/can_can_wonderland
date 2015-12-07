@@ -6,7 +6,8 @@
     <p class="reservationDisclaimer">Groups of 4 or more will tee off separately.</p>
     <div ng-repeat="curRes in control.currentReservations" class="futureReservationContainer">
         <div class="divUserControl">
-            <div class="pUserControl">TEE TIME: {{curRes.humantime}}</div>
+            <div class="pUserControl">DATE: {{curRes.humantime}}</div>
+            <div class="pUserControl">TIME: {{curRes.restime}}</div>
             <div class="pUserControl"><span class="redUC">{{curRes.adultnumber}}</span> Adults <span class="redUC">{{curRes.childnumber}}</span> Children <span class="redUC">{{curRes.numslots}}</span> Group(s)</div>
             <button class="userControlButton" ng-click="control.cancelReservation(curRes.id)">CANCEL</button>
         </div>
