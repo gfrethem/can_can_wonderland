@@ -569,6 +569,10 @@ input:-webkit-autofill {
     color:black;
 }
 
+.childWarn {
+    text-align: center;
+}
+
 /*////////////////////////////////*/
 /*CONFIRMATION PAGE*/
 

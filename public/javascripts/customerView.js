@@ -343,7 +343,7 @@ app.controller("ConfirmController", ["$scope", "captureRes", "$http", "currentUs
 
     vm.resConfirm = captureRes.newReservation;
     vm.resConfirm.reservation = true;
-    vm.resTime = moment(vm.resConfirm.datetime).format("hg:mm A");
+    vm.resTime = moment(vm.resConfirm.datetime).format("h:mm A");
     vm.resDate = moment(vm.resConfirm.humandate).format("dddd, MMM DD, YYYY");
 //SAVE A NEW RESERVATION TO THE DATABASE
     vm.confirmReservation = function(){
@@ -374,10 +374,12 @@ app.controller("UserControlController", ["$scope", "currentUser", "$http", "$loc
 
     var getReservations = function() {
         $http.get('/reservation/getReservations/' + vm.myUser.email).then(function (response) {
+            console.log(response);
             vm.currentReservations = [];
             for (i = 0; i < response.data.length; i++) {
                 if (moment().format('YYYY-MM-DD HH:mm') < response.data[i].datetime) {
-                    response.data[i].humantime = moment(response.data[i].datetime).format('dddd, MMM DD, YYYY h:mm A');
+                    response.data[i].humantime = moment(response.data[i].datetime).format('dddd, MMM DD, YYYY');
+                    response.data[i].restime = moment(response.data[i].datetime).format('h:mm A');
                     vm.currentReservations.push(response.data[i]);
                 } else {
                     response.data[i].humantime = moment(response.data[i].datetime).format('dddd, MMM DD, YYYY h:mm A');
