@@ -1028,7 +1028,7 @@ ul{
     border: 4px solid black;
     text-decoration: none;
     border-radius: 0;
-    margin: 0 41px;
+    margin: 0 10px;
     cursor: pointer;
 }
 
@@ -1043,6 +1043,7 @@ ul{
     border: 4px solid black;
     text-decoration: none;
     cursor: pointer;
+    margin: 10px 0;
 }
 
 .userControlButton{
