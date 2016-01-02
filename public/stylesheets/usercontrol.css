@@ -473,7 +473,12 @@
     #password2{
         font-size: 1.3em;
     }
-
+    .calendarDiv {
+        width: 100%;
+    }
+    ._720kb-datepicker-calendar._720kb-datepicker-open{
+        font-size: 70%;
+    }
 }
 
 
