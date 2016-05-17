@@ -9,6 +9,9 @@ app.config(function($routeProvider, $locationProvider){
         .when('/login', {
             templateUrl: "../views/login.html"
         })
+        .when('/loginfail', {
+            templateUrl: "../views/loginfail.html"
+        })
         .when('/info', {
             templateUrl: "../views/customerView/info.html"
         })

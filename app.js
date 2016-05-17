@@ -24,6 +24,7 @@ var reservation = require('./routes/reservation');
 var register = require('./routes/register');
 var admin = require('./routes/admin');
 var login = require('./routes/login');
+var loginfail = require('./routes/loginfail');
 var confirmReservation = require('./routes/confirmReservation');
 var userControl = require('./routes/userControl');
 var info = require('./routes/info');
@@ -178,7 +179,7 @@ app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' })
 app.get('/auth/facebook/callback',
     passport.authenticate('facebook', {
         successRedirect : '/confirmReservation',
-        failureRedirect : '/login'
+        failureRedirect : '/loginfail'
     })
 );
 
@@ -189,6 +190,7 @@ app.use('/reservation', reservation);
 app.use('/register', register);
 app.use('/settings', admin);
 app.use('/login', login);
+app.use('/loginfail', loginfail);
 app.use('/confirmReservation', confirmReservation);
 app.use('/userControl', userControl);
 app.use('/info', info);
