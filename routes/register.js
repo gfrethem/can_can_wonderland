@@ -9,10 +9,6 @@ router.get('/', function(req, res, next){
     res.sendFile(path.join(__dirname, '../public/views/index.html'));
 });
 
-router.get('/registerLanding', function(req, res, next){
-    res.sendFile(path.join(__dirname, '../views/registerLanding.html'));
-});
-
 router.post('/', function(req, res, next){
     User.create(req.body).catch(function(err){
         if(err) {
