@@ -14,7 +14,7 @@ router.post('/', function(req, res, next){
         if(err) {
             console.log(err);
             // res.json error obj
-        }}).then(res.redirect('/login')
+        }}).then(res.redirect('/loginnew')
     );
 });
 

@@ -25,6 +25,7 @@ var register = require('./routes/register');
 var admin = require('./routes/admin');
 var login = require('./routes/login');
 var loginfail = require('./routes/loginfail');
+var loginnew = require('./routes/loginnew');
 var confirmReservation = require('./routes/confirmReservation');
 var userControl = require('./routes/userControl');
 var info = require('./routes/info');
@@ -66,7 +67,7 @@ passport.use('local', new localStrategy({passReqToCallback: true, usernameField:
             }
         }).then(function (user) {
             if (user == null) {
-                return done(null, false, {message: 'Incorrect credentials.'})
+                return done(null, false, {message: 'Incorrect username or password.'})
             }
 
             bcrypt.compare(password, user.password, function (err, isMatch) {
@@ -74,7 +75,7 @@ passport.use('local', new localStrategy({passReqToCallback: true, usernameField:
                 if (isMatch) {
                     return done(null, user);
                 } else {
-                    done(null, false, {message: 'Incorrect username or password'})
+                    done(null, false, {message: 'Incorrect username or password.'})
 
                 }
             })
@@ -161,7 +162,7 @@ passport.deserializeUser(function (id, done) {
         }
     }).then(function (user) {
         if (user == null) {
-            done(new Error('Wrong user id.'))
+            done(new Error('Incorrect username or password.'))
         }
 
         done(null, user)
@@ -191,6 +192,7 @@ app.use('/register', register);
 app.use('/settings', admin);
 app.use('/login', login);
 app.use('/loginfail', loginfail);
+app.use('/loginnew', loginnew);
 app.use('/confirmReservation', confirmReservation);
 app.use('/userControl', userControl);
 app.use('/info', info);

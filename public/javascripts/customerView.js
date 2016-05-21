@@ -12,7 +12,9 @@ app.config(function($routeProvider, $locationProvider){
         .when('/loginfail', {
             templateUrl: "../views/loginfail.html"
         })
-        .when('/info', {
+        .when('/loginnew', {
+            templateUrl: "../views/loginnew.html"
+        })        .when('/info', {
             templateUrl: "../views/customerView/info.html"
         })
         .when('/guests', {

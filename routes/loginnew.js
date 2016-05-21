@@ -23,9 +23,9 @@ router.post('/', passport.authenticate('local',
 });
 
 
-//router.post('/', passport.authenticate('local', function(req, res){
-//    console.log(req.user);
-//}));
+router.post('/', passport.authenticate('local', function(req, res){
+    console.log(req.user);
+}));
 
 
 //LOGOUT
