@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var moment = require('moment');
-//var Sequelize = require('sequelize');
+var serverSettings = require('./serverSettings');
 
 // SEQUELIZE
 var models = require("./models");
@@ -86,14 +86,13 @@ passport.use('local', new localStrategy({passReqToCallback: true, usernameField:
 // =========================================================================
 // FACEBOOK ================================================================
 // =========================================================================
-var configAuth = require('./auth');
 
 passport.use(new FacebookStrategy({
 
         // pull in our app id and secret from our auth.js file
-        clientID: configAuth.facebookAuth.clientID,
-        clientSecret: configAuth.facebookAuth.clientSecret,
-        callbackURL: configAuth.facebookAuth.callbackURL,
+        clientID: serverSettings.facebookAuth.clientID,
+        clientSecret: serverSettings.facebookAuth.clientSecret,
+        callbackURL: serverSettings.facebookAuth.callbackURL,
         enableProof: true,
         profileFields: ["emails", "displayName"]
 
@@ -200,8 +199,8 @@ app.use('/customerCalendar', customerCalendar);
 app.use('/guests', guests);
 
 //require the Twilio module and create a REST client
-var ACCOUNT_SID = 'ACa191532f90a93e915f16da74ef789a7a';
-var AUTH_TOKEN = 'e9ccd52f2d96b3801435c108ca0470ba';
+var ACCOUNT_SID = serverSettings.twilioAuth.ACCOUNT_SID;
+var AUTH_TOKEN = serverSettings.twilioAuth.AUTH_TOKEN;
 
 //SETUP CRON JOB FOR TWILIO
 var client = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
